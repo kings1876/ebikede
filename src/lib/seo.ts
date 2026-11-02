@@ -57,7 +57,7 @@ function minPriceFor(r: (typeof TAXONOMY_ROUTES)[number]): number {
     if (m.length) return Math.min(...m.map((p) => p.price));
   }
   if (fc?.priceMin) return fc.priceMin;
-  return 899;
+  return PRODUCTS.length ? Math.min(...PRODUCTS.map((p) => p.price)) : 0;
 }
 
 export function resolvePage(rawPath: string): PageInfo {
@@ -82,7 +82,7 @@ export function resolvePage(rawPath: string): PageInfo {
       pathDe: '/',
       pathEn: '/en/',
       title: de
-        ? `E-Bikes online kaufen | Neue E-Bikes ab 899 € | ${SITE}`
+        ? `E-Bikes online kaufen | Neue E-Bikes ab ${Math.min(...PRODUCTS.map((p) => p.price)).toLocaleString("de-DE")} € | ${SITE}`
         : `Buy E-Bikes Online in Germany | New Electric Bikes | ${SITE}`,
       description: de
         ? 'Neue E-Bikes online kaufen: E-Mountainbikes, Trekkingbikes, Citybikes und Lastenräder. Zahlung per Überweisung oder Krypto mit 10 % Rabatt.'

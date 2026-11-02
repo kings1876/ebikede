@@ -70,7 +70,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       {/* Card Content */}
       <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
         <div>
-          {SHOW_REVIEWS && (
+          {SHOW_REVIEWS && reviews.length > 0 && (
 
           <div className="flex items-center gap-1.5 mb-2">
             <div className="flex items-center gap-0.5">

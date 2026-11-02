@@ -59,8 +59,8 @@ export interface Product {
   motorDetails: string;
   torqueNm: number;
   batteryWh: number;
-  rangeKm: number;
-  weightKg: number;
+  rangeKm?: number;
+  weightKg?: number;
   gender: FrameGender;
   useCases: string[];
   isPreviousYear?: boolean;

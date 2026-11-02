@@ -22,6 +22,11 @@ import { PRODUCTS } from '../data/products';
 import { ACCESSORIES } from '../data/accessories';
 import { STORE_TRUSTPILOT_INFO } from '../data/reviews';
 
+const fromPrice = (category: string) => {
+  const ps = PRODUCTS.filter((p) => p.category === category);
+  return ps.length ? `ab ${Math.min(...ps.map((p) => p.price)).toLocaleString('de-DE')} €` : '';
+};
+
 export const Header: React.FC = () => {
   const {
     currentPath,
@@ -171,8 +176,8 @@ export const Header: React.FC = () => {
               onFocus={() => setSearchFocused(true)}
               placeholder={
                 isEn
-                  ? 'Search by model, brand (Cube, Specialized) or motor (Bosch)...'
-                  : 'Suche nach Modell, Marke (Cube, Specialized) oder Motor (Bosch)...'
+                  ? 'Search by model, brand (Cube, Haibike) or motor (Bosch)...'
+                  : 'Suche nach Modell, Marke (Cube, Haibike) oder Motor (Bosch)...'
               }
               className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 focus:outline-hidden transition-all"
             />
@@ -309,28 +314,28 @@ export const Header: React.FC = () => {
                   className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-emerald-600 cursor-pointer flex justify-between"
                 >
                   <span>{isEn ? 'Full-Suspension E-MTB (Fully)' : 'E-Mountainbike Fully'}</span>
-                  <span className="text-[10px] text-slate-400">ab 3.999 €</span>
+                  <span className="text-[10px] text-slate-400">{fromPrice('e-mountainbikes-fully')}</span>
                 </div>
                 <div
                   onClick={() => handleNav('/e-bikes/e-mountainbikes/hardtail/', '/en/e-bikes/electric-mountain-bikes/hardtail/')}
                   className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-emerald-600 cursor-pointer flex justify-between"
                 >
                   <span>{isEn ? 'Hardtail E-MTB' : 'E-Mountainbike Hardtail'}</span>
-                  <span className="text-[10px] text-slate-400">ab 899 €</span>
+                  <span className="text-[10px] text-slate-400">{fromPrice('e-mountainbikes-hardtail')}</span>
                 </div>
                 <div
                   onClick={() => handleNav('/e-bikes/e-trekkingbikes/', '/en/e-bikes/electric-trekking-bikes/')}
                   className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-emerald-600 cursor-pointer flex justify-between"
                 >
                   <span>{isEn ? 'Electric Trekking Bikes' : 'E-Trekkingbikes (Touren)'}</span>
-                  <span className="text-[10px] text-slate-400">ab 2.499 €</span>
+                  <span className="text-[10px] text-slate-400">{fromPrice('e-trekkingbikes')}</span>
                 </div>
                 <div
                   onClick={() => handleNav('/e-bikes/e-citybikes/', '/en/e-bikes/electric-city-bikes/')}
                   className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-emerald-600 cursor-pointer flex justify-between"
                 >
                   <span>{isEn ? 'Electric City Bikes' : 'E-Citybikes (Tiefeinsteiger)'}</span>
-                  <span className="text-[10px] text-slate-400">ab 1.899 €</span>
+                  <span className="text-[10px] text-slate-400">{fromPrice('e-citybikes')}</span>
                 </div>
                 <div
                   onClick={() => handleNav('/e-bikes/e-lastenraeder/', '/en/e-bikes/electric-cargo-bikes/')}

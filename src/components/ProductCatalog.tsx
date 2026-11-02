@@ -96,7 +96,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     }).sort((a, b) => {
       if (sortBy === 'price-asc') return a.price - b.price;
       if (sortBy === 'price-desc') return b.price - a.price;
-      if (sortBy === 'range') return b.rangeKm - a.rangeKm;
+      if (sortBy === 'range') return b.batteryWh - a.batteryWh;
       if (sortBy === 'torque') return b.torqueNm - a.torqueNm;
       return 0;
     });
@@ -210,7 +210,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             <option value="featured">{isEn ? 'Recommended' : 'Empfehlung'}</option>
             <option value="price-asc">{isEn ? 'Price: Low to High' : 'Preis: aufsteigend'}</option>
             <option value="price-desc">{isEn ? 'Price: High to Low' : 'Preis: absteigend'}</option>
-            <option value="range">{isEn ? 'Highest Range (km)' : 'Größte Reichweite'}</option>
+            <option value="range">{isEn ? 'Largest Battery (Wh)' : 'Größter Akku (Wh)'}</option>
             <option value="torque">{isEn ? 'Highest Torque (Nm)' : 'Stärkstes Drehmoment'}</option>
           </select>
         </div>

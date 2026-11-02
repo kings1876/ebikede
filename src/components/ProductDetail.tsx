@@ -134,14 +134,22 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             </div>
             <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center">
               <Gauge className="w-5 h-5 text-blue-500 mx-auto mb-1" />
-              <div className="text-xs text-slate-500">{isEn ? 'Max Range' : 'Reichweite'}</div>
-              <div className="text-sm font-bold text-slate-900">bis {product.rangeKm} km</div>
+              <div className="text-xs text-slate-500">{isEn ? 'Motor' : 'Antrieb'}</div>
+              <div className="text-sm font-bold text-slate-900">{product.motor}</div>
             </div>
-            <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center">
-              <Weight className="w-5 h-5 text-purple-500 mx-auto mb-1" />
-              <div className="text-xs text-slate-500">{isEn ? 'Weight' : 'Gewicht'}</div>
-              <div className="text-sm font-bold text-slate-900">{product.weightKg} kg</div>
-            </div>
+            {product.weightKg ? (
+              <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center">
+                <Weight className="w-5 h-5 text-purple-500 mx-auto mb-1" />
+                <div className="text-xs text-slate-500">{isEn ? 'Weight' : 'Gewicht'}</div>
+                <div className="text-sm font-bold text-slate-900">{product.weightKg} kg</div>
+              </div>
+            ) : (
+              <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center">
+                <Weight className="w-5 h-5 text-purple-500 mx-auto mb-1" />
+                <div className="text-xs text-slate-500">{isEn ? 'Frame' : 'Rahmen'}</div>
+                <div className="text-sm font-bold text-slate-900">{product.specs.frameMaterial}</div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -162,7 +170,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
               {isEn ? product.name_en : product.name_de}
             </h1>
 
-            {SHOW_REVIEWS && (
+            {SHOW_REVIEWS && reviews.length > 0 && (
 
             <a
               href="#trustpilot-reviews"
@@ -398,16 +406,18 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
                 <span className="font-semibold text-slate-600">{isEn ? 'Wheel & Tires' : 'Laufräder & Reifen'}</span>
                 <span className="font-bold text-slate-900">{product.specs.wheelSize}</span>
               </div>
-              <div className="py-2.5 flex justify-between">
-                <span className="font-semibold text-slate-600">{isEn ? 'System Weight' : 'Eigengewicht'}</span>
-                <span className="font-bold text-slate-900">{product.weightKg} kg</span>
-              </div>
+              {product.weightKg ? (
+                <div className="py-2.5 flex justify-between">
+                  <span className="font-semibold text-slate-600">{isEn ? 'System Weight' : 'Eigengewicht'}</span>
+                  <span className="font-bold text-slate-900">{product.weightKg} kg</span>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
       </div>
 
-      {SHOW_REVIEWS && (
+      {SHOW_REVIEWS && reviews.length > 0 && (
 
       <section id="trustpilot-reviews" className="scroll-mt-24 pt-8">
         <TrustpilotWidget productId={product.id} productName={isEn ? product.name_en : product.name_de} />

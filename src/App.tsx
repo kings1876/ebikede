@@ -36,6 +36,25 @@ import { GUIDES } from './data/guides';
 import { LEGAL_DOCUMENTS } from './data/legal';
 import { STORE_TRUSTPILOT_INFO, calculateReviewStats, INITIAL_REVIEWS } from './data/reviews';
 
+const TILE_CATEGORY: Record<string, string> = {
+  '/e-bikes/e-mountainbikes/': 'e-mountainbikes',
+  '/e-bikes/e-trekkingbikes/': 'e-trekkingbikes',
+  '/e-bikes/e-citybikes/': 'e-citybikes',
+  '/e-bikes/e-lastenraeder/': 'e-lastenraeder',
+  '/e-bikes/s-pedelecs/': 's-pedelecs',
+  '/e-bikes/e-faltraeder/': 'e-faltraeder',
+};
+
+/** Photo and "from" price for a category tile, taken from the live catalogue. */
+function tileFor(pathDe: string): { minPrice: number; img?: string } {
+  const prefix = TILE_CATEGORY[pathDe];
+  const matches = PRODUCTS.filter((p) => prefix && p.category.startsWith(prefix));
+  return {
+    minPrice: matches.length ? Math.min(...matches.map((p) => p.price)) : 0,
+    img: matches[0]?.images[0],
+  };
+}
+
 export function MainRouter() {
   const { currentPath, language, navigateTo, activeProduct, activeRoute } = useShop();
   const isEn = language === 'en';
@@ -217,8 +236,8 @@ export function MainRouter() {
 
             <p className="text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed">
               {isEn
-                ? "Germany's leading e-bike specialist. Over 150 ready-to-ship models with Bosch, Yamaha & Brose motors. Official JobRad leasing and fast carrier delivery."
-                : 'Über 150 sofort lieferbare E-Bikes mit Bosch, Yamaha, Brose & Shimano Motoren. Bis zu 40% sparen mit JobRad Dienstrad-Leasing.'}
+                ? "New e-bikes from Cube and Haibike with Bosch, Yamaha and Fazua drives. Pay by bank transfer or crypto with 10% off."
+                : 'Neue E-Bikes von Cube und Haibike mit Bosch, Yamaha und Fazua Antrieb. Zahlung per Überweisung oder Krypto mit 10 % Rabatt.'}
             </p>
 
             {/* CTAs */}
@@ -263,21 +282,22 @@ export function MainRouter() {
               <div className="relative aspect-4/3 rounded-2xl overflow-hidden mb-4 bg-slate-800">
                 <img
                   src={PRODUCTS[0].images[0]}
-                  alt="Cube Kathmandu Hybrid Pro"
+                  alt={isEn ? PRODUCTS[0].name_en : PRODUCTS[0].name_de}
                   className="w-full h-full object-cover"
                 />
-                <span className="absolute top-3 left-3 text-[10px] font-black uppercase px-2.5 py-1 rounded bg-emerald-500 text-slate-950">
-                  {isEn ? 'Top Seller' : 'Testsieger'}
-                </span>
               </div>
 
               <div className="flex items-center justify-between mb-1">
-                <span className="text-xs font-bold text-emerald-400">Cube • Bosch CX 85 Nm</span>
-                <span className="text-lg font-black text-white">2.899 €</span>
+                <span className="text-xs font-bold text-emerald-400">
+                  {PRODUCTS[0].brand} • {PRODUCTS[0].motor} {PRODUCTS[0].torqueNm} Nm
+                </span>
+                <span className="text-lg font-black text-white">
+                  {PRODUCTS[0].price.toLocaleString(isEn ? 'en-US' : 'de-DE')} €
+                </span>
               </div>
 
               <h3 className="font-bold text-white text-base mb-3">
-                Cube Kathmandu Hybrid Pro 750
+                {isEn ? PRODUCTS[0].name_en : PRODUCTS[0].name_de}
               </h3>
 
               <button
@@ -362,25 +382,31 @@ export function MainRouter() {
               pathEn: '/en/e-bikes/electric-folding-bikes/',
               img: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=400&q=80',
             },
-          ].map((cat) => (
+          ].map((c) => ({ ...c, ...tileFor(c.pathDe) })).map((cat) => (
             <div
               key={cat.titleDe}
               onClick={() => navigateTo(isEn ? cat.pathEn : cat.pathDe)}
               className="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all cursor-pointer flex flex-col"
             >
-              <div className="h-28 overflow-hidden bg-slate-100">
-                <img
-                  src={cat.img}
-                  alt={isEn ? cat.titleEn : cat.titleDe}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                />
+              <div className="h-28 overflow-hidden bg-white">
+                {cat.img && (
+                  <img
+                    src={cat.img}
+                    alt={isEn ? cat.titleEn : cat.titleDe}
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform"
+                  />
+                )}
               </div>
               <div className="p-3 text-center flex-1 flex flex-col justify-between">
                 <div className="font-bold text-xs text-slate-900 group-hover:text-emerald-600">
                   {isEn ? cat.titleEn : cat.titleDe}
                 </div>
                 <div className="text-[10px] text-emerald-700 font-bold mt-1">
-                  {cat.price}
+                  {cat.minPrice
+                    ? isEn
+                      ? `from €${cat.minPrice.toLocaleString('en-US')}`
+                      : `ab ${cat.minPrice.toLocaleString('de-DE')} €`
+                    : ''}
                 </div>
               </div>
             </div>
