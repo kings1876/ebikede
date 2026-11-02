@@ -1,0 +1,336 @@
+import React, { useState } from 'react';
+import {
+  X,
+  ShieldCheck,
+  CreditCard,
+  Building,
+  Sparkles,
+  CheckCircle,
+  Percent,
+  ArrowRight,
+  Bike,
+} from 'lucide-react';
+import { useShop } from '../context/ShopContext';
+
+interface CheckoutModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose }) => {
+  const { language, cart, cartSubtotal, placeOrder } = useShop();
+  const isEn = language === 'en';
+
+  const [paymentMethod, setPaymentMethod] = useState<'crypto' | 'sepa' | 'jobrad' | 'creditcard' | 'paypal'>('crypto');
+  const [name, setName] = useState('Maximilian Bauer');
+  const [email, setEmail] = useState('m.bauer@example.de');
+  const [phone, setPhone] = useState('+49 171 4982031');
+  const [address, setAddress] = useState('Maximilianstraße 14');
+  const [city, setCity] = useState('München');
+  const [zip, setZip] = useState('80539');
+  const [country, setCountry] = useState(isEn ? 'Germany' : 'Deutschland');
+
+  if (!isOpen) return null;
+
+  // Calculate discounts
+  let discountRate = 0;
+  if (paymentMethod === 'crypto') discountRate = 0.02; // 2% discount
+  if (paymentMethod === 'sepa') discountRate = 0.015; // 1.5% discount
+
+  const discountAmount = Number((cartSubtotal * discountRate).toFixed(2));
+  const shippingCost = cartSubtotal >= 99 || cartSubtotal === 0 ? 0 : 49;
+  const total = Number((cartSubtotal - discountAmount + shippingCost).toFixed(2));
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    placeOrder({
+      customerName: name,
+      email,
+      phone,
+      address,
+      city,
+      zip,
+      country,
+      language,
+      paymentMethod,
+      items: cart,
+      subtotal: cartSubtotal,
+      discount: discountAmount,
+      shipping: shippingCost,
+      total,
+    });
+    onClose();
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-xs p-4 overflow-y-auto">
+      <div className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative my-8 animate-in fade-in zoom-in-95 duration-200">
+        <button
+          onClick={onClose}
+          className="absolute top-5 right-5 p-2 text-slate-400 hover:text-slate-700 rounded-full hover:bg-slate-100 transition-colors"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
+        {/* Header */}
+        <div className="mb-6">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+            <span className="text-xs font-black uppercase tracking-wider text-emerald-700">
+              {isEn ? 'SSL 256-Bit Secure Checkout' : 'SSL 256-Bit Verschlüsselte Kasse'}
+            </span>
+          </div>
+          <h2 className="text-2xl font-black text-slate-900 tracking-tight">
+            {isEn ? 'Complete Your E-Bike Order' : 'Bestellung sicher abschließen'}
+          </h2>
+          <p className="text-xs text-slate-500">
+            {isEn
+              ? 'Order emails and WhatsApp messages follow your selected language.'
+              : 'Auftragsbestätigung und WhatsApp-Nachricht erfolgen in deiner Bestellsprache.'}
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Customer Details */}
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
+              {isEn ? '1. Customer & Delivery Address' : '1. Kunden- & Lieferanschrift'}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  {isEn ? 'Full Name *' : 'Vor- und Nachname *'}
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full px-3 py-2 text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-hidden"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  {isEn ? 'Email Address *' : 'E-Mail-Adresse *'}
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-3 py-2 text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-hidden"
+                />
+              </div>
+              <div className="sm:col-span-2">
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  {isEn ? 'Street & House Number *' : 'Straße & Hausnummer *'}
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                  className="w-full px-3 py-2 text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-hidden"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  {isEn ? 'Postal Code *' : 'Postleitzahl *'}
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={zip}
+                  onChange={(e) => setZip(e.target.value)}
+                  className="w-full px-3 py-2 text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-hidden"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  {isEn ? 'City *' : 'Stadt *'}
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  className="w-full px-3 py-2 text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-hidden"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  {isEn ? 'Phone (Carrier Freight Notification) *' : 'Telefon (für Speditionsaviso) *'}
+                </label>
+                <input
+                  type="tel"
+                  required
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="w-full px-3 py-2 text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-hidden"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  {isEn ? 'Country' : 'Land'}
+                </label>
+                <input
+                  type="text"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                  className="w-full px-3 py-2 text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-hidden"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Payment Method Selector */}
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
+              {isEn ? '2. Select Payment Method' : '2. Zahlungsart wählen'}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {/* Crypto - 2% Discount */}
+              <button
+                type="button"
+                onClick={() => setPaymentMethod('crypto')}
+                className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer relative ${
+                  paymentMethod === 'crypto'
+                    ? 'border-emerald-600 bg-emerald-50/70 ring-2 ring-emerald-500'
+                    : 'border-slate-200 hover:bg-slate-50'
+                }`}
+              >
+                <span className="absolute top-2.5 right-2.5 text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-emerald-600 text-white shadow-xs">
+                  -2% Rabatt
+                </span>
+                <div className="flex items-center gap-2 mb-1">
+                  <Sparkles className="w-4 h-4 text-emerald-600" />
+                  <span className="font-bold text-sm text-slate-900">
+                    Bitcoin / USDT / Krypto
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-500 leading-tight">
+                  {isEn
+                    ? 'Save 2% instant discount on entire order.'
+                    : 'Spare sofort 2% Skonto auf den gesamten Warenkorb.'}
+                </p>
+              </button>
+
+              {/* SEPA Instant - 1.5% Discount */}
+              <button
+                type="button"
+                onClick={() => setPaymentMethod('sepa')}
+                className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer relative ${
+                  paymentMethod === 'sepa'
+                    ? 'border-emerald-600 bg-emerald-50/70 ring-2 ring-emerald-500'
+                    : 'border-slate-200 hover:bg-slate-50'
+                }`}
+              >
+                <span className="absolute top-2.5 right-2.5 text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800">
+                  -1.5% Skonto
+                </span>
+                <div className="flex items-center gap-2 mb-1">
+                  <Building className="w-4 h-4 text-blue-600" />
+                  <span className="font-bold text-sm text-slate-900">
+                    SEPA-Echtzeitüberweisung
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-500 leading-tight">
+                  {isEn ? 'Direct bank wire transfer.' : 'Direkte Banküberweisung ohne Zwischenhändler.'}
+                </p>
+              </button>
+
+              {/* JobRad Leasing */}
+              <button
+                type="button"
+                onClick={() => setPaymentMethod('jobrad')}
+                className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
+                  paymentMethod === 'jobrad'
+                    ? 'border-emerald-600 bg-emerald-50/70 ring-2 ring-emerald-500'
+                    : 'border-slate-200 hover:bg-slate-50'
+                }`}
+              >
+                <div className="flex items-center gap-2 mb-1">
+                  <Bike className="w-4 h-4 text-emerald-600" />
+                  <span className="font-bold text-sm text-slate-900">
+                    JobRad & Dienstrad Leasing
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-500 leading-tight">
+                  {isEn ? 'Salary sacrifice (0.25% rule).' : 'Über Arbeitgeber leasen & bis zu 40% sparen.'}
+                </p>
+              </button>
+
+              {/* Credit Card & PayPal */}
+              <button
+                type="button"
+                onClick={() => setPaymentMethod('creditcard')}
+                className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
+                  paymentMethod === 'creditcard'
+                    ? 'border-emerald-600 bg-emerald-50/70 ring-2 ring-emerald-500'
+                    : 'border-slate-200 hover:bg-slate-50'
+                }`}
+              >
+                <div className="flex items-center gap-2 mb-1">
+                  <CreditCard className="w-4 h-4 text-slate-700" />
+                  <span className="font-bold text-sm text-slate-900">
+                    Kreditkarte / PayPal
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-500 leading-tight">
+                  {isEn ? 'Visa, Mastercard, Amex, PayPal.' : 'Kostenfrei mit Käuferschutz.'}
+                </p>
+              </button>
+            </div>
+          </div>
+
+          {/* Pricing Breakdown */}
+          <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2 text-xs">
+            <div className="flex justify-between text-slate-600">
+              <span>{isEn ? 'Subtotal' : 'Zwischensumme'}</span>
+              <span>€{cartSubtotal.toLocaleString(isEn ? 'en-US' : 'de-DE')}</span>
+            </div>
+            {discountAmount > 0 && (
+              <div className="flex justify-between text-emerald-700 font-bold">
+                <span>
+                  {paymentMethod === 'crypto'
+                    ? isEn ? '2% Crypto Discount' : '2% Krypto-Sofortrabatt'
+                    : isEn ? '1.5% SEPA Discount' : '1,5% SEPA-Skonto'}
+                </span>
+                <span>-€{discountAmount.toLocaleString(isEn ? 'en-US' : 'de-DE')}</span>
+              </div>
+            )}
+            <div className="flex justify-between text-slate-600">
+              <span>{isEn ? 'Freight Shipping (Carrier)' : 'Speditionsversand'}</span>
+              <span className="text-emerald-700 font-semibold">
+                {shippingCost === 0 ? (isEn ? 'Free' : 'Kostenfrei') : `€${shippingCost}`}
+              </span>
+            </div>
+            <div className="pt-2 border-t border-slate-200 flex justify-between items-baseline font-black text-base text-slate-900">
+              <span>{isEn ? 'Total to Pay' : 'Zu zahlender Betrag'}</span>
+              <span className="text-2xl text-slate-900">
+                €{total.toLocaleString(isEn ? 'en-US' : 'de-DE')}
+              </span>
+            </div>
+            <p className="text-[10px] text-slate-400">
+              {isEn ? 'Includes statutory 19% VAT (€' : 'Inklusive gesetzlicher 19% MwSt. ('}
+              {((total * 19) / 119).toFixed(2)} €)
+            </p>
+          </div>
+
+          {/* Submit */}
+          <button
+            type="submit"
+            className="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-base flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20 transition-all cursor-pointer"
+          >
+            <span>
+              {isEn
+                ? `Place Order (€${total.toLocaleString('en-US')})`
+                : `Zahlungspflichtig bestellen (${total.toLocaleString('de-DE')} €)`}
+            </span>
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
