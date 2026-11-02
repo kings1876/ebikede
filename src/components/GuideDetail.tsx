@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import {
   BookOpen,
@@ -384,8 +385,8 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
         </h3>
         <p className="text-xs text-slate-600 max-w-md mx-auto">
           {isEn
-            ? 'Browse our certified inventory with Bosch & Yamaha motors, JobRad company leasing and 2% crypto discount.'
-            : 'Entdecke alle Modelle mit Top-Motoren, JobRad Leasing und 2% Rabatt bei Krypto-Zahlung.'}
+            ? 'Browse our certified inventory with Bosch & Yamaha motors, bank transfer and a 10% crypto discount.'
+            : 'Entdecke alle Modelle mit Top-Motoren, Überweisung und 10% Rabatt bei Krypto-Zahlung.'}
         </p>
         <button
           onClick={() => navigateTo(isEn ? '/en/e-bikes/' : '/e-bikes/')}

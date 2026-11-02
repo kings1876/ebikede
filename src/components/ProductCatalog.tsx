@@ -1,3 +1,4 @@
+'use client';
 import React, { useMemo, useState } from 'react';
 import {
   Filter,
@@ -168,7 +169,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             </span>
             <span className="flex items-center gap-1.5">
               <Check className="w-4 h-4 text-emerald-400" />
-              {isEn ? '2% Crypto / SEPA Discount' : '2% Krypto- & SEPA-Skonto'}
+              {isEn ? '10% Crypto Discount' : '10% Krypto-Rabatt'}
             </span>
           </div>
         </div>

@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { ShieldAlert, Globe, ChevronRight, FileText, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { useShop } from '../context/ShopContext';

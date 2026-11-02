@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import {
   Zap,
@@ -431,7 +432,7 @@ export const Footer: React.FC = () => {
                 onClick={() => handleNav('/ratgeber/e-bike-zahlung/', '/en/guides/payment-and-crypto-discount/')}
                 className="hover:text-emerald-400 transition-colors"
               >
-                {isEn ? 'Crypto Discount (2%)' : '2% Krypto-Rabatt'}
+                {isEn ? 'Crypto Discount (10%)' : '10% Krypto-Rabatt'}
               </button>
             </li>
             <li>
@@ -549,19 +550,10 @@ export const Footer: React.FC = () => {
         </div>
         <div className="flex items-center gap-3 flex-wrap">
           <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 font-mono text-[10px] text-slate-300">
-            SEPA Instant
+            Banküberweisung / Bank transfer
           </span>
           <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 font-mono text-[10px] text-emerald-400">
-            Bitcoin / USDT (-2%)
-          </span>
-          <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 font-mono text-[10px] text-slate-300">
-            JobRad
-          </span>
-          <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 font-mono text-[10px] text-slate-300">
-            Visa / Mastercard
-          </span>
-          <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 font-mono text-[10px] text-slate-300">
-            PayPal
+            Bitcoin / USDT (-10%)
           </span>
         </div>
       </div>

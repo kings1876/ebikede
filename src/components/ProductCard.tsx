@@ -1,3 +1,4 @@
+'use client';
 import React, { useMemo } from 'react';
 import { Star, Battery, Zap, Gauge, ShoppingCart, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Product } from '../types';

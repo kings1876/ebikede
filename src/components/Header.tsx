@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import {
   Bike,
@@ -79,7 +80,7 @@ export const Header: React.FC = () => {
           <div className="flex items-center gap-6 overflow-x-auto text-[11px] font-medium no-scrollbar">
             <span className="flex items-center gap-1.5 text-emerald-400">
               <Percent className="w-3.5 h-3.5" />
-              {isEn ? '2% Crypto Discount (BTC/USDT) & 1.5% SEPA Instant' : '2% Krypto-Rabatt (BTC/USDT) & 1,5% SEPA-Echtzeit'}
+              {isEn ? '10% Crypto Discount (BTC/USDT) & Bank Transfer' : '10% Krypto-Rabatt (BTC/USDT) & Banküberweisung'}
             </span>
             <span className="hidden sm:flex items-center gap-1.5 text-slate-300">
               <Truck className="w-3.5 h-3.5 text-blue-400" />
@@ -594,7 +595,7 @@ export const Header: React.FC = () => {
                   onClick={() => handleNav('/ratgeber/e-bike-zahlung/', '/en/guides/payment-and-crypto-discount/')}
                   className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-600 cursor-pointer"
                 >
-                  {isEn ? '2% Crypto & SEPA Discount' : 'Zahlung & 2% Krypto-Rabatt'}
+                  {isEn ? '10% Crypto Discount' : 'Zahlung & 10% Krypto-Rabatt'}
                 </div>
                 <div
                   onClick={() => handleNav('/ratgeber/e-bike-recht/', '/en/guides/e-bike-laws-germany/')}

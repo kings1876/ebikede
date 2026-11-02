@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { Ruler, CheckCircle2, ChevronRight, HelpCircle, ArrowRight } from 'lucide-react';
 import { useShop } from '../context/ShopContext';

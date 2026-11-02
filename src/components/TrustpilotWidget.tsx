@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useMemo } from 'react';
 import { Star, CheckCircle, ThumbsUp, MessageSquarePlus, X, Filter } from 'lucide-react';
 import { useShop } from '../context/ShopContext';

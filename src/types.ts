@@ -128,7 +128,7 @@ export interface OrderData {
   zip: string;
   country: string;
   language: Language;
-  paymentMethod: 'sepa' | 'crypto' | 'jobrad' | 'creditcard' | 'paypal';
+  paymentMethod: 'sepa' | 'crypto';
   items: CartItem[];
   subtotal: number;
   discount: number;

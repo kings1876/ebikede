@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import {
   X,
@@ -32,7 +33,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onProceedToCheckout }) =
   if (!isCartOpen) return null;
 
   // Potential crypto savings
-  const cryptoSavings = Number((cartSubtotal * 0.02).toFixed(2));
+  const cryptoSavings = Number((cartSubtotal * 0.1).toFixed(2));
   const shippingCost = cartSubtotal >= 99 || cartSubtotal === 0 ? 0 : 49;
 
   return (
@@ -154,7 +155,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onProceedToCheckout }) =
             <div className="flex items-center justify-between text-xs bg-emerald-100/70 p-2 rounded-lg text-emerald-950 border border-emerald-300">
               <span className="flex items-center gap-1.5 font-medium">
                 <Percent className="w-3.5 h-3.5 text-emerald-700" />
-                {isEn ? 'Crypto Discount (-2%):' : '2% Krypto-Rabatt:'}
+                {isEn ? 'Crypto Discount (-10%):' : '10% Krypto-Rabatt:'}
               </span>
               <span className="font-bold text-emerald-700">
                 -€{cryptoSavings.toLocaleString(isEn ? 'en-US' : 'de-DE')}

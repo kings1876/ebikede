@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import {
   Bike,
@@ -33,9 +35,8 @@ import { GUIDES } from './data/guides';
 import { LEGAL_DOCUMENTS } from './data/legal';
 import { STORE_TRUSTPILOT_INFO, calculateReviewStats, INITIAL_REVIEWS } from './data/reviews';
 
-function MainRouter() {
+export function MainRouter() {
   const { currentPath, language, navigateTo, activeProduct, activeRoute } = useShop();
-  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const isEn = language === 'en';
 
   // 1. Single Product Detail Page: /e-bike/<slug>/ or /en/e-bike/<slug>/
@@ -483,18 +484,17 @@ function MainRouter() {
   );
 }
 
-export default function App() {
+export function AppShell({ children }: { children: React.ReactNode }) {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
   return (
     <ShopProvider>
       <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans">
         <Header />
-        <MainRouter />
+        {children}
         <Footer />
         <CartDrawer onProceedToCheckout={() => setIsCheckoutOpen(true)} />
         <CheckoutModal isOpen={isCheckoutOpen} onClose={() => setIsCheckoutOpen(false)} />
-        <TaxonomyInspector />
       </div>
     </ShopProvider>
   );

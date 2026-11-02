@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useMemo } from 'react';
 import {
   Star,
@@ -43,7 +44,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
   const stats = useMemo(() => calculateReviewStats(reviews), [reviews]);
 
   // Pricing & Discounts
-  const cryptoDiscount = Number((product.price * 0.02).toFixed(2));
+  const cryptoDiscount = Number((product.price * 0.1).toFixed(2));
   const cryptoPrice = Number((product.price - cryptoDiscount).toFixed(2));
 
   // Leasing estimate (approx. 1.2% - 1.5% of bike cost per month after tax benefit)
@@ -204,7 +205,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             <div className="flex items-start gap-2 bg-emerald-100/60 p-2.5 rounded-xl border border-emerald-300 text-xs text-emerald-950">
               <Sparkles className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
               <div>
-                <strong>{isEn ? 'Save 2% with Crypto / SEPA: ' : '2% Rabatt bei Krypto-Zahlung: '}</strong>
+                <strong>{isEn ? 'Save 10% with Crypto: ' : '10% Rabatt bei Krypto-Zahlung: '}</strong>
                 {isEn
                   ? `Pay only €${cryptoPrice.toLocaleString('en-US')} (save €${cryptoDiscount.toLocaleString('en-US')}) with Bitcoin or USDT.`
                   : `Zahle nur ${cryptoPrice.toLocaleString('de-DE')} € (spare ${cryptoDiscount.toLocaleString('de-DE')} €) bei Zahlung mit Bitcoin oder USDT.`}

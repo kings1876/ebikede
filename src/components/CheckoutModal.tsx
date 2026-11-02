@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import {
   X,
@@ -21,21 +22,20 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
   const { language, cart, cartSubtotal, placeOrder } = useShop();
   const isEn = language === 'en';
 
-  const [paymentMethod, setPaymentMethod] = useState<'crypto' | 'sepa' | 'jobrad' | 'creditcard' | 'paypal'>('crypto');
-  const [name, setName] = useState('Maximilian Bauer');
-  const [email, setEmail] = useState('m.bauer@example.de');
-  const [phone, setPhone] = useState('+49 171 4982031');
-  const [address, setAddress] = useState('Maximilianstraße 14');
-  const [city, setCity] = useState('München');
-  const [zip, setZip] = useState('80539');
+  const [paymentMethod, setPaymentMethod] = useState<'crypto' | 'sepa'>('crypto');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [address, setAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [zip, setZip] = useState('');
   const [country, setCountry] = useState(isEn ? 'Germany' : 'Deutschland');
 
   if (!isOpen) return null;
 
   // Calculate discounts
   let discountRate = 0;
-  if (paymentMethod === 'crypto') discountRate = 0.02; // 2% discount
-  if (paymentMethod === 'sepa') discountRate = 0.015; // 1.5% discount
+  if (paymentMethod === 'crypto') discountRate = 0.1; // 10% discount
 
   const discountAmount = Number((cartSubtotal * discountRate).toFixed(2));
   const shippingCost = cartSubtotal >= 99 || cartSubtotal === 0 ? 0 : 49;
@@ -189,7 +189,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
               {isEn ? '2. Select Payment Method' : '2. Zahlungsart wählen'}
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {/* Crypto - 2% Discount */}
+              {/* Crypto - 10% Discount */}
               <button
                 type="button"
                 onClick={() => setPaymentMethod('crypto')}
@@ -200,7 +200,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 }`}
               >
                 <span className="absolute top-2.5 right-2.5 text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-emerald-600 text-white shadow-xs">
-                  -2% Rabatt
+                  -10% Rabatt
                 </span>
                 <div className="flex items-center gap-2 mb-1">
                   <Sparkles className="w-4 h-4 text-emerald-600" />
@@ -210,12 +210,12 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 </div>
                 <p className="text-[11px] text-slate-500 leading-tight">
                   {isEn
-                    ? 'Save 2% instant discount on entire order.'
-                    : 'Spare sofort 2% Skonto auf den gesamten Warenkorb.'}
+                    ? 'Save 10% instant discount on the entire order.'
+                    : 'Spare sofort 10% auf den gesamten Warenkorb.'}
                 </p>
               </button>
 
-              {/* SEPA Instant - 1.5% Discount */}
+              {/* Bank transfer */}
               <button
                 type="button"
                 onClick={() => setPaymentMethod('sepa')}
@@ -225,59 +225,14 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                     : 'border-slate-200 hover:bg-slate-50'
                 }`}
               >
-                <span className="absolute top-2.5 right-2.5 text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800">
-                  -1.5% Skonto
-                </span>
                 <div className="flex items-center gap-2 mb-1">
                   <Building className="w-4 h-4 text-blue-600" />
                   <span className="font-bold text-sm text-slate-900">
-                    SEPA-Echtzeitüberweisung
+                    {isEn ? 'Bank transfer' : 'Banküberweisung'}
                   </span>
                 </div>
                 <p className="text-[11px] text-slate-500 leading-tight">
                   {isEn ? 'Direct bank wire transfer.' : 'Direkte Banküberweisung ohne Zwischenhändler.'}
-                </p>
-              </button>
-
-              {/* JobRad Leasing */}
-              <button
-                type="button"
-                onClick={() => setPaymentMethod('jobrad')}
-                className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
-                  paymentMethod === 'jobrad'
-                    ? 'border-emerald-600 bg-emerald-50/70 ring-2 ring-emerald-500'
-                    : 'border-slate-200 hover:bg-slate-50'
-                }`}
-              >
-                <div className="flex items-center gap-2 mb-1">
-                  <Bike className="w-4 h-4 text-emerald-600" />
-                  <span className="font-bold text-sm text-slate-900">
-                    JobRad & Dienstrad Leasing
-                  </span>
-                </div>
-                <p className="text-[11px] text-slate-500 leading-tight">
-                  {isEn ? 'Salary sacrifice (0.25% rule).' : 'Über Arbeitgeber leasen & bis zu 40% sparen.'}
-                </p>
-              </button>
-
-              {/* Credit Card & PayPal */}
-              <button
-                type="button"
-                onClick={() => setPaymentMethod('creditcard')}
-                className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
-                  paymentMethod === 'creditcard'
-                    ? 'border-emerald-600 bg-emerald-50/70 ring-2 ring-emerald-500'
-                    : 'border-slate-200 hover:bg-slate-50'
-                }`}
-              >
-                <div className="flex items-center gap-2 mb-1">
-                  <CreditCard className="w-4 h-4 text-slate-700" />
-                  <span className="font-bold text-sm text-slate-900">
-                    Kreditkarte / PayPal
-                  </span>
-                </div>
-                <p className="text-[11px] text-slate-500 leading-tight">
-                  {isEn ? 'Visa, Mastercard, Amex, PayPal.' : 'Kostenfrei mit Käuferschutz.'}
                 </p>
               </button>
             </div>
@@ -293,8 +248,8 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
               <div className="flex justify-between text-emerald-700 font-bold">
                 <span>
                   {paymentMethod === 'crypto'
-                    ? isEn ? '2% Crypto Discount' : '2% Krypto-Sofortrabatt'
-                    : isEn ? '1.5% SEPA Discount' : '1,5% SEPA-Skonto'}
+                    ? isEn ? '10% Crypto Discount' : '10% Krypto-Rabatt'
+                    : ''}
                 </span>
                 <span>-€{discountAmount.toLocaleString(isEn ? 'en-US' : 'de-DE')}</span>
               </div>

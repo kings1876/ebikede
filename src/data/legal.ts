@@ -134,7 +134,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         heading: '§ 3 Preise, Versandkosten und Krypto-Rabatt',
         paragraphs: [
           'Alle genannten Preise sind Endpreise in Euro (€) inklusive der gesetzlichen deutschen Mehrwertsteuer (19%).',
-          'Versandkostenfreie Speditionslieferung innerhalb Deutschlands ab einem Bestellwert von 99 €. Bei Zahlung per Kryptowährung (BTC, USDT, ETH) oder SEPA-Instant wird der im Bestellprozess ausgewiesene Skonto-Rabatt (bis zu 2%) automatisch in Abzug gebracht.',
+          'Versandkostenfreie Speditionslieferung innerhalb Deutschlands ab einem Bestellwert von 99 €. Bei Zahlung per Kryptowährung (BTC, USDT) wird der im Bestellprozess ausgewiesene Krypto-Rabatt von 10 % automatisch in Abzug gebracht.',
         ],
       },
       {
@@ -167,7 +167,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         heading: '§ 3 Prices, Shipping & Crypto Discount',
         paragraphs: [
           'All displayed prices are in Euro (€) and include statutory German VAT (19%).',
-          'Free freight delivery within Germany on orders exceeding €99. When selecting cryptocurrency (BTC, USDT, ETH) or SEPA Instant, the checkout automatically deducts up to 2% cash discount.',
+          'Free freight delivery within Germany on orders exceeding €99. When paying with cryptocurrency (BTC, USDT), the checkout automatically deducts a 10% discount.',
         ],
       },
       {

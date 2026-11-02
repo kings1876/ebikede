@@ -1,3 +1,5 @@
+'use client';
+import { usePathname, useRouter } from 'next/navigation';
 import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
 import {
   Language,
@@ -77,23 +79,23 @@ interface ShopContextType {
 const ShopContext = createContext<ShopContextType | undefined>(undefined);
 
 export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Initialize current path from window.location.pathname if available
-  const [currentPath, setCurrentPath] = useState<string>(() => {
-    if (typeof window !== 'undefined') {
-      const p = window.location.pathname || '/';
-      return normalizePath(p);
-    }
-    return '/';
-  });
+  const pathname = usePathname();
+  const router = useRouter();
+  const currentPath = useMemo(() => normalizePath(pathname || '/'), [pathname]);
 
-  const [cart, setCart] = useState<CartItem[]>(() => {
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cartLoaded, setCartLoaded] = useState(false);
+
+  // Load cart after hydration (localStorage is not available during SSR)
+  useEffect(() => {
     try {
       const saved = localStorage.getItem('ebike_cart');
-      return saved ? JSON.parse(saved) : [];
+      if (saved) setCart(JSON.parse(saved));
     } catch {
-      return [];
+      // ignore
     }
-  });
+    setCartLoaded(true);
+  }, []);
 
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [reviews, setReviews] = useState<TrustpilotReview[]>(INITIAL_REVIEWS);
@@ -115,22 +117,13 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   // Save cart to local storage
   useEffect(() => {
+    if (!cartLoaded) return;
     try {
       localStorage.setItem('ebike_cart', JSON.stringify(cart));
     } catch {
       // ignore
     }
-  }, [cart]);
-
-  // Handle browser back/forward buttons
-  useEffect(() => {
-    const handlePopState = () => {
-      const norm = normalizePath(window.location.pathname);
-      setCurrentPath(norm);
-    };
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
+  }, [cart, cartLoaded]);
 
   const language = useMemo<Language>(() => {
     return getLanguageFromPath(currentPath);
@@ -138,12 +131,11 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const navigateTo = useCallback((rawPath: string) => {
     const norm = normalizePath(rawPath);
-    setCurrentPath(norm);
+    router.push(norm);
     if (typeof window !== 'undefined') {
-      window.history.pushState({}, '', norm);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  }, []);
+  }, [router]);
 
   const switchLanguage = useCallback((targetLang: Language) => {
     const newPath = translatePath(currentPath, targetLang);
@@ -270,80 +262,6 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
       minPrice: minCategoryPrice,
     };
   }, [currentPath, language, activeProduct, activeBrand, activeRoute, minCategoryPrice, searchQuery, selectedMotor, selectedBrand]);
-
-  // Inject SEO metadata dynamically into DOM
-  useEffect(() => {
-    if (typeof document === 'undefined') return;
-
-    // Document Title
-    document.title = seoInfo.title;
-
-    // Meta description
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta');
-      metaDesc.setAttribute('name', 'description');
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.setAttribute('content', seoInfo.description);
-
-    // Meta robots
-    let metaRobots = document.querySelector('meta[name="robots"]');
-    if (!metaRobots) {
-      metaRobots = document.createElement('meta');
-      metaRobots.setAttribute('name', 'robots');
-      document.head.appendChild(metaRobots);
-    }
-    metaRobots.setAttribute('content', seoInfo.robots);
-
-    // OpenGraph Title & Description
-    let ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', seoInfo.title);
-    let ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute('content', seoInfo.description);
-
-    // Canonical link
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute('href', seoInfo.canonicalUrl);
-
-    // Alternate de-DE
-    let altDe = document.querySelector('link[rel="alternate"][hreflang="de-DE"]');
-    if (!altDe) {
-      altDe = document.createElement('link');
-      altDe.setAttribute('rel', 'alternate');
-      altDe.setAttribute('hreflang', 'de-DE');
-      document.head.appendChild(altDe);
-    }
-    altDe.setAttribute('href', seoInfo.hreflangDe);
-
-    // Alternate en
-    let altEn = document.querySelector('link[rel="alternate"][hreflang="en"]');
-    if (!altEn) {
-      altEn = document.createElement('link');
-      altEn.setAttribute('rel', 'alternate');
-      altEn.setAttribute('hreflang', 'en');
-      document.head.appendChild(altEn);
-    }
-    altEn.setAttribute('href', seoInfo.hreflangEn);
-
-    // Alternate x-default
-    let altDef = document.querySelector('link[rel="alternate"][hreflang="x-default"]');
-    if (!altDef) {
-      altDef = document.createElement('link');
-      altDef.setAttribute('rel', 'alternate');
-      altDef.setAttribute('hreflang', 'x-default');
-      document.head.appendChild(altDef);
-    }
-    altDef.setAttribute('href', seoInfo.hreflangDefault);
-
-    // HTML lang attribute
-    document.documentElement.lang = language === 'de' ? 'de-DE' : 'en';
-  }, [seoInfo, language]);
 
   // Cart operations
   const addToCart = useCallback(
