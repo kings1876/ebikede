@@ -278,7 +278,7 @@ export const Header: React.FC = () => {
 
       {/* Main Taxonomy Navigation Bar (Desktop) */}
       <nav className="hidden md:block bg-slate-50/80 border-t border-slate-200 text-xs font-semibold text-slate-700">
-        <div className="max-w-7xl mx-auto px-4 flex items-center gap-1 overflow-x-auto no-scrollbar">
+        <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center gap-x-1">
           {/* Shop / E-Bikes Mega Dropdown */}
           <div
             className="relative group py-2.5"
@@ -653,10 +653,34 @@ export const Header: React.FC = () => {
               {isEn ? 'E-MTB Fully' : 'E-Mountainbike Fully'}
             </button>
             <button
+              onClick={() => handleNav('/e-bikes/e-mountainbikes/hardtail/', '/en/e-bikes/electric-mountain-bikes/hardtail/')}
+              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50"
+            >
+              {isEn ? 'E-MTB Hardtail' : 'E-Mountainbike Hardtail'}
+            </button>
+            <button
               onClick={() => handleNav('/e-bikes/e-trekkingbikes/', '/en/e-bikes/electric-trekking-bikes/')}
               className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50"
             >
               {isEn ? 'Electric Trekking Bikes' : 'E-Trekkingbikes'}
+            </button>
+            <button
+              onClick={() => handleNav('/e-bikes/e-gravelbikes/', '/en/e-bikes/electric-gravel-bikes/')}
+              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50"
+            >
+              {isEn ? 'Electric Gravel Bikes' : 'E-Gravelbikes'}
+            </button>
+            <button
+              onClick={() => handleNav('/e-bikes/e-rennraeder/', '/en/e-bikes/electric-road-bikes/')}
+              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50"
+            >
+              {isEn ? 'Electric Road Bikes' : 'E-Rennräder'}
+            </button>
+            <button
+              onClick={() => handleNav('/e-bikes/e-faltraeder/', '/en/e-bikes/electric-folding-bikes/')}
+              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50"
+            >
+              {isEn ? 'Electric Folding Bikes' : 'E-Falträder & Klappräder'}
             </button>
             <button
               onClick={() => handleNav('/e-bikes/e-citybikes/', '/en/e-bikes/electric-city-bikes/')}
@@ -678,8 +702,64 @@ export const Header: React.FC = () => {
             </button>
 
             <div className="text-[11px] uppercase tracking-wider text-slate-400 font-bold px-2 py-1 pt-3">
+              {isEn ? 'Price Brackets' : 'Preisklassen'}
+            </div>
+            <button
+              onClick={() => handleNav('/e-bikes/unter-1000-euro/', '/en/e-bikes/under-1000-euro/')}
+              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50"
+            >
+              {isEn ? 'Under €1,000' : 'Unter 1.000 €'}
+            </button>
+            <button
+              onClick={() => handleNav('/e-bikes/unter-2000-euro/', '/en/e-bikes/under-2000-euro/')}
+              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50"
+            >
+              {isEn ? 'Under €2,000' : 'Unter 2.000 €'}
+            </button>
+            <button
+              onClick={() => handleNav('/e-bikes/unter-3000-euro/', '/en/e-bikes/under-3000-euro/')}
+              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50"
+            >
+              {isEn ? 'Under €3,000' : 'Unter 3.000 €'}
+            </button>
+            <button
+              onClick={() => handleNav('/e-bikes/ab-3000-euro/', '/en/e-bikes/over-3000-euro/')}
+              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50"
+            >
+              {isEn ? 'Over €3,000' : 'Ab 3.000 €'}
+            </button>
+
+            <div className="text-[11px] uppercase tracking-wider text-slate-400 font-bold px-2 py-1 pt-3">
+              {isEn ? 'Motors' : 'Motoren'}
+            </div>
+            <button
+              onClick={() => handleNav('/e-bikes/antrieb/bosch/', '/en/e-bikes/motor/bosch/')}
+              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50"
+            >
+              Bosch
+            </button>
+            <button
+              onClick={() => handleNav('/e-bikes/antrieb/shimano-steps/', '/en/e-bikes/motor/shimano-steps/')}
+              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50"
+            >
+              Shimano STEPS
+            </button>
+            <button
+              onClick={() => handleNav('/e-bikes/antrieb/yamaha/', '/en/e-bikes/motor/yamaha/')}
+              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50"
+            >
+              Yamaha
+            </button>
+
+            <div className="text-[11px] uppercase tracking-wider text-slate-400 font-bold px-2 py-1 pt-3">
               {isEn ? 'Special Pages & Guides' : 'Sonderseiten & Ratgeber'}
             </div>
+            <button
+              onClick={() => handleNav('/ratgeber/', '/en/guides/')}
+              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50"
+            >
+              {isEn ? 'All Guides' : 'Alle Ratgeber'}
+            </button>
             <button
               onClick={() => handleNav('/angebote/vorjahresmodelle/', '/en/deals/previous-year-models/')}
               className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-red-600 font-bold"
