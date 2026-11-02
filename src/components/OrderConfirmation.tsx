@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
 
-export const OrderConfirmation: React.FC = () => {
+const OrderConfirmationInner: React.FC = () => {
   const { lastOrder, language, navigateTo } = useShop();
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedWhatsApp, setCopiedWhatsApp] = useState(false);
@@ -309,6 +309,28 @@ Web: https://e-bike-zuverkaufen.de`;
           <ArrowRight className="w-4 h-4" />
         </button>
       </div>
+    </div>
+  );
+};
+
+export const OrderConfirmation: React.FC = () => {
+  const { lastOrder, language, navigateTo } = useShop();
+  if (lastOrder) return <OrderConfirmationInner />;
+  const isEn = language === 'en';
+  return (
+    <div className="max-w-xl mx-auto px-4 py-24 text-center">
+      <h1 className="text-2xl font-black text-slate-900 mb-3">
+        {isEn ? 'No order found' : 'Keine Bestellung gefunden'}
+      </h1>
+      <p className="text-sm text-slate-600 mb-6">
+        {isEn ? 'There is no recent order in this session.' : 'In dieser Sitzung liegt keine aktuelle Bestellung vor.'}
+      </p>
+      <button
+        onClick={() => navigateTo(isEn ? '/en/e-bikes/' : '/e-bikes/')}
+        className="px-5 py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm cursor-pointer"
+      >
+        {isEn ? 'Browse e-bikes' : 'E-Bikes ansehen'}
+      </button>
     </div>
   );
 };

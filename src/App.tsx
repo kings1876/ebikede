@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { SHOW_REVIEWS } from './config/flags';
 import {
   Bike,
   ShieldCheck,
@@ -238,7 +239,8 @@ export function MainRouter() {
               </button>
             </div>
 
-            {/* Trustpilot Store Highlight */}
+            {SHOW_REVIEWS && (
+
             <div className="pt-6 border-t border-slate-800 flex items-center gap-4 text-xs text-slate-300">
               <div className="flex items-center gap-1">
                 {[1, 2, 3, 4, 5].map((s) => (
@@ -252,6 +254,7 @@ export function MainRouter() {
                 <span>{STORE_TRUSTPILOT_INFO.totalReviews} {isEn ? 'Verified Customer Reviews' : 'Echte Bewertungen'}</span>
               </div>
             </div>
+)}
           </div>
 
           {/* Hero Feature Bike Card */}
@@ -414,7 +417,8 @@ export function MainRouter() {
         </div>
       </section>
 
-      {/* Trustpilot Brand Review Section */}
+      {SHOW_REVIEWS && (
+
       <section id="bewertungen" className="max-w-7xl mx-auto px-4 py-16">
         <div className="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-slate-200">
@@ -480,6 +484,7 @@ export function MainRouter() {
           </div>
         </div>
       </section>
+)}
     </main>
   );
 }

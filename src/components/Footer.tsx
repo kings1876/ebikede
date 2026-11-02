@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SHOW_REVIEWS } from '../config/flags';
 import {
   Zap,
   ShieldCheck,
@@ -76,6 +77,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
+{SHOW_REVIEWS && (
           <div className="flex items-start gap-3.5">
             <div className="w-10 h-10 rounded-xl bg-[#00b67a]/20 text-[#00b67a] flex items-center justify-center shrink-0 border border-[#00b67a]/30">
               <Star className="w-5 h-5 fill-current" />
@@ -92,6 +94,7 @@ export const Footer: React.FC = () => {
               </p>
             </div>
           </div>
+)}
         </div>
       </div>
 

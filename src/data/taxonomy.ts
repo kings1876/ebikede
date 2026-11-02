@@ -13,8 +13,8 @@ export const TAXONOMY_ROUTES: TaxonomyRoute[] = [
     metaEn: 'EBike Zu Verkaufen: Your premium e-bike specialist store in Germany. E-MTB, trekking, city & cargo bikes with Bosch, Yamaha & Shimano motors. JobRad leasing & fast delivery.',
     h1De: 'E-Bikes online kaufen bei EBike Zu Verkaufen',
     h1En: 'Buy E-Bikes Online at EBike Zu Verkaufen',
-    subtitleDe: 'Deutschlands führender Fachhändler für Pedelecs, S-Pedelecs und Zubehör mit Trustpilot 4.8★ Bewertung',
-    subtitleEn: "Germany's leading specialist retailer for pedelecs, speed pedelecs and accessories with Trustpilot 4.8★ rating",
+    subtitleDe: 'Deutschlands führender Fachhändler für Pedelecs, S-Pedelecs und Zubehör',
+    subtitleEn: "Germany's leading specialist retailer for pedelecs, speed pedelecs and accessories",
   },
   {
     id: 'all-ebikes',

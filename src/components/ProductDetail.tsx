@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useMemo } from 'react';
+import { SHOW_REVIEWS } from '../config/flags';
 import {
   Star,
   CheckCircle,
@@ -161,7 +162,8 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
               {isEn ? product.name_en : product.name_de}
             </h1>
 
-            {/* Trustpilot Header Anchor */}
+            {SHOW_REVIEWS && (
+
             <a
               href="#trustpilot-reviews"
               className="inline-flex items-center gap-2 mt-2 p-1 rounded-lg hover:bg-slate-50 transition-colors"
@@ -183,6 +185,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
                 ({stats.total} {isEn ? 'verified reviews on Trustpilot' : 'verifizierte Bewertungen'})
               </span>
             </a>
+)}
           </div>
 
           {/* Pricing Box */}
@@ -404,10 +407,12 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
         </div>
       </div>
 
-      {/* DYNAMIC TRUSTPILOT REVIEWS SECTION (REQUIRED BY PROMPT) */}
+      {SHOW_REVIEWS && (
+
       <section id="trustpilot-reviews" className="scroll-mt-24 pt-8">
         <TrustpilotWidget productId={product.id} productName={isEn ? product.name_en : product.name_de} />
       </section>
+)}
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (

@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
+import { SHOW_REVIEWS } from '../config/flags';
 import {
   Bike,
   Search,
@@ -93,7 +94,8 @@ export const Header: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-4 shrink-0 text-[11px]">
-            {/* Trustpilot Store Badge */}
+            {SHOW_REVIEWS && (
+
             <div
               onClick={() => handleNav('/#bewertungen', '/en/#reviews')}
               className="flex items-center gap-1.5 bg-slate-900 px-2.5 py-0.5 rounded-full border border-slate-800 cursor-pointer hover:border-slate-700"
@@ -107,6 +109,7 @@ export const Header: React.FC = () => {
                 ({STORE_TRUSTPILOT_INFO.totalReviews} {isEn ? 'reviews' : 'Bewertungen'})
               </span>
             </div>
+)}
 
             {/* Language Switcher */}
             <div className="flex items-center bg-slate-900 rounded-md p-0.5 border border-slate-800">

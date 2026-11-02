@@ -1,5 +1,6 @@
 'use client';
 import React, { useMemo } from 'react';
+import { SHOW_REVIEWS } from '../config/flags';
 import { Star, Battery, Zap, Gauge, ShoppingCart, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Product } from '../types';
 import { useShop } from '../context/ShopContext';
@@ -69,7 +70,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       {/* Card Content */}
       <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
         <div>
-          {/* Trustpilot Mini Rating Header */}
+          {SHOW_REVIEWS && (
+
           <div className="flex items-center gap-1.5 mb-2">
             <div className="flex items-center gap-0.5">
               {[1, 2, 3, 4, 5].map((star) => (
@@ -88,6 +90,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               ({stats.total} {isEn ? 'Trustpilot' : 'Bewertungen'})
             </span>
           </div>
+)}
 
           {/* Product Title */}
           <h3 className="font-bold text-slate-900 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">
