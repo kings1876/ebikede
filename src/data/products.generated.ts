@@ -2086,6 +2086,63 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "canyon-torque-on-cf-8",
+  "slug": "canyon-torque-on-cf-8",
+  "brand": "Canyon",
+  "name_de": "Canyon Torque:ON CF 8",
+  "name_en": "Canyon Torque:ON CF 8",
+  "description_de": "Das Canyon Torque:ON CF 8 ist ein vollgefedertes E-Mountainbike von Canyon. Der Antrieb (Shimano EP600) mit bis zu 85 Nm Drehmoment wird von einem 800-Wh-Akku gespeist. Federung: RockShox ZEB, 180 mm Federweg. Schaltung: Shimano Deore M6100 12-fach, Kassette 10-51. Bremsen: Shimano hydraulische Scheibenbremsen, 220/203 mm. Rahmen: Carbon (CF), 175 mm Federweg hinten. Erhältlich in den Größen S, M, L, XL. Gewicht laut Hersteller: 25,12 kg.",
+  "description_en": "The Canyon Torque:ON CF 8 is a full-suspension electric mountain bike from Canyon. The drive (Shimano EP600) with up to 85 Nm of torque is powered by an 800 Wh battery. Suspension: RockShox ZEB, 180 mm Federweg. Drivetrain: Shimano Deore M6100 12-fach, Kassette 10-51. Brakes: Shimano hydraulische Scheibenbremsen, 220/203 mm. Frame: Carbon (CF), 175 mm Federweg hinten. Available in sizes S, M, L, XL. Weight according to the manufacturer: 25.12 kg.",
+  "category": "e-mountainbikes-fully",
+  "price": 3999,
+  "motor": "Shimano Steps",
+  "motorDetails": "Shimano EP600, 250 W, 85 Nm",
+  "torqueNm": 85,
+  "batteryWh": 800,
+  "weightKg": 25.12,
+  "gender": "unisex",
+  "useCases": [],
+  "images": [
+   "/images/products/canyon-torque-on-cf-8/main.webp",
+   "/images/products/canyon-torque-on-cf-8/gallery-1.webp",
+   "/images/products/canyon-torque-on-cf-8/gallery-2.webp",
+   "/images/products/canyon-torque-on-cf-8/gallery-3.webp"
+  ],
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   {
+    "nameDe": "Herstellerfarbe",
+    "nameEn": "Manufacturer colour",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "Shimano EP600, bis 85 Nm, 800-Wh-Akku",
+   "Federung: RockShox ZEB, 180 mm Federweg",
+   "Schaltung: Shimano Deore M6100 12-fach, Kassette 10-51",
+   "Bremsen: Shimano hydraulische Scheibenbremsen, 220/203 mm"
+  ],
+  "features_en": [
+   "Shimano EP600, up to 85 Nm, 800 Wh battery",
+   "Suspension: RockShox ZEB, 180 mm Federweg",
+   "Drivetrain: Shimano Deore M6100 12-fach, Kassette 10-51",
+   "Brakes: Shimano hydraulische Scheibenbremsen, 220/203 mm"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Carbon (CF), 175 mm Federweg hinten",
+   "gears": "Shimano Deore M6100 12-fach, Kassette 10-51",
+   "brakes": "Shimano hydraulische Scheibenbremsen, 220/203 mm",
+   "fork": "RockShox ZEB, 180 mm Federweg",
+   "wheelSize": "Sunringle 309 Enduro Comp, 29\" · Maxxis Assegai / Minion DHR II, 2,5\""
+  }
+ },
+ {
   "id": "cube-nulane-hybrid-c-62-slx-400x-fe",
   "slug": "cube-nulane-hybrid-c-62-slx-400x-fe",
   "brand": "Cube",

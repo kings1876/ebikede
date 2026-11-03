@@ -407,13 +407,6 @@ export const Header: React.FC = () => {
                   <span className="text-[10px] px-1.5 py-0.5 bg-slate-100 rounded text-slate-600">85 Nm</span>
                 </div>
                 <div
-                  onClick={() => handleNav('/e-bikes/antrieb/brose/', '/en/e-bikes/motor/brose/')}
-                  className="px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-600 cursor-pointer flex justify-between items-center"
-                >
-                  <span>Brose / Specialized 2.2</span>
-                  <span className="text-[10px] px-1.5 py-0.5 bg-slate-100 rounded text-slate-600">90 Nm</span>
-                </div>
-                <div
                   onClick={() => handleNav('/e-bikes/antrieb/fazua/', '/en/e-bikes/motor/fazua/')}
                   className="px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-600 cursor-pointer flex justify-between items-center"
                 >

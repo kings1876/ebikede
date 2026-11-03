@@ -205,14 +205,6 @@ export const Footer: React.FC = () => {
             </li>
             <li>
               <button
-                onClick={() => handleNav('/e-bikes/antrieb/brose/', '/en/e-bikes/motor/brose/')}
-                className="hover:text-emerald-400 transition-colors"
-              >
-                Brose Drive S Mag
-              </button>
-            </li>
-            <li>
-              <button
                 onClick={() => handleNav('/e-bikes/tiefeinsteiger/', '/en/e-bikes/step-through/')}
                 className="hover:text-emerald-400 transition-colors"
               >

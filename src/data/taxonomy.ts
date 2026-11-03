@@ -416,6 +416,7 @@ export const TAXONOMY_ROUTES: TaxonomyRoute[] = [
     pathDe: '/e-bikes/antrieb/brose/',
     pathEn: '/en/e-bikes/motor/brose/',
     section: 'landing',
+    noindex: true,
     titleTemplateDe: (p = 5499) => `E-Bikes mit Brose Motor kaufen | Große Auswahl ab ${p} € | EBike Zu Verkaufen`,
     titleTemplateEn: (p = 5499) => `Buy Brose Motor Electric Bikes | Wide Selection from €${p} | EBike Zu Verkaufen`,
     metaDe: 'E-Bikes mit Brose Drive S Mag und Specialized 2.2 Motoren. Bis zu 90 Nm Drehmoment und flüsterleiser Riemenantrieb.',
