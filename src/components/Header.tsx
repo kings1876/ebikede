@@ -176,8 +176,8 @@ export const Header: React.FC = () => {
               onFocus={() => setSearchFocused(true)}
               placeholder={
                 isEn
-                  ? 'Search by model, brand (Cube, Haibike) or motor (Bosch)...'
-                  : 'Suche nach Modell, Marke (Cube, Haibike) oder Motor (Bosch)...'
+                  ? 'Search by model, brand (Cube, Zündapp) or motor (Bosch)...'
+                  : 'Suche nach Modell, Marke (Cube, Zündapp) oder Motor (Bosch)...'
               }
               className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 focus:outline-hidden transition-all"
             />

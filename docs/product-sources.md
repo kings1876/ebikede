@@ -279,3 +279,49 @@ Nothing was edited beyond crop, scale and compression.
 | ghost-e-teru-advanced-gtet1 | https://ghost-bikes.com/products/e-teru-advanced-gtet1 | €3999 (2025) |
 | ghost-e-teru-pro-29-gtbu1 | https://ghost-bikes.com/products/e-teru-pro-29-gtbu1 | €4499 |
 | ghost-e-teru-universal-29-gtct1 | https://ghost-bikes.com/products/e-teru-universal-29-gtct1 | €3499 (2025) |
+
+## Added products (Zündapp, Stromer, Canyon)
+
+Taken directly from the manufacturers' own German shops and product pages (zuendapp.com Shopify catalogue, stromerbike.com, canyon.com). Prices are the manufacturer's list prices at the time of sourcing; photos are the manufacturers' own studio shots.
+
+| Slug | Source | Price |
+|---|---|---|
+| zuendapp-x500-trekkingrad-28-zoll | https://www.zuendapp.com/products/x500-nb | €3399 |
+| zuendapp-z802-herren-trekkingrad-28-zoll | https://www.zuendapp.com/products/zundapp-z802-herren-e-bike-trekkingrad-28-zoll | €649 |
+| zuendapp-x20-faltrad-active-line | https://www.zuendapp.com/products/x20-1y | €2290 |
+| zuendapp-green-2-7-damen-28-zoll | https://www.zuendapp.com/products/green-27-ge | €999 |
+| zuendapp-x400-trekkingrad-28-zoll | https://www.zuendapp.com/products/x400-e-trekkingrad | €3399 |
+| zuendapp-x900-mountainbike-hardtail | https://www.zuendapp.com/products/x900-e-mountainbike-hardtail | €1899 |
+| zuendapp-x100-klapprad-bosch-active-line | https://www.zuendapp.com/products/x100-e-klapprad | €2299 |
+| zuendapp-z502-citybike-damen-28 | https://www.zuendapp.com/products/z502-e-citybike-damen | €999 |
+| zuendapp-longtail-m400-lastenrad-24-zoll | https://www.zuendapp.com/products/longtail-m400 | €2999 |
+| zuendapp-x800-trekkingrad-damen | https://www.zuendapp.com/products/x800-e-trekkingrad-damen | €1899 |
+| zuendapp-z807-trekkingrad | https://www.zuendapp.com/products/z807-e-trekkingrad | €899 |
+| zuendapp-green-7-7-damen-trekkingrad-28-zoll | https://www.zuendapp.com/products/green-77-e-trekkingrad-damen | €999 |
+| zuendapp-z510-damen-hollandrad-28-zoll | https://www.zuendapp.com/products/z510-e-hollandrad-damen | €1049 |
+| zuendapp-z901-hollandrad-damen | https://www.zuendapp.com/products/z901-e-hollandrad-damen | €1699 |
+| zuendapp-green-7-7-trekkingrad-herren | https://www.zuendapp.com/products/green-77-e-trekkingrad-herren | €999 |
+| zuendapp-z503-citybike-damen-28 | https://www.zuendapp.com/products/z503-e-citybike-damen-28 | €1099 |
+| zuendapp-z101-klapprad-20-zoll | https://www.zuendapp.com/products/z101 | €999 |
+| zuendapp-x600-citybike-damen | https://www.zuendapp.com/products/x600-e-citybike-damen | €2599 |
+| zuendapp-x700-mountainbike-27-5-zoll | https://www.zuendapp.com/products/x700-e-mountainbike | €1399 |
+| zuendapp-z898-mountainbike-27-5-zoll | https://www.zuendapp.com/products/z898-e-mountainbike | €1299 |
+| zuendapp-x1000-mountainbike-fully | https://www.zuendapp.com/products/x1000-e-mountainbike-fully | €2599 |
+| zuendapp-x850-trekkingrad-herren | https://www.zuendapp.com/products/x850-e-trekkingrad-herren | €2299 |
+| zuendapp-x850-trekkingrad-damen | https://www.zuendapp.com/products/x850-e-trekkingrad-damen | €2199 |
+| zuendapp-z802-damen-trekkingrad-28-zoll | https://www.zuendapp.com/products/z802-damen | €999 |
+| zuendapp-z503-citybike-damen-26 | https://www.zuendapp.com/products/z503-e-citybike-damen-26 | €1099 |
+| zuendapp-zxt20-klapprad-20-zoll | https://www.zuendapp.com/products/zxt20 | €1399 |
+| zuendapp-z808-mountainbike-27-5 | https://www.zuendapp.com/products/z808-e-mountainbike-275 | €1499 |
+| zuendapp-z808-mountainbike-29 | https://www.zuendapp.com/products/z808-e-mountainbike-29 | €1499 |
+| zuendapp-z810-trekkingrad-herren | https://www.zuendapp.com/products/z810-e-trekkingrad-herren | €1449 |
+| zuendapp-z810-trekkingrad-damen | https://www.zuendapp.com/products/z810-e-trekkingrad-damen | €1449 |
+| stromer-st1 | https://www.stromerbike.com/de/bikes/st1 | €5565 |
+| stromer-st2 | https://www.stromerbike.com/de/bikes/st2 | €6890 |
+| stromer-st3 | https://www.stromerbike.com/de/bikes/st3 | €8882 |
+| stromer-st5 | https://www.stromerbike.com/de/bikes/st5 | €10990 |
+| stromer-st7 | https://www.stromerbike.com/de/bikes/st7 | €11490 |
+| canyon-endurace-onfly-cf-6 | https://www.canyon.com/en-de/electric-bikes/electric-road-bikes/endurace-on-fly/endurace-onfly-cf-6/4043.html | €3999 |
+| canyon-endurace-onfly-cf-7 | https://www.canyon.com/en-de/electric-bikes/electric-road-bikes/endurace-on-fly/endurace-onfly-cf-7/4044.html | €5499 |
+| canyon-endurace-onfly-cf-8 | https://www.canyon.com/en-de/electric-bikes/electric-road-bikes/endurace-on-fly/endurace-onfly-cf-8/4045.html | €6999 |
+| canyon-endurace-onfly-sub-10 | https://www.canyon.com/en-de/electric-bikes/electric-road-bikes/endurace-on-fly/endurace-onfly-sub-10/4046.html | €9999 |

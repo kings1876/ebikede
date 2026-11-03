@@ -20,6 +20,7 @@ import {
 import { PRODUCTS } from '../data/products';
 import { ACCESSORIES } from '../data/accessories';
 import { INITIAL_REVIEWS } from '../data/reviews';
+import { brandSlug } from '../lib/brand';
 
 interface ShopContextType {
   currentPath: string;
@@ -157,7 +158,7 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const activeBrand = useMemo(() => {
     if (routeResolution.isBrandDetail && routeResolution.brandSlug) {
       const bSlug = routeResolution.brandSlug.toLowerCase();
-      const p = PRODUCTS.find((prod) => prod.brand.toLowerCase() === bSlug);
+      const p = PRODUCTS.find((prod) => brandSlug(prod.brand) === bSlug);
       return p ? p.brand : routeResolution.brandSlug;
     }
     return null;
@@ -231,8 +232,8 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
         title = `Buy ${activeBrand} Electric Bikes | All Models & Deals | EBike Zu Verkaufen`;
         description = `Discover all ${activeBrand} e-bike models featuring Bosch, Shimano & Yamaha systems. Company leasing & best deals.`;
       }
-      pathDe = `/marken/${activeBrand.toLowerCase()}/`;
-      pathEn = `/en/brands/${activeBrand.toLowerCase()}/`;
+      pathDe = `/marken/${brandSlug(activeBrand)}/`;
+      pathEn = `/en/brands/${brandSlug(activeBrand)}/`;
     } else if (activeRoute) {
       if (activeRoute.noindex) isNoindex = true;
       if (language === 'de') {

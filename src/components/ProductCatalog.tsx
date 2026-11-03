@@ -47,7 +47,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
   // Available unique brands & motors
   const availableBrands = useMemo(() => Array.from(new Set(PRODUCTS.map((p) => p.brand))), []);
-  const availableMotors = useMemo(() => ['Bosch', 'Shimano Steps', 'Yamaha', 'Bafang', 'Fazua', 'Brose'], []);
+  const availableMotors = useMemo(() => Array.from(new Set(PRODUCTS.map((p) => p.motor))), []);
 
   // Filter products based on taxonomy route + active user filter selections
   const filteredProducts = useMemo(() => {

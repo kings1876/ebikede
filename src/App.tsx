@@ -236,8 +236,8 @@ export function MainRouter() {
 
             <p className="text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed">
               {isEn
-                ? "New e-bikes from Cube and Haibike with Bosch, Yamaha and Fazua drives. Pay by bank transfer or crypto with 10% off."
-                : 'Neue E-Bikes von Cube und Haibike mit Bosch, Yamaha und Fazua Antrieb. Zahlung per Überweisung oder Krypto mit 10 % Rabatt.'}
+                ? "New e-bikes from Cube, Haibike, Winora, Ghost, Zündapp, Stromer and Canyon. Pay by bank transfer or crypto with 10% off."
+                : 'Neue E-Bikes von Cube, Haibike, Winora, Ghost, Zündapp, Stromer und Canyon. Zahlung per Überweisung oder Krypto mit 10 % Rabatt.'}
             </p>
 
             {/* CTAs */}

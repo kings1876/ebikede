@@ -28,7 +28,7 @@ export interface TaxonomyRoute {
   noindex?: boolean;
 }
 
-export type MotorType = 'Bosch' | 'Shimano Steps' | 'Yamaha' | 'Bafang' | 'Fazua' | 'Brose';
+export type MotorType = 'Bosch' | 'Shimano Steps' | 'Yamaha' | 'Bafang' | 'Fazua' | 'Brose' | 'TQ' | 'Stromer' | 'Ananda' | 'Nabenmotor';
 
 export type BikeCategory =
   | 'e-mountainbikes'

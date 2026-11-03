@@ -246,6 +246,186 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-x500-trekkingrad-28-zoll",
+  "slug": "zuendapp-x500-trekkingrad-28-zoll",
+  "brand": "Zündapp",
+  "name_de": "Zündapp X500 Trekkingrad 28 Zoll",
+  "name_en": "Zündapp X500 Trekkingrad 28 Zoll",
+  "description_de": "Das Zündapp X500 Trekkingrad 28 Zoll ist ein E-Trekkingbike von Zündapp. Der Antrieb (Bosch Performance Line CX Mittelmotor) wird von einem 500-Wh-Akku gespeist, bedient wird er über Bosch Intuvia LCD. Federung: Federgabel, 45 mm Federweg. Schaltung: Shimano Deore 10-Gang. Bremsen: Shimano hydraulische Scheibenbremsen. Rahmen: Aluminium Diamantrahmen.",
+  "description_en": "The Zündapp X500 Trekkingrad 28 Zoll is an electric trekking bike from Zündapp. The drive (Bosch Performance Line CX Mittelmotor) is powered by a 500 Wh battery, controlled via Bosch Intuvia LCD. Suspension: Federgabel, 45 mm Federweg. Drivetrain: Shimano Deore 10-Gang. Brakes: Shimano hydraulische Scheibenbremsen. Frame: Aluminium Diamantrahmen.",
+  "category": "e-trekkingbikes",
+  "price": 3399,
+  "motor": "Bosch",
+  "motorDetails": "Bosch Performance Line CX Mittelmotor, 250 W",
+  "batteryWh": 500,
+  "gender": "unisex",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/zuendapp-x500-trekkingrad-28-zoll/main.webp",
+   "/images/products/zuendapp-x500-trekkingrad-28-zoll/gallery-1.webp",
+   "/images/products/zuendapp-x500-trekkingrad-28-zoll/gallery-2.webp",
+   "/images/products/zuendapp-x500-trekkingrad-28-zoll/gallery-3.webp"
+  ],
+  "sizes": [
+   "Einheitsgröße"
+  ],
+  "colors": [
+   {
+    "nameDe": "Schwarz",
+    "nameEn": "Schwarz",
+    "hex": "#1f2937"
+   }
+  ],
+  "features_de": [
+   "Bosch Performance Line CX Mittelmotor, 500-Wh-Akku",
+   "Bosch Intuvia LCD",
+   "Federung: Federgabel, 45 mm Federweg",
+   "Schaltung: Shimano Deore 10-Gang",
+   "Bremsen: Shimano hydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Bosch Performance Line CX Mittelmotor, 500 Wh battery",
+   "Bosch Intuvia LCD",
+   "Suspension: Federgabel, 45 mm Federweg",
+   "Drivetrain: Shimano Deore 10-Gang",
+   "Brakes: Shimano hydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium Diamantrahmen",
+   "gears": "Shimano Deore 10-Gang",
+   "brakes": "Shimano hydraulische Scheibenbremsen",
+   "fork": "Federgabel, 45 mm Federweg",
+   "wheelSize": "Kenda 47-622"
+  }
+ },
+ {
+  "id": "stromer-st1",
+  "slug": "stromer-st1",
+  "brand": "Stromer",
+  "name_de": "Stromer ST1",
+  "name_en": "Stromer ST1",
+  "description_de": "Das Stromer ST1 ist ein S-Pedelec (bis 45 km/h) von Stromer. Der Antrieb (Stromer CYRO Drive II) mit bis zu 35 Nm Drehmoment wird von einem 983-Wh-Akku gespeist, bedient wird er über OMNI C. Schaltung: Microshift 9-Gang 11-42. Bremsen: Stromer HD922 by Tektro, 2-Kolben, Scheiben 203 mm. Rahmen: Aluminium. Erhältlich in den Größen M, L. Für S-Pedelecs sind in Deutschland Führerschein der Klasse AM, Versicherungskennzeichen und Betriebserlaubnis erforderlich. Typgenehmigt als Kleinkraftrad (EU L1e-B), Unterstützung bis 45 km/h.",
+  "description_en": "The Stromer ST1 is a speed pedelec (up to 45 km/h) from Stromer. The drive (Stromer CYRO Drive II) with up to 35 Nm of torque is powered by a 983 Wh battery, controlled via OMNI C. Drivetrain: Microshift 9-Gang 11-42. Brakes: Stromer HD922 by Tektro, 2-Kolben, Scheiben 203 mm. Frame: Aluminium. Available in sizes M, L. In Germany, speed pedelecs require an AM driving licence, an insurance plate and a type approval. Type-approved as a light moped (EU L1e-B) with assistance up to 45 km/h.",
+  "category": "s-pedelecs",
+  "price": 5565,
+  "motor": "Stromer",
+  "motorDetails": "Stromer CYRO Drive II, 670 W, 35 Nm",
+  "torqueNm": 35,
+  "batteryWh": 983,
+  "gender": "unisex",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/stromer-st1/main.webp",
+   "/images/products/stromer-st1/gallery-1.webp"
+  ],
+  "sizes": [
+   "M",
+   "L"
+  ],
+  "colors": [
+   {
+    "nameDe": "Deep Petrol",
+    "nameEn": "Deep Petrol",
+    "hex": "#0f766e"
+   },
+   {
+    "nameDe": "Dark Grey",
+    "nameEn": "Dark Grey",
+    "hex": "#8b95a1"
+   }
+  ],
+  "features_de": [
+   "Stromer CYRO Drive II, bis 35 Nm, 983-Wh-Akku",
+   "OMNI C",
+   "Schaltung: Microshift 9-Gang 11-42",
+   "Bremsen: Stromer HD922 by Tektro, 2-Kolben, Scheiben 203 mm"
+  ],
+  "features_en": [
+   "Stromer CYRO Drive II, up to 35 Nm, 983 Wh battery",
+   "OMNI C",
+   "Drivetrain: Microshift 9-Gang 11-42",
+   "Brakes: Stromer HD922 by Tektro, 2-Kolben, Scheiben 203 mm"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium",
+   "gears": "Microshift 9-Gang 11-42",
+   "brakes": "Stromer HD922 by Tektro, 2-Kolben, Scheiben 203 mm",
+   "fork": "—",
+   "wheelSize": "27,5 × 30 · Stromer Custom TA754 by Vee Tire, 54-584"
+  }
+ },
+ {
+  "id": "canyon-endurace-onfly-cf-6",
+  "slug": "canyon-endurace-onfly-cf-6",
+  "brand": "Canyon",
+  "name_de": "Canyon Endurace:ONfly CF 6",
+  "name_en": "Canyon Endurace:ONfly CF 6",
+  "description_de": "Das Canyon Endurace:ONfly CF 6 ist ein E-Rennrad von Canyon. Der Antrieb (TQ HPR40) mit bis zu 40 Nm Drehmoment wird von einem 292-Wh-Akku gespeist. Federung: Canyon FK0140 Carbon. Schaltung: Shimano 105 2×12-fach, Kassette 11-36. Bremsen: Shimano 105 hydraulische Scheibenbremsen, 180/180 mm. Rahmen: Carbon (CF). Erhältlich in den Größen 2XS, XS, S, M, L, XL, 2XL. Gewicht laut Hersteller: 12,1 kg.",
+  "description_en": "The Canyon Endurace:ONfly CF 6 is an electric road bike from Canyon. The drive (TQ HPR40) with up to 40 Nm of torque is powered by a 292 Wh battery. Suspension: Canyon FK0140 Carbon. Drivetrain: Shimano 105 2×12-fach, Kassette 11-36. Brakes: Shimano 105 hydraulische Scheibenbremsen, 180/180 mm. Frame: Carbon (CF). Available in sizes 2XS, XS, S, M, L, XL, 2XL. Weight according to the manufacturer: 12.1 kg.",
+  "category": "e-rennraeder",
+  "price": 3999,
+  "motor": "TQ",
+  "motorDetails": "TQ HPR40, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 292,
+  "weightKg": 12.1,
+  "gender": "unisex",
+  "useCases": [
+   "fuer-lange-strecken",
+   "leicht"
+  ],
+  "images": [
+   "/images/products/canyon-endurace-onfly-cf-6/main.webp",
+   "/images/products/canyon-endurace-onfly-cf-6/gallery-1.webp",
+   "/images/products/canyon-endurace-onfly-cf-6/gallery-2.webp",
+   "/images/products/canyon-endurace-onfly-cf-6/gallery-3.webp"
+  ],
+  "sizes": [
+   "2XS",
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   {
+    "nameDe": "Herstellerfarbe",
+    "nameEn": "Manufacturer colour",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "TQ HPR40, bis 40 Nm, 292-Wh-Akku",
+   "Federung: Canyon FK0140 Carbon",
+   "Schaltung: Shimano 105 2×12-fach, Kassette 11-36",
+   "Bremsen: Shimano 105 hydraulische Scheibenbremsen, 180/180 mm"
+  ],
+  "features_en": [
+   "TQ HPR40, up to 40 Nm, 292 Wh battery",
+   "Suspension: Canyon FK0140 Carbon",
+   "Drivetrain: Shimano 105 2×12-fach, Kassette 11-36",
+   "Brakes: Shimano 105 hydraulische Scheibenbremsen, 180/180 mm"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Carbon (CF)",
+   "gears": "Shimano 105 2×12-fach, Kassette 11-36",
+   "brakes": "Shimano 105 hydraulische Scheibenbremsen, 180/180 mm",
+   "fork": "Canyon FK0140 Carbon",
+   "wheelSize": "DT Swiss Endurance LN Aluminium, 28\" · Schwalbe One, 32 mm"
+  }
+ },
+ {
   "id": "cube-compact-hybrid-540",
   "slug": "cube-compact-hybrid-540",
   "brand": "Cube",
@@ -478,6 +658,199 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Tektro Hydraulic Disc brake HD-M535, 4 pistons, resin pad, 203 mm",
    "fork": "Rockshox Psylo Silver RC, Crown Adjust, Solo Air, 160 mm · Dämpfer Rockshox Deluxe Select R 210x55mm, DebonAir+",
    "wheelSize": "WTB ST i30 TCS 2.0 29 32H · Continental Xynotal Trail Endurance, foldable skin SL 60-622"
+  }
+ },
+ {
+  "id": "zuendapp-z802-herren-trekkingrad-28-zoll",
+  "slug": "zuendapp-z802-herren-trekkingrad-28-zoll",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z802 Herren Trekkingrad 28 Zoll",
+  "name_en": "Zündapp Z802 Herren Trekkingrad 28 Zoll",
+  "description_de": "Das Zündapp Z802 Herren Trekkingrad 28 Zoll ist ein E-Trekkingbike von Zündapp. Der Antrieb (Radnabenmotor hinten) wird von einem 536-Wh-Akku gespeist, bedient wird er über Ananda D15 LED mit 5 Modi und Batterieanzeige. Federung: Zoom Federgabel mit 63 mm Federweg und einstellbarer Vorspannung. Schaltung: 21. Bremsen: V-Brakes. Rahmen: Zündapp Aluminium Diamantrahmen. Gewicht laut Hersteller: 23,4 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Z802 Herren Trekkingrad 28 Zoll is an electric trekking bike from Zündapp. The drive (Radnabenmotor hinten) is powered by a 536 Wh battery, controlled via Ananda D15 LED mit 5 Modi und Batterieanzeige. Suspension: Zoom Federgabel mit 63 mm Federweg und einstellbarer Vorspannung. Drivetrain: 21. Brakes: V-Brakes. Frame: Zündapp Aluminium Diamantrahmen. Weight according to the manufacturer: 23.4 kg. Permissible total weight: 120 kg.",
+  "category": "e-trekkingbikes",
+  "price": 649,
+  "motor": "Nabenmotor",
+  "motorDetails": "Radnabenmotor hinten, 250 W",
+  "batteryWh": 536,
+  "weightKg": 23.4,
+  "gender": "herren",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/zuendapp-z802-herren-trekkingrad-28-zoll/main.webp",
+   "/images/products/zuendapp-z802-herren-trekkingrad-28-zoll/gallery-1.webp",
+   "/images/products/zuendapp-z802-herren-trekkingrad-28-zoll/gallery-2.webp"
+  ],
+  "sizes": [
+   "48 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Grau / GrüN",
+    "nameEn": "Grau / GrüN",
+    "hex": "#8b95a1"
+   },
+   {
+    "nameDe": "Weiß / Grau",
+    "nameEn": "Weiß / Grau",
+    "hex": "#8b95a1"
+   },
+   {
+    "nameDe": "Schwarz / Grau",
+    "nameEn": "Schwarz / Grau",
+    "hex": "#1f2937"
+   }
+  ],
+  "features_de": [
+   "Radnabenmotor hinten, 536-Wh-Akku",
+   "Ananda D15 LED mit 5 Modi und Batterieanzeige",
+   "Federung: Zoom Federgabel mit 63 mm Federweg und einstellbarer Vorspannung",
+   "Schaltung: 21",
+   "Bremsen: V-Brakes"
+  ],
+  "features_en": [
+   "Radnabenmotor hinten, 536 Wh battery",
+   "Ananda D15 LED mit 5 Modi und Batterieanzeige",
+   "Suspension: Zoom Federgabel mit 63 mm Federweg und einstellbarer Vorspannung",
+   "Drivetrain: 21",
+   "Brakes: V-Brakes"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Diamantrahmen",
+   "gears": "21",
+   "brakes": "V-Brakes",
+   "fork": "Zoom Federgabel mit 63 mm Federweg und einstellbarer Vorspannung",
+   "wheelSize": "700c/28 Zoll · Kenda 700c x 42c / 28\" x 1,60\" / 42-622 mit Straßenprofil und Reflexstreifen"
+  }
+ },
+ {
+  "id": "stromer-st2",
+  "slug": "stromer-st2",
+  "brand": "Stromer",
+  "name_de": "Stromer ST2",
+  "name_en": "Stromer ST2",
+  "description_de": "Das Stromer ST2 ist ein S-Pedelec (bis 45 km/h) von Stromer. Der Antrieb (Stromer CYRO Drive 3) mit bis zu 40 Nm Drehmoment wird von einem 983-Wh-Akku gespeist, bedient wird er über OMNI C. Schaltung: Pinion C1.6 Getriebe mit Gates Riemenantrieb. Bremsen: Stromer HD922 by Tektro, 2-Kolben, Scheiben 203 mm. Rahmen: Aluminium. Erhältlich in den Größen M, L. Für S-Pedelecs sind in Deutschland Führerschein der Klasse AM, Versicherungskennzeichen und Betriebserlaubnis erforderlich. Typgenehmigt als Kleinkraftrad (EU L1e-B), Unterstützung bis 45 km/h.",
+  "description_en": "The Stromer ST2 is a speed pedelec (up to 45 km/h) from Stromer. The drive (Stromer CYRO Drive 3) with up to 40 Nm of torque is powered by a 983 Wh battery, controlled via OMNI C. Drivetrain: Pinion C1.6 Getriebe mit Gates Riemenantrieb. Brakes: Stromer HD922 by Tektro, 2-Kolben, Scheiben 203 mm. Frame: Aluminium. Available in sizes M, L. In Germany, speed pedelecs require an AM driving licence, an insurance plate and a type approval. Type-approved as a light moped (EU L1e-B) with assistance up to 45 km/h.",
+  "category": "s-pedelecs",
+  "price": 6890,
+  "motor": "Stromer",
+  "motorDetails": "Stromer CYRO Drive 3, 750 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 983,
+  "gender": "unisex",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/stromer-st2/main.webp",
+   "/images/products/stromer-st2/gallery-1.webp",
+   "/images/products/stromer-st2/gallery-2.webp",
+   "/images/products/stromer-st2/gallery-3.webp"
+  ],
+  "sizes": [
+   "M",
+   "L"
+  ],
+  "colors": [
+   {
+    "nameDe": "Moon Grey",
+    "nameEn": "Moon Grey",
+    "hex": "#8b95a1"
+   },
+   {
+    "nameDe": "Dark Grey",
+    "nameEn": "Dark Grey",
+    "hex": "#8b95a1"
+   }
+  ],
+  "features_de": [
+   "Stromer CYRO Drive 3, bis 40 Nm, 983-Wh-Akku",
+   "OMNI C",
+   "Schaltung: Pinion C1.6 Getriebe mit Gates Riemenantrieb",
+   "Bremsen: Stromer HD922 by Tektro, 2-Kolben, Scheiben 203 mm"
+  ],
+  "features_en": [
+   "Stromer CYRO Drive 3, up to 40 Nm, 983 Wh battery",
+   "OMNI C",
+   "Drivetrain: Pinion C1.6 Getriebe mit Gates Riemenantrieb",
+   "Brakes: Stromer HD922 by Tektro, 2-Kolben, Scheiben 203 mm"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium",
+   "gears": "Pinion C1.6 Getriebe mit Gates Riemenantrieb",
+   "brakes": "Stromer HD922 by Tektro, 2-Kolben, Scheiben 203 mm",
+   "fork": "—",
+   "wheelSize": "27,5 × 30 · Pirelli Angel GT Urban, 57-584"
+  }
+ },
+ {
+  "id": "canyon-endurace-onfly-cf-7",
+  "slug": "canyon-endurace-onfly-cf-7",
+  "brand": "Canyon",
+  "name_de": "Canyon Endurace:ONfly CF 7",
+  "name_en": "Canyon Endurace:ONfly CF 7",
+  "description_de": "Das Canyon Endurace:ONfly CF 7 ist ein E-Rennrad von Canyon. Der Antrieb (TQ HPR40) mit bis zu 40 Nm Drehmoment wird von einem 292-Wh-Akku gespeist. Federung: Canyon FK0140 Carbon. Schaltung: Shimano 105 Di2 2×12-fach, Kassette 11-36. Bremsen: Shimano 105 Di2 hydraulische Scheibenbremsen, 180/180 mm. Rahmen: Carbon (CF). Erhältlich in den Größen 2XS, XS, S, M, L, XL, 2XL. Gewicht laut Hersteller: 11,72 kg.",
+  "description_en": "The Canyon Endurace:ONfly CF 7 is an electric road bike from Canyon. The drive (TQ HPR40) with up to 40 Nm of torque is powered by a 292 Wh battery. Suspension: Canyon FK0140 Carbon. Drivetrain: Shimano 105 Di2 2×12-fach, Kassette 11-36. Brakes: Shimano 105 Di2 hydraulische Scheibenbremsen, 180/180 mm. Frame: Carbon (CF). Available in sizes 2XS, XS, S, M, L, XL, 2XL. Weight according to the manufacturer: 11.72 kg.",
+  "category": "e-rennraeder",
+  "price": 5499,
+  "motor": "TQ",
+  "motorDetails": "TQ HPR40, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 292,
+  "weightKg": 11.72,
+  "gender": "unisex",
+  "useCases": [
+   "fuer-lange-strecken",
+   "leicht"
+  ],
+  "images": [
+   "/images/products/canyon-endurace-onfly-cf-7/main.webp",
+   "/images/products/canyon-endurace-onfly-cf-7/gallery-1.webp",
+   "/images/products/canyon-endurace-onfly-cf-7/gallery-2.webp",
+   "/images/products/canyon-endurace-onfly-cf-7/gallery-3.webp",
+   "/images/products/canyon-endurace-onfly-cf-7/gallery-4.webp"
+  ],
+  "sizes": [
+   "2XS",
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   {
+    "nameDe": "Herstellerfarbe",
+    "nameEn": "Manufacturer colour",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "TQ HPR40, bis 40 Nm, 292-Wh-Akku",
+   "Federung: Canyon FK0140 Carbon",
+   "Schaltung: Shimano 105 Di2 2×12-fach, Kassette 11-36",
+   "Bremsen: Shimano 105 Di2 hydraulische Scheibenbremsen, 180/180 mm"
+  ],
+  "features_en": [
+   "TQ HPR40, up to 40 Nm, 292 Wh battery",
+   "Suspension: Canyon FK0140 Carbon",
+   "Drivetrain: Shimano 105 Di2 2×12-fach, Kassette 11-36",
+   "Brakes: Shimano 105 Di2 hydraulische Scheibenbremsen, 180/180 mm"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Carbon (CF)",
+   "gears": "Shimano 105 Di2 2×12-fach, Kassette 11-36",
+   "brakes": "Shimano 105 Di2 hydraulische Scheibenbremsen, 180/180 mm",
+   "fork": "Canyon FK0140 Carbon",
+   "wheelSize": "DT Swiss Endurance LN Aluminium, 28\" · Schwalbe One, 32 mm"
   }
  },
  {
@@ -727,6 +1100,195 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-x20-faltrad-active-line",
+  "slug": "zuendapp-x20-faltrad-active-line",
+  "brand": "Zündapp",
+  "name_de": "Zündapp X20 Faltrad Active Line",
+  "name_en": "Zündapp X20 Faltrad Active Line",
+  "description_de": "Das Zündapp X20 Faltrad Active Line ist ein Falt-E-Bike von Zündapp. Der Antrieb (Bosch Active Line Mittelmotor) mit bis zu 40 Nm Drehmoment wird von einem 400-Wh-Akku gespeist, bedient wird er über Bosch Purion LCD. Schaltung: Shimano Nexus 8-Gang. Bremsen: Hydraulische Scheibenbremsen. Rahmen: Aluminium.",
+  "description_en": "The Zündapp X20 Faltrad Active Line is a folding electric bike from Zündapp. The drive (Bosch Active Line Mittelmotor) with up to 40 Nm of torque is powered by a 400 Wh battery, controlled via Bosch Purion LCD. Drivetrain: Shimano Nexus 8-Gang. Brakes: Hydraulische Scheibenbremsen. Frame: Aluminium.",
+  "category": "e-faltraeder",
+  "price": 2290,
+  "motor": "Bosch",
+  "motorDetails": "Bosch Active Line Mittelmotor, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 400,
+  "gender": "unisex",
+  "useCases": [
+   "pendler"
+  ],
+  "images": [
+   "/images/products/zuendapp-x20-faltrad-active-line/main.webp",
+   "/images/products/zuendapp-x20-faltrad-active-line/gallery-1.webp",
+   "/images/products/zuendapp-x20-faltrad-active-line/gallery-2.webp",
+   "/images/products/zuendapp-x20-faltrad-active-line/gallery-3.webp",
+   "/images/products/zuendapp-x20-faltrad-active-line/gallery-4.webp"
+  ],
+  "sizes": [
+   "Einheitsgröße"
+  ],
+  "colors": [
+   {
+    "nameDe": "Schwarz-GrüN",
+    "nameEn": "Schwarz-GrüN",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Schwarz-Rot",
+    "nameEn": "Schwarz-Rot",
+    "hex": "#1f2937"
+   }
+  ],
+  "features_de": [
+   "Bosch Active Line Mittelmotor, bis 40 Nm, 400-Wh-Akku",
+   "Bosch Purion LCD",
+   "Schaltung: Shimano Nexus 8-Gang",
+   "Bremsen: Hydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Bosch Active Line Mittelmotor, up to 40 Nm, 400 Wh battery",
+   "Bosch Purion LCD",
+   "Drivetrain: Shimano Nexus 8-Gang",
+   "Brakes: Hydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium",
+   "gears": "Shimano Nexus 8-Gang",
+   "brakes": "Hydraulische Scheibenbremsen",
+   "fork": "—",
+   "wheelSize": "20\" × 1,95\""
+  }
+ },
+ {
+  "id": "stromer-st3",
+  "slug": "stromer-st3",
+  "brand": "Stromer",
+  "name_de": "Stromer ST3",
+  "name_en": "Stromer ST3",
+  "description_de": "Das Stromer ST3 ist ein S-Pedelec (bis 45 km/h) von Stromer. Der Antrieb (Stromer SYNO Drive II) mit bis zu 44 Nm Drehmoment wird von einem 983-Wh-Akku gespeist, bedient wird er über OMNI C. Schaltung: Pinion C1.9 XR Getriebe mit Gates Riemenantrieb. Bremsen: Stromer HD942 by TRP, 4-Kolben, Scheiben 203 mm. Rahmen: Aluminium. Erhältlich in den Größen M, L, XL. Für S-Pedelecs sind in Deutschland Führerschein der Klasse AM, Versicherungskennzeichen und Betriebserlaubnis erforderlich. Typgenehmigt als Kleinkraftrad (EU L1e-B), Unterstützung bis 45 km/h.",
+  "description_en": "The Stromer ST3 is a speed pedelec (up to 45 km/h) from Stromer. The drive (Stromer SYNO Drive II) with up to 44 Nm of torque is powered by a 983 Wh battery, controlled via OMNI C. Drivetrain: Pinion C1.9 XR Getriebe mit Gates Riemenantrieb. Brakes: Stromer HD942 by TRP, 4-Kolben, Scheiben 203 mm. Frame: Aluminium. Available in sizes M, L, XL. In Germany, speed pedelecs require an AM driving licence, an insurance plate and a type approval. Type-approved as a light moped (EU L1e-B) with assistance up to 45 km/h.",
+  "category": "s-pedelecs",
+  "price": 8882,
+  "motor": "Stromer",
+  "motorDetails": "Stromer SYNO Drive II, 820 W, 44 Nm",
+  "torqueNm": 44,
+  "batteryWh": 983,
+  "gender": "unisex",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/stromer-st3/main.webp",
+   "/images/products/stromer-st3/gallery-1.webp",
+   "/images/products/stromer-st3/gallery-2.webp",
+   "/images/products/stromer-st3/gallery-3.webp",
+   "/images/products/stromer-st3/gallery-4.webp"
+  ],
+  "sizes": [
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   {
+    "nameDe": "Cool White",
+    "nameEn": "Cool White",
+    "hex": "#e5e7eb"
+   },
+   {
+    "nameDe": "Deep Black",
+    "nameEn": "Deep Black",
+    "hex": "#1f2937"
+   }
+  ],
+  "features_de": [
+   "Stromer SYNO Drive II, bis 44 Nm, 983-Wh-Akku",
+   "OMNI C",
+   "Schaltung: Pinion C1.9 XR Getriebe mit Gates Riemenantrieb",
+   "Bremsen: Stromer HD942 by TRP, 4-Kolben, Scheiben 203 mm"
+  ],
+  "features_en": [
+   "Stromer SYNO Drive II, up to 44 Nm, 983 Wh battery",
+   "OMNI C",
+   "Drivetrain: Pinion C1.9 XR Getriebe mit Gates Riemenantrieb",
+   "Brakes: Stromer HD942 by TRP, 4-Kolben, Scheiben 203 mm"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium",
+   "gears": "Pinion C1.9 XR Getriebe mit Gates Riemenantrieb",
+   "brakes": "Stromer HD942 by TRP, 4-Kolben, Scheiben 203 mm",
+   "fork": "—",
+   "wheelSize": "27,5 × 35 · Pirelli Angel ST Urban, 57-584"
+  }
+ },
+ {
+  "id": "canyon-endurace-onfly-cf-8",
+  "slug": "canyon-endurace-onfly-cf-8",
+  "brand": "Canyon",
+  "name_de": "Canyon Endurace:ONfly CF 8",
+  "name_en": "Canyon Endurace:ONfly CF 8",
+  "description_de": "Das Canyon Endurace:ONfly CF 8 ist ein E-Rennrad von Canyon. Der Antrieb (TQ HPR40) mit bis zu 40 Nm Drehmoment wird von einem 292-Wh-Akku gespeist. Federung: Canyon FK0140 Carbon. Schaltung: Shimano Ultegra Di2 2×12-fach, Kassette 11-34. Bremsen: Shimano Ultegra Di2 hydraulische Scheibenbremsen, 180/180 mm. Rahmen: Carbon (CF). Erhältlich in den Größen 2XS, XS, S, M, L, XL, 2XL. Gewicht laut Hersteller: 10,94 kg.",
+  "description_en": "The Canyon Endurace:ONfly CF 8 is an electric road bike from Canyon. The drive (TQ HPR40) with up to 40 Nm of torque is powered by a 292 Wh battery. Suspension: Canyon FK0140 Carbon. Drivetrain: Shimano Ultegra Di2 2×12-fach, Kassette 11-34. Brakes: Shimano Ultegra Di2 hydraulische Scheibenbremsen, 180/180 mm. Frame: Carbon (CF). Available in sizes 2XS, XS, S, M, L, XL, 2XL. Weight according to the manufacturer: 10.94 kg.",
+  "category": "e-rennraeder",
+  "price": 6999,
+  "motor": "TQ",
+  "motorDetails": "TQ HPR40, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 292,
+  "weightKg": 10.94,
+  "gender": "unisex",
+  "useCases": [
+   "fuer-lange-strecken",
+   "leicht"
+  ],
+  "images": [
+   "/images/products/canyon-endurace-onfly-cf-8/main.webp",
+   "/images/products/canyon-endurace-onfly-cf-8/gallery-1.webp",
+   "/images/products/canyon-endurace-onfly-cf-8/gallery-2.webp",
+   "/images/products/canyon-endurace-onfly-cf-8/gallery-3.webp",
+   "/images/products/canyon-endurace-onfly-cf-8/gallery-4.webp"
+  ],
+  "sizes": [
+   "2XS",
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   {
+    "nameDe": "Herstellerfarbe",
+    "nameEn": "Manufacturer colour",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "TQ HPR40, bis 40 Nm, 292-Wh-Akku",
+   "Federung: Canyon FK0140 Carbon",
+   "Schaltung: Shimano Ultegra Di2 2×12-fach, Kassette 11-34",
+   "Bremsen: Shimano Ultegra Di2 hydraulische Scheibenbremsen, 180/180 mm"
+  ],
+  "features_en": [
+   "TQ HPR40, up to 40 Nm, 292 Wh battery",
+   "Suspension: Canyon FK0140 Carbon",
+   "Drivetrain: Shimano Ultegra Di2 2×12-fach, Kassette 11-34",
+   "Brakes: Shimano Ultegra Di2 hydraulische Scheibenbremsen, 180/180 mm"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Carbon (CF)",
+   "gears": "Shimano Ultegra Di2 2×12-fach, Kassette 11-34",
+   "brakes": "Shimano Ultegra Di2 hydraulische Scheibenbremsen, 180/180 mm",
+   "fork": "Canyon FK0140 Carbon",
+   "wheelSize": "DT Swiss ERC 1400 Dicut Carbon, 28\" · Schwalbe Pro One TLE, 32 mm"
+  }
+ },
+ {
   "id": "cube-nuroad-hybrid-c-62-slx-400x",
   "slug": "cube-nuroad-hybrid-c-62-slx-400x",
   "brand": "Cube",
@@ -968,6 +1530,190 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Shimano Hydraulic Disc brake Deore BR-M6120, 4 pistons, 203 mm",
    "fork": "FOX Factory 36 Float Rhythm, GRIP, E-Optimized, QR 160 mm · Dämpfer FOX Factory FLOAT X Performance, A, 2pos, Evol LV, 210x55mm",
    "wheelSize": "XLC WR-M39 Disc 30/622 32H 6,5 mm Valve · Continental Xynotal Trail Endurance, foldable skin SL 60-622"
+  }
+ },
+ {
+  "id": "zuendapp-green-2-7-damen-28-zoll",
+  "slug": "zuendapp-green-2-7-damen-28-zoll",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Green 2.7 Damen 28 Zoll",
+  "name_en": "Zündapp Green 2.7 Damen 28 Zoll",
+  "description_de": "Das Zündapp Green 2.7 Damen 28 Zoll ist ein E-Trekkingbike von Zündapp. Der Antrieb (Ananda F129 Radnabenmotor vorne) mit bis zu 40 Nm Drehmoment wird von einem 536-Wh-Akku gespeist, bedient wird er über Ananda D16 2,4\" TFT mit Remote, Bluetooth und Ananda Ride App. Federung: Zündapp Stahl Starrgabel. Schaltung: 3. Bremsen: Promax TX117 V-Brakes, Rücktrittbremse. Rahmen: Zündapp Aluminium Tiefeinsteiger. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Green 2.7 Damen 28 Zoll is an electric trekking bike from Zündapp. The drive (Ananda F129 Radnabenmotor vorne) with up to 40 Nm of torque is powered by a 536 Wh battery, controlled via Ananda D16 2,4\" TFT mit Remote, Bluetooth und Ananda Ride App. Suspension: Zündapp Stahl Starrgabel. Drivetrain: 3. Brakes: Promax TX117 V-Brakes, Rücktrittbremse. Frame: Zündapp Aluminium Tiefeinsteiger. Permissible total weight: 120 kg.",
+  "category": "e-trekkingbikes",
+  "price": 999,
+  "motor": "Ananda",
+  "motorDetails": "Ananda F129 Radnabenmotor vorne, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 536,
+  "gender": "damen",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/zuendapp-green-2-7-damen-28-zoll/main.webp",
+   "/images/products/zuendapp-green-2-7-damen-28-zoll/gallery-1.webp",
+   "/images/products/zuendapp-green-2-7-damen-28-zoll/gallery-2.webp",
+   "/images/products/zuendapp-green-2-7-damen-28-zoll/gallery-3.webp",
+   "/images/products/zuendapp-green-2-7-damen-28-zoll/gallery-4.webp"
+  ],
+  "sizes": [
+   "48 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Grau",
+    "nameEn": "Grau",
+    "hex": "#8b95a1"
+   },
+   {
+    "nameDe": "Schwarz-Blau",
+    "nameEn": "Schwarz-Blau",
+    "hex": "#1f2937"
+   }
+  ],
+  "features_de": [
+   "Ananda F129 Radnabenmotor vorne, bis 40 Nm, 536-Wh-Akku",
+   "Ananda D16 2,4\" TFT mit Remote, Bluetooth und Ananda Ride App",
+   "Federung: Zündapp Stahl Starrgabel",
+   "Schaltung: 3",
+   "Bremsen: Promax TX117 V-Brakes, Rücktrittbremse"
+  ],
+  "features_en": [
+   "Ananda F129 Radnabenmotor vorne, up to 40 Nm, 536 Wh battery",
+   "Ananda D16 2,4\" TFT mit Remote, Bluetooth und Ananda Ride App",
+   "Suspension: Zündapp Stahl Starrgabel",
+   "Drivetrain: 3",
+   "Brakes: Promax TX117 V-Brakes, Rücktrittbremse"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Tiefeinsteiger",
+   "gears": "3",
+   "brakes": "Promax TX117 V-Brakes, Rücktrittbremse",
+   "fork": "Zündapp Stahl Starrgabel",
+   "wheelSize": "700c / 28 Zoll · Kenda 28\" x 2,0\" / 700c x 50c / 50-622 mit Straßenprofil und Reflexstreifen"
+  }
+ },
+ {
+  "id": "stromer-st5",
+  "slug": "stromer-st5",
+  "brand": "Stromer",
+  "name_de": "Stromer ST5",
+  "name_en": "Stromer ST5",
+  "description_de": "Das Stromer ST5 ist ein S-Pedelec (bis 45 km/h) von Stromer. Der Antrieb (Stromer SYNO Sport) mit bis zu 48 Nm Drehmoment wird von einem 983-Wh-Akku gespeist, bedient wird er über OMNI C. Schaltung: Pinion C1.9 XR Getriebe mit Gates Riemenantrieb. Bremsen: Stromer HD944 by TRP, 4-Kolben, ABS, Scheiben 203 mm. Rahmen: Aluminium. Erhältlich in den Größen M, L, XL. Für S-Pedelecs sind in Deutschland Führerschein der Klasse AM, Versicherungskennzeichen und Betriebserlaubnis erforderlich. Typgenehmigt als Kleinkraftrad (EU L1e-B), Unterstützung bis 45 km/h.",
+  "description_en": "The Stromer ST5 is a speed pedelec (up to 45 km/h) from Stromer. The drive (Stromer SYNO Sport) with up to 48 Nm of torque is powered by a 983 Wh battery, controlled via OMNI C. Drivetrain: Pinion C1.9 XR Getriebe mit Gates Riemenantrieb. Brakes: Stromer HD944 by TRP, 4-Kolben, ABS, Scheiben 203 mm. Frame: Aluminium. Available in sizes M, L, XL. In Germany, speed pedelecs require an AM driving licence, an insurance plate and a type approval. Type-approved as a light moped (EU L1e-B) with assistance up to 45 km/h.",
+  "category": "s-pedelecs",
+  "price": 10990,
+  "motor": "Stromer",
+  "motorDetails": "Stromer SYNO Sport, 850 W, 48 Nm",
+  "torqueNm": 48,
+  "batteryWh": 983,
+  "gender": "unisex",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/stromer-st5/main.webp",
+   "/images/products/stromer-st5/gallery-1.webp",
+   "/images/products/stromer-st5/gallery-2.webp"
+  ],
+  "sizes": [
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   {
+    "nameDe": "Aventurin Green",
+    "nameEn": "Aventurin Green",
+    "hex": "#3f6b4f"
+   }
+  ],
+  "features_de": [
+   "Stromer SYNO Sport, bis 48 Nm, 983-Wh-Akku",
+   "OMNI C",
+   "Schaltung: Pinion C1.9 XR Getriebe mit Gates Riemenantrieb",
+   "Bremsen: Stromer HD944 by TRP, 4-Kolben, ABS, Scheiben 203 mm"
+  ],
+  "features_en": [
+   "Stromer SYNO Sport, up to 48 Nm, 983 Wh battery",
+   "OMNI C",
+   "Drivetrain: Pinion C1.9 XR Getriebe mit Gates Riemenantrieb",
+   "Brakes: Stromer HD944 by TRP, 4-Kolben, ABS, Scheiben 203 mm"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium",
+   "gears": "Pinion C1.9 XR Getriebe mit Gates Riemenantrieb",
+   "brakes": "Stromer HD944 by TRP, 4-Kolben, ABS, Scheiben 203 mm",
+   "fork": "—",
+   "wheelSize": "27,5 × 35 · Pirelli Angel ST Sport, 57-584"
+  }
+ },
+ {
+  "id": "canyon-endurace-onfly-sub-10",
+  "slug": "canyon-endurace-onfly-sub-10",
+  "brand": "Canyon",
+  "name_de": "Canyon Endurace:ONfly Sub 10",
+  "name_en": "Canyon Endurace:ONfly Sub 10",
+  "description_de": "Das Canyon Endurace:ONfly Sub 10 ist ein E-Rennrad von Canyon. Der Antrieb (TQ HPR40) mit bis zu 40 Nm Drehmoment wird von einem 292-Wh-Akku gespeist. Federung: Canyon FK0140 Carbon. Schaltung: Shimano Dura-Ace Di2 2×12-fach, Kassette 11-34. Bremsen: Shimano Dura-Ace hydraulische Scheibenbremsen, 180/180 mm. Rahmen: Carbon (CF). Erhältlich in den Größen 2XS, XS, S, M, L, XL, 2XL. Gewicht laut Hersteller: 9,86 kg.",
+  "description_en": "The Canyon Endurace:ONfly Sub 10 is an electric road bike from Canyon. The drive (TQ HPR40) with up to 40 Nm of torque is powered by a 292 Wh battery. Suspension: Canyon FK0140 Carbon. Drivetrain: Shimano Dura-Ace Di2 2×12-fach, Kassette 11-34. Brakes: Shimano Dura-Ace hydraulische Scheibenbremsen, 180/180 mm. Frame: Carbon (CF). Available in sizes 2XS, XS, S, M, L, XL, 2XL. Weight according to the manufacturer: 9.86 kg.",
+  "category": "e-rennraeder",
+  "price": 9999,
+  "motor": "TQ",
+  "motorDetails": "TQ HPR40, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 292,
+  "weightKg": 9.86,
+  "gender": "unisex",
+  "useCases": [
+   "fuer-lange-strecken",
+   "leicht"
+  ],
+  "images": [
+   "/images/products/canyon-endurace-onfly-sub-10/main.webp",
+   "/images/products/canyon-endurace-onfly-sub-10/gallery-1.webp",
+   "/images/products/canyon-endurace-onfly-sub-10/gallery-2.webp",
+   "/images/products/canyon-endurace-onfly-sub-10/gallery-3.webp"
+  ],
+  "sizes": [
+   "2XS",
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL"
+  ],
+  "colors": [
+   {
+    "nameDe": "Herstellerfarbe",
+    "nameEn": "Manufacturer colour",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "TQ HPR40, bis 40 Nm, 292-Wh-Akku",
+   "Federung: Canyon FK0140 Carbon",
+   "Schaltung: Shimano Dura-Ace Di2 2×12-fach, Kassette 11-34",
+   "Bremsen: Shimano Dura-Ace hydraulische Scheibenbremsen, 180/180 mm"
+  ],
+  "features_en": [
+   "TQ HPR40, up to 40 Nm, 292 Wh battery",
+   "Suspension: Canyon FK0140 Carbon",
+   "Drivetrain: Shimano Dura-Ace Di2 2×12-fach, Kassette 11-34",
+   "Brakes: Shimano Dura-Ace hydraulische Scheibenbremsen, 180/180 mm"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Carbon (CF)",
+   "gears": "Shimano Dura-Ace Di2 2×12-fach, Kassette 11-34",
+   "brakes": "Shimano Dura-Ace hydraulische Scheibenbremsen, 180/180 mm",
+   "fork": "Canyon FK0140 Carbon",
+   "wheelSize": "DT Swiss ERC 1100 Dicut Carbon, 28\" · Schwalbe Pro One Evo, 28 mm"
   }
  },
  {
@@ -1215,6 +1961,128 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Tektro Hydraulic Disc brake HD-M535, 4 pistons, resin pad, 203 mm",
    "fork": "Rockshox Psylo Silver RC, Crown Adjust, Solo Air, 160 mm · Dämpfer Rockshox Deluxe Select R 210x55mm, DebonAir+",
    "wheelSize": "WTB ST i30 TCS 2.0 29 32H · Continental Xynotal Trail Endurance, foldable skin SL 60-622"
+  }
+ },
+ {
+  "id": "zuendapp-x400-trekkingrad-28-zoll",
+  "slug": "zuendapp-x400-trekkingrad-28-zoll",
+  "brand": "Zündapp",
+  "name_de": "Zündapp X400 Trekkingrad 28 Zoll",
+  "name_en": "Zündapp X400 Trekkingrad 28 Zoll",
+  "description_de": "Das Zündapp X400 Trekkingrad 28 Zoll ist ein E-Trekkingbike von Zündapp. Der Antrieb (Bosch PerformanceLine CX Mittelmotor) mit bis zu 85 Nm Drehmoment wird von einem 500-Wh-Akku gespeist, bedient wird er über Bosch Intuvia LCD. Federung: Federgabel mit 65 mm Federweg, einstellbare Vorspannung, Lockout. Schaltung: 11-Gang Schaltung. Bremsen: Shimano hydraulische Scheibenbremse. Rahmen: Aluminium Trapezrahmen. Gewicht laut Hersteller: 28 kg. Zulässiges Gesamtgewicht: ca. 120 kg (Fahrrad + Fahrer + Zuladung/Gepäck).",
+  "description_en": "The Zündapp X400 Trekkingrad 28 Zoll is an electric trekking bike from Zündapp. The drive (Bosch PerformanceLine CX Mittelmotor) with up to 85 Nm of torque is powered by a 500 Wh battery, controlled via Bosch Intuvia LCD. Suspension: Federgabel mit 65 mm Federweg, einstellbare Vorspannung, Lockout. Drivetrain: 11-Gang Schaltung. Brakes: Shimano hydraulische Scheibenbremse. Frame: Aluminium Trapezrahmen. Weight according to the manufacturer: 28 kg. Permissible total weight: ca. 120 kg (Fahrrad + Fahrer + Zuladung/Gepäck).",
+  "category": "e-trekkingbikes",
+  "price": 3399,
+  "motor": "Bosch",
+  "motorDetails": "Bosch PerformanceLine CX Mittelmotor, 250 W, 85 Nm",
+  "torqueNm": 85,
+  "batteryWh": 500,
+  "weightKg": 28,
+  "gender": "unisex",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/zuendapp-x400-trekkingrad-28-zoll/main.webp",
+   "/images/products/zuendapp-x400-trekkingrad-28-zoll/gallery-1.webp",
+   "/images/products/zuendapp-x400-trekkingrad-28-zoll/gallery-2.webp",
+   "/images/products/zuendapp-x400-trekkingrad-28-zoll/gallery-3.webp",
+   "/images/products/zuendapp-x400-trekkingrad-28-zoll/gallery-4.webp"
+  ],
+  "sizes": [
+   "Einheitsgröße"
+  ],
+  "colors": [
+   {
+    "nameDe": "Schwarz-TüRkis",
+    "nameEn": "Schwarz-TüRkis",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Silber",
+    "nameEn": "Silber",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "Bosch PerformanceLine CX Mittelmotor, bis 85 Nm, 500-Wh-Akku",
+   "Bosch Intuvia LCD",
+   "Federung: Federgabel mit 65 mm Federweg, einstellbare Vorspannung, Lockout",
+   "Schaltung: 11-Gang Schaltung",
+   "Bremsen: Shimano hydraulische Scheibenbremse"
+  ],
+  "features_en": [
+   "Bosch PerformanceLine CX Mittelmotor, up to 85 Nm, 500 Wh battery",
+   "Bosch Intuvia LCD",
+   "Suspension: Federgabel mit 65 mm Federweg, einstellbare Vorspannung, Lockout",
+   "Drivetrain: 11-Gang Schaltung",
+   "Brakes: Shimano hydraulische Scheibenbremse"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium Trapezrahmen",
+   "gears": "11-Gang Schaltung",
+   "brakes": "Shimano hydraulische Scheibenbremse",
+   "fork": "Federgabel mit 65 mm Federweg, einstellbare Vorspannung, Lockout",
+   "wheelSize": "Kenda 71,12 cm (28 Zoll) mit Straßenprofil und Antipuncture Pannenschutz"
+  }
+ },
+ {
+  "id": "stromer-st7",
+  "slug": "stromer-st7",
+  "brand": "Stromer",
+  "name_de": "Stromer ST7",
+  "name_en": "Stromer ST7",
+  "description_de": "Das Stromer ST7 ist ein S-Pedelec (bis 45 km/h) von Stromer. Der Antrieb (Stromer SYNO Sport II) mit bis zu 52 Nm Drehmoment wird von einem 1440-Wh-Akku gespeist, bedient wird er über OMNI C. Schaltung: Pinion C1.12 Smart.Shift Getriebe mit Gates Riemenantrieb. Bremsen: Stromer HD944 by TRP, 4-Kolben, ABS, Scheiben 203 mm. Rahmen: Aluminium. Erhältlich in den Größen M, L, XL. Für S-Pedelecs sind in Deutschland Führerschein der Klasse AM, Versicherungskennzeichen und Betriebserlaubnis erforderlich. Typgenehmigt als Kleinkraftrad (EU L1e-B), Unterstützung bis 45 km/h.",
+  "description_en": "The Stromer ST7 is a speed pedelec (up to 45 km/h) from Stromer. The drive (Stromer SYNO Sport II) with up to 52 Nm of torque is powered by a 1440 Wh battery, controlled via OMNI C. Drivetrain: Pinion C1.12 Smart.Shift Getriebe mit Gates Riemenantrieb. Brakes: Stromer HD944 by TRP, 4-Kolben, ABS, Scheiben 203 mm. Frame: Aluminium. Available in sizes M, L, XL. In Germany, speed pedelecs require an AM driving licence, an insurance plate and a type approval. Type-approved as a light moped (EU L1e-B) with assistance up to 45 km/h.",
+  "category": "s-pedelecs",
+  "price": 11490,
+  "motor": "Stromer",
+  "motorDetails": "Stromer SYNO Sport II, 940 W, 52 Nm",
+  "torqueNm": 52,
+  "batteryWh": 1440,
+  "gender": "unisex",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/stromer-st7/main.webp",
+   "/images/products/stromer-st7/gallery-1.webp",
+   "/images/products/stromer-st7/gallery-2.webp"
+  ],
+  "sizes": [
+   "M",
+   "L",
+   "XL"
+  ],
+  "colors": [
+   {
+    "nameDe": "Platinum Grey",
+    "nameEn": "Platinum Grey",
+    "hex": "#8b95a1"
+   }
+  ],
+  "features_de": [
+   "Stromer SYNO Sport II, bis 52 Nm, 1440-Wh-Akku",
+   "OMNI C",
+   "Schaltung: Pinion C1.12 Smart.Shift Getriebe mit Gates Riemenantrieb",
+   "Bremsen: Stromer HD944 by TRP, 4-Kolben, ABS, Scheiben 203 mm"
+  ],
+  "features_en": [
+   "Stromer SYNO Sport II, up to 52 Nm, 1440 Wh battery",
+   "OMNI C",
+   "Drivetrain: Pinion C1.12 Smart.Shift Getriebe mit Gates Riemenantrieb",
+   "Brakes: Stromer HD944 by TRP, 4-Kolben, ABS, Scheiben 203 mm"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium",
+   "gears": "Pinion C1.12 Smart.Shift Getriebe mit Gates Riemenantrieb",
+   "brakes": "Stromer HD944 by TRP, 4-Kolben, ABS, Scheiben 203 mm",
+   "fork": "—",
+   "wheelSize": "27,5 × 35 · Pirelli Angel ST Sport, 57-584"
   }
  },
  {
@@ -1474,6 +2342,73 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-x900-mountainbike-hardtail",
+  "slug": "zuendapp-x900-mountainbike-hardtail",
+  "brand": "Zündapp",
+  "name_de": "Zündapp X900 Mountainbike Hardtail",
+  "name_en": "Zündapp X900 Mountainbike Hardtail",
+  "description_de": "Das Zündapp X900 Mountainbike Hardtail ist ein E-Hardtail-Mountainbike von Zündapp. Der Antrieb (Ananda M100 CAN Mittelmotor) mit bis zu 110 Nm Drehmoment wird von einem 734-Wh-Akku gespeist, bedient wird er über Ananda D19 LED CAN mit Bluetooth und Ananda Ride App. Federung: Zoom Federgabel mit 100 cm Federweg, einstellbarer Vorspannung und Lockout. Schaltung: 10. Bremsen: Shimano MT200 hydraulische Scheibenbremsen. Rahmen: Aluminium Slopingrahmen. Gewicht laut Hersteller: 26,7 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp X900 Mountainbike Hardtail is an electric hardtail mountain bike from Zündapp. The drive (Ananda M100 CAN Mittelmotor) with up to 110 Nm of torque is powered by a 734 Wh battery, controlled via Ananda D19 LED CAN mit Bluetooth und Ananda Ride App. Suspension: Zoom Federgabel mit 100 cm Federweg, einstellbarer Vorspannung und Lockout. Drivetrain: 10. Brakes: Shimano MT200 hydraulische Scheibenbremsen. Frame: Aluminium Slopingrahmen. Weight according to the manufacturer: 26.7 kg. Permissible total weight: 120 kg.",
+  "category": "e-mountainbikes-hardtail",
+  "price": 1899,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M100 CAN Mittelmotor, 250 W, 110 Nm",
+  "torqueNm": 110,
+  "batteryWh": 734,
+  "weightKg": 26.7,
+  "gender": "unisex",
+  "useCases": [],
+  "images": [
+   "/images/products/zuendapp-x900-mountainbike-hardtail/main.webp",
+   "/images/products/zuendapp-x900-mountainbike-hardtail/gallery-1.webp",
+   "/images/products/zuendapp-x900-mountainbike-hardtail/gallery-2.webp",
+   "/images/products/zuendapp-x900-mountainbike-hardtail/gallery-3.webp",
+   "/images/products/zuendapp-x900-mountainbike-hardtail/gallery-4.webp"
+  ],
+  "sizes": [
+   "46 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Weiß",
+    "nameEn": "Weiß",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Schwarz",
+    "nameEn": "Schwarz",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Khaki",
+    "nameEn": "Khaki",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "Ananda M100 CAN Mittelmotor, bis 110 Nm, 734-Wh-Akku",
+   "Ananda D19 LED CAN mit Bluetooth und Ananda Ride App",
+   "Federung: Zoom Federgabel mit 100 cm Federweg, einstellbarer Vorspannung und Lockout",
+   "Schaltung: 10",
+   "Bremsen: Shimano MT200 hydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Ananda M100 CAN Mittelmotor, up to 110 Nm, 734 Wh battery",
+   "Ananda D19 LED CAN mit Bluetooth und Ananda Ride App",
+   "Suspension: Zoom Federgabel mit 100 cm Federweg, einstellbarer Vorspannung und Lockout",
+   "Drivetrain: 10",
+   "Brakes: Shimano MT200 hydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium Slopingrahmen",
+   "gears": "10",
+   "brakes": "Shimano MT200 hydraulische Scheibenbremsen",
+   "fork": "Zoom Federgabel mit 100 cm Federweg, einstellbarer Vorspannung und Lockout",
+   "wheelSize": "27,5 Zoll / 650B · Kenda Booster 27,5\" x 2,35\" / 650B x 55B / 55-584"
+  }
+ },
+ {
   "id": "cube-nulane-hybrid-c-62-slx-400x",
   "slug": "cube-nulane-hybrid-c-62-slx-400x",
   "brand": "Cube",
@@ -1727,6 +2662,67 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-x100-klapprad-bosch-active-line",
+  "slug": "zuendapp-x100-klapprad-bosch-active-line",
+  "brand": "Zündapp",
+  "name_de": "Zündapp X100 Klapprad Bosch Active Line",
+  "name_en": "Zündapp X100 Klapprad Bosch Active Line",
+  "description_de": "Das Zündapp X100 Klapprad Bosch Active Line ist ein Falt-E-Bike von Zündapp. Der Antrieb (Bosch Active Line Mittelmotor) mit bis zu 40 Nm Drehmoment wird von einem 400-Wh-Akku gespeist, bedient wird er über Bosch Purion LCD. Schaltung: Shimano Sora 9-Gang. Bremsen: Hydraulische Scheibenbremsen. Rahmen: Aluminium.",
+  "description_en": "The Zündapp X100 Klapprad Bosch Active Line is a folding electric bike from Zündapp. The drive (Bosch Active Line Mittelmotor) with up to 40 Nm of torque is powered by a 400 Wh battery, controlled via Bosch Purion LCD. Drivetrain: Shimano Sora 9-Gang. Brakes: Hydraulische Scheibenbremsen. Frame: Aluminium.",
+  "category": "e-faltraeder",
+  "price": 2299,
+  "motor": "Bosch",
+  "motorDetails": "Bosch Active Line Mittelmotor, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 400,
+  "gender": "tiefeinsteiger",
+  "useCases": [
+   "pendler"
+  ],
+  "images": [
+   "/images/products/zuendapp-x100-klapprad-bosch-active-line/main.webp",
+   "/images/products/zuendapp-x100-klapprad-bosch-active-line/gallery-1.webp",
+   "/images/products/zuendapp-x100-klapprad-bosch-active-line/gallery-2.webp",
+   "/images/products/zuendapp-x100-klapprad-bosch-active-line/gallery-3.webp",
+   "/images/products/zuendapp-x100-klapprad-bosch-active-line/gallery-4.webp"
+  ],
+  "sizes": [
+   "Einheitsgröße"
+  ],
+  "colors": [
+   {
+    "nameDe": "Schwarz-TüRkis",
+    "nameEn": "Schwarz-TüRkis",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Schwarz-Grau",
+    "nameEn": "Schwarz-Grau",
+    "hex": "#1f2937"
+   }
+  ],
+  "features_de": [
+   "Bosch Active Line Mittelmotor, bis 40 Nm, 400-Wh-Akku",
+   "Bosch Purion LCD",
+   "Schaltung: Shimano Sora 9-Gang",
+   "Bremsen: Hydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Bosch Active Line Mittelmotor, up to 40 Nm, 400 Wh battery",
+   "Bosch Purion LCD",
+   "Drivetrain: Shimano Sora 9-Gang",
+   "Brakes: Hydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium",
+   "gears": "Shimano Sora 9-Gang",
+   "brakes": "Hydraulische Scheibenbremsen",
+   "fork": "—",
+   "wheelSize": "20\""
+  }
+ },
+ {
   "id": "cube-nulane-hybrid-c-62-race-400x-fe",
   "slug": "cube-nulane-hybrid-c-62-race-400x-fe",
   "brand": "Cube",
@@ -1964,6 +2960,75 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Shimano Hydraulic Disc brake Deore BR-M6120, 4 pistons, 220 mm / Shimano Hydraulic Disc brake Deore…",
    "fork": "FOX Factory 38 Float Performance eMTB+, GRIP, 3pos, 170 mm, QR · Dämpfer FOX Factory FLOAT X2 Performance, 2pos-Adj, 205x65mm, Trunnion",
    "wheelSize": "XLC WR-M49 SL Disc 30/622 32H 6,5 mm Valve · Continental Kryptotal-Fr Enduro Super Soft, TR 60-622"
+  }
+ },
+ {
+  "id": "zuendapp-z502-citybike-damen-28",
+  "slug": "zuendapp-z502-citybike-damen-28",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z502 Citybike Damen 28\"",
+  "name_en": "Zündapp Z502 Citybike Damen 28\"",
+  "description_de": "Das Zündapp Z502 Citybike Damen 28\" ist ein E-Citybike von Zündapp. Der Antrieb (Ananda M129F Radnabenmotor vorne) mit bis zu 40 Nm Drehmoment wird von einem 522-Wh-Akku gespeist, bedient wird er über Ananda D16 TFT 2,4\" mit Bluetooth und Remote Control. Federung: Zoom 730 AMS Federgabel. Schaltung: 7. Bremsen: Promax TX117 V-Brakes, Rücktrittbremse. Rahmen: Zündapp Aluminium Tiefeinsteiger. Gewicht laut Hersteller: 23,5 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Z502 Citybike Damen 28\" is an electric city bike from Zündapp. The drive (Ananda M129F Radnabenmotor vorne) with up to 40 Nm of torque is powered by a 522 Wh battery, controlled via Ananda D16 TFT 2,4\" mit Bluetooth und Remote Control. Suspension: Zoom 730 AMS Federgabel. Drivetrain: 7. Brakes: Promax TX117 V-Brakes, Rücktrittbremse. Frame: Zündapp Aluminium Tiefeinsteiger. Weight according to the manufacturer: 23.5 kg. Permissible total weight: 120 kg.",
+  "category": "e-citybikes",
+  "price": 999,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M129F Radnabenmotor vorne, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 522,
+  "weightKg": 23.5,
+  "gender": "damen",
+  "useCases": [
+   "pendler"
+  ],
+  "images": [
+   "/images/products/zuendapp-z502-citybike-damen-28/main.webp",
+   "/images/products/zuendapp-z502-citybike-damen-28/gallery-1.webp",
+   "/images/products/zuendapp-z502-citybike-damen-28/gallery-2.webp",
+   "/images/products/zuendapp-z502-citybike-damen-28/gallery-3.webp",
+   "/images/products/zuendapp-z502-citybike-damen-28/gallery-4.webp"
+  ],
+  "sizes": [
+   "50 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Weiß-Lila",
+    "nameEn": "Weiß-Lila",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Grau-GrüN",
+    "nameEn": "Grau-GrüN",
+    "hex": "#8b95a1"
+   },
+   {
+    "nameDe": "Dusty Blue",
+    "nameEn": "Dusty Blue",
+    "hex": "#3b5b8c"
+   }
+  ],
+  "features_de": [
+   "Ananda M129F Radnabenmotor vorne, bis 40 Nm, 522-Wh-Akku",
+   "Ananda D16 TFT 2,4\" mit Bluetooth und Remote Control",
+   "Federung: Zoom 730 AMS Federgabel",
+   "Schaltung: 7",
+   "Bremsen: Promax TX117 V-Brakes, Rücktrittbremse"
+  ],
+  "features_en": [
+   "Ananda M129F Radnabenmotor vorne, up to 40 Nm, 522 Wh battery",
+   "Ananda D16 TFT 2,4\" mit Bluetooth und Remote Control",
+   "Suspension: Zoom 730 AMS Federgabel",
+   "Drivetrain: 7",
+   "Brakes: Promax TX117 V-Brakes, Rücktrittbremse"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Tiefeinsteiger",
+   "gears": "7",
+   "brakes": "Promax TX117 V-Brakes, Rücktrittbremse",
+   "fork": "Zoom 730 AMS Federgabel",
+   "wheelSize": "700c / 28 Zoll · Kenda K1172 50-622 Straßenreifen"
   }
  },
  {
@@ -2213,6 +3278,65 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-longtail-m400-lastenrad-24-zoll",
+  "slug": "zuendapp-longtail-m400-lastenrad-24-zoll",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Longtail M400 Lastenrad 24 Zoll",
+  "name_en": "Zündapp Longtail M400 Lastenrad 24 Zoll",
+  "description_de": "Das Zündapp Longtail M400 Lastenrad 24 Zoll ist ein E-Lastenrad von Zündapp. Der Antrieb (Bafang M400 Mittelmotor) mit bis zu 80 Nm Drehmoment wird von einem 468-Wh-Akku gespeist, bedient wird er über Bafang DP 220 LC-Display, 1,9\". Federung: Aluminium Starrgabel. Schaltung: 7. Bremsen: Logan 160/160 mm hydraulische Scheibenbremsen. Rahmen: Aluminium Trapezrahmen Longtail. Gewicht laut Hersteller: 22,4 kg. Zulässiges Gesamtgewicht: 180 kg.",
+  "description_en": "The Zündapp Longtail M400 Lastenrad 24 Zoll is an electric cargo bike from Zündapp. The drive (Bafang M400 Mittelmotor) with up to 80 Nm of torque is powered by a 468 Wh battery, controlled via Bafang DP 220 LC-Display, 1,9\". Suspension: Aluminium Starrgabel. Drivetrain: 7. Brakes: Logan 160/160 mm hydraulische Scheibenbremsen. Frame: Aluminium Trapezrahmen Longtail. Weight according to the manufacturer: 22.4 kg. Permissible total weight: 180 kg.",
+  "category": "e-lastenraeder",
+  "price": 2999,
+  "motor": "Bafang",
+  "motorDetails": "Bafang M400 Mittelmotor, 250 W, 80 Nm",
+  "torqueNm": 80,
+  "batteryWh": 468,
+  "weightKg": 22.4,
+  "gender": "unisex",
+  "useCases": [
+   "familie"
+  ],
+  "images": [
+   "/images/products/zuendapp-longtail-m400-lastenrad-24-zoll/main.webp",
+   "/images/products/zuendapp-longtail-m400-lastenrad-24-zoll/gallery-1.webp",
+   "/images/products/zuendapp-longtail-m400-lastenrad-24-zoll/gallery-2.webp",
+   "/images/products/zuendapp-longtail-m400-lastenrad-24-zoll/gallery-3.webp",
+   "/images/products/zuendapp-longtail-m400-lastenrad-24-zoll/gallery-4.webp"
+  ],
+  "sizes": [
+   "48 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Blau",
+    "nameEn": "Blau",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "Bafang M400 Mittelmotor, bis 80 Nm, 468-Wh-Akku",
+   "Bafang DP 220 LC-Display, 1,9\"",
+   "Federung: Aluminium Starrgabel",
+   "Schaltung: 7",
+   "Bremsen: Logan 160/160 mm hydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Bafang M400 Mittelmotor, up to 80 Nm, 468 Wh battery",
+   "Bafang DP 220 LC-Display, 1,9\"",
+   "Suspension: Aluminium Starrgabel",
+   "Drivetrain: 7",
+   "Brakes: Logan 160/160 mm hydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium Trapezrahmen Longtail",
+   "gears": "7",
+   "brakes": "Logan 160/160 mm hydraulische Scheibenbremsen",
+   "fork": "Aluminium Starrgabel",
+   "wheelSize": "24 Zoll · Kenda 24\" x 2,30\" / 58-507"
+  }
+ },
+ {
   "id": "cube-nuroad-hybrid-c-62-slx-400x-fe",
   "slug": "cube-nuroad-hybrid-c-62-slx-400x-fe",
   "brand": "Cube",
@@ -2446,6 +3570,81 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Sram Hydraulic Disc brake DB Maven Base, 4 pistons, organic pad, 220 mm / Sram Hydraulic Disc brake DB Maven…",
    "fork": "Rockshox Domain Gold Isolator RC3 Debonair 170 mm · Dämpfer Rockshox Vivid Select 205x65mm Vivid Air, Trunnion",
    "wheelSize": "XLC WR-M49 SL Disc 30/622 32H 6,5 mm Valve · Continental Kryptotal-Fr Enduro Super Soft, TR 60-622"
+  }
+ },
+ {
+  "id": "zuendapp-x800-trekkingrad-damen",
+  "slug": "zuendapp-x800-trekkingrad-damen",
+  "brand": "Zündapp",
+  "name_de": "Zündapp X800 Trekkingrad Damen",
+  "name_en": "Zündapp X800 Trekkingrad Damen",
+  "description_de": "Das Zündapp X800 Trekkingrad Damen ist ein E-Trekkingbike von Zündapp. Der Antrieb (Ananda M60 Mittelmotor) mit bis zu 70 Nm Drehmoment wird von einem 550-Wh-Akku gespeist, bedient wird er über Ananda D19 LED mit Bluetooth und Ananda Ride App Anbindung. Federung: Zoom Federgabel mit 63 mm Federweg, Lockout und einstellbarer Zugstufe. Schaltung: 7. Bremsen: Shimano MT200 180/160 mm hydraulische Scheibenbremsen. Rahmen: Aluminium Tiefeinsteiger. Gewicht laut Hersteller: 27,4 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp X800 Trekkingrad Damen is an electric trekking bike from Zündapp. The drive (Ananda M60 Mittelmotor) with up to 70 Nm of torque is powered by a 550 Wh battery, controlled via Ananda D19 LED mit Bluetooth und Ananda Ride App Anbindung. Suspension: Zoom Federgabel mit 63 mm Federweg, Lockout und einstellbarer Zugstufe. Drivetrain: 7. Brakes: Shimano MT200 180/160 mm hydraulische Scheibenbremsen. Frame: Aluminium Tiefeinsteiger. Weight according to the manufacturer: 27.4 kg. Permissible total weight: 120 kg.",
+  "category": "e-trekkingbikes",
+  "price": 1899,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M60 Mittelmotor, 250 W, 70 Nm",
+  "torqueNm": 70,
+  "batteryWh": 550,
+  "weightKg": 27.4,
+  "gender": "damen",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/zuendapp-x800-trekkingrad-damen/main.webp",
+   "/images/products/zuendapp-x800-trekkingrad-damen/gallery-1.webp",
+   "/images/products/zuendapp-x800-trekkingrad-damen/gallery-2.webp",
+   "/images/products/zuendapp-x800-trekkingrad-damen/gallery-3.webp",
+   "/images/products/zuendapp-x800-trekkingrad-damen/gallery-4.webp"
+  ],
+  "sizes": [
+   "48 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Pastellblau",
+    "nameEn": "Pastellblau",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Weinrot",
+    "nameEn": "Weinrot",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Purple Violet",
+    "nameEn": "Purple Violet",
+    "hex": "#6b4c9a"
+   },
+   {
+    "nameDe": "Antique White",
+    "nameEn": "Antique White",
+    "hex": "#e5e7eb"
+   }
+  ],
+  "features_de": [
+   "Ananda M60 Mittelmotor, bis 70 Nm, 550-Wh-Akku",
+   "Ananda D19 LED mit Bluetooth und Ananda Ride App Anbindung",
+   "Federung: Zoom Federgabel mit 63 mm Federweg, Lockout und einstellbarer Zugstufe",
+   "Schaltung: 7",
+   "Bremsen: Shimano MT200 180/160 mm hydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Ananda M60 Mittelmotor, up to 70 Nm, 550 Wh battery",
+   "Ananda D19 LED mit Bluetooth und Ananda Ride App Anbindung",
+   "Suspension: Zoom Federgabel mit 63 mm Federweg, Lockout und einstellbarer Zugstufe",
+   "Drivetrain: 7",
+   "Brakes: Shimano MT200 180/160 mm hydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium Tiefeinsteiger",
+   "gears": "7",
+   "brakes": "Shimano MT200 180/160 mm hydraulische Scheibenbremsen",
+   "fork": "Zoom Federgabel mit 63 mm Federweg, Lockout und einstellbarer Zugstufe",
+   "wheelSize": "27,5 Zoll / 650B · Kenda K1172 62-584 / 27,5\" x 2,40\" Straßenreifen mit Reflexstreifen"
   }
  },
  {
@@ -2684,6 +3883,71 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Shimano Hydraulic Disc brake BR-MT520, 4 pistons, resin pad, 203 mm",
    "fork": "Rockshox Lyrik Select Charger RC, DebonAir+, Boost 150 mm · Dämpfer Rockshox Super Deluxe Select RT 185x55mm, DebonAir Prog.",
    "wheelSize": "WTB ST Light i30 29 TCS 2.0, 32H, Single eyelets · Continental Kryptotal-Fr Trail Soft, foldable skin SL, TR 60-622"
+  }
+ },
+ {
+  "id": "zuendapp-z807-trekkingrad",
+  "slug": "zuendapp-z807-trekkingrad",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z807 Trekkingrad",
+  "name_en": "Zündapp Z807 Trekkingrad",
+  "description_de": "Das Zündapp Z807 Trekkingrad ist ein E-Trekkingbike von Zündapp. Der Antrieb (Ananda Radnabenmotor hinten) mit bis zu 40 Nm Drehmoment wird von einem 468-Wh-Akku gespeist, bedient wird er über Ananda D15 LED mit 5 Modi und Batterieanzeige. Federung: Zoom 730 Federgabel mit 63 mm Federweg. Schaltung: 7. Bremsen: Tektro V-Brakes. Rahmen: Zündapp Aluminium Diamantrahmen. Gewicht laut Hersteller: 24,8 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Z807 Trekkingrad is an electric trekking bike from Zündapp. The drive (Ananda Radnabenmotor hinten) with up to 40 Nm of torque is powered by a 468 Wh battery, controlled via Ananda D15 LED mit 5 Modi und Batterieanzeige. Suspension: Zoom 730 Federgabel mit 63 mm Federweg. Drivetrain: 7. Brakes: Tektro V-Brakes. Frame: Zündapp Aluminium Diamantrahmen. Weight according to the manufacturer: 24.8 kg. Permissible total weight: 120 kg.",
+  "category": "e-trekkingbikes",
+  "price": 899,
+  "motor": "Ananda",
+  "motorDetails": "Ananda Radnabenmotor hinten, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 468,
+  "weightKg": 24.8,
+  "gender": "unisex",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/zuendapp-z807-trekkingrad/main.webp",
+   "/images/products/zuendapp-z807-trekkingrad/gallery-1.webp",
+   "/images/products/zuendapp-z807-trekkingrad/gallery-2.webp",
+   "/images/products/zuendapp-z807-trekkingrad/gallery-3.webp",
+   "/images/products/zuendapp-z807-trekkingrad/gallery-4.webp"
+  ],
+  "sizes": [
+   "50 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Beige-GrüN",
+    "nameEn": "Beige-GrüN",
+    "hex": "#c9bfa8"
+   },
+   {
+    "nameDe": "Telegrau-TüRkis",
+    "nameEn": "Telegrau-TüRkis",
+    "hex": "#8b95a1"
+   }
+  ],
+  "features_de": [
+   "Ananda Radnabenmotor hinten, bis 40 Nm, 468-Wh-Akku",
+   "Ananda D15 LED mit 5 Modi und Batterieanzeige",
+   "Federung: Zoom 730 Federgabel mit 63 mm Federweg",
+   "Schaltung: 7",
+   "Bremsen: Tektro V-Brakes"
+  ],
+  "features_en": [
+   "Ananda Radnabenmotor hinten, up to 40 Nm, 468 Wh battery",
+   "Ananda D15 LED mit 5 Modi und Batterieanzeige",
+   "Suspension: Zoom 730 Federgabel mit 63 mm Federweg",
+   "Drivetrain: 7",
+   "Brakes: Tektro V-Brakes"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Diamantrahmen",
+   "gears": "7",
+   "brakes": "Tektro V-Brakes",
+   "fork": "Zoom 730 Federgabel mit 63 mm Federweg",
+   "wheelSize": "700c/28 Zoll · Kenda Khan II 700c x 40c / 28\" x 1,75\" / 42-622 mit Straßenprofil und Reflexstreifen"
   }
  },
  {
@@ -2930,6 +4194,63 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Tektro Hydraulic Disc brake HD-M535, 4 pistons, resin pad, 203 mm",
    "fork": "Rockshox Psylo Silver RC, Crown Adjust, Solo Air, 150 mm · Dämpfer Rockshox Deluxe Select R 210x50mm, DebonAir+",
    "wheelSize": "WTB ST i30 TCS 2.0 29 32H · Continental Xynotal Trail Endurance, foldable skin SL 60-622"
+  }
+ },
+ {
+  "id": "zuendapp-green-7-7-damen-trekkingrad-28-zoll",
+  "slug": "zuendapp-green-7-7-damen-trekkingrad-28-zoll",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Green 7.7 Damen Trekkingrad 28 Zoll",
+  "name_en": "Zündapp Green 7.7 Damen Trekkingrad 28 Zoll",
+  "description_de": "Das Zündapp Green 7.7 Damen Trekkingrad 28 Zoll ist ein E-Trekkingbike von Zündapp. Der Antrieb (Ananda M129 Radnabenmotor hinten) mit bis zu 40 Nm Drehmoment wird von einem 537-Wh-Akku gespeist, bedient wird er über Ananda D16 CAN 2,4\" TFT Farbdisplay mit Remote, Bluetooth und Ananda Ride App. Federung: Zoom 730 AMS Federgabel mit 63 mm Federweg. Schaltung: 21. Bremsen: V-Brakes. Rahmen: Zündapp Aluminium Trapezrahmen. Gewicht laut Hersteller: 24 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Green 7.7 Damen Trekkingrad 28 Zoll is an electric trekking bike from Zündapp. The drive (Ananda M129 Radnabenmotor hinten) with up to 40 Nm of torque is powered by a 537 Wh battery, controlled via Ananda D16 CAN 2,4\" TFT Farbdisplay mit Remote, Bluetooth und Ananda Ride App. Suspension: Zoom 730 AMS Federgabel mit 63 mm Federweg. Drivetrain: 21. Brakes: V-Brakes. Frame: Zündapp Aluminium Trapezrahmen. Weight according to the manufacturer: 24 kg. Permissible total weight: 120 kg.",
+  "category": "e-trekkingbikes",
+  "price": 999,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M129 Radnabenmotor hinten, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 537,
+  "weightKg": 24,
+  "gender": "damen",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/zuendapp-green-7-7-damen-trekkingrad-28-zoll/main.webp",
+   "/images/products/zuendapp-green-7-7-damen-trekkingrad-28-zoll/gallery-1.webp"
+  ],
+  "sizes": [
+   "48 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Grau / Blau",
+    "nameEn": "Grau / Blau",
+    "hex": "#8b95a1"
+   }
+  ],
+  "features_de": [
+   "Ananda M129 Radnabenmotor hinten, bis 40 Nm, 537-Wh-Akku",
+   "Ananda D16 CAN 2,4\" TFT Farbdisplay mit Remote, Bluetooth und Ananda Ride App",
+   "Federung: Zoom 730 AMS Federgabel mit 63 mm Federweg",
+   "Schaltung: 21",
+   "Bremsen: V-Brakes"
+  ],
+  "features_en": [
+   "Ananda M129 Radnabenmotor hinten, up to 40 Nm, 537 Wh battery",
+   "Ananda D16 CAN 2,4\" TFT Farbdisplay mit Remote, Bluetooth und Ananda Ride App",
+   "Suspension: Zoom 730 AMS Federgabel mit 63 mm Federweg",
+   "Drivetrain: 21",
+   "Brakes: V-Brakes"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Trapezrahmen",
+   "gears": "21",
+   "brakes": "V-Brakes",
+   "fork": "Zoom 730 AMS Federgabel mit 63 mm Federweg",
+   "wheelSize": "700c / 28 Zoll · Kenda Khan II 700c x 40c/28\" x 1,75\"/42-622 mit Straßenprofil und Reflexstreifen"
   }
  },
  {
@@ -3186,6 +4507,80 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-z510-damen-hollandrad-28-zoll",
+  "slug": "zuendapp-z510-damen-hollandrad-28-zoll",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z510 Damen Hollandrad 28 Zoll",
+  "name_en": "Zündapp Z510 Damen Hollandrad 28 Zoll",
+  "description_de": "Das Zündapp Z510 Damen Hollandrad 28 Zoll ist ein E-Citybike von Zündapp. Der Antrieb (Ananda M129F CAN Radnabenmotor vorne) mit bis zu 40 Nm Drehmoment wird von einem 531-Wh-Akku gespeist, bedient wird er über Ananda D16 TFT 2,4\" CAN mit Remote und Bluetooth, Nutzung mit Ananda Ride App. Federung: Zoom 730 AMS Federgabel mit 50 mm Federweg mit einstellbarer Vorspannung. Schaltung: 3. Bremsen: Promax TX117 V-Brakes, Rücktrittbremse. Rahmen: Zündapp Aluminium Tiefeinsteiger. Gewicht laut Hersteller: 22,8 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Z510 Damen Hollandrad 28 Zoll is an electric city bike from Zündapp. The drive (Ananda M129F CAN Radnabenmotor vorne) with up to 40 Nm of torque is powered by a 531 Wh battery, controlled via Ananda D16 TFT 2,4\" CAN mit Remote und Bluetooth, Nutzung mit Ananda Ride App. Suspension: Zoom 730 AMS Federgabel mit 50 mm Federweg mit einstellbarer Vorspannung. Drivetrain: 3. Brakes: Promax TX117 V-Brakes, Rücktrittbremse. Frame: Zündapp Aluminium Tiefeinsteiger. Weight according to the manufacturer: 22.8 kg. Permissible total weight: 120 kg.",
+  "category": "e-citybikes",
+  "price": 1049,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M129F CAN Radnabenmotor vorne, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 531,
+  "weightKg": 22.8,
+  "gender": "tiefeinsteiger",
+  "useCases": [
+   "pendler"
+  ],
+  "images": [
+   "/images/products/zuendapp-z510-damen-hollandrad-28-zoll/main.webp",
+   "/images/products/zuendapp-z510-damen-hollandrad-28-zoll/gallery-1.webp",
+   "/images/products/zuendapp-z510-damen-hollandrad-28-zoll/gallery-2.webp",
+   "/images/products/zuendapp-z510-damen-hollandrad-28-zoll/gallery-3.webp",
+   "/images/products/zuendapp-z510-damen-hollandrad-28-zoll/gallery-4.webp"
+  ],
+  "sizes": [
+   "48 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Weiß / GrüN",
+    "nameEn": "Weiß / GrüN",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Schwarz / TüRkis",
+    "nameEn": "Schwarz / TüRkis",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Weiß / Orange",
+    "nameEn": "Weiß / Orange",
+    "hex": "#d97706"
+   },
+   {
+    "nameDe": "Grau / GrüN",
+    "nameEn": "Grau / GrüN",
+    "hex": "#8b95a1"
+   }
+  ],
+  "features_de": [
+   "Ananda M129F CAN Radnabenmotor vorne, bis 40 Nm, 531-Wh-Akku",
+   "Ananda D16 TFT 2,4\" CAN mit Remote und Bluetooth, Nutzung mit Ananda Ride App",
+   "Federung: Zoom 730 AMS Federgabel mit 50 mm Federweg mit einstellbarer Vorspannung",
+   "Schaltung: 3",
+   "Bremsen: Promax TX117 V-Brakes, Rücktrittbremse"
+  ],
+  "features_en": [
+   "Ananda M129F CAN Radnabenmotor vorne, up to 40 Nm, 531 Wh battery",
+   "Ananda D16 TFT 2,4\" CAN mit Remote und Bluetooth, Nutzung mit Ananda Ride App",
+   "Suspension: Zoom 730 AMS Federgabel mit 50 mm Federweg mit einstellbarer Vorspannung",
+   "Drivetrain: 3",
+   "Brakes: Promax TX117 V-Brakes, Rücktrittbremse"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Tiefeinsteiger",
+   "gears": "3",
+   "brakes": "Promax TX117 V-Brakes, Rücktrittbremse",
+   "fork": "Zoom 730 AMS Federgabel mit 50 mm Federweg mit einstellbarer Vorspannung",
+   "wheelSize": "700c/28 Zoll · Kenda Khan II 700c x 40c/42-622 mit Straßenprofil und Reflexstreifen"
+  }
+ },
+ {
   "id": "cube-stereo-hybrid-one77-hpc-slt-800",
   "slug": "cube-stereo-hybrid-one77-hpc-slt-800",
   "brand": "Cube",
@@ -3435,6 +4830,64 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Magura Hydraulic Disc brake MT C Allroad ABS, 4 pistons, 203 mm",
    "fork": "Suntour MOBIE34-D Boost AIR 2CR DS 100 mm",
    "wheelSize": "XLC WR-M37 Tryp EVO Disc 30/584 32H 6,5 mm Valve · Schwalbe Johnny Watts Performance, DD, RaceGuard, 67EPI 60-584"
+  }
+ },
+ {
+  "id": "zuendapp-z901-hollandrad-damen",
+  "slug": "zuendapp-z901-hollandrad-damen",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z901 Hollandrad Damen",
+  "name_en": "Zündapp Z901 Hollandrad Damen",
+  "description_de": "Das Zündapp Z901 Hollandrad Damen ist ein E-Citybike von Zündapp. Der Antrieb (Ananda M80 Mittelmotor) mit bis zu 80 Nm Drehmoment wird von einem 418-Wh-Akku gespeist, bedient wird er über Ananda D10 LCD. Federung: Zoom 141DMS Federgabel mit 63 mm Federweg. Schaltung: 7. Bremsen: Promax 117 V-Brakes. Rahmen: Zündapp Aluminium Waverahmen. Gewicht laut Hersteller: 23 kg. Zulässiges Gesamtgewicht: 130 kg.",
+  "description_en": "The Zündapp Z901 Hollandrad Damen is an electric city bike from Zündapp. The drive (Ananda M80 Mittelmotor) with up to 80 Nm of torque is powered by a 418 Wh battery, controlled via Ananda D10 LCD. Suspension: Zoom 141DMS Federgabel mit 63 mm Federweg. Drivetrain: 7. Brakes: Promax 117 V-Brakes. Frame: Zündapp Aluminium Waverahmen. Weight according to the manufacturer: 23 kg. Permissible total weight: 130 kg.",
+  "category": "e-citybikes",
+  "price": 1699,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M80 Mittelmotor, 250 W, 80 Nm",
+  "torqueNm": 80,
+  "batteryWh": 418,
+  "weightKg": 23,
+  "gender": "tiefeinsteiger",
+  "useCases": [
+   "pendler"
+  ],
+  "images": [
+   "/images/products/zuendapp-z901-hollandrad-damen/main.webp",
+   "/images/products/zuendapp-z901-hollandrad-damen/gallery-1.webp",
+   "/images/products/zuendapp-z901-hollandrad-damen/gallery-2.webp",
+   "/images/products/zuendapp-z901-hollandrad-damen/gallery-3.webp"
+  ],
+  "sizes": [
+   "46 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Grau / Weiß",
+    "nameEn": "Grau / Weiß",
+    "hex": "#8b95a1"
+   }
+  ],
+  "features_de": [
+   "Ananda M80 Mittelmotor, bis 80 Nm, 418-Wh-Akku",
+   "Ananda D10 LCD",
+   "Federung: Zoom 141DMS Federgabel mit 63 mm Federweg",
+   "Schaltung: 7",
+   "Bremsen: Promax 117 V-Brakes"
+  ],
+  "features_en": [
+   "Ananda M80 Mittelmotor, up to 80 Nm, 418 Wh battery",
+   "Ananda D10 LCD",
+   "Suspension: Zoom 141DMS Federgabel mit 63 mm Federweg",
+   "Drivetrain: 7",
+   "Brakes: Promax 117 V-Brakes"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Waverahmen",
+   "gears": "7",
+   "brakes": "Promax 117 V-Brakes",
+   "fork": "Zoom 141DMS Federgabel mit 63 mm Federweg",
+   "wheelSize": "700c/28 Zoll · Kenda 42-622 / 700c x 40c / 28\" x 1,65\" mit Straßenprofil"
   }
  },
  {
@@ -3690,6 +5143,63 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-green-7-7-trekkingrad-herren",
+  "slug": "zuendapp-green-7-7-trekkingrad-herren",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Green 7.7 Trekkingrad Herren",
+  "name_en": "Zündapp Green 7.7 Trekkingrad Herren",
+  "description_de": "Das Zündapp Green 7.7 Trekkingrad Herren ist ein E-Trekkingbike von Zündapp. Der Antrieb (Ananda M129CD Radnabenmotor hinten) mit bis zu 40 Nm Drehmoment wird von einem 537-Wh-Akku gespeist, bedient wird er über Ananda D16 CAN 2,4\" TFT Farbdisplay mit Remote, Bluetooth und Ananda Ride App. Federung: Zoom 730 AMS Federgabel mit 63 mm Federweg. Schaltung: 21. Bremsen: V-Brakes. Rahmen: Zündapp Aluminium Diamantrahmen. Gewicht laut Hersteller: 23,9 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Green 7.7 Trekkingrad Herren is an electric trekking bike from Zündapp. The drive (Ananda M129CD Radnabenmotor hinten) with up to 40 Nm of torque is powered by a 537 Wh battery, controlled via Ananda D16 CAN 2,4\" TFT Farbdisplay mit Remote, Bluetooth und Ananda Ride App. Suspension: Zoom 730 AMS Federgabel mit 63 mm Federweg. Drivetrain: 21. Brakes: V-Brakes. Frame: Zündapp Aluminium Diamantrahmen. Weight according to the manufacturer: 23.9 kg. Permissible total weight: 120 kg.",
+  "category": "e-trekkingbikes",
+  "price": 999,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M129CD Radnabenmotor hinten, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 537,
+  "weightKg": 23.9,
+  "gender": "herren",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/zuendapp-green-7-7-trekkingrad-herren/main.webp",
+   "/images/products/zuendapp-green-7-7-trekkingrad-herren/gallery-1.webp"
+  ],
+  "sizes": [
+   "48 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Grau / Blau",
+    "nameEn": "Grau / Blau",
+    "hex": "#8b95a1"
+   }
+  ],
+  "features_de": [
+   "Ananda M129CD Radnabenmotor hinten, bis 40 Nm, 537-Wh-Akku",
+   "Ananda D16 CAN 2,4\" TFT Farbdisplay mit Remote, Bluetooth und Ananda Ride App",
+   "Federung: Zoom 730 AMS Federgabel mit 63 mm Federweg",
+   "Schaltung: 21",
+   "Bremsen: V-Brakes"
+  ],
+  "features_en": [
+   "Ananda M129CD Radnabenmotor hinten, up to 40 Nm, 537 Wh battery",
+   "Ananda D16 CAN 2,4\" TFT Farbdisplay mit Remote, Bluetooth und Ananda Ride App",
+   "Suspension: Zoom 730 AMS Federgabel mit 63 mm Federweg",
+   "Drivetrain: 21",
+   "Brakes: V-Brakes"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Diamantrahmen",
+   "gears": "21",
+   "brakes": "V-Brakes",
+   "fork": "Zoom 730 AMS Federgabel mit 63 mm Federweg",
+   "wheelSize": "700c / 28 Zoll · Kenda Khan II 700c x 40c/28\" x 1,75\"/42-622 mit Straßenprofil und Reflexstreifen"
+  }
+ },
+ {
   "id": "cube-ams-hybrid-one44-c-68x-slt-400x",
   "slug": "cube-ams-hybrid-one44-c-68x-slt-400x",
   "brand": "Cube",
@@ -3932,6 +5442,75 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-z503-citybike-damen-28",
+  "slug": "zuendapp-z503-citybike-damen-28",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z503 Citybike Damen 28\"",
+  "name_en": "Zündapp Z503 Citybike Damen 28\"",
+  "description_de": "Das Zündapp Z503 Citybike Damen 28\" ist ein E-Citybike von Zündapp. Der Antrieb (Ananda F129 CAN Radnabenmotor Vorderrad) mit bis zu 40 Nm Drehmoment wird von einem 537-Wh-Akku gespeist, bedient wird er über Ananda D19 LED CAN mit Bluetooth und Ananda Ride App. Federung: Zündapp Stahl Starrgabel. Schaltung: 7. Bremsen: Promax TX117 V-Brakes. Rahmen: Zündapp Aluminium Tiefeinsteiger Waverahmen. Gewicht laut Hersteller: 22,4 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Z503 Citybike Damen 28\" is an electric city bike from Zündapp. The drive (Ananda F129 CAN Radnabenmotor Vorderrad) with up to 40 Nm of torque is powered by a 537 Wh battery, controlled via Ananda D19 LED CAN mit Bluetooth und Ananda Ride App. Suspension: Zündapp Stahl Starrgabel. Drivetrain: 7. Brakes: Promax TX117 V-Brakes. Frame: Zündapp Aluminium Tiefeinsteiger Waverahmen. Weight according to the manufacturer: 22.4 kg. Permissible total weight: 120 kg.",
+  "category": "e-citybikes",
+  "price": 1099,
+  "motor": "Ananda",
+  "motorDetails": "Ananda F129 CAN Radnabenmotor Vorderrad, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 537,
+  "weightKg": 22.4,
+  "gender": "damen",
+  "useCases": [
+   "pendler"
+  ],
+  "images": [
+   "/images/products/zuendapp-z503-citybike-damen-28/main.webp",
+   "/images/products/zuendapp-z503-citybike-damen-28/gallery-1.webp",
+   "/images/products/zuendapp-z503-citybike-damen-28/gallery-2.webp",
+   "/images/products/zuendapp-z503-citybike-damen-28/gallery-3.webp",
+   "/images/products/zuendapp-z503-citybike-damen-28/gallery-4.webp"
+  ],
+  "sizes": [
+   "49 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Weiß-GrüN",
+    "nameEn": "Weiß-GrüN",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Antique White",
+    "nameEn": "Antique White",
+    "hex": "#e5e7eb"
+   },
+   {
+    "nameDe": "Weinrot",
+    "nameEn": "Weinrot",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "Ananda F129 CAN Radnabenmotor Vorderrad, bis 40 Nm, 537-Wh-Akku",
+   "Ananda D19 LED CAN mit Bluetooth und Ananda Ride App",
+   "Federung: Zündapp Stahl Starrgabel",
+   "Schaltung: 7",
+   "Bremsen: Promax TX117 V-Brakes"
+  ],
+  "features_en": [
+   "Ananda F129 CAN Radnabenmotor Vorderrad, up to 40 Nm, 537 Wh battery",
+   "Ananda D19 LED CAN mit Bluetooth und Ananda Ride App",
+   "Suspension: Zündapp Stahl Starrgabel",
+   "Drivetrain: 7",
+   "Brakes: Promax TX117 V-Brakes"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Tiefeinsteiger Waverahmen",
+   "gears": "7",
+   "brakes": "Promax TX117 V-Brakes",
+   "fork": "Zündapp Stahl Starrgabel",
+   "wheelSize": "700c/28 Zoll · Kenda Khan II 42-622 / 700c x 40c mit Straßenprofil und Reflexstreifen"
+  }
+ },
+ {
   "id": "cube-ams-hybrid-177-c-62-at-600x",
   "slug": "cube-ams-hybrid-177-c-62-at-600x",
   "brand": "Cube",
@@ -4167,6 +5746,80 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Shimano Hydraulic Disc brake Deore BR-MT420, 4 pistons, 180 mm",
    "fork": "Suntour XCM32-Boost DS, 15AH3-110 120 mm",
    "wheelSize": "XLC WR-M17 Disc 25/584 32H 6,5 mm Valve · XLC VT-M20 Summit 57-584"
+  }
+ },
+ {
+  "id": "zuendapp-z101-klapprad-20-zoll",
+  "slug": "zuendapp-z101-klapprad-20-zoll",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z101 Klapprad 20 Zoll",
+  "name_en": "Zündapp Z101 Klapprad 20 Zoll",
+  "description_de": "Das Zündapp Z101 Klapprad 20 Zoll ist ein Falt-E-Bike von Zündapp. Der Antrieb (SY Radnabenmotor hinten) mit bis zu 30 Nm Drehmoment wird von einem 270-Wh-Akku gespeist, bedient wird er über King Meter T320 LED. Federung: Zündapp Stahl Starrgabel. Schaltung: 6. Bremsen: Tektro C310 V-Brakes. Rahmen: Zündapp Aluminium Faltrahmen mit vollintegriertem Akku. Gewicht laut Hersteller: 21,1 kg. Zulässiges Gesamtgewicht: 110 kg.",
+  "description_en": "The Zündapp Z101 Klapprad 20 Zoll is a folding electric bike from Zündapp. The drive (SY Radnabenmotor hinten) with up to 30 Nm of torque is powered by a 270 Wh battery, controlled via King Meter T320 LED. Suspension: Zündapp Stahl Starrgabel. Drivetrain: 6. Brakes: Tektro C310 V-Brakes. Frame: Zündapp Aluminium Faltrahmen mit vollintegriertem Akku. Weight according to the manufacturer: 21.1 kg. Permissible total weight: 110 kg.",
+  "category": "e-faltraeder",
+  "price": 999,
+  "motor": "Nabenmotor",
+  "motorDetails": "SY Radnabenmotor hinten, 250 W, 30 Nm",
+  "torqueNm": 30,
+  "batteryWh": 270,
+  "weightKg": 21.1,
+  "gender": "tiefeinsteiger",
+  "useCases": [
+   "pendler"
+  ],
+  "images": [
+   "/images/products/zuendapp-z101-klapprad-20-zoll/main.webp",
+   "/images/products/zuendapp-z101-klapprad-20-zoll/gallery-1.webp",
+   "/images/products/zuendapp-z101-klapprad-20-zoll/gallery-2.webp",
+   "/images/products/zuendapp-z101-klapprad-20-zoll/gallery-3.webp",
+   "/images/products/zuendapp-z101-klapprad-20-zoll/gallery-4.webp"
+  ],
+  "sizes": [
+   "37 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Schwarz",
+    "nameEn": "Schwarz",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Blau",
+    "nameEn": "Blau",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Weiß",
+    "nameEn": "Weiß",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Silber",
+    "nameEn": "Silber",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "SY Radnabenmotor hinten, bis 30 Nm, 270-Wh-Akku",
+   "King Meter T320 LED",
+   "Federung: Zündapp Stahl Starrgabel",
+   "Schaltung: 6",
+   "Bremsen: Tektro C310 V-Brakes"
+  ],
+  "features_en": [
+   "SY Radnabenmotor hinten, up to 30 Nm, 270 Wh battery",
+   "King Meter T320 LED",
+   "Suspension: Zündapp Stahl Starrgabel",
+   "Drivetrain: 6",
+   "Brakes: Tektro C310 V-Brakes"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Faltrahmen mit vollintegriertem Akku",
+   "gears": "6",
+   "brakes": "Tektro C310 V-Brakes",
+   "fork": "Zündapp Stahl Starrgabel",
+   "wheelSize": "20 Zoll · CST Tires 20\" x 1,75\" / 47-406 mit Straßenprofil"
   }
  },
  {
@@ -4418,6 +6071,70 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-x600-citybike-damen",
+  "slug": "zuendapp-x600-citybike-damen",
+  "brand": "Zündapp",
+  "name_de": "Zündapp X600 Citybike Damen",
+  "name_en": "Zündapp X600 Citybike Damen",
+  "description_de": "Das Zündapp X600 Citybike Damen ist ein E-Citybike von Zündapp. Der Antrieb (Bosch ActiveLine Mittelmotor) mit bis zu 40 Nm Drehmoment wird von einem 400-Wh-Akku gespeist, bedient wird er über Bosch Purion LCD. Federung: AMS MLO Federgabel mit 65 mm Federweg, einstellbare Vorspannung, Lockout. Schaltung: 7. Bremsen: Magura HS11 hydraulische Felgenbremsen, Rücktrittbremse. Rahmen: Zündapp Easy Step Aluminium Tiefeinsteiger. Gewicht laut Hersteller: 27,5 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp X600 Citybike Damen is an electric city bike from Zündapp. The drive (Bosch ActiveLine Mittelmotor) with up to 40 Nm of torque is powered by a 400 Wh battery, controlled via Bosch Purion LCD. Suspension: AMS MLO Federgabel mit 65 mm Federweg, einstellbare Vorspannung, Lockout. Drivetrain: 7. Brakes: Magura HS11 hydraulische Felgenbremsen, Rücktrittbremse. Frame: Zündapp Easy Step Aluminium Tiefeinsteiger. Weight according to the manufacturer: 27.5 kg. Permissible total weight: 120 kg.",
+  "category": "e-citybikes",
+  "price": 2599,
+  "motor": "Bosch",
+  "motorDetails": "Bosch ActiveLine Mittelmotor, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 400,
+  "weightKg": 27.5,
+  "gender": "damen",
+  "useCases": [
+   "pendler"
+  ],
+  "images": [
+   "/images/products/zuendapp-x600-citybike-damen/main.webp",
+   "/images/products/zuendapp-x600-citybike-damen/gallery-1.webp",
+   "/images/products/zuendapp-x600-citybike-damen/gallery-2.webp",
+   "/images/products/zuendapp-x600-citybike-damen/gallery-3.webp",
+   "/images/products/zuendapp-x600-citybike-damen/gallery-4.webp"
+  ],
+  "sizes": [
+   "50 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Grau-Blau",
+    "nameEn": "Grau-Blau",
+    "hex": "#8b95a1"
+   },
+   {
+    "nameDe": "Grau-Gelb",
+    "nameEn": "Grau-Gelb",
+    "hex": "#8b95a1"
+   }
+  ],
+  "features_de": [
+   "Bosch ActiveLine Mittelmotor, bis 40 Nm, 400-Wh-Akku",
+   "Bosch Purion LCD",
+   "Federung: AMS MLO Federgabel mit 65 mm Federweg, einstellbare Vorspannung, Lockout",
+   "Schaltung: 7",
+   "Bremsen: Magura HS11 hydraulische Felgenbremsen, Rücktrittbremse"
+  ],
+  "features_en": [
+   "Bosch ActiveLine Mittelmotor, up to 40 Nm, 400 Wh battery",
+   "Bosch Purion LCD",
+   "Suspension: AMS MLO Federgabel mit 65 mm Federweg, einstellbare Vorspannung, Lockout",
+   "Drivetrain: 7",
+   "Brakes: Magura HS11 hydraulische Felgenbremsen, Rücktrittbremse"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Easy Step Aluminium Tiefeinsteiger",
+   "gears": "7",
+   "brakes": "Magura HS11 hydraulische Felgenbremsen, Rücktrittbremse",
+   "fork": "AMS MLO Federgabel mit 65 mm Federweg, einstellbare Vorspannung, Lockout",
+   "wheelSize": "28 Zoll / 700c · Kenda K1172 47-622 mit Straßenprofil, Reflexstreifen und Antipuncture Pannenschutz"
+  }
+ },
+ {
   "id": "cube-stereo-hybrid-one44-hpc-at-800",
   "slug": "cube-stereo-hybrid-one44-hpc-at-800",
   "brand": "Cube",
@@ -4659,6 +6376,68 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Shimano Hydraulic Disc brake Deore BR-MT420, 4 pistons, 180 mm",
    "fork": "Suntour XCM32-Boost DS, 15AH3-110 100 mm",
    "wheelSize": "XLC WR-M37 Tryp EVO Disc 30/584 32H 6,5 mm Valve · XLC VT-T45 Toorak 60-584"
+  }
+ },
+ {
+  "id": "zuendapp-x700-mountainbike-27-5-zoll",
+  "slug": "zuendapp-x700-mountainbike-27-5-zoll",
+  "brand": "Zündapp",
+  "name_de": "Zündapp X700 Mountainbike 27,5 Zoll",
+  "name_en": "Zündapp X700 Mountainbike 27,5 Zoll",
+  "description_de": "Das Zündapp X700 Mountainbike 27,5 Zoll ist ein E-Hardtail-Mountainbike von Zündapp. Der Antrieb (Ananda M80 Mittelmotor) mit bis zu 80 Nm Drehmoment wird von einem 504-Wh-Akku gespeist, bedient wird er über Ananda D13 LCD. Federung: Zoom Federgabel mit 100 mm Federweg, einstellbare Vorspannung, Lockout. Schaltung: 9. Bremsen: Logan hydraulische Scheibenbremsen. Rahmen: Zündapp Aluminium Sloping-Rahmen. Gewicht laut Hersteller: 38 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp X700 Mountainbike 27,5 Zoll is an electric hardtail mountain bike from Zündapp. The drive (Ananda M80 Mittelmotor) with up to 80 Nm of torque is powered by a 504 Wh battery, controlled via Ananda D13 LCD. Suspension: Zoom Federgabel mit 100 mm Federweg, einstellbare Vorspannung, Lockout. Drivetrain: 9. Brakes: Logan hydraulische Scheibenbremsen. Frame: Zündapp Aluminium Sloping-Rahmen. Weight according to the manufacturer: 38 kg. Permissible total weight: 120 kg.",
+  "category": "e-mountainbikes-hardtail",
+  "price": 1399,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M80 Mittelmotor, 250 W, 80 Nm",
+  "torqueNm": 80,
+  "batteryWh": 504,
+  "weightKg": 38,
+  "gender": "unisex",
+  "useCases": [],
+  "images": [
+   "/images/products/zuendapp-x700-mountainbike-27-5-zoll/main.webp",
+   "/images/products/zuendapp-x700-mountainbike-27-5-zoll/gallery-1.webp",
+   "/images/products/zuendapp-x700-mountainbike-27-5-zoll/gallery-2.webp",
+   "/images/products/zuendapp-x700-mountainbike-27-5-zoll/gallery-3.webp",
+   "/images/products/zuendapp-x700-mountainbike-27-5-zoll/gallery-4.webp"
+  ],
+  "sizes": [
+   "50 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Khaki",
+    "nameEn": "Khaki",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Blau",
+    "nameEn": "Blau",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "Ananda M80 Mittelmotor, bis 80 Nm, 504-Wh-Akku",
+   "Ananda D13 LCD",
+   "Federung: Zoom Federgabel mit 100 mm Federweg, einstellbare Vorspannung, Lockout",
+   "Schaltung: 9",
+   "Bremsen: Logan hydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Ananda M80 Mittelmotor, up to 80 Nm, 504 Wh battery",
+   "Ananda D13 LCD",
+   "Suspension: Zoom Federgabel mit 100 mm Federweg, einstellbare Vorspannung, Lockout",
+   "Drivetrain: 9",
+   "Brakes: Logan hydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Sloping-Rahmen",
+   "gears": "9",
+   "brakes": "Logan hydraulische Scheibenbremsen",
+   "fork": "Zoom Federgabel mit 100 mm Federweg, einstellbare Vorspannung, Lockout",
+   "wheelSize": "27,5 Zoll / 650B · Mitas 27,5\" x 2,10 / 54-584 mit Stollenprofil"
   }
  },
  {
@@ -4907,6 +6686,78 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Shimano Hydraulic Disc brake Deore BR-MT420, 4 pistons, 203 mm",
    "fork": "Suntour MOBIE34-D Boost 15AH2-110 120 mm",
    "wheelSize": "Schurmann Craft Disc 584-30 32H · Schwalbe Nobby Nic Performance, 67EPI 65-584"
+  }
+ },
+ {
+  "id": "zuendapp-z898-mountainbike-27-5-zoll",
+  "slug": "zuendapp-z898-mountainbike-27-5-zoll",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z898 Mountainbike 27,5 Zoll",
+  "name_en": "Zündapp Z898 Mountainbike 27,5 Zoll",
+  "description_de": "Das Zündapp Z898 Mountainbike 27,5 Zoll ist ein E-Hardtail-Mountainbike von Zündapp. Der Antrieb (Ananda M145CD Radnabenmotor Hinterrad) mit bis zu 40 Nm Drehmoment wird von einem 540-Wh-Akku gespeist, bedient wird er über Ananda DF130 LED CAN mit Bluetooth und App-Konnektivität. Federung: Zoom AMS HLO Federgabel, Federweg: 80 mm, einstellbar, mit Lockout. Schaltung: 10. Bremsen: Shimano MT200 hydraulische Scheibenbremsen 160/180 mm. Rahmen: Aluminium Slopingrahmen. Gewicht laut Hersteller: 22,5 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Z898 Mountainbike 27,5 Zoll is an electric hardtail mountain bike from Zündapp. The drive (Ananda M145CD Radnabenmotor Hinterrad) with up to 40 Nm of torque is powered by a 540 Wh battery, controlled via Ananda DF130 LED CAN mit Bluetooth und App-Konnektivität. Suspension: Zoom AMS HLO Federgabel, Federweg: 80 mm, einstellbar, mit Lockout. Drivetrain: 10. Brakes: Shimano MT200 hydraulische Scheibenbremsen 160/180 mm. Frame: Aluminium Slopingrahmen. Weight according to the manufacturer: 22.5 kg. Permissible total weight: 120 kg.",
+  "category": "e-mountainbikes-hardtail",
+  "price": 1299,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M145CD Radnabenmotor Hinterrad, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 540,
+  "weightKg": 22.5,
+  "gender": "unisex",
+  "useCases": [],
+  "images": [
+   "/images/products/zuendapp-z898-mountainbike-27-5-zoll/main.webp",
+   "/images/products/zuendapp-z898-mountainbike-27-5-zoll/gallery-1.webp",
+   "/images/products/zuendapp-z898-mountainbike-27-5-zoll/gallery-2.webp",
+   "/images/products/zuendapp-z898-mountainbike-27-5-zoll/gallery-3.webp",
+   "/images/products/zuendapp-z898-mountainbike-27-5-zoll/gallery-4.webp"
+  ],
+  "sizes": [
+   "48 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Schwarz-GrüN",
+    "nameEn": "Schwarz-GrüN",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Schwarz-Rot",
+    "nameEn": "Schwarz-Rot",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Schwarz-Blau",
+    "nameEn": "Schwarz-Blau",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Weiß-Rot",
+    "nameEn": "Weiß-Rot",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "Ananda M145CD Radnabenmotor Hinterrad, bis 40 Nm, 540-Wh-Akku",
+   "Ananda DF130 LED CAN mit Bluetooth und App-Konnektivität",
+   "Federung: Zoom AMS HLO Federgabel, Federweg: 80 mm, einstellbar, mit Lockout",
+   "Schaltung: 10",
+   "Bremsen: Shimano MT200 hydraulische Scheibenbremsen 160/180 mm"
+  ],
+  "features_en": [
+   "Ananda M145CD Radnabenmotor Hinterrad, up to 40 Nm, 540 Wh battery",
+   "Ananda DF130 LED CAN mit Bluetooth und App-Konnektivität",
+   "Suspension: Zoom AMS HLO Federgabel, Federweg: 80 mm, einstellbar, mit Lockout",
+   "Drivetrain: 10",
+   "Brakes: Shimano MT200 hydraulische Scheibenbremsen 160/180 mm"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium Slopingrahmen",
+   "gears": "10",
+   "brakes": "Shimano MT200 hydraulische Scheibenbremsen 160/180 mm",
+   "fork": "Zoom AMS HLO Federgabel, Federweg: 80 mm, einstellbar, mit Lockout",
+   "wheelSize": "650B / 27,5 Zoll · Kenda 27,5 x 2,35 Zoll / 60-584 mit Stollenprofil"
   }
  },
  {
@@ -5167,6 +7018,68 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-x1000-mountainbike-fully",
+  "slug": "zuendapp-x1000-mountainbike-fully",
+  "brand": "Zündapp",
+  "name_de": "Zündapp X1000 Mountainbike Fully",
+  "name_en": "Zündapp X1000 Mountainbike Fully",
+  "description_de": "Das Zündapp X1000 Mountainbike Fully ist ein vollgefedertes E-Mountainbike von Zündapp. Der Antrieb (Ananda M100 Mittelmotor) mit bis zu 110 Nm Drehmoment wird von einem 734-Wh-Akku gespeist, bedient wird er über Ananda DF130 mit Bluetooth. Federung: Federgabel. Schaltung: 10. Bremsen: Shimano MT200 160/160 mm hydraulische Scheibenbremsen. Rahmen: Aluminium Fully-Rahmen. Gewicht laut Hersteller: 26 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp X1000 Mountainbike Fully is a full-suspension electric mountain bike from Zündapp. The drive (Ananda M100 Mittelmotor) with up to 110 Nm of torque is powered by a 734 Wh battery, controlled via Ananda DF130 mit Bluetooth. Suspension: Federgabel. Drivetrain: 10. Brakes: Shimano MT200 160/160 mm hydraulische Scheibenbremsen. Frame: Aluminium Fully-Rahmen. Weight according to the manufacturer: 26 kg. Permissible total weight: 120 kg.",
+  "category": "e-mountainbikes-fully",
+  "price": 2599,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M100 Mittelmotor, 250 W, 110 Nm",
+  "torqueNm": 110,
+  "batteryWh": 734,
+  "weightKg": 26,
+  "gender": "unisex",
+  "useCases": [],
+  "images": [
+   "/images/products/zuendapp-x1000-mountainbike-fully/main.webp",
+   "/images/products/zuendapp-x1000-mountainbike-fully/gallery-1.webp",
+   "/images/products/zuendapp-x1000-mountainbike-fully/gallery-2.webp",
+   "/images/products/zuendapp-x1000-mountainbike-fully/gallery-3.webp",
+   "/images/products/zuendapp-x1000-mountainbike-fully/gallery-4.webp"
+  ],
+  "sizes": [
+   "47 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Schwarz",
+    "nameEn": "Schwarz",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Sunlight Magic",
+    "nameEn": "Sunlight Magic",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "Ananda M100 Mittelmotor, bis 110 Nm, 734-Wh-Akku",
+   "Ananda DF130 mit Bluetooth",
+   "Federung: Federgabel",
+   "Schaltung: 10",
+   "Bremsen: Shimano MT200 160/160 mm hydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Ananda M100 Mittelmotor, up to 110 Nm, 734 Wh battery",
+   "Ananda DF130 mit Bluetooth",
+   "Suspension: Federgabel",
+   "Drivetrain: 10",
+   "Brakes: Shimano MT200 160/160 mm hydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium Fully-Rahmen",
+   "gears": "10",
+   "brakes": "Shimano MT200 160/160 mm hydraulische Scheibenbremsen",
+   "fork": "Federgabel",
+   "wheelSize": "29 Zoll · 29\" x 2,60\" / 66-622 mit Stollenprofil"
+  }
+ },
+ {
   "id": "cube-ams-hybrid-one44-c-68x-slx-400x",
   "slug": "cube-ams-hybrid-one44-c-68x-slx-400x",
   "brand": "Cube",
@@ -5416,6 +7329,75 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-x850-trekkingrad-herren",
+  "slug": "zuendapp-x850-trekkingrad-herren",
+  "brand": "Zündapp",
+  "name_de": "Zündapp X850 Trekkingrad Herren",
+  "name_en": "Zündapp X850 Trekkingrad Herren",
+  "description_de": "Das Zündapp X850 Trekkingrad Herren ist ein E-Trekkingbike von Zündapp. Der Antrieb (Ananda M60CD Mittelmotor) wird von einem 550-Wh-Akku gespeist, bedient wird er über Ananda D19 LED CAN mit Bluetooth und App. Federung: Zoom AMS HLO Federgabel mit 63 mm Federweg, einstellbarer Vorspannung und Lockout. Schaltung: 7. Bremsen: Shimano MT200 mit Bremsscheiben SM-RT10 180/160 mmhydraulische Scheibenbremsen. Rahmen: Aluminium Diamantrahmen. Gewicht laut Hersteller: 27,3 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp X850 Trekkingrad Herren is an electric trekking bike from Zündapp. The drive (Ananda M60CD Mittelmotor) is powered by a 550 Wh battery, controlled via Ananda D19 LED CAN mit Bluetooth und App. Suspension: Zoom AMS HLO Federgabel mit 63 mm Federweg, einstellbarer Vorspannung und Lockout. Drivetrain: 7. Brakes: Shimano MT200 mit Bremsscheiben SM-RT10 180/160 mmhydraulische Scheibenbremsen. Frame: Aluminium Diamantrahmen. Weight according to the manufacturer: 27.3 kg. Permissible total weight: 120 kg.",
+  "category": "e-trekkingbikes",
+  "price": 2299,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M60CD Mittelmotor, 250 W",
+  "batteryWh": 550,
+  "weightKg": 27.3,
+  "gender": "herren",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/zuendapp-x850-trekkingrad-herren/main.webp",
+   "/images/products/zuendapp-x850-trekkingrad-herren/gallery-1.webp",
+   "/images/products/zuendapp-x850-trekkingrad-herren/gallery-2.webp",
+   "/images/products/zuendapp-x850-trekkingrad-herren/gallery-3.webp",
+   "/images/products/zuendapp-x850-trekkingrad-herren/gallery-4.webp"
+  ],
+  "sizes": [
+   "53 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Weiß",
+    "nameEn": "Weiß",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Schwarz",
+    "nameEn": "Schwarz",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Basaltgrau",
+    "nameEn": "Basaltgrau",
+    "hex": "#8b95a1"
+   }
+  ],
+  "features_de": [
+   "Ananda M60CD Mittelmotor, 550-Wh-Akku",
+   "Ananda D19 LED CAN mit Bluetooth und App",
+   "Federung: Zoom AMS HLO Federgabel mit 63 mm Federweg, einstellbarer Vorspannung und Lockout",
+   "Schaltung: 7",
+   "Bremsen: Shimano MT200 mit Bremsscheiben SM-RT10 180/160 mmhydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Ananda M60CD Mittelmotor, 550 Wh battery",
+   "Ananda D19 LED CAN mit Bluetooth und App",
+   "Suspension: Zoom AMS HLO Federgabel mit 63 mm Federweg, einstellbarer Vorspannung und Lockout",
+   "Drivetrain: 7",
+   "Brakes: Shimano MT200 mit Bremsscheiben SM-RT10 180/160 mmhydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium Diamantrahmen",
+   "gears": "7",
+   "brakes": "Shimano MT200 mit Bremsscheiben SM-RT10 180/160 mmhydraulische Scheibenbremsen",
+   "fork": "Zoom AMS HLO Federgabel mit 63 mm Federweg, einstellbarer Vorspannung und Lockout",
+   "wheelSize": "27,5 Zoll / 650B · Schwalbe Super Motion X 27,5\" x 2,4\" / 62-584 / 650B x 41B mit Straßenprofil und Reflexstreifen"
+  }
+ },
+ {
   "id": "cube-stereo-hybrid-one44-hpc-tm-800",
   "slug": "cube-stereo-hybrid-one44-hpc-tm-800",
   "brand": "Cube",
@@ -5596,6 +7578,75 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Shimano Hydraulic Disc brake Deore XT BR-M8120, 4 pistons, resin pad, 203mm / Shimano Hydraulic Disc brake…",
    "fork": "Suntour SF23 X1 Boost LO-R 80 mm",
    "wheelSize": "Schurmann YAK Disc 25-584, 32H, 8,5 mm Valve · Schwalbe AL Grounder Performance 60-584"
+  }
+ },
+ {
+  "id": "zuendapp-x850-trekkingrad-damen",
+  "slug": "zuendapp-x850-trekkingrad-damen",
+  "brand": "Zündapp",
+  "name_de": "Zündapp X850 Trekkingrad Damen",
+  "name_en": "Zündapp X850 Trekkingrad Damen",
+  "description_de": "Das Zündapp X850 Trekkingrad Damen ist ein E-Trekkingbike von Zündapp. Der Antrieb (Ananda M60CD Mittelmotor) wird von einem 550-Wh-Akku gespeist, bedient wird er über Ananda D19 LED CAN mit Bluetooth und App. Federung: Zoom AMS HLO Federgabel mit 63 mm Federweg, einstellbarer Vorspannung und Lockout. Schaltung: 7. Bremsen: Shimano MT200 mit Bremsscheiben SM-RT10 180/160 mmhydraulische Scheibenbremsen. Rahmen: Aluminium Tiefeinsteiger Rahmen. Gewicht laut Hersteller: 26,3 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp X850 Trekkingrad Damen is an electric trekking bike from Zündapp. The drive (Ananda M60CD Mittelmotor) is powered by a 550 Wh battery, controlled via Ananda D19 LED CAN mit Bluetooth und App. Suspension: Zoom AMS HLO Federgabel mit 63 mm Federweg, einstellbarer Vorspannung und Lockout. Drivetrain: 7. Brakes: Shimano MT200 mit Bremsscheiben SM-RT10 180/160 mmhydraulische Scheibenbremsen. Frame: Aluminium Tiefeinsteiger Rahmen. Weight according to the manufacturer: 26.3 kg. Permissible total weight: 120 kg.",
+  "category": "e-trekkingbikes",
+  "price": 2199,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M60CD Mittelmotor, 250 W",
+  "batteryWh": 550,
+  "weightKg": 26.3,
+  "gender": "damen",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/zuendapp-x850-trekkingrad-damen/main.webp",
+   "/images/products/zuendapp-x850-trekkingrad-damen/gallery-1.webp",
+   "/images/products/zuendapp-x850-trekkingrad-damen/gallery-2.webp",
+   "/images/products/zuendapp-x850-trekkingrad-damen/gallery-3.webp",
+   "/images/products/zuendapp-x850-trekkingrad-damen/gallery-4.webp"
+  ],
+  "sizes": [
+   "48 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Grau",
+    "nameEn": "Grau",
+    "hex": "#8b95a1"
+   },
+   {
+    "nameDe": "PastellgrüN",
+    "nameEn": "PastellgrüN",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Seeblau",
+    "nameEn": "Seeblau",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "Ananda M60CD Mittelmotor, 550-Wh-Akku",
+   "Ananda D19 LED CAN mit Bluetooth und App",
+   "Federung: Zoom AMS HLO Federgabel mit 63 mm Federweg, einstellbarer Vorspannung und Lockout",
+   "Schaltung: 7",
+   "Bremsen: Shimano MT200 mit Bremsscheiben SM-RT10 180/160 mmhydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Ananda M60CD Mittelmotor, 550 Wh battery",
+   "Ananda D19 LED CAN mit Bluetooth und App",
+   "Suspension: Zoom AMS HLO Federgabel mit 63 mm Federweg, einstellbarer Vorspannung und Lockout",
+   "Drivetrain: 7",
+   "Brakes: Shimano MT200 mit Bremsscheiben SM-RT10 180/160 mmhydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium Tiefeinsteiger Rahmen",
+   "gears": "7",
+   "brakes": "Shimano MT200 mit Bremsscheiben SM-RT10 180/160 mmhydraulische Scheibenbremsen",
+   "fork": "Zoom AMS HLO Federgabel mit 63 mm Federweg, einstellbarer Vorspannung und Lockout",
+   "wheelSize": "27,5 Zoll / 650B · Schwalbe Super Motion X 27,5\" x 2,4\" / 62-584 / 650B x 41B mit Straßenprofil und Reflexstreifen"
   }
  },
  {
@@ -5786,6 +7837,76 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-z802-damen-trekkingrad-28-zoll",
+  "slug": "zuendapp-z802-damen-trekkingrad-28-zoll",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z802 Damen Trekkingrad 28 Zoll",
+  "name_en": "Zündapp Z802 Damen Trekkingrad 28 Zoll",
+  "description_de": "Das Zündapp Z802 Damen Trekkingrad 28 Zoll ist ein E-Trekkingbike von Zündapp. Der Antrieb (Ananda Radnabenmotor hinten) mit bis zu 40 Nm Drehmoment wird von einem 374-Wh-Akku gespeist, bedient wird er über Ananda D15 LED. Federung: Zoom 730 Federgabel mit 63 mm Federweg. Schaltung: 21. Bremsen: Tektro V-Brake. Rahmen: Zündapp Aluminium Trapezrahmen. Gewicht laut Hersteller: 24,8 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Z802 Damen Trekkingrad 28 Zoll is an electric trekking bike from Zündapp. The drive (Ananda Radnabenmotor hinten) with up to 40 Nm of torque is powered by a 374 Wh battery, controlled via Ananda D15 LED. Suspension: Zoom 730 Federgabel mit 63 mm Federweg. Drivetrain: 21. Brakes: Tektro V-Brake. Frame: Zündapp Aluminium Trapezrahmen. Weight according to the manufacturer: 24.8 kg. Permissible total weight: 120 kg.",
+  "category": "e-trekkingbikes",
+  "price": 999,
+  "motor": "Ananda",
+  "motorDetails": "Ananda Radnabenmotor hinten, 250 W, 40 Nm",
+  "torqueNm": 40,
+  "batteryWh": 374,
+  "weightKg": 24.8,
+  "gender": "damen",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/zuendapp-z802-damen-trekkingrad-28-zoll/main.webp",
+   "/images/products/zuendapp-z802-damen-trekkingrad-28-zoll/gallery-1.webp",
+   "/images/products/zuendapp-z802-damen-trekkingrad-28-zoll/gallery-2.webp",
+   "/images/products/zuendapp-z802-damen-trekkingrad-28-zoll/gallery-3.webp",
+   "/images/products/zuendapp-z802-damen-trekkingrad-28-zoll/gallery-4.webp"
+  ],
+  "sizes": [
+   "48 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Grau / GrüN",
+    "nameEn": "Grau / GrüN",
+    "hex": "#8b95a1"
+   },
+   {
+    "nameDe": "Weiß / Lila",
+    "nameEn": "Weiß / Lila",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Schwarz / Grau",
+    "nameEn": "Schwarz / Grau",
+    "hex": "#1f2937"
+   }
+  ],
+  "features_de": [
+   "Ananda Radnabenmotor hinten, bis 40 Nm, 374-Wh-Akku",
+   "Ananda D15 LED",
+   "Federung: Zoom 730 Federgabel mit 63 mm Federweg",
+   "Schaltung: 21",
+   "Bremsen: Tektro V-Brake"
+  ],
+  "features_en": [
+   "Ananda Radnabenmotor hinten, up to 40 Nm, 374 Wh battery",
+   "Ananda D15 LED",
+   "Suspension: Zoom 730 Federgabel mit 63 mm Federweg",
+   "Drivetrain: 21",
+   "Brakes: Tektro V-Brake"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Trapezrahmen",
+   "gears": "21",
+   "brakes": "Tektro V-Brake",
+   "fork": "Zoom 730 Federgabel mit 63 mm Federweg",
+   "wheelSize": "700c/28 Zoll · Kenda Khan II 700c x 40c / 28\" x 1,75\" / 42-622 mit Straßenprofil und Reflexstreifen"
+  }
+ },
+ {
   "id": "cube-stereo-hybrid-one44-hpc-slx-evo-800",
   "slug": "cube-stereo-hybrid-one44-hpc-slx-evo-800",
   "brand": "Cube",
@@ -5966,6 +8087,69 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Shimano Hydraulic Disc brake Deore BR-MT420, 4 pistons, resin pad, 203 mm / Shimano Hydraulic Disc brake",
    "fork": "Suntour XCR34 2CR DS Boost 100 mm",
    "wheelSize": "Ryde Andra 40, 32H · Schwalbe AL Grounder Performance 60-584"
+  }
+ },
+ {
+  "id": "zuendapp-z503-citybike-damen-26",
+  "slug": "zuendapp-z503-citybike-damen-26",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z503 Citybike Damen 26\"",
+  "name_en": "Zündapp Z503 Citybike Damen 26\"",
+  "description_de": "Das Zündapp Z503 Citybike Damen 26\" ist ein E-Citybike von Zündapp. Der Antrieb (Ananda M129F Vorderradmotor) wird von einem 536-Wh-Akku gespeist, bedient wird er über Ananda D19 LCD CAN mit Bluetooth. Federung: Stahl Starrgabel. Schaltung: 7. Bremsen: Promax TX117 V-Brakes. Rahmen: Aluminium Tiefeinsteigerrahmen. Gewicht laut Hersteller: 14 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Z503 Citybike Damen 26\" is an electric city bike from Zündapp. The drive (Ananda M129F Vorderradmotor) is powered by a 536 Wh battery, controlled via Ananda D19 LCD CAN mit Bluetooth. Suspension: Stahl Starrgabel. Drivetrain: 7. Brakes: Promax TX117 V-Brakes. Frame: Aluminium Tiefeinsteigerrahmen. Weight according to the manufacturer: 14 kg. Permissible total weight: 120 kg.",
+  "category": "e-citybikes",
+  "price": 1099,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M129F Vorderradmotor, 250 W",
+  "batteryWh": 536,
+  "weightKg": 14,
+  "gender": "damen",
+  "useCases": [
+   "pendler",
+   "leicht"
+  ],
+  "images": [
+   "/images/products/zuendapp-z503-citybike-damen-26/main.webp",
+   "/images/products/zuendapp-z503-citybike-damen-26/gallery-1.webp",
+   "/images/products/zuendapp-z503-citybike-damen-26/gallery-2.webp",
+   "/images/products/zuendapp-z503-citybike-damen-26/gallery-3.webp"
+  ],
+  "sizes": [
+   "46 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Grau-GrüN",
+    "nameEn": "Grau-GrüN",
+    "hex": "#8b95a1"
+   },
+   {
+    "nameDe": "Antique White",
+    "nameEn": "Antique White",
+    "hex": "#e5e7eb"
+   }
+  ],
+  "features_de": [
+   "Ananda M129F Vorderradmotor, 536-Wh-Akku",
+   "Ananda D19 LCD CAN mit Bluetooth",
+   "Federung: Stahl Starrgabel",
+   "Schaltung: 7",
+   "Bremsen: Promax TX117 V-Brakes"
+  ],
+  "features_en": [
+   "Ananda M129F Vorderradmotor, 536 Wh battery",
+   "Ananda D19 LCD CAN mit Bluetooth",
+   "Suspension: Stahl Starrgabel",
+   "Drivetrain: 7",
+   "Brakes: Promax TX117 V-Brakes"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium Tiefeinsteigerrahmen",
+   "gears": "7",
+   "brakes": "Promax TX117 V-Brakes",
+   "fork": "Stahl Starrgabel",
+   "wheelSize": "26 Zoll · 26\" x 1,75\" / 47-559 Straßenreifen mit Reflexstreifen"
   }
  },
  {
@@ -6150,6 +8334,75 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Magura Hydraulic Disc brake MT-C ABS, 203 mm / Magura Hydraulic Disc brake",
    "fork": "Suntour SF24 Mobie 34 Boost ABS EQ 2CR DS 100 mm",
    "wheelSize": "Ryde Andra 40, 32H · Schwalbe AL Grounder Performance 60-584"
+  }
+ },
+ {
+  "id": "zuendapp-zxt20-klapprad-20-zoll",
+  "slug": "zuendapp-zxt20-klapprad-20-zoll",
+  "brand": "Zündapp",
+  "name_de": "Zündapp ZXT20 Klapprad 20 Zoll",
+  "name_en": "Zündapp ZXT20 Klapprad 20 Zoll",
+  "description_de": "Das Zündapp ZXT20 Klapprad 20 Zoll ist ein Falt-E-Bike von Zündapp. Der Antrieb (Bafang DW07 Radnabenmotor vorne) mit bis zu 38 Nm Drehmoment wird von einem 230-Wh-Akku gespeist, bedient wird er über King Meter KM529 LCD. Federung: Zündapp Stahl Starrgabel. Schaltung: 3. Bremsen: mechanische Scheibenbremse 160 mm vorne, Rücktrittbremse hinten. Rahmen: Zündapp Aluminium Tiefeinsteiger faltbar. Gewicht laut Hersteller: 21 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp ZXT20 Klapprad 20 Zoll is a folding electric bike from Zündapp. The drive (Bafang DW07 Radnabenmotor vorne) with up to 38 Nm of torque is powered by a 230 Wh battery, controlled via King Meter KM529 LCD. Suspension: Zündapp Stahl Starrgabel. Drivetrain: 3. Brakes: mechanische Scheibenbremse 160 mm vorne, Rücktrittbremse hinten. Frame: Zündapp Aluminium Tiefeinsteiger faltbar. Weight according to the manufacturer: 21 kg. Permissible total weight: 120 kg.",
+  "category": "e-faltraeder",
+  "price": 1399,
+  "motor": "Bafang",
+  "motorDetails": "Bafang DW07 Radnabenmotor vorne, 250 W, 38 Nm",
+  "torqueNm": 38,
+  "batteryWh": 230,
+  "weightKg": 21,
+  "gender": "tiefeinsteiger",
+  "useCases": [
+   "pendler"
+  ],
+  "images": [
+   "/images/products/zuendapp-zxt20-klapprad-20-zoll/main.webp",
+   "/images/products/zuendapp-zxt20-klapprad-20-zoll/gallery-1.webp",
+   "/images/products/zuendapp-zxt20-klapprad-20-zoll/gallery-2.webp",
+   "/images/products/zuendapp-zxt20-klapprad-20-zoll/gallery-3.webp",
+   "/images/products/zuendapp-zxt20-klapprad-20-zoll/gallery-4.webp"
+  ],
+  "sizes": [
+   "38 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Blau",
+    "nameEn": "Blau",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Weiß",
+    "nameEn": "Weiß",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Schwarz",
+    "nameEn": "Schwarz",
+    "hex": "#1f2937"
+   }
+  ],
+  "features_de": [
+   "Bafang DW07 Radnabenmotor vorne, bis 38 Nm, 230-Wh-Akku",
+   "King Meter KM529 LCD",
+   "Federung: Zündapp Stahl Starrgabel",
+   "Schaltung: 3",
+   "Bremsen: mechanische Scheibenbremse 160 mm vorne, Rücktrittbremse hinten"
+  ],
+  "features_en": [
+   "Bafang DW07 Radnabenmotor vorne, up to 38 Nm, 230 Wh battery",
+   "King Meter KM529 LCD",
+   "Suspension: Zündapp Stahl Starrgabel",
+   "Drivetrain: 3",
+   "Brakes: mechanische Scheibenbremse 160 mm vorne, Rücktrittbremse hinten"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Tiefeinsteiger faltbar",
+   "gears": "3",
+   "brakes": "mechanische Scheibenbremse 160 mm vorne, Rücktrittbremse hinten",
+   "fork": "Zündapp Stahl Starrgabel",
+   "wheelSize": "20 Zoll · CST Tires 20\" x 2,125\" / 57-406 mit Straßenprofil und Reflexstreifen"
   }
  },
  {
@@ -6344,6 +8597,78 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-z808-mountainbike-27-5",
+  "slug": "zuendapp-z808-mountainbike-27-5",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z808 Mountainbike 27,5\"",
+  "name_en": "Zündapp Z808 Mountainbike 27,5\"",
+  "description_de": "Das Zündapp Z808 Mountainbike 27,5\" ist ein E-Hardtail-Mountainbike von Zündapp. Der Antrieb (Ananda M145CD Radnabenmotor Hinterrad) mit bis zu 50 Nm Drehmoment wird von einem 540-Wh-Akku gespeist, bedient wird er über Ananda DF130 LCD 1,9\" TFT. Federung: Zoom AMS HLO Federgabel, Federweg: 100 mm, mit einstellbarer Vorspannung und Lockout. Schaltung: 10. Bremsen: Shimano MT200 mit Bremsscheiben SM-RT26S 160/180 mm hydraulische Scheibenbremsen. Rahmen: Aluminium Slopingrahmen. Gewicht laut Hersteller: 24,6 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Z808 Mountainbike 27,5\" is an electric hardtail mountain bike from Zündapp. The drive (Ananda M145CD Radnabenmotor Hinterrad) with up to 50 Nm of torque is powered by a 540 Wh battery, controlled via Ananda DF130 LCD 1,9\" TFT. Suspension: Zoom AMS HLO Federgabel, Federweg: 100 mm, mit einstellbarer Vorspannung und Lockout. Drivetrain: 10. Brakes: Shimano MT200 mit Bremsscheiben SM-RT26S 160/180 mm hydraulische Scheibenbremsen. Frame: Aluminium Slopingrahmen. Weight according to the manufacturer: 24.6 kg. Permissible total weight: 120 kg.",
+  "category": "e-mountainbikes-hardtail",
+  "price": 1499,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M145CD Radnabenmotor Hinterrad, 250 W, 50 Nm",
+  "torqueNm": 50,
+  "batteryWh": 540,
+  "weightKg": 24.6,
+  "gender": "unisex",
+  "useCases": [],
+  "images": [
+   "/images/products/zuendapp-z808-mountainbike-27-5/main.webp",
+   "/images/products/zuendapp-z808-mountainbike-27-5/gallery-1.webp",
+   "/images/products/zuendapp-z808-mountainbike-27-5/gallery-2.webp",
+   "/images/products/zuendapp-z808-mountainbike-27-5/gallery-3.webp",
+   "/images/products/zuendapp-z808-mountainbike-27-5/gallery-4.webp"
+  ],
+  "sizes": [
+   "50 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Grau-Rot",
+    "nameEn": "Grau-Rot",
+    "hex": "#8b95a1"
+   },
+   {
+    "nameDe": "Grau-GrüN",
+    "nameEn": "Grau-GrüN",
+    "hex": "#8b95a1"
+   },
+   {
+    "nameDe": "Schwarz-Grau",
+    "nameEn": "Schwarz-Grau",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Dunkelblau",
+    "nameEn": "Dunkelblau",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "Ananda M145CD Radnabenmotor Hinterrad, bis 50 Nm, 540-Wh-Akku",
+   "Ananda DF130 LCD 1,9\" TFT",
+   "Federung: Zoom AMS HLO Federgabel, Federweg: 100 mm, mit einstellbarer Vorspannung und Lockout",
+   "Schaltung: 10",
+   "Bremsen: Shimano MT200 mit Bremsscheiben SM-RT26S 160/180 mm hydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Ananda M145CD Radnabenmotor Hinterrad, up to 50 Nm, 540 Wh battery",
+   "Ananda DF130 LCD 1,9\" TFT",
+   "Suspension: Zoom AMS HLO Federgabel, Federweg: 100 mm, mit einstellbarer Vorspannung und Lockout",
+   "Drivetrain: 10",
+   "Brakes: Shimano MT200 mit Bremsscheiben SM-RT26S 160/180 mm hydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium Slopingrahmen",
+   "gears": "10",
+   "brakes": "Shimano MT200 mit Bremsscheiben SM-RT26S 160/180 mm hydraulische Scheibenbremsen",
+   "fork": "Zoom AMS HLO Federgabel, Federweg: 100 mm, mit einstellbarer Vorspannung und Lockout",
+   "wheelSize": "650B / 27,5 Zoll · Kenda Amrak 27,5 x 2,40 Zoll / 61-584 mit Stollenprofil"
+  }
+ },
+ {
   "id": "cube-stereo-hybrid-one77-hpc-slx-800",
   "slug": "cube-stereo-hybrid-one77-hpc-slx-800",
   "brand": "Cube",
@@ -6535,6 +8860,78 @@ export const GENERATED_PRODUCTS = [
   }
  },
  {
+  "id": "zuendapp-z808-mountainbike-29",
+  "slug": "zuendapp-z808-mountainbike-29",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z808 Mountainbike 29\"",
+  "name_en": "Zündapp Z808 Mountainbike 29\"",
+  "description_de": "Das Zündapp Z808 Mountainbike 29\" ist ein E-Hardtail-Mountainbike von Zündapp. Der Antrieb (Ananda M145CD Radnabenmotor Hinterrad) mit bis zu 50 Nm Drehmoment wird von einem 540-Wh-Akku gespeist, bedient wird er über Ananda DF130 LCD 1,9\" TFT. Federung: Zoom AMS HLO Federgabel, Federweg: 80 mm, mit einstellbarer Vorspannung und Lockout. Schaltung: 10. Bremsen: Shimano MT200 mit Bremsscheiben SM-RT26S 160/180 mm hydraulische Scheibenbremsen. Rahmen: Aluminium Slopingrahmen. Gewicht laut Hersteller: 25 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Z808 Mountainbike 29\" is an electric hardtail mountain bike from Zündapp. The drive (Ananda M145CD Radnabenmotor Hinterrad) with up to 50 Nm of torque is powered by a 540 Wh battery, controlled via Ananda DF130 LCD 1,9\" TFT. Suspension: Zoom AMS HLO Federgabel, Federweg: 80 mm, mit einstellbarer Vorspannung und Lockout. Drivetrain: 10. Brakes: Shimano MT200 mit Bremsscheiben SM-RT26S 160/180 mm hydraulische Scheibenbremsen. Frame: Aluminium Slopingrahmen. Weight according to the manufacturer: 25 kg. Permissible total weight: 120 kg.",
+  "category": "e-mountainbikes-hardtail",
+  "price": 1499,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M145CD Radnabenmotor Hinterrad, 250 W, 50 Nm",
+  "torqueNm": 50,
+  "batteryWh": 540,
+  "weightKg": 25,
+  "gender": "unisex",
+  "useCases": [],
+  "images": [
+   "/images/products/zuendapp-z808-mountainbike-29/main.webp",
+   "/images/products/zuendapp-z808-mountainbike-29/gallery-1.webp",
+   "/images/products/zuendapp-z808-mountainbike-29/gallery-2.webp",
+   "/images/products/zuendapp-z808-mountainbike-29/gallery-3.webp",
+   "/images/products/zuendapp-z808-mountainbike-29/gallery-4.webp"
+  ],
+  "sizes": [
+   "50 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Schwarz-GrüN",
+    "nameEn": "Schwarz-GrüN",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Schwarz-Gelb",
+    "nameEn": "Schwarz-Gelb",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Silber-Blau",
+    "nameEn": "Silber-Blau",
+    "hex": "#6b7280"
+   },
+   {
+    "nameDe": "Schwarz-Orange",
+    "nameEn": "Schwarz-Orange",
+    "hex": "#1f2937"
+   }
+  ],
+  "features_de": [
+   "Ananda M145CD Radnabenmotor Hinterrad, bis 50 Nm, 540-Wh-Akku",
+   "Ananda DF130 LCD 1,9\" TFT",
+   "Federung: Zoom AMS HLO Federgabel, Federweg: 80 mm, mit einstellbarer Vorspannung und Lockout",
+   "Schaltung: 10",
+   "Bremsen: Shimano MT200 mit Bremsscheiben SM-RT26S 160/180 mm hydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Ananda M145CD Radnabenmotor Hinterrad, up to 50 Nm, 540 Wh battery",
+   "Ananda DF130 LCD 1,9\" TFT",
+   "Suspension: Zoom AMS HLO Federgabel, Federweg: 80 mm, mit einstellbarer Vorspannung und Lockout",
+   "Drivetrain: 10",
+   "Brakes: Shimano MT200 mit Bremsscheiben SM-RT26S 160/180 mm hydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Aluminium Slopingrahmen",
+   "gears": "10",
+   "brakes": "Shimano MT200 mit Bremsscheiben SM-RT26S 160/180 mm hydraulische Scheibenbremsen",
+   "fork": "Zoom AMS HLO Federgabel, Federweg: 80 mm, mit einstellbarer Vorspannung und Lockout",
+   "wheelSize": "29 Zoll · Kenda Amrak 29 x 2,40 Zoll / 61-622 mit Stollenprofil"
+  }
+ },
+ {
   "id": "cube-stereo-hybrid-one44-slx-800-fe",
   "slug": "cube-stereo-hybrid-one44-slx-800-fe",
   "brand": "Cube",
@@ -6656,6 +9053,81 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Magura MT C Allroad ABS, 4 pistons, 203 mm",
    "fork": "SR Suntour SF24-MOBIE34-Boost-ABS-EQ-2CR-DS, Offset: 44 mm, Travel: 100mm",
    "wheelSize": "Schürmann YAK Disc 25-584 32H w/ single eyelets · Schwalbe Johnny Watts w/ reflective line, 60-584"
+  }
+ },
+ {
+  "id": "zuendapp-z810-trekkingrad-herren",
+  "slug": "zuendapp-z810-trekkingrad-herren",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z810 Trekkingrad Herren",
+  "name_en": "Zündapp Z810 Trekkingrad Herren",
+  "description_de": "Das Zündapp Z810 Trekkingrad Herren ist ein E-Trekkingbike von Zündapp. Der Antrieb (Ananda M145CD Radnabenmotor Hinterrad) mit bis zu 50 Nm Drehmoment wird von einem 550-Wh-Akku gespeist, bedient wird er über Ananda D16 LCD 2,4\" TFT mit Bluetooth und Ananda Ride-App. Federung: Zoom AMS MLO Federgabel mit 63 mm Federweg, Lockout und einstellbarer Vorspannung. Schaltung: 8. Bremsen: Shimano MT200 mit Bremsscheiben SM-RT26 160/180 mm hydraulische Scheibenbremsen. Rahmen: Zündapp Aluminium Diamantrahmen. Gewicht laut Hersteller: 28,2 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Z810 Trekkingrad Herren is an electric trekking bike from Zündapp. The drive (Ananda M145CD Radnabenmotor Hinterrad) with up to 50 Nm of torque is powered by a 550 Wh battery, controlled via Ananda D16 LCD 2,4\" TFT mit Bluetooth und Ananda Ride-App. Suspension: Zoom AMS MLO Federgabel mit 63 mm Federweg, Lockout und einstellbarer Vorspannung. Drivetrain: 8. Brakes: Shimano MT200 mit Bremsscheiben SM-RT26 160/180 mm hydraulische Scheibenbremsen. Frame: Zündapp Aluminium Diamantrahmen. Weight according to the manufacturer: 28.2 kg. Permissible total weight: 120 kg.",
+  "category": "e-trekkingbikes",
+  "price": 1449,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M145CD Radnabenmotor Hinterrad, 250 W, 50 Nm",
+  "torqueNm": 50,
+  "batteryWh": 550,
+  "weightKg": 28.2,
+  "gender": "herren",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/zuendapp-z810-trekkingrad-herren/main.webp",
+   "/images/products/zuendapp-z810-trekkingrad-herren/gallery-1.webp",
+   "/images/products/zuendapp-z810-trekkingrad-herren/gallery-2.webp",
+   "/images/products/zuendapp-z810-trekkingrad-herren/gallery-3.webp",
+   "/images/products/zuendapp-z810-trekkingrad-herren/gallery-4.webp"
+  ],
+  "sizes": [
+   "52 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Schwarz",
+    "nameEn": "Schwarz",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Grau",
+    "nameEn": "Grau",
+    "hex": "#8b95a1"
+   },
+   {
+    "nameDe": "Schwarz-Grau",
+    "nameEn": "Schwarz-Grau",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Brillantblau",
+    "nameEn": "Brillantblau",
+    "hex": "#6b7280"
+   }
+  ],
+  "features_de": [
+   "Ananda M145CD Radnabenmotor Hinterrad, bis 50 Nm, 550-Wh-Akku",
+   "Ananda D16 LCD 2,4\" TFT mit Bluetooth und Ananda Ride-App",
+   "Federung: Zoom AMS MLO Federgabel mit 63 mm Federweg, Lockout und einstellbarer Vorspannung",
+   "Schaltung: 8",
+   "Bremsen: Shimano MT200 mit Bremsscheiben SM-RT26 160/180 mm hydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Ananda M145CD Radnabenmotor Hinterrad, up to 50 Nm, 550 Wh battery",
+   "Ananda D16 LCD 2,4\" TFT mit Bluetooth und Ananda Ride-App",
+   "Suspension: Zoom AMS MLO Federgabel mit 63 mm Federweg, Lockout und einstellbarer Vorspannung",
+   "Drivetrain: 8",
+   "Brakes: Shimano MT200 mit Bremsscheiben SM-RT26 160/180 mm hydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Diamantrahmen",
+   "gears": "8",
+   "brakes": "Shimano MT200 mit Bremsscheiben SM-RT26 160/180 mm hydraulische Scheibenbremsen",
+   "fork": "Zoom AMS MLO Federgabel mit 63 mm Federweg, Lockout und einstellbarer Vorspannung",
+   "wheelSize": "700c / 28\" · Kenda K1172 50-622 / 700c x 50c mit Reflexstreifen"
   }
  },
  {
@@ -6789,6 +9261,81 @@ export const GENERATED_PRODUCTS = [
    "brakes": "Shimano Deore BR-MT410, 2 pistons, resin pad, 180 mm",
    "fork": "SR Suntour MOBIE34-D-Boost, 2CR, Coil, Offset: 44 mm, Travel: 100mm",
    "wheelSize": "Schürmann YAK Disc 25-584 32H w/ single eyelets · Schwalbe Johnny Watts w/ reflective line, 60-584"
+  }
+ },
+ {
+  "id": "zuendapp-z810-trekkingrad-damen",
+  "slug": "zuendapp-z810-trekkingrad-damen",
+  "brand": "Zündapp",
+  "name_de": "Zündapp Z810 Trekkingrad Damen",
+  "name_en": "Zündapp Z810 Trekkingrad Damen",
+  "description_de": "Das Zündapp Z810 Trekkingrad Damen ist ein E-Trekkingbike von Zündapp. Der Antrieb (Ananda M145CD Radnabenmotor Hinterrad) mit bis zu 50 Nm Drehmoment wird von einem 550-Wh-Akku gespeist, bedient wird er über Ananda D16 LCD 2,4\" TFT mit Bluetooth und Ananda Ride-App. Federung: Zoom AMS MLO Federgabel mit 63 mm Federweg, Lockout und einstellbarer Vorspannung. Schaltung: 8. Bremsen: Shimano MT200 mit Bremsscheiben SM-RT26 160/180 mm hydraulische Scheibenbremsen. Rahmen: Zündapp Aluminium Trapezrahmen. Gewicht laut Hersteller: 26,5 kg. Zulässiges Gesamtgewicht: 120 kg.",
+  "description_en": "The Zündapp Z810 Trekkingrad Damen is an electric trekking bike from Zündapp. The drive (Ananda M145CD Radnabenmotor Hinterrad) with up to 50 Nm of torque is powered by a 550 Wh battery, controlled via Ananda D16 LCD 2,4\" TFT mit Bluetooth und Ananda Ride-App. Suspension: Zoom AMS MLO Federgabel mit 63 mm Federweg, Lockout und einstellbarer Vorspannung. Drivetrain: 8. Brakes: Shimano MT200 mit Bremsscheiben SM-RT26 160/180 mm hydraulische Scheibenbremsen. Frame: Zündapp Aluminium Trapezrahmen. Weight according to the manufacturer: 26.5 kg. Permissible total weight: 120 kg.",
+  "category": "e-trekkingbikes",
+  "price": 1449,
+  "motor": "Ananda",
+  "motorDetails": "Ananda M145CD Radnabenmotor Hinterrad, 250 W, 50 Nm",
+  "torqueNm": 50,
+  "batteryWh": 550,
+  "weightKg": 26.5,
+  "gender": "damen",
+  "useCases": [
+   "pendler",
+   "fuer-lange-strecken"
+  ],
+  "images": [
+   "/images/products/zuendapp-z810-trekkingrad-damen/main.webp",
+   "/images/products/zuendapp-z810-trekkingrad-damen/gallery-1.webp",
+   "/images/products/zuendapp-z810-trekkingrad-damen/gallery-2.webp",
+   "/images/products/zuendapp-z810-trekkingrad-damen/gallery-3.webp",
+   "/images/products/zuendapp-z810-trekkingrad-damen/gallery-4.webp"
+  ],
+  "sizes": [
+   "50 cm"
+  ],
+  "colors": [
+   {
+    "nameDe": "Schwarz",
+    "nameEn": "Schwarz",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Grau",
+    "nameEn": "Grau",
+    "hex": "#8b95a1"
+   },
+   {
+    "nameDe": "Schwarz-Grau",
+    "nameEn": "Schwarz-Grau",
+    "hex": "#1f2937"
+   },
+   {
+    "nameDe": "Schwarz-Rot",
+    "nameEn": "Schwarz-Rot",
+    "hex": "#1f2937"
+   }
+  ],
+  "features_de": [
+   "Ananda M145CD Radnabenmotor Hinterrad, bis 50 Nm, 550-Wh-Akku",
+   "Ananda D16 LCD 2,4\" TFT mit Bluetooth und Ananda Ride-App",
+   "Federung: Zoom AMS MLO Federgabel mit 63 mm Federweg, Lockout und einstellbarer Vorspannung",
+   "Schaltung: 8",
+   "Bremsen: Shimano MT200 mit Bremsscheiben SM-RT26 160/180 mm hydraulische Scheibenbremsen"
+  ],
+  "features_en": [
+   "Ananda M145CD Radnabenmotor Hinterrad, up to 50 Nm, 550 Wh battery",
+   "Ananda D16 LCD 2,4\" TFT mit Bluetooth und Ananda Ride-App",
+   "Suspension: Zoom AMS MLO Federgabel mit 63 mm Federweg, Lockout und einstellbarer Vorspannung",
+   "Drivetrain: 8",
+   "Brakes: Shimano MT200 mit Bremsscheiben SM-RT26 160/180 mm hydraulische Scheibenbremsen"
+  ],
+  "inStock": true,
+  "specs": {
+   "frameMaterial": "Zündapp Aluminium Trapezrahmen",
+   "gears": "8",
+   "brakes": "Shimano MT200 mit Bremsscheiben SM-RT26 160/180 mm hydraulische Scheibenbremsen",
+   "fork": "Zoom AMS MLO Federgabel mit 63 mm Federweg, Lockout und einstellbarer Vorspannung",
+   "wheelSize": "700c / 28\" · Kenda K1172 50-622 / 700c x 50c mit Reflexstreifen"
   }
  },
  {

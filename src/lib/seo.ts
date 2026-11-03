@@ -3,6 +3,7 @@ import { TAXONOMY_ROUTES, findRouteByPath, normalizePath, getLanguageFromPath } 
 import { PRODUCTS } from '../data/products';
 import { GUIDES } from '../data/guides';
 import { LEGAL_DOCUMENTS } from '../data/legal';
+import { brandSlug } from './brand';
 
 export const BASE_URL = 'https://e-bike-zuverkaufen.de';
 const SITE = 'EBike Zu Verkaufen';
@@ -20,7 +21,7 @@ export interface PageInfo {
 }
 
 export function brandSlugs(): string[] {
-  return Array.from(new Set(PRODUCTS.map((p) => p.brand.toLowerCase())));
+  return Array.from(new Set(PRODUCTS.map((p) => brandSlug(p.brand))));
 }
 
 /** Every URL the site serves, both languages. */
@@ -109,14 +110,14 @@ export function resolvePage(rawPath: string): PageInfo {
   }
 
   if (res.isBrandDetail && res.brandSlug) {
-    const prod = PRODUCTS.find((x) => x.brand.toLowerCase() === res.brandSlug!.toLowerCase());
+    const prod = PRODUCTS.find((x) => brandSlug(x.brand) === res.brandSlug!.toLowerCase());
     if (!prod) return base;
     const b = prod.brand;
     return {
       ...base,
       kind: 'brand',
-      pathDe: `/marken/${b.toLowerCase()}/`,
-      pathEn: `/en/brands/${b.toLowerCase()}/`,
+      pathDe: `/marken/${brandSlug(b)}/`,
+      pathEn: `/en/brands/${brandSlug(b)}/`,
       title: de
         ? `${b} E-Bikes kaufen | Alle Modelle & Angebote | ${SITE}`
         : `Buy ${b} Electric Bikes | All Models & Deals | ${SITE}`,
