@@ -590,7 +590,7 @@ export const Header: React.FC = () => {
                   
                   className="px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer flex justify-between"
                 >
-                  <span>{isEn ? 'Subsidies & Grants' : 'E-Bike Förderung (bis 2.500 €)'}</span>
+                  <span>{isEn ? 'Subsidies & Grants' : 'E-Lastenrad Förderung (BAFA)'}</span>
                   <span className="text-[10px] text-slate-400">BAFA/Länder</span>
                 </NavLink>
                 <NavLink href={isEn ? '/en/guides/e-bike-buying-guide/' : '/ratgeber/e-bike-kaufberatung/'} onNavigate={() => { afterNav() }}

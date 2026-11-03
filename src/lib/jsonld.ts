@@ -2,7 +2,7 @@ import { PRODUCTS } from '../data/products';
 import { GUIDES } from '../data/guides';
 import { findRouteByPath } from '../data/taxonomy';
 import { productsForRoute } from '../data/seo-apply';
-import { BASE_URL, PageInfo } from './seo';
+import { BASE_URL, CONTENT_UPDATED, PageInfo } from './seo';
 import { brandSlug } from './brand';
 import type { Product } from '../types';
 
@@ -134,7 +134,17 @@ export function jsonLdFor(info: PageInfo): object[] {
     const items = PRODUCTS.filter((p) => brandSlug(p.brand) === slug);
     out.push({ '@type': 'CollectionPage', name: info.title, url: abs(self), inLanguage: de ? 'de-DE' : 'en', ...(items.length ? { mainEntity: itemList(items, de) } : {}) });
   } else if (info.kind === 'guide') {
-    out.push({ '@type': 'Article', headline: info.title.split(' | ')[0], description: info.description, inLanguage: de ? 'de-DE' : 'en', mainEntityOfPage: abs(self), publisher: { '@id': `${BASE_URL}/#organization` } });
+    out.push({
+      '@type': 'Article',
+      headline: info.title.split(' | ')[0],
+      description: info.description,
+      inLanguage: de ? 'de-DE' : 'en',
+      mainEntityOfPage: abs(self),
+      image: abs(info.image || '/images/og/default.jpg'),
+      dateModified: CONTENT_UPDATED,
+      author: { '@id': `${BASE_URL}/#organization` },
+      publisher: { '@id': `${BASE_URL}/#organization` },
+    });
     out.push(ORGANIZATION);
   }
   return out.map((x) => ({ '@context': 'https://schema.org', ...x }));

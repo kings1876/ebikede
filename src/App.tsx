@@ -136,8 +136,8 @@ export function MainRouter() {
           </h1>
           <p className="text-slate-300 text-sm max-w-2xl">
             {isEn
-              ? 'Expert insights on buying criteria, JobRad corporate leasing, state subsidies up to €2,500, battery care, and German traffic laws.'
-              : 'Expertenwissen zu Kaufkriterien, JobRad Dienstrad-Leasing, Zuschüssen von bis zu 2.500 €, Akkupflege und deutschem Verkehrsrecht.'}
+              ? 'Guides on buying criteria, company bike leasing, cargo bike grants, battery care, insurance and German traffic law.'
+              : 'Ratgeber zu Kaufkriterien, Dienstrad-Leasing, Lastenrad-Förderung, Akkupflege, Versicherung und deutschem Verkehrsrecht.'}
           </p>
         </div>
 
@@ -150,7 +150,7 @@ export function MainRouter() {
             >
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
-                  {g.category}
+                  {isEn ? g.categoryEn : g.categoryDe}
                 </span>
                 <h2 className="text-base font-bold text-slate-900 mt-2 mb-2 line-clamp-2">
                   {isEn ? g.titleEn : g.titleDe}

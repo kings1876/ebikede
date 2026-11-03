@@ -396,7 +396,7 @@ export const Footer: React.FC = () => {
                 
                 className="hover:text-emerald-400 transition-colors inline-block"
               >
-                {isEn ? 'Subsidies in Germany' : 'E-Bike Förderung (2.500 €)'}
+                {isEn ? 'Subsidies in Germany' : 'E-Lastenrad Förderung (BAFA)'}
               </NavLink>
             </li>
             <li>
