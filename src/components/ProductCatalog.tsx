@@ -52,6 +52,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     if (activeBrand && !activeRoute) list = list.filter((r) => r.filterCriteria?.brand === activeBrand);
     else if (fc?.category && !fc.brand && !fc.gender && !fc.priceMax) list = list.filter((r) => r.filterCriteria?.category === fc.category);
     else if (fc?.category) list = list.filter((r) => r.filterCriteria?.category === fc.category);
+    else if (fc?.gender && !fc.brand) list = list.filter((r) => r.filterCriteria?.gender === fc.gender && r.filterCriteria?.brand);
     else return [];
     return list.slice(0, 12);
   }, [activeRoute, activeBrand]);

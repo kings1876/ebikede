@@ -55,3 +55,54 @@ Built automatically from the catalogue in `src/data/landing-combos.ts`. A page e
 - Volume data (Keyword Planner / Sistrix) to rank the clusters above.
 - Search Console: verify the domain, submit the sitemap, and watch which of the new pages get impressions.
 - The custom domain `e-bike-zuverkaufen.de` must be live with HTTPS for any of this to rank; the pages currently live on the Vercel address.
+
+---
+
+# Semrush research (Keyword Magic Tool, database Germany)
+
+Done through the Semrush Keyword Magic Tool (db=de, EUR) with filters **KD 0-24** and intent **Transactional + Commercial**. About 110 German seed terms (types, brands, models, price limits, audiences, motors, batteries, payment) were run; every result page was collected, 2,924 unique keywords in total.
+
+Then removed: used bikes (gebraucht, Kleinanzeigen), repair and tuning terms, spare parts and accessories, other retailers and stores, brands we do not sell, children's and non-electric bikes, city names. What remains:
+
+| | Keywords | Monthly searches (DE) |
+|---|---|---|
+| **Primary: transactional** | 364 | 91,320 |
+| **Secondary: commercial** | 906 | 269,510 |
+| **Total** | **1,270** | **360,830** |
+| of which 100+ searches/month | 880 | |
+| of which 200+ searches/month | 458 | |
+| of which 500+ searches/month | 103 | |
+
+Full list with volume, KD, CPC, intent, cluster and the page each keyword belongs to: [keywords-semrush-de.csv](keywords-semrush-de.csv) (semicolon separated, opens in Excel).
+Score used to sort: volume x (100 - KD) / 100, transactional x 1.5.
+
+## Where the demand sits (summed monthly searches of the matched keywords)
+
+| Page | Searches / month | Note |
+|---|---|---|
+| `/e-bikes/` (head terms, general) | 70,460 | e-bike kaufen, e-bike 24 zoll, carbon e-bike, ... |
+| `/e-bikes/damen/` | 59,300 | "e bike damen" alone is 27,100 at KD 20 |
+| `/e-bikes/herren/` | 51,690 | "e bike herren" 22,200 at KD 22 |
+| `/marken/cube/` | 20,550 | plus 5,110 on the new `/e-bikes/herren/cube/` |
+| `/e-bikes/s-pedelecs/` | 13,910 | s pedelec 45 km/h, e bike bis 45 km/h, s-pedelec kaufen |
+| `/marken/canyon/` | 13,110 | Endurace model names |
+| `/e-bikes/e-mountainbikes/fully/` | 12,520 | |
+| `/e-bikes/antrieb/bosch/` | 12,290 | |
+| `/e-bikes/e-trekkingbikes/damen/` | 8,360 | |
+| `/e-bikes/e-mountainbikes/fully/haibike/` and `.../fully/cube/` | 8,100 and 8,000 | |
+
+## Added because of this research
+- Brand x gender pages (7 per language): `/e-bikes/herren/cube/`, `/e-bikes/damen/cube/`, `/e-bikes/tiefeinsteiger/cube/`, `/e-bikes/tiefeinsteiger/winora/`, `/e-bikes/damen/zuendapp/`, `/e-bikes/tiefeinsteiger/zuendapp/`, `/e-bikes/herren/zuendapp/` (targets "cube e bike herren" 4,400, "cube e-bike damen" 1,900 and similar).
+- Gender pages link to their brand pages through the "Beliebte Auswahl" chips.
+
+## Gaps the data shows (need products, not code)
+- Canyon x Fully / Mountain / Trekking (e.g. "canyon e bike fully" 1,300): only 1 Canyon mountain bike and 0 trekking bikes, so no landing page yet.
+- Cube S-Pedelec and Cube road bike searches: Cube has 1 S-Pedelec and no road e-bike on cube.eu.
+- Winora cargo: 0 models.
+- Mountain bikes under 2,000 EUR: too few models.
+- Model series names get plenty of searches (Cube Kathmandu Hybrid, Canyon Endurace, Haibike Trekking): the brand pages carry them today; series pages would need at least 4 models per series (Kathmandu qualifies).
+
+## Caveats
+- KD and volume values come from Semrush as shown; they are monthly averages and can move.
+- "Transactional" is Semrush's intent label. Many labelled keywords are brand + model names with mixed intent; the "Priorität" column keeps the label as delivered.
+- The Semrush session used the address `1.semrush.com.in`, which is not Semrush's own domain (`semrush.com`). The keyword numbers looked normal, but treat that access as a third-party mirror.

@@ -149,6 +149,28 @@ export function buildComboRoutes(): TaxonomyRoute[] {
       }));
     }
   }
+
+  // brand x gender (all categories), e.g. "Cube E-Bike Herren"
+  for (const brand of brands) {
+    for (const g of GENDERS) {
+      const items = PRODUCTS.filter((p) => p.brand === brand && p.gender === g.key);
+      if (items.length < MIN_PRODUCTS) continue;
+      const slug = brandSlug(brand);
+      routes.push(build({
+        id: `combo-gender-${g.slugDe}-${slug}`,
+        pathDe: `/e-bikes/${g.slugDe}/${slug}/`,
+        pathEn: `/en/e-bikes/${g.slugEn}/${slug}/`,
+        items,
+        h1De: `${brand} E-Bike ${g.de}`,
+        h1En: `${brand} ${g.en} E-Bikes`,
+        nameDe: `${brand} E-Bikes ${g.de}`,
+        nameEn: `${brand} ${g.en} E-Bikes`,
+        subtitleDe: `${brand} E-Bikes ${g.de}: ${items.length} Modelle mit Rahmengrößen, Motor- und Akkudaten`,
+        subtitleEn: `${brand} ${g.en} e-bikes: ${items.length} models with frame sizes, motor and battery data`,
+        filter: { brand, gender: g.key },
+      }));
+    }
+  }
   return routes;
 }
 
