@@ -1,0 +1,1173 @@
+{
+ "/e-bikes/damen/": {
+  "lead": "E-Bike Damen",
+  "alt": [
+   "E-Bike Frauen",
+   "E-Bike 28 Zoll Damen",
+   "Sportliche E-Bikes für Damen"
+  ],
+  "long": [
+   "E-Bike Damen sportlich",
+   "Sportliches E-Bike Damen",
+   "E-Bike Damen retro"
+  ],
+  "leadVolume": 27100,
+  "leadKD": 24,
+  "leadTransactional": false,
+  "pageVolume": 40670,
+  "dataBacked": true
+ },
+ "/e-bikes/herren/": {
+  "lead": "E-Bike Herren",
+  "alt": [
+   "Elektro Herren Fahrrad",
+   "Elektro herrenfahrrad",
+   "Leichtes E-Bike Herren"
+  ],
+  "long": [
+   "E-Bikes Herren günstig",
+   "E-Bikes Herren Sale",
+   "E-Bike Herren 29 Zoll"
+  ],
+  "leadVolume": 22200,
+  "leadKD": 24,
+  "leadTransactional": false,
+  "pageVolume": 28800,
+  "dataBacked": true
+ },
+ "/e-bikes/herren/cube/": {
+  "lead": "Cube E-Bike Herren",
+  "alt": [
+   "E-Bike Cube Herren 750 Watt",
+   "Cube E-Bike Herren 29 Zoll"
+  ],
+  "long": [],
+  "leadVolume": 4400,
+  "leadKD": 22,
+  "leadTransactional": true,
+  "pageVolume": 4640,
+  "dataBacked": true
+ },
+ "/": {
+  "lead": "E-Bike kaufen",
+  "alt": [
+   "E-Bike Damen",
+   "E-Bike Herren",
+   "S-Pedelec kaufen",
+   "E-Klapprad"
+  ],
+  "long": [],
+  "leadVolume": 2900,
+  "leadKD": 20,
+  "leadTransactional": true,
+  "pageVolume": 2900,
+  "dataBacked": true
+ },
+ "/e-bikes/e-mountainbikes/fully/cube/": {
+  "lead": "Cube Fully E-Bike",
+  "alt": [
+   "Cube E-MTB Fully",
+   "Cube E-Bike Fully 750 wh",
+   "Cube Fully 29 Zoll E-Bike"
+  ],
+  "long": [],
+  "leadVolume": 2900,
+  "leadKD": 22,
+  "leadTransactional": true,
+  "pageVolume": 4190,
+  "dataBacked": true
+ },
+ "/e-bikes/e-rennraeder/": {
+  "lead": "E-Rennrad",
+  "alt": [
+   "Endurance Rennrad",
+   "E-Rennrad Damen",
+   "E-Rennrad Herren"
+  ],
+  "long": [],
+  "leadVolume": 70,
+  "leadKD": 15,
+  "leadTransactional": false,
+  "pageVolume": 3970,
+  "dataBacked": true
+ },
+ "/e-bikes/e-lastenraeder/": {
+  "lead": "E-Lastenrad",
+  "alt": [
+   "Cargo Bike",
+   "Lastenrad 3 Räder",
+   "Urban Lastenrad"
+  ],
+  "long": [
+   "Elektro Lastenrad"
+  ],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 4470,
+  "dataBacked": false
+ },
+ "/e-bikes/s-pedelecs/": {
+  "lead": "S-Pedelec",
+  "alt": [
+   "E-Bike bis 45 km/h",
+   "Speed Pedelec kaufen",
+   "S-Pedelec 45 km/h"
+  ],
+  "long": [
+   "E-Bike 45 km/h",
+   "E-Bike mit 45 km/h",
+   "Pedelec über 45 km/h"
+  ],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 11170,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/fully/haibike/": {
+  "lead": "Haibike Fully E-Bike",
+  "alt": [
+   "Haibike E-MTB Fully",
+   "Haibike E-Bike Fully 800 Watt"
+  ],
+  "long": [],
+  "leadVolume": 1900,
+  "leadKD": 21,
+  "leadTransactional": true,
+  "pageVolume": 2180,
+  "dataBacked": true
+ },
+ "/marken/cube/": {
+  "lead": "Cube E-Bike",
+  "alt": [
+   "Cube Kathmandu Hybrid",
+   "Cube Fully E-Bike",
+   "Cube E-Bike Herren",
+   "Cube E-Bike Damen"
+  ],
+  "long": [
+   "Cube Kathmandu Hybrid ONE 800",
+   "Cube Kathmandu Hybrid comfort SLT 800",
+   "Cube Kathmandu ONE"
+  ],
+  "leadVolume": 320,
+  "leadKD": 23,
+  "leadTransactional": true,
+  "pageVolume": 18920,
+  "dataBacked": true
+ },
+ "/e-bikes/antrieb/bosch/": {
+  "lead": "Bosch E-Bike",
+  "alt": [
+   "E-Bike mit Bosch Mittelmotor",
+   "Bosch Smart System E-Bike",
+   "Bosch E-Bike Motor"
+  ],
+  "long": [
+   "E-Bike Bosch Mittelmotor",
+   "E-Bike 20 Zoll Bosch Mittelmotor",
+   "Bosch ersatzakku E-Bike"
+  ],
+  "leadVolume": 480,
+  "leadKD": 22,
+  "leadTransactional": true,
+  "pageVolume": 9490,
+  "dataBacked": true
+ },
+ "/marken/canyon/": {
+  "lead": "Canyon E-Bike",
+  "alt": [
+   "Canyon Endurace",
+   "Canyon Endurace CF SLX",
+   "Canyon E-Bike Fully"
+  ],
+  "long": [
+   "Canyon Endurace CFR",
+   "Canyon Endurace 6",
+   "Canyon Endurace AL"
+  ],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 12090,
+  "dataBacked": false
+ },
+ "/e-bikes/damen/cube/": {
+  "lead": "Cube E-Bike Damen",
+  "alt": [
+   "Cube E-Bike Damen grün",
+   "Cube E-Bike Damen 750 Watt",
+   "Cube E-Bike Damen leicht"
+  ],
+  "long": [],
+  "leadVolume": 1900,
+  "leadKD": 24,
+  "leadTransactional": true,
+  "pageVolume": 2660,
+  "dataBacked": true
+ },
+ "/e-bikes/carbon/": {
+  "lead": "Carbon E-Bike",
+  "alt": [
+   "Carbon E-Bike Damen"
+  ],
+  "long": [],
+  "leadVolume": 1600,
+  "leadKD": 13,
+  "leadTransactional": false,
+  "pageVolume": 1600,
+  "dataBacked": true
+ },
+ "/e-bikes/": {
+  "lead": "E-Bikes: Alle Modelle & Marken",
+  "alt": [
+   "Carbon E-Bike",
+   "E-Bike mit Bosch Mittelmotor",
+   "S-Pedelec kaufen",
+   "E-Bike Klapprad"
+  ],
+  "long": [
+   "E-Bike 24 Zoll",
+   "Downhill E-Bike",
+   "E-Bike ohne zu treten"
+  ],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 43510,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/fully/ghost/": {
+  "lead": "Ghost Fully E-Bike",
+  "alt": [],
+  "long": [],
+  "leadVolume": 880,
+  "leadKD": 19,
+  "leadTransactional": true,
+  "pageVolume": 880,
+  "dataBacked": true
+ },
+ "/e-bikes/e-trekkingbikes/damen/": {
+  "lead": "Trekking E-Bike Damen",
+  "alt": [
+   "Trekkingrad Damen E-Bike",
+   "E-Trekkingbike Damen"
+  ],
+  "long": [],
+  "leadVolume": 1300,
+  "leadKD": 19,
+  "leadTransactional": false,
+  "pageVolume": 2920,
+  "dataBacked": true
+ },
+ "/e-bikes/e-mountainbikes/fully/": {
+  "lead": "E-MTB Fully",
+  "alt": [
+   "E-Mountainbike Fully",
+   "E-Bike Fully",
+   "E-MTB Fullys"
+  ],
+  "long": [
+   "E-Bike Fully mtb",
+   "E-Bike Fully 750 Watt",
+   "E-Bike Herren Fully"
+  ],
+  "leadVolume": 1000,
+  "leadKD": 24,
+  "leadTransactional": false,
+  "pageVolume": 6020,
+  "dataBacked": true
+ },
+ "/e-bikes/e-mountainbikes/fully/vorjahresmodelle/": {
+  "lead": "E-Bike Fully Auslaufmodelle",
+  "alt": [
+   "E-Bike Fully Vorjahresmodelle",
+   "E-Bike Fully Sale",
+   "E-Mountainbike Fully Sale"
+  ],
+  "long": [],
+  "leadVolume": 720,
+  "leadKD": 14,
+  "leadTransactional": false,
+  "pageVolume": 2040,
+  "dataBacked": true
+ },
+ "/marken/winora/": {
+  "lead": "Winora E-Bike",
+  "alt": [
+   "Winora Sinus",
+   "Winora Yakun",
+   "Winora E-Bike Damen"
+  ],
+  "long": [
+   "Winora Sinus as",
+   "Winora Sinus r8",
+   "Winora Lastenrad"
+  ],
+  "leadVolume": 720,
+  "leadKD": 23,
+  "leadTransactional": true,
+  "pageVolume": 3850,
+  "dataBacked": true
+ },
+ "/e-bikes/e-mountainbikes/": {
+  "lead": "E-Mountainbike",
+  "alt": [
+   "E-MTB",
+   "Light E-Mountainbike",
+   "E-MTB leicht"
+  ],
+  "long": [
+   "E-Mountainbike Sale",
+   "E-MTB Sale",
+   "Leichtes E-MTB"
+  ],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 5030,
+  "dataBacked": false
+ },
+ "/e-bikes/unter-1000-euro/": {
+  "lead": "E-Bike unter 1000 Euro",
+  "alt": [
+   "E-Bike unter 800 Euro",
+   "E-Bike für 1000 Euro",
+   "E-Bike bis 500 Euro"
+  ],
+  "long": [
+   "E-Bike für 500 Euro",
+   "E-Bike unter 1000 Euro 28 Zoll Mittelmotor",
+   "Bestes E-Bike unter 1000 Euro"
+  ],
+  "leadVolume": 880,
+  "leadKD": 22,
+  "leadTransactional": false,
+  "pageVolume": 2920,
+  "dataBacked": true
+ },
+ "/e-bikes/e-mountainbikes/hardtail/cube/": {
+  "lead": "Cube Hardtail E-Bike",
+  "alt": [
+   "Cube E-MTB Hardtail"
+  ],
+  "long": [],
+  "leadVolume": 480,
+  "leadKD": 17,
+  "leadTransactional": true,
+  "pageVolume": 650,
+  "dataBacked": true
+ },
+ "/e-bikes/riemenantrieb/": {
+  "lead": "E-Bike mit Riemenantrieb",
+  "alt": [
+   "E-Bike Riemenantrieb",
+   "E-Bikes mit Riemenantrieb",
+   "E-Bike mit Riemenantrieb und automatik"
+  ],
+  "long": [
+   "Leichtes E-Bike mit Riemenantrieb",
+   "Herren E-Bike mit Riemenantrieb",
+   "Damen E-Bike mit Riemenantrieb"
+  ],
+  "leadVolume": 720,
+  "leadKD": 18,
+  "leadTransactional": false,
+  "pageVolume": 3890,
+  "dataBacked": true
+ },
+ "/e-bikes/e-mountainbikes/cube/": {
+  "lead": "Cube E-Mountainbike",
+  "alt": [
+   "Cube Light E-MTB",
+   "E-Bike Cube mountainbike",
+   "Cube E-Bike Damen mountainbike"
+  ],
+  "long": [],
+  "leadVolume": 480,
+  "leadKD": 24,
+  "leadTransactional": true,
+  "pageVolume": 1340,
+  "dataBacked": true
+ },
+ "/e-bikes/e-citybikes/": {
+  "lead": "City E-Bike",
+  "alt": [
+   "E-Citybike",
+   "Stadt E-Bike",
+   "City Bike E-Bike"
+  ],
+  "long": [
+   "E City bikes",
+   "Citybike E-Bike",
+   "Leichtes City E-Bike"
+  ],
+  "leadVolume": 720,
+  "leadKD": 24,
+  "leadTransactional": false,
+  "pageVolume": 2280,
+  "dataBacked": true
+ },
+ "/e-bikes/e-mountainbikes/damen/": {
+  "lead": "E-Mountainbike Damen",
+  "alt": [
+   "E-Bike mountain Damen",
+   "Damen E-Bike mtb",
+   "Mountainbike Damen E-Bike"
+  ],
+  "long": [],
+  "leadVolume": 590,
+  "leadKD": 16,
+  "leadTransactional": false,
+  "pageVolume": 1080,
+  "dataBacked": true
+ },
+ "/e-bikes/tiefeinsteiger/": {
+  "lead": "Tiefeinsteiger E-Bikes",
+  "alt": [
+   "Senioren E-Bike mit tiefem einstieg",
+   "E-Bike Tiefeinsteiger 750 Watt",
+   "E-Bike für Senioren Tiefeinsteiger"
+  ],
+  "long": [
+   "Leichte E-Bikes mit tiefem einstieg",
+   "Leichtes E-Bike Tiefeinsteiger",
+   "Leichtes E-Bike mit tiefem einstieg"
+  ],
+  "leadVolume": 590,
+  "leadKD": 13,
+  "leadTransactional": false,
+  "pageVolume": 2190,
+  "dataBacked": true
+ },
+ "/e-bikes/antrieb/shimano-steps/": {
+  "lead": "Shimano E-Bike",
+  "alt": [
+   "E-Bike mit Shimano Motor",
+   "Shimano E-Bike Motor"
+  ],
+  "long": [],
+  "leadVolume": 390,
+  "leadKD": 22,
+  "leadTransactional": false,
+  "pageVolume": 1410,
+  "dataBacked": true
+ },
+ "/e-bikes/e-gravelbikes/cube/": {
+  "lead": "Cube Gravel E-Bike",
+  "alt": [],
+  "long": [],
+  "leadVolume": 590,
+  "leadKD": 19,
+  "leadTransactional": false,
+  "pageVolume": 590,
+  "dataBacked": true
+ },
+ "/e-bikes/e-trekkingbikes/haibike/": {
+  "lead": "Haibike Trekking E-Bike",
+  "alt": [],
+  "long": [],
+  "leadVolume": 390,
+  "leadKD": 20,
+  "leadTransactional": true,
+  "pageVolume": 390,
+  "dataBacked": true
+ },
+ "/e-bikes/e-trekkingbikes/herren/": {
+  "lead": "Trekking E-Bike Herren",
+  "alt": [
+   "E-Bike Herren Trekking 28 Zoll"
+  ],
+  "long": [],
+  "leadVolume": 590,
+  "leadKD": 20,
+  "leadTransactional": false,
+  "pageVolume": 660,
+  "dataBacked": true
+ },
+ "/e-bikes/e-mountainbikes/haibike/": {
+  "lead": "Haibike E-Mountainbike",
+  "alt": [
+   "Haibike E-Mountainbikes",
+   "E-Bike Haibike mountainbike"
+  ],
+  "long": [],
+  "leadVolume": 390,
+  "leadKD": 23,
+  "leadTransactional": true,
+  "pageVolume": 1320,
+  "dataBacked": true
+ },
+ "/e-bikes/e-faltraeder/": {
+  "lead": "E-Klapprad",
+  "alt": [
+   "Faltrad E-Bike",
+   "E-Bike Klapprad 20 Zoll",
+   "Klapp E-Bike leicht"
+  ],
+  "long": [
+   "E-Bike klapp",
+   "E-Bike Klapprad mit Bosch Mittelmotor",
+   "E-Klapprad leicht"
+  ],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 5840,
+  "dataBacked": false
+ },
+ "/e-bikes/e-faltraeder/zuendapp/": {
+  "lead": "Zündapp Klapprad E-Bike",
+  "alt": [],
+  "long": [],
+  "leadVolume": 320,
+  "leadKD": 12,
+  "leadTransactional": true,
+  "pageVolume": 320,
+  "dataBacked": true
+ },
+ "/e-bikes/senioren/": {
+  "lead": "E-Bike für Senioren",
+  "alt": [
+   "Kleines E-Bike für Senioren",
+   "Leichte E-Bikes für Senioren",
+   "Leichtes E-Bike für Senioren"
+  ],
+  "long": [],
+  "leadVolume": 480,
+  "leadKD": 14,
+  "leadTransactional": false,
+  "pageVolume": 730,
+  "dataBacked": true
+ },
+ "/e-bikes/e-mountainbikes/hardtail/": {
+  "lead": "E-MTB Hardtail",
+  "alt": [
+   "Hardtail E-Bike",
+   "E-MTB Hardtail unter 20 kg",
+   "Light E-MTB Hardtail"
+  ],
+  "long": [
+   "Leichtes E-MTB Hardtail",
+   "Leichte E-MTB Hardtail"
+  ],
+  "leadVolume": 260,
+  "leadKD": 21,
+  "leadTransactional": false,
+  "pageVolume": 1250,
+  "dataBacked": true
+ },
+ "/angebote/": {
+  "lead": "E-Bike Angebote",
+  "alt": [
+   "E-Bikes Restposten",
+   "E-Bikes günstiger",
+   "E-Bike Sale"
+  ],
+  "long": [
+   "E-Bike Vorjahresmodelle",
+   "Isy E-Bike günstig kaufen",
+   "Schauer schweinfurt E-Bike Angebote aktuell"
+  ],
+  "leadVolume": 260,
+  "leadKD": 22,
+  "leadTransactional": false,
+  "pageVolume": 1870,
+  "dataBacked": true
+ },
+ "/marken/ghost/": {
+  "lead": "Ghost E-Bike",
+  "alt": [
+   "Ghost E-Teru",
+   "Ghost E-Teru Advanced",
+   "Ghost E-Bike Fully"
+  ],
+  "long": [
+   "Ghost e Teru",
+   "Ghost E-Mountainbike",
+   "Ghost e Teru advanced"
+  ],
+  "leadVolume": 320,
+  "leadKD": 24,
+  "leadTransactional": true,
+  "pageVolume": 1340,
+  "dataBacked": true
+ },
+ "/e-bikes/tiefeinsteiger/cube/": {
+  "lead": "Cube E-Bike Tiefeinsteiger",
+  "alt": [],
+  "long": [],
+  "leadVolume": 260,
+  "leadKD": 12,
+  "leadTransactional": true,
+  "pageVolume": 260,
+  "dataBacked": true
+ },
+ "/marken/stromer/": {
+  "lead": "Stromer S-Pedelec",
+  "alt": [
+   "Speed Pedelec Stromer",
+   "Stromer E-Bike 45 km/h"
+  ],
+  "long": [],
+  "leadVolume": 260,
+  "leadKD": 23,
+  "leadTransactional": true,
+  "pageVolume": 470,
+  "dataBacked": true
+ },
+ "/e-bikes/e-citybikes/damen/": {
+  "lead": "City E-Bike Damen",
+  "alt": [
+   "E-Citybike Damen",
+   "Günstiges citybike Damen"
+  ],
+  "long": [],
+  "leadVolume": 260,
+  "leadKD": 17,
+  "leadTransactional": false,
+  "pageVolume": 760,
+  "dataBacked": true
+ },
+ "/e-bikes/e-gravelbikes/": {
+  "lead": "E-Gravelbike",
+  "alt": [
+   "Gravel E-Bike Herren",
+   "E-Gravel Bike Damen",
+   "Gravel Bike mit Riemenantrieb"
+  ],
+  "long": [
+   "E-Gravelbike Damen",
+   "Gravel Bike Riemenantrieb",
+   "Gravel Bike E-Bike"
+  ],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 1900,
+  "dataBacked": false
+ },
+ "/e-bikes/e-trekkingbikes/": {
+  "lead": "Trekking E-Bike",
+  "alt": [
+   "E-Trekkingbike",
+   "Bestes Trekking E-Bike",
+   "Trekking E-Bike 750 Watt"
+  ],
+  "long": [
+   "Besten E-Bikes Trekking",
+   "Trekking E-Bike kaufen",
+   "Trekking E-Bike mit Riemenantrieb"
+  ],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 1100,
+  "dataBacked": false
+ },
+ "/e-bikes/unisex/": {
+  "lead": "Unisex E-Bike",
+  "alt": [
+   "E-Bikes Unisex"
+  ],
+  "long": [],
+  "leadVolume": 260,
+  "leadKD": 19,
+  "leadTransactional": false,
+  "pageVolume": 260,
+  "dataBacked": true
+ },
+ "/e-bikes/e-trekkingbikes/cube/": {
+  "lead": "Cube Trekking E-Bike",
+  "alt": [
+   "Cube touring E-Bike",
+   "Cube E-Bike Trekking Herren",
+   "Cube E-Bike Damen Trekking"
+  ],
+  "long": [],
+  "leadVolume": 260,
+  "leadKD": 16,
+  "leadTransactional": false,
+  "pageVolume": 740,
+  "dataBacked": true
+ },
+ "/marken/haibike/": {
+  "lead": "Haibike E-Bike",
+  "alt": [
+   "Haibike Fully E-Bike",
+   "Haibike Trekking",
+   "Haibike S-Pedelec"
+  ],
+  "long": [
+   "Damen E-Bike Haibike",
+   "Haibike E-Bike SDURO"
+  ],
+  "leadVolume": 110,
+  "leadKD": 19,
+  "leadTransactional": true,
+  "pageVolume": 550,
+  "dataBacked": true
+ },
+ "/e-bikes/e-mountainbikes/herren/": {
+  "lead": "E-Mountainbike Herren",
+  "alt": [],
+  "long": [],
+  "leadVolume": 170,
+  "leadKD": 12,
+  "leadTransactional": false,
+  "pageVolume": 170,
+  "dataBacked": true
+ },
+ "/e-bikes/leicht/": {
+  "lead": "Leichtes E-Bike",
+  "alt": [
+   "Leichtes E-Bike Herren",
+   "Leichte Damen E-Bikes",
+   "Leichtes E-Bike Damen Tiefeinsteiger"
+  ],
+  "long": [
+   "E-Bike Light",
+   "Leichtes E-Bike unter 15 kg",
+   "E-Bike leichtes gewicht"
+  ],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 940,
+  "dataBacked": false
+ },
+ "/e-bikes/e-rennraeder/canyon/": {
+  "lead": "Canyon E-Rennrad",
+  "alt": [
+   "Canyon Endurace CFR AXS Rennrad",
+   "Canyon E-Bike Rennrad",
+   "Canyon Endurace CF 7 Di2 Rennrad"
+  ],
+  "long": [
+   "Canyon Rennrad Endurace"
+  ],
+  "leadVolume": 110,
+  "leadKD": 24,
+  "leadTransactional": true,
+  "pageVolume": 520,
+  "dataBacked": true
+ },
+ "/e-bikes/e-citybikes/herren/": {
+  "lead": "City E-Bike Herren",
+  "alt": [
+   "E-Bike citybike Herren"
+  ],
+  "long": [],
+  "leadVolume": 140,
+  "leadKD": 23,
+  "leadTransactional": false,
+  "pageVolume": 210,
+  "dataBacked": true
+ },
+ "/e-bikes/familie/": {
+  "lead": "Familien E-Bike",
+  "alt": [],
+  "long": [],
+  "leadVolume": 90,
+  "leadKD": 16,
+  "leadTransactional": true,
+  "pageVolume": 90,
+  "dataBacked": true
+ },
+ "/e-bikes/e-mountainbikes/tiefeinsteiger/": {
+  "lead": "E-Mountainbike Tiefeinsteiger",
+  "alt": [],
+  "long": [],
+  "leadVolume": 110,
+  "leadKD": 12,
+  "leadTransactional": false,
+  "pageVolume": 110,
+  "dataBacked": true
+ },
+ "/e-bikes/e-lastenraeder/cube/": {
+  "lead": "Cube Lastenrad E-Bike",
+  "alt": [],
+  "long": [],
+  "leadVolume": 70,
+  "leadKD": 18,
+  "leadTransactional": true,
+  "pageVolume": 70,
+  "dataBacked": true
+ },
+ "/e-bikes/unter-3000-euro/": {
+  "lead": "E-Bike unter 3000 Euro",
+  "alt": [
+   "E-Bike bis 3000 Euro",
+   "E-Bike bis 2500 Euro"
+  ],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 180,
+  "dataBacked": false
+ },
+ "/e-bikes/unter-1500-euro/": {
+  "lead": "E-Bike unter 1500 Euro",
+  "alt": [
+   "E-Bikes bis 1500 Euro",
+   "E-Bike bis 1500 Euro Mittelmotor"
+  ],
+  "long": [],
+  "leadVolume": 70,
+  "leadKD": 12,
+  "leadTransactional": false,
+  "pageVolume": 340,
+  "dataBacked": true
+ },
+ "/e-bikes/unter-2000-euro/": {
+  "lead": "E-Bike unter 2000 Euro",
+  "alt": [
+   "E-Bikes bis 2000 Euro"
+  ],
+  "long": [],
+  "leadVolume": 90,
+  "leadKD": 14,
+  "leadTransactional": false,
+  "pageVolume": 180,
+  "dataBacked": true
+ },
+ "/angebote/vorjahresmodelle/": {
+  "lead": "E-Bike Vorjahresmodelle",
+  "alt": [
+   "E-Bike Auslaufmodelle",
+   "E-Bike Fully Auslaufmodelle"
+  ],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/marken/zuendapp/": {
+  "lead": "Zündapp E-Bike",
+  "alt": [
+   "Zündapp E-Bike Damen",
+   "Zündapp E-Bike Klapprad",
+   "Zündapp E-Bike Mountainbike"
+  ],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/fuer-lange-strecken/": {
+  "lead": "E-Bike mit hoher Reichweite",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/damen/zuendapp/": {
+  "lead": "Zündapp E-Bike Damen",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-citybikes/cube/": {
+  "lead": "Cube City E-Bike",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-citybikes/tiefeinsteiger/": {
+  "lead": "City E-Bike Tiefeinsteiger",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-citybikes/unter-1500-euro/": {
+  "lead": "City E-Bike unter 1500 Euro",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-citybikes/unter-2000-euro/": {
+  "lead": "City E-Bike unter 2000 Euro",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-citybikes/unter-3000-euro/": {
+  "lead": "City E-Bike unter 3000 Euro",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-citybikes/winora/": {
+  "lead": "Winora City E-Bike",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-citybikes/zuendapp/": {
+  "lead": "Zündapp City E-Bike",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-faltraeder/unter-3000-euro/": {
+  "lead": "Klapprad E-Bike unter 3000 Euro",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/hardtail/damen/": {
+  "lead": "Hardtail E-Bike Damen",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/hardtail/ghost/": {
+  "lead": "Ghost Hardtail E-Bike",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/hardtail/herren/": {
+  "lead": "Hardtail E-Bike Herren",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/hardtail/tiefeinsteiger/": {
+  "lead": "Hardtail E-Bike Tiefeinsteiger",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/hardtail/unter-1500-euro/": {
+  "lead": "Hardtail E-Bike unter 1500 Euro",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/hardtail/unter-2000-euro/": {
+  "lead": "Hardtail E-Bike unter 2000 Euro",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/hardtail/unter-3000-euro/": {
+  "lead": "Hardtail E-Bike unter 3000 Euro",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/hardtail/zuendapp/": {
+  "lead": "Zündapp Hardtail E-Bike",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/unter-1500-euro/": {
+  "lead": "E-Mountainbike unter 1500 Euro",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/unter-2000-euro/": {
+  "lead": "E-Mountainbike unter 2000 Euro",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/unter-3000-euro/": {
+  "lead": "E-Mountainbike unter 3000 Euro",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-mountainbikes/zuendapp/": {
+  "lead": "Zündapp E-Mountainbike",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-trekkingbikes/tiefeinsteiger/": {
+  "lead": "Trekking E-Bike Tiefeinsteiger",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-trekkingbikes/unter-1500-euro/": {
+  "lead": "Trekking E-Bike unter 1500 Euro",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-trekkingbikes/unter-2000-euro/": {
+  "lead": "Trekking E-Bike unter 2000 Euro",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-trekkingbikes/unter-3000-euro/": {
+  "lead": "Trekking E-Bike unter 3000 Euro",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-trekkingbikes/winora/": {
+  "lead": "Winora Trekking E-Bike",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/e-trekkingbikes/zuendapp/": {
+  "lead": "Zündapp Trekking E-Bike",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/herren/zuendapp/": {
+  "lead": "Zündapp E-Bike Herren",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/tiefeinsteiger/winora/": {
+  "lead": "Winora E-Bike Tiefeinsteiger",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ },
+ "/e-bikes/tiefeinsteiger/zuendapp/": {
+  "lead": "Zündapp E-Bike Tiefeinsteiger",
+  "alt": [],
+  "long": [],
+  "leadVolume": null,
+  "leadKD": null,
+  "leadTransactional": null,
+  "pageVolume": 0,
+  "dataBacked": false
+ }
+}

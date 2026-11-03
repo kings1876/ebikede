@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import { TAXONOMY_ROUTES, findRouteByPath, normalizePath, getLanguageFromPath } from '../data/taxonomy';
 import { PRODUCTS } from '../data/products';
 import { GUIDES } from '../data/guides';
+import { ACCESSORIES } from '../data/accessories';
 import { LEGAL_DOCUMENTS } from '../data/legal';
 import { brandSlug } from './brand';
+import { homeSeoDe, brandSeoDe, productTitleDe } from '../data/seo-apply';
 
 export const BASE_URL = 'https://e-bike-zuverkaufen.de';
 const SITE = 'EBike Zu Verkaufen';
@@ -52,6 +54,10 @@ export function allPaths(): string[] {
 
 function minPriceFor(r: (typeof TAXONOMY_ROUTES)[number]): number {
   const fc = r.filterCriteria;
+  if (r.section === 'accessories') {
+    const acc = ACCESSORIES.filter((x) => !fc?.accessoryType || x.category === fc.accessoryType);
+    return acc.length ? Math.min(...acc.map((x) => x.price)) : Math.min(...ACCESSORIES.map((x) => x.price));
+  }
   if (fc?.category) {
     const cat = fc.category;
     const m = PRODUCTS.filter((p) => p.category.startsWith(cat) || cat.startsWith(p.category));
@@ -83,10 +89,10 @@ export function resolvePage(rawPath: string): PageInfo {
       pathDe: '/',
       pathEn: '/en/',
       title: de
-        ? `E-Bikes online kaufen | Neue E-Bikes ab ${Math.min(...PRODUCTS.map((p) => p.price)).toLocaleString("de-DE")} € | ${SITE}`
+        ? homeSeoDe().title
         : `Buy E-Bikes Online in Germany | New Electric Bikes | ${SITE}`,
       description: de
-        ? 'Neue E-Bikes online kaufen: E-Mountainbikes, Trekkingbikes, Citybikes und Lastenräder. Zahlung per Überweisung oder Krypto mit 10 % Rabatt.'
+        ? homeSeoDe().description
         : 'Buy new electric bikes online in Germany: e-mountain, trekking, city and cargo bikes. Pay by bank transfer or crypto with 10% off.',
     };
   }
@@ -103,7 +109,7 @@ export function resolvePage(rawPath: string): PageInfo {
       pathDe: `/e-bike/${p.slug}/`,
       pathEn: `/en/e-bike/${p.slug}/`,
       title: de
-        ? `${p.name_de} kaufen | ${p.price.toLocaleString('de-DE')} € | ${SITE}`
+        ? productTitleDe(p)
         : `Buy ${p.name_en} | €${p.price.toLocaleString('en-US')} | ${SITE}`,
       description: (de ? p.description_de : p.description_en).slice(0, 155) + '...',
     };
@@ -119,10 +125,10 @@ export function resolvePage(rawPath: string): PageInfo {
       pathDe: `/marken/${brandSlug(b)}/`,
       pathEn: `/en/brands/${brandSlug(b)}/`,
       title: de
-        ? `${b} E-Bikes kaufen | Alle Modelle & Angebote | ${SITE}`
+        ? brandSeoDe(b).title
         : `Buy ${b} Electric Bikes | All Models & Deals | ${SITE}`,
       description: de
-        ? `Alle ${b} E-Bike Modelle im Überblick, neu und fahrfertig montiert geliefert.`
+        ? brandSeoDe(b).description
         : `All ${b} e-bike models at a glance, new and delivered fully assembled.`,
     };
   }

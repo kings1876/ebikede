@@ -95,6 +95,7 @@ export function buildComboRoutes(): TaxonomyRoute[] {
     for (const brand of brands) {
       const items = inCat.filter((p) => p.brand === brand);
       if (items.length < MIN_PRODUCTS) continue;
+      if (items.length === PRODUCTS.filter((p) => p.brand === brand).length) continue; // identical to the brand page
       const slug = brandSlug(brand);
       routes.push(build({
         id: `combo-${cat.filter}-${slug}`,
@@ -170,6 +171,17 @@ export function buildComboRoutes(): TaxonomyRoute[] {
         filter: { brand, gender: g.key },
       }));
     }
+  }
+
+  // feature / theme pages that keyword research showed demand for
+  const themes: Array<{ id: string; pathDe: string; pathEn: string; items: Item[]; nameDe: string; nameEn: string; filter: NonNullable<TaxonomyRoute['filterCriteria']> }> = [
+    { id: 'theme-carbon', pathDe: '/e-bikes/carbon/', pathEn: '/en/e-bikes/carbon/', nameDe: 'Carbon E-Bike', nameEn: 'Carbon E-Bikes', filter: { frame: 'carbon|cf' }, items: PRODUCTS.filter((p) => /carbon|cf/i.test(p.specs.frameMaterial || '')) },
+    { id: 'theme-riemenantrieb', pathDe: '/e-bikes/riemenantrieb/', pathEn: '/en/e-bikes/belt-drive/', nameDe: 'E-Bike mit Riemenantrieb', nameEn: 'Belt-Drive E-Bikes', filter: { text: 'riemen|gates|belt|pinion' }, items: PRODUCTS.filter((p) => /riemen|gates|belt|pinion/i.test([p.specs.gears, p.description_de, ...(p.features_de || [])].join(' '))) },
+    { id: 'theme-fully-vorjahr', pathDe: '/e-bikes/e-mountainbikes/fully/vorjahresmodelle/', pathEn: '/en/e-bikes/electric-mountain-bikes/full-suspension/previous-year-models/', nameDe: 'E-Bike Fully Auslaufmodelle', nameEn: 'Previous-Year Full-Suspension E-Bikes', filter: { category: 'e-mountainbikes-fully', deal: true }, items: PRODUCTS.filter((p) => p.category === 'e-mountainbikes-fully' && (p.originalPrice || p.isPreviousYear)) },
+  ];
+  for (const t of themes) {
+    if (t.items.length < MIN_PRODUCTS) continue;
+    routes.push(build({ id: t.id, pathDe: t.pathDe, pathEn: t.pathEn, items: t.items, h1De: t.nameDe, h1En: t.nameEn, nameDe: t.nameDe, nameEn: t.nameEn, subtitleDe: `${t.nameDe}: ${t.items.length} Modelle im Überblick`, subtitleEn: `${t.nameEn}: ${t.items.length} models at a glance`, filter: t.filter }));
   }
   return routes;
 }

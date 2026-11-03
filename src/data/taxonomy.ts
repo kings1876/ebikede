@@ -1,5 +1,6 @@
 import { TaxonomyRoute } from '../types';
 import { COMBO_ROUTES } from './landing-combos';
+import { applySeoKeywords } from './seo-apply';
 
 export const TAXONOMY_ROUTES: TaxonomyRoute[] = [
   // ==================== SHOP ====================
@@ -256,7 +257,8 @@ export const TAXONOMY_ROUTES: TaxonomyRoute[] = [
     h1En: 'Electric Bikes for Seniors – Safe & Ergonomic',
     subtitleDe: 'Extra tiefer Durchstieg, aufrechte Haltung, pannensichere Reifen und einfache Bedienung',
     subtitleEn: 'Extra-low entry clearance, upright posture, puncture-proof tires, and simplified controls',
-    filterCriteria: { gender: 'senioren' },
+    noindex: true, // shows the step-through bikes; same list as /tiefeinsteiger/, so it must not compete with it
+    filterCriteria: { gender: 'tiefeinsteiger' },
   },
 
   // ==================== PRICE TIERS ====================
@@ -1171,3 +1173,5 @@ export function translatePath(currentPath: string, targetLang: 'de' | 'en'): str
 
 // Keyword landing pages generated from the catalogue (brand x category, gender x category, price x category)
 TAXONOMY_ROUTES.push(...COMBO_ROUTES);
+// Titles, descriptions and H1s from the keyword plan (docs/keyword-matching.md)
+applySeoKeywords(TAXONOMY_ROUTES);

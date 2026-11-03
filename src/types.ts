@@ -23,6 +23,8 @@ export interface TaxonomyRoute {
     useCase?: string;
     deal?: boolean;
     brand?: string;
+    frame?: string;
+    text?: string;
     accessoryType?: string;
   };
   noindex?: boolean;

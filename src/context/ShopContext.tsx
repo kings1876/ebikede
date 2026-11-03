@@ -21,6 +21,7 @@ import { PRODUCTS } from '../data/products';
 import { ACCESSORIES } from '../data/accessories';
 import { INITIAL_REVIEWS } from '../data/reviews';
 import { brandSlug } from '../lib/brand';
+import { brandSeoDe, productTitleDe } from '../data/seo-apply';
 
 interface ShopContextType {
   currentPath: string;
@@ -172,6 +173,11 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // DE: E-Trekkingbike kaufen | Große Auswahl ab {Preis} € | EBike Zu Verkaufen
   // EN: Buy Electric Trekking Bikes | Wide Selection from €{price} | EBike Zu Verkaufen
   const minCategoryPrice = useMemo(() => {
+    if (activeRoute?.section === 'accessories') {
+      const acc = ACCESSORIES.filter((a) => !activeRoute.filterCriteria?.accessoryType || a.category === activeRoute.filterCriteria.accessoryType);
+      const list = acc.length ? acc : ACCESSORIES;
+      return Math.min(...list.map((a) => a.price));
+    }
     if (activeRoute?.filterCriteria?.category) {
       const cat = activeRoute.filterCriteria.category;
       const matching = PRODUCTS.filter((p) => p.category.startsWith(cat) || cat.startsWith(p.category));
@@ -216,7 +222,7 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     if (activeProduct) {
       if (language === 'de') {
-        title = `${activeProduct.name_de} kaufen | ${activeProduct.price.toLocaleString('de-DE')} € | EBike Zu Verkaufen`;
+        title = productTitleDe(activeProduct);
         description = activeProduct.description_de.slice(0, 155) + '...';
       } else {
         title = `Buy ${activeProduct.name_en} | €${activeProduct.price.toLocaleString('en-US')} | EBike Zu Verkaufen`;
@@ -226,8 +232,8 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
       pathEn = `/en/e-bike/${activeProduct.slug}/`;
     } else if (activeBrand) {
       if (language === 'de') {
-        title = `${activeBrand} E-Bikes kaufen | Alle Modelle & Angebote | EBike Zu Verkaufen`;
-        description = `Entdecke alle ${activeBrand} E-Bike Modelle mit Bosch, Shimano & Yamaha Antrieben. JobRad Leasing & Top Rabatte.`;
+        title = brandSeoDe(activeBrand).title;
+        description = brandSeoDe(activeBrand).description;
       } else {
         title = `Buy ${activeBrand} Electric Bikes | All Models & Deals | EBike Zu Verkaufen`;
         description = `Discover all ${activeBrand} e-bike models featuring Bosch, Shimano & Yamaha systems. Company leasing & best deals.`;

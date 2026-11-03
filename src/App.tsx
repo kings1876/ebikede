@@ -225,11 +225,11 @@ export function MainRouter() {
                 </>
               ) : (
                 <>
-                  Dein Fachhändler für <br />
+                  E-Bike kaufen: <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
-                    Premium E-Bikes
+                    Neue Modelle
                   </span>{' '}
-                  in Deutschland
+                  von Cube, Haibike, Canyon &amp; mehr
                 </>
               )}
             </h1>

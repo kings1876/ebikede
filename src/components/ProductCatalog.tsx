@@ -15,6 +15,7 @@ import { PRODUCTS } from '../data/products';
 import { ProductCard } from './ProductCard';
 import { Product } from '../types';
 import { COMBO_ROUTES } from '../data/landing-combos';
+import { brandSeoDe } from '../data/seo-apply';
 
 interface ProductCatalogProps {
   customTitle?: string;
@@ -93,6 +94,8 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
           }
         }
         if (fc.brand && p.brand !== fc.brand) return false;
+        if (fc.frame && !new RegExp(fc.frame, 'i').test(p.specs.frameMaterial || '')) return false;
+        if (fc.text && !new RegExp(fc.text, 'i').test([p.specs.gears, p.description_de, ...(p.features_de || [])].join(' '))) return false;
         if (fc.motor && p.motor !== fc.motor) return false;
         if (fc.gender && p.gender !== fc.gender) return false;
         if (fc.priceMax && p.price > fc.priceMax) return false;
@@ -126,7 +129,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   // Dynamic H1 heading matching user specifications
   const displayTitle = useMemo(() => {
     if (customTitle) return customTitle;
-    if (activeBrand) return `${activeBrand} E-Bikes`;
+    if (activeBrand) return isEn ? `${activeBrand} E-Bikes` : brandSeoDe(activeBrand).h1;
     if (activeRoute) {
       return isEn ? activeRoute.h1En : activeRoute.h1De;
     }
