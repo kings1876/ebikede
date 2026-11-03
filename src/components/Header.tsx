@@ -219,7 +219,7 @@ export const Header: React.FC = () => {
                           {isEn ? product.name_en : product.name_de}
                         </div>
                         <div className="text-[11px] text-slate-500">
-                          {product.motor} • {product.batteryWh} Wh • {product.torqueNm} Nm
+                          {product.motor} • {product.batteryWh} Wh{product.torqueNm ? ` • ${product.torqueNm} Nm` : ''}
                         </div>
                       </div>
                     </div>

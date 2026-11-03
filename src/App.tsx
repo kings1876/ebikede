@@ -289,7 +289,7 @@ export function MainRouter() {
 
               <div className="flex items-center justify-between mb-1">
                 <span className="text-xs font-bold text-emerald-400">
-                  {PRODUCTS[0].brand} • {PRODUCTS[0].motor} {PRODUCTS[0].torqueNm} Nm
+                  {PRODUCTS[0].brand} • {PRODUCTS[0].motor}{PRODUCTS[0].torqueNm ? ` ${PRODUCTS[0].torqueNm} Nm` : ''}
                 </span>
                 <span className="text-lg font-black text-white">
                   {PRODUCTS[0].price.toLocaleString(isEn ? 'en-US' : 'de-DE')} €

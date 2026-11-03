@@ -125,7 +125,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center">
               <Zap className="w-5 h-5 text-amber-500 mx-auto mb-1" />
               <div className="text-xs text-slate-500">{isEn ? 'Motor Torque' : 'Drehmoment'}</div>
-              <div className="text-sm font-bold text-slate-900">{product.torqueNm} Nm</div>
+              <div className="text-sm font-bold text-slate-900">{product.torqueNm ? `${product.torqueNm} Nm` : '–'}</div>
             </div>
             <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center">
               <Battery className="w-5 h-5 text-emerald-500 mx-auto mb-1" />
@@ -380,7 +380,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
               </div>
               <div className="py-2.5 flex justify-between">
                 <span className="font-semibold text-slate-600">{isEn ? 'Max Torque' : 'Drehmoment'}</span>
-                <span className="font-bold text-slate-900">{product.torqueNm} Nm</span>
+                <span className="font-bold text-slate-900">{product.torqueNm ? `${product.torqueNm} Nm` : '–'}</span>
               </div>
               <div className="py-2.5 flex justify-between">
                 <span className="font-semibold text-slate-600">{isEn ? 'Battery Capacity' : 'Akkukapazität'}</span>

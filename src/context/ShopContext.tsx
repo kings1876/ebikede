@@ -106,13 +106,13 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [selectedMotor, setSelectedMotor] = useState<string | null>(null);
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
   const [selectedGender, setSelectedGender] = useState<string | null>(null);
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 10000]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 15000]);
 
   const resetFilters = useCallback(() => {
     setSelectedMotor(null);
     setSelectedBrand(null);
     setSelectedGender(null);
-    setPriceRange([0, 10000]);
+    setPriceRange([0, 15000]);
   }, []);
 
   // Save cart to local storage

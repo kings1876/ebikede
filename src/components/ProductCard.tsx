@@ -105,7 +105,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <div className="grid grid-cols-2 gap-2 mt-3.5 text-[11px] text-slate-600 font-medium">
             <div className="flex items-center gap-1.5 bg-slate-50 p-1.5 rounded-lg border border-slate-100">
               <Zap className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-              <span className="truncate">{product.motor} ({product.torqueNm} Nm)</span>
+              <span className="truncate">{product.motor}{product.torqueNm ? ` (${product.torqueNm} Nm)` : ''}</span>
             </div>
             <div className="flex items-center gap-1.5 bg-slate-50 p-1.5 rounded-lg border border-slate-100">
               <Battery className="w-3.5 h-3.5 text-emerald-500 shrink-0" />

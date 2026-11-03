@@ -57,7 +57,7 @@ export interface Product {
   originalPrice?: number;
   motor: MotorType;
   motorDetails: string;
-  torqueNm: number;
+  torqueNm?: number;
   batteryWh: number;
   rangeKm?: number;
   weightKg?: number;

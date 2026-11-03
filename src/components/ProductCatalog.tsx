@@ -97,7 +97,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       if (sortBy === 'price-asc') return a.price - b.price;
       if (sortBy === 'price-desc') return b.price - a.price;
       if (sortBy === 'range') return b.batteryWh - a.batteryWh;
-      if (sortBy === 'torque') return b.torqueNm - a.torqueNm;
+      if (sortBy === 'torque') return (b.torqueNm || 0) - (a.torqueNm || 0);
       return 0;
     });
   }, [searchQuery, activeBrand, activeRoute, selectedMotor, selectedBrand, selectedGender, priceRange, sortBy]);
@@ -133,7 +133,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     selectedBrand !== null ||
     selectedGender !== null ||
     priceRange[0] > 0 ||
-    priceRange[1] < 10000;
+    priceRange[1] < 15000;
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -348,7 +348,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               <input
                 type="range"
                 min="800"
-                max="8500"
+                max="15000"
                 step="100"
                 value={priceRange[1]}
                 onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}

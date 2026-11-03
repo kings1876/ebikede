@@ -1,4 +1,5 @@
 import { Product } from '../types';
+import { GENERATED_PRODUCTS } from './products.generated';
 
 /**
  * Catalogue sourced from the manufacturers' own product pages (cube.eu, haibike.com).
@@ -13,7 +14,7 @@ const img = (slug: string, count: number) => [
   ...Array.from({ length: count - 1 }, (_, i) => `/images/products/${slug}/gallery-${i + 1}.webp`),
 ];
 
-export const PRODUCTS: Product[] = [
+const MANUAL_PRODUCTS: Product[] = [
   {
     id: 'cube-kathmandu-hybrid-exc-800',
     slug: 'cube-kathmandu-hybrid-exc-800',
@@ -512,3 +513,5 @@ export const PRODUCTS: Product[] = [
     },
   },
 ];
+
+export const PRODUCTS: Product[] = [...MANUAL_PRODUCTS, ...GENERATED_PRODUCTS];
