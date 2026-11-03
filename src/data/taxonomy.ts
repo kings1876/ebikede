@@ -1,4 +1,5 @@
 import { TaxonomyRoute } from '../types';
+import { COMBO_ROUTES } from './landing-combos';
 
 export const TAXONOMY_ROUTES: TaxonomyRoute[] = [
   // ==================== SHOP ====================
@@ -1167,3 +1168,6 @@ export function translatePath(currentPath: string, targetLang: 'de' | 'en'): str
     return `/en${norm}`;
   }
 }
+
+// Keyword landing pages generated from the catalogue (brand x category, gender x category, price x category)
+TAXONOMY_ROUTES.push(...COMBO_ROUTES);

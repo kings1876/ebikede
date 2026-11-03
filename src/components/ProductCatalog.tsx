@@ -14,6 +14,7 @@ import { useShop } from '../context/ShopContext';
 import { PRODUCTS } from '../data/products';
 import { ProductCard } from './ProductCard';
 import { Product } from '../types';
+import { COMBO_ROUTES } from '../data/landing-combos';
 
 interface ProductCatalogProps {
   customTitle?: string;
@@ -39,9 +40,21 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     setPriceRange,
     resetFilters,
     seoInfo,
+    navigateTo,
   } = useShop();
 
   const isEn = language === 'en';
+
+  // Related keyword landing pages (same category, or same brand on a brand page)
+  const relatedPages = useMemo(() => {
+    const fc = activeRoute?.filterCriteria;
+    let list = COMBO_ROUTES.filter((r) => r.id !== activeRoute?.id);
+    if (activeBrand && !activeRoute) list = list.filter((r) => r.filterCriteria?.brand === activeBrand);
+    else if (fc?.category && !fc.brand && !fc.gender && !fc.priceMax) list = list.filter((r) => r.filterCriteria?.category === fc.category);
+    else if (fc?.category) list = list.filter((r) => r.filterCriteria?.category === fc.category);
+    else return [];
+    return list.slice(0, 12);
+  }, [activeRoute, activeBrand]);
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'range' | 'torque'>('featured');
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
 
@@ -78,6 +91,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             return false;
           }
         }
+        if (fc.brand && p.brand !== fc.brand) return false;
         if (fc.motor && p.motor !== fc.motor) return false;
         if (fc.gender && p.gender !== fc.gender) return false;
         if (fc.priceMax && p.price > fc.priceMax) return false;
@@ -174,6 +188,22 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
           </div>
         </div>
       </div>
+
+      {relatedPages.length > 0 && (
+        <nav aria-label={isEn ? 'Related selections' : 'Beliebte Auswahl'} className="mb-6 flex flex-wrap items-center gap-2">
+          <span className="text-xs font-semibold text-slate-500 mr-1">{isEn ? 'Popular selections:' : 'Beliebte Auswahl:'}</span>
+          {relatedPages.map((r) => (
+            <a
+              key={r.id}
+              href={isEn ? r.pathEn : r.pathDe}
+              onClick={(e) => { e.preventDefault(); navigateTo(isEn ? r.pathEn : r.pathDe); }}
+              className="px-3 py-1.5 rounded-full border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:border-emerald-500 hover:text-emerald-700"
+            >
+              {isEn ? r.h1En : r.h1De}
+            </a>
+          ))}
+        </nav>
+      )}
 
       {/* Control Bar: Result count, Sort, Mobile Filter Trigger */}
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200">
