@@ -5,12 +5,16 @@ import { Star, Battery, Zap, Gauge, ShoppingCart, ArrowRight, ShieldCheck } from
 import { Product } from '../types';
 import { useShop } from '../context/ShopContext';
 import { calculateReviewStats } from '../data/reviews';
+import { NavLink } from './NavLink';
+import { smallImg } from '../lib/img';
 
 interface ProductCardProps {
   product: Product;
+  /** above-the-fold card: load eagerly */
+  priority?: boolean;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = false }) => {
   const { language, navigateTo, addToCart, getProductReviews } = useShop();
   const isEn = language === 'en';
 
@@ -21,10 +25,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0;
 
-  const handleCardClick = () => {
+  const handleCardClick = (e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).closest('a')) return; // real links navigate themselves
     const targetPath = isEn ? `/en/e-bike/${product.slug}/` : `/e-bike/${product.slug}/`;
     navigateTo(targetPath);
   };
+
+  const productHref = isEn ? `/en/e-bike/${product.slug}/` : `/e-bike/${product.slug}/`;
 
   const handleQuickAdd = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -58,12 +65,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
       {/* Product Image */}
       <div className="relative h-56 bg-slate-100 overflow-hidden flex items-center justify-center p-4">
-        <img
-          src={product.images[0]}
-          alt={isEn ? product.name_en : product.name_de}
-          className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
-          loading="lazy"
-        />
+        <NavLink href={productHref} tabIndex={-1} aria-hidden="true" className="block w-full h-full">
+          <img
+            src={smallImg(product.images[0])}
+            alt={isEn ? product.name_en : product.name_de}
+            width={480}
+            height={360}
+            className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
+            loading={priority ? 'eager' : 'lazy'}
+            fetchPriority={priority ? 'high' : 'auto'}
+            decoding="async"
+          />
+        </NavLink>
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
 
@@ -93,9 +106,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 )}
 
           {/* Product Title */}
-          <h3 className="font-bold text-slate-900 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">
-            {isEn ? product.name_en : product.name_de}
-          </h3>
+          <h2 className="font-bold text-slate-900 text-base group-hover:text-emerald-700 transition-colors line-clamp-1">
+            <NavLink href={productHref}>{isEn ? product.name_en : product.name_de}</NavLink>
+          </h2>
 
           <p className="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">
             {isEn ? product.description_en : product.description_de}
@@ -128,14 +141,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               )}
             </div>
             <div className="text-[10px] text-emerald-700 font-medium flex items-center gap-1">
-              <ShieldCheck className="w-3 h-3 text-emerald-600" />
+              <ShieldCheck className="w-3 h-3 text-emerald-700" />
               <span>{isEn ? 'Leasing: from €49/mo' : 'JobRad ab 49 €/Monat'}</span>
             </div>
           </div>
 
           <button
             onClick={handleQuickAdd}
-            className="p-2.5 rounded-xl bg-slate-900 hover:bg-emerald-600 text-white transition-all shadow-xs cursor-pointer"
+            className="p-2.5 rounded-xl bg-slate-900 hover:bg-emerald-700 text-white transition-all shadow-xs cursor-pointer"
             title={isEn ? 'Add to cart' : 'In den Warenkorb'}
           >
             <ShoppingCart className="w-4 h-4" />

@@ -1,4 +1,5 @@
 'use client';
+import { NavLink } from './NavLink';
 import React from 'react';
 import { SHOW_REVIEWS } from '../config/flags';
 import {
@@ -34,9 +35,9 @@ export const Footer: React.FC = () => {
               <Truck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white">
+              <h2 className="text-sm font-bold text-white">
                 {isEn ? '100% Pre-Assembled Freight' : 'Fahrfertig montierter Versand'}
-              </h4>
+              </h2>
               <p className="text-xs text-slate-400 mt-0.5">
                 {isEn
                   ? 'Ready to ride in 5 minutes. Free freight shipping over €99.'
@@ -50,9 +51,9 @@ export const Footer: React.FC = () => {
               <RotateCcw className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white">
+              <h2 className="text-sm font-bold text-white">
                 {isEn ? '14-Day Right of Withdrawal' : '14 Tage Widerrufsrecht'}
-              </h4>
+              </h2>
               <p className="text-xs text-slate-400 mt-0.5">
                 {isEn
                   ? 'Risk-free online purchase with convenient freight pickup.'
@@ -66,9 +67,9 @@ export const Footer: React.FC = () => {
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white">
+              <h2 className="text-sm font-bold text-white">
                 {isEn ? 'JobRad & Leasing Specialist' : 'JobRad & Leasing Partner'}
-              </h4>
+              </h2>
               <p className="text-xs text-slate-400 mt-0.5">
                 {isEn
                   ? 'Save up to 40% via company salary sacrifice leasing.'
@@ -102,414 +103,414 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 text-xs">
         {/* Col 1: Shop Categories */}
         <div className="space-y-3">
-          <h5 className="font-bold uppercase tracking-wider text-white text-[11px]">
+          <h2 className="font-bold uppercase tracking-wider text-white text-[11px]">
             {isEn ? 'E-Bike Categories' : 'E-Bike Kategorien'}
-          </h5>
+          </h2>
           <ul className="space-y-2">
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/', '/en/e-bikes/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/' : '/e-bikes/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'All Electric Bikes' : 'Alle E-Bikes'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/e-mountainbikes/fully/', '/en/e-bikes/electric-mountain-bikes/full-suspension/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/electric-mountain-bikes/full-suspension/' : '/e-bikes/e-mountainbikes/fully/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'E-MTB Fully' : 'E-MTB Fully'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/e-mountainbikes/hardtail/', '/en/e-bikes/electric-mountain-bikes/hardtail/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/electric-mountain-bikes/hardtail/' : '/e-bikes/e-mountainbikes/hardtail/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'E-MTB Hardtail' : 'E-MTB Hardtail'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/e-trekkingbikes/', '/en/e-bikes/electric-trekking-bikes/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/electric-trekking-bikes/' : '/e-bikes/e-trekkingbikes/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Electric Trekking' : 'E-Trekkingbikes'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/e-citybikes/', '/en/e-bikes/electric-city-bikes/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/electric-city-bikes/' : '/e-bikes/e-citybikes/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Electric City Bikes' : 'E-Citybikes'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/e-lastenraeder/', '/en/e-bikes/electric-cargo-bikes/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/electric-cargo-bikes/' : '/e-bikes/e-lastenraeder/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Cargo Bikes' : 'E-Lastenräder'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/s-pedelecs/', '/en/e-bikes/speed-pedelecs/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/speed-pedelecs/' : '/e-bikes/s-pedelecs/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Speed Pedelecs (45 km/h)' : 'S-Pedelecs (45 km/h)'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/e-faltraeder/', '/en/e-bikes/electric-folding-bikes/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/electric-folding-bikes/' : '/e-bikes/e-faltraeder/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Folding Bikes' : 'E-Falträder'}
-              </button>
+              </NavLink>
             </li>
           </ul>
         </div>
 
         {/* Col 2: Motors & Demographics */}
         <div className="space-y-3">
-          <h5 className="font-bold uppercase tracking-wider text-white text-[11px]">
+          <h2 className="font-bold uppercase tracking-wider text-white text-[11px]">
             {isEn ? 'Drives & Frames' : 'Motoren & Rahmen'}
-          </h5>
+          </h2>
           <ul className="space-y-2">
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/antrieb/bosch/', '/en/e-bikes/motor/bosch/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/motor/bosch/' : '/e-bikes/antrieb/bosch/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 Bosch Smart System
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/antrieb/shimano-steps/', '/en/e-bikes/motor/shimano-steps/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/motor/shimano-steps/' : '/e-bikes/antrieb/shimano-steps/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 Shimano STEPS
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/antrieb/yamaha/', '/en/e-bikes/motor/yamaha/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/motor/yamaha/' : '/e-bikes/antrieb/yamaha/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 Yamaha PW-X3
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/tiefeinsteiger/', '/en/e-bikes/step-through/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/step-through/' : '/e-bikes/tiefeinsteiger/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Step-Through' : 'Tiefeinsteiger'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/senioren/', '/en/e-bikes/for-seniors/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/for-seniors/' : '/e-bikes/senioren/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Seniors E-Bikes' : 'Senioren E-Bikes'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/damen/', '/en/e-bikes/womens/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/womens/' : '/e-bikes/damen/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? "Women's E-Bikes" : 'Damen E-Bikes'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/pendler/', '/en/e-bikes/commuter/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/commuter/' : '/e-bikes/pendler/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Commuter Bikes' : 'Pendler E-Bikes'}
-              </button>
+              </NavLink>
             </li>
           </ul>
         </div>
 
         {/* Col 3: Budget & Deals */}
         <div className="space-y-3">
-          <h5 className="font-bold uppercase tracking-wider text-white text-[11px]">
+          <h2 className="font-bold uppercase tracking-wider text-white text-[11px]">
             {isEn ? 'Price & Deals' : 'Preise & Angebote'}
-          </h5>
+          </h2>
           <ul className="space-y-2">
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/unter-1000-euro/', '/en/e-bikes/under-1000-euro/')}
-                className="text-emerald-400 font-bold hover:underline"
+              <NavLink href={isEn ? '/en/e-bikes/under-1000-euro/' : '/e-bikes/unter-1000-euro/'}
+                
+                className="text-emerald-400 font-bold hover:underline inline-block"
               >
                 {isEn ? 'Under €1,000' : 'Unter 1.000 €'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/unter-1500-euro/', '/en/e-bikes/under-1500-euro/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/under-1500-euro/' : '/e-bikes/unter-1500-euro/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Under €1,500' : 'Unter 1.500 €'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/unter-2000-euro/', '/en/e-bikes/under-2000-euro/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/under-2000-euro/' : '/e-bikes/unter-2000-euro/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Under €2,000' : 'Unter 2.000 €'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/unter-3000-euro/', '/en/e-bikes/under-3000-euro/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/under-3000-euro/' : '/e-bikes/unter-3000-euro/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Under €3,000' : 'Unter 3.000 €'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/e-bikes/ab-3000-euro/', '/en/e-bikes/over-3000-euro/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/e-bikes/over-3000-euro/' : '/e-bikes/ab-3000-euro/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Over €3,000' : 'Ab 3.000 €'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/angebote/vorjahresmodelle/', '/en/deals/previous-year-models/')}
-                className="text-red-400 font-bold hover:underline"
+              <NavLink href={isEn ? '/en/deals/previous-year-models/' : '/angebote/vorjahresmodelle/'}
+                
+                className="text-red-400 font-bold hover:underline inline-block"
               >
                 {isEn ? 'Previous Year Deals' : 'Vorjahresmodelle'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/marken/', '/en/brands/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/brands/' : '/marken/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'All Brands' : 'Alle Marken'}
-              </button>
+              </NavLink>
             </li>
           </ul>
         </div>
 
         {/* Col 4: Accessories */}
         <div className="space-y-3">
-          <h5 className="font-bold uppercase tracking-wider text-white text-[11px]">
+          <h2 className="font-bold uppercase tracking-wider text-white text-[11px]">
             {isEn ? 'Accessories' : 'Zubehör & Akkus'}
-          </h5>
+          </h2>
           <ul className="space-y-2">
             <li>
-              <button
-                onClick={() => handleNav('/zubehoer/e-bike-akkus/', '/en/accessories/batteries/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/accessories/batteries/' : '/zubehoer/e-bike-akkus/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'E-Bike Batteries' : 'E-Bike Akkus'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/zubehoer/ladegeraete/', '/en/accessories/chargers/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/accessories/chargers/' : '/zubehoer/ladegeraete/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Fast Chargers' : 'Ladegeräte'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/zubehoer/helme/', '/en/accessories/helmets/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/accessories/helmets/' : '/zubehoer/helme/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Helmets (NTA-8776)' : 'Helme (NTA-8776)'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/zubehoer/schloesser/', '/en/accessories/locks/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/accessories/locks/' : '/zubehoer/schloesser/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Locks (Level 15)' : 'Schlösser (Level 15)'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/zubehoer/gepaecktraeger-taschen/', '/en/accessories/racks-bags/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/accessories/racks-bags/' : '/zubehoer/gepaecktraeger-taschen/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Waterproof Panniers' : 'Gepäckträgertaschen'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/zubehoer/beleuchtung/', '/en/accessories/lights/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/accessories/lights/' : '/zubehoer/beleuchtung/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'StVZO Lights' : 'StVZO Beleuchtung'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/zubehoer/kindersitze/', '/en/accessories/child-seats/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/accessories/child-seats/' : '/zubehoer/kindersitze/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Child Seats' : 'Kindersitze'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/ersatzteile/', '/en/spare-parts/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/spare-parts/' : '/ersatzteile/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Spare Parts' : 'Ersatzteile'}
-              </button>
+              </NavLink>
             </li>
           </ul>
         </div>
 
         {/* Col 5: Guides / Ratgeber */}
         <div className="space-y-3">
-          <h5 className="font-bold uppercase tracking-wider text-white text-[11px]">
+          <h2 className="font-bold uppercase tracking-wider text-white text-[11px]">
             {isEn ? 'Guides & Advice' : 'Ratgeber & Wissen'}
-          </h5>
+          </h2>
           <ul className="space-y-2">
             <li>
-              <button
-                onClick={() => handleNav('/ratgeber/e-bike-leasing-jobrad/', '/en/guides/bike-leasing-germany/')}
-                className="text-emerald-400 font-bold hover:underline"
+              <NavLink href={isEn ? '/en/guides/bike-leasing-germany/' : '/ratgeber/e-bike-leasing-jobrad/'}
+                
+                className="text-emerald-400 font-bold hover:underline inline-block"
               >
                 {isEn ? 'JobRad Leasing Guide' : 'JobRad Dienstrad (-40%)'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/ratgeber/e-bike-foerderung/', '/en/guides/subsidies-germany/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/guides/subsidies-germany/' : '/ratgeber/e-bike-foerderung/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Subsidies in Germany' : 'E-Bike Förderung (2.500 €)'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/ratgeber/e-bike-kaufberatung/', '/en/guides/e-bike-buying-guide/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/guides/e-bike-buying-guide/' : '/ratgeber/e-bike-kaufberatung/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Buying Guide 2026' : 'Kaufberatung 2026'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/ratgeber/e-bike-typen/', '/en/guides/e-bike-types/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/guides/e-bike-types/' : '/ratgeber/e-bike-typen/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Types Comparison' : 'E-Bike Typen'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/ratgeber/e-bike-akku-reichweite/', '/en/guides/battery-and-range/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/guides/battery-and-range/' : '/ratgeber/e-bike-akku-reichweite/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Battery & Range' : 'Akku & Reichweite'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/ratgeber/e-bike-zahlung/', '/en/guides/payment-and-crypto-discount/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/guides/payment-and-crypto-discount/' : '/ratgeber/e-bike-zahlung/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Crypto Discount (10%)' : '10% Krypto-Rabatt'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/ratgeber/e-bike-recht/', '/en/guides/e-bike-laws-germany/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/guides/e-bike-laws-germany/' : '/ratgeber/e-bike-recht/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Traffic Laws (Pedelec/S)' : 'E-Bike Verkehrsrecht'}
-              </button>
+              </NavLink>
             </li>
           </ul>
         </div>
 
         {/* Col 6: Service & Legal */}
         <div className="space-y-3">
-          <h5 className="font-bold uppercase tracking-wider text-white text-[11px]">
+          <h2 className="font-bold uppercase tracking-wider text-white text-[11px]">
             {isEn ? 'Service & Legal' : 'Service & Rechtliches'}
-          </h5>
+          </h2>
           <ul className="space-y-2">
             <li>
-              <button
-                onClick={() => handleNav('/versand/', '/en/shipping/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/shipping/' : '/versand/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Shipping Terms' : 'Versand & Lieferung'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/zahlungsarten/', '/en/payment-methods/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/payment-methods/' : '/zahlungsarten/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Payment Methods' : 'Zahlungsarten'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/widerrufsbelehrung/', '/en/withdrawal-policy/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/withdrawal-policy/' : '/widerrufsbelehrung/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Withdrawal Policy' : 'Widerrufsbelehrung'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/impressum/', '/en/legal-notice/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/legal-notice/' : '/impressum/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Legal Notice (Impressum)' : 'Impressum (§ 5 TMG)'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/datenschutz/', '/en/privacy/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/privacy/' : '/datenschutz/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Privacy Policy' : 'Datenschutz (DSGVO)'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/agb/', '/en/terms/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/terms/' : '/agb/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Terms & Conditions' : 'AGB'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/batterie-hinweise/', '/en/battery-information/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/battery-information/' : '/batterie-hinweise/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Battery Notice (BattG)' : 'Batterie-Hinweise'}
-              </button>
+              </NavLink>
             </li>
             <li>
-              <button
-                onClick={() => handleNav('/verpackung-elektrogeraete/', '/en/packaging-weee/')}
-                className="hover:text-emerald-400 transition-colors"
+              <NavLink href={isEn ? '/en/packaging-weee/' : '/verpackung-elektrogeraete/'}
+                
+                className="hover:text-emerald-400 transition-colors inline-block"
               >
                 {isEn ? 'Packaging & WEEE' : 'Verpackung & ElektroG'}
-              </button>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -530,7 +531,7 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          <div className="shrink-0 flex items-center gap-2 text-slate-500 font-mono">
+          <div className="shrink-0 flex items-center gap-2 text-slate-400 font-mono">
             <span>DE-WEEE: 89123456</span>
             <span>•</span>
             <span>LUCID: DE4812390812903</span>
@@ -539,7 +540,7 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Copyright & Payment Badges */}
-      <div className="max-w-7xl mx-auto px-4 py-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div className="max-w-7xl mx-auto px-4 py-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
         <div>
           © 2026 EBike Zu Verkaufen GmbH & Co. KG. Alle Rechte vorbehalten. e-bike-zuverkaufen.de
         </div>

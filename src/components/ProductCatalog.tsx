@@ -59,6 +59,10 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   }, [activeRoute, activeBrand]);
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'range' | 'torque'>('featured');
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
+  // Render the first page of results only; the rest loads on demand (keeps hydration fast on pages with 150+ bikes)
+  const PAGE_SIZE = 24;
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  React.useEffect(() => { setVisibleCount(PAGE_SIZE); }, [activeRoute?.id, activeBrand, searchQuery]);
 
   // Available unique brands & motors
   const availableBrands = useMemo(() => Array.from(new Set(PRODUCTS.map((p) => p.brand))), []);
@@ -237,6 +241,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             {isEn ? 'Sort by:' : 'Sortierung:'}
           </span>
           <select
+            aria-label={isEn ? 'Sort by' : 'Sortierung'}
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as any)}
             className="bg-white border border-slate-300 rounded-lg px-3 py-1.5 font-semibold text-slate-800 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-hidden"
@@ -262,9 +267,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
         >
           {mobileFilterOpen && (
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200 lg:hidden">
-              <h3 className="font-bold text-base text-slate-900">
+              <h2 className="font-bold text-base text-slate-900">
                 {isEn ? 'Filter Options' : 'Filteroptionen'}
-              </h3>
+              </h2>
               <button
                 onClick={() => setMobileFilterOpen(false)}
                 className="p-2 text-slate-400 hover:text-slate-700"
@@ -276,10 +281,10 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
           <div className="bg-white rounded-2xl border border-slate-200 p-5 space-y-6 shadow-2xs">
             <div className="flex items-center justify-between">
-              <h3 className="font-bold text-sm text-slate-900 flex items-center gap-2">
-                <Filter className="w-4 h-4 text-emerald-600" />
+              <h2 className="font-bold text-sm text-slate-900 flex items-center gap-2">
+                <Filter className="w-4 h-4 text-emerald-700" />
                 <span>{isEn ? 'Refine Selection' : 'Filter'}</span>
-              </h3>
+              </h2>
               {hasActiveFilters && (
                 <button
                   onClick={resetFilters}
@@ -292,9 +297,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
             {/* Motor Filter */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
                 {isEn ? 'Drive Motor' : 'Antriebssystem'}
-              </h4>
+              </h3>
               <div className="space-y-1">
                 {availableMotors.map((m) => {
                   const isChecked = selectedMotor === m;
@@ -309,7 +314,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                       }`}
                     >
                       <span>{m}</span>
-                      {isChecked && <Check className="w-3.5 h-3.5 text-emerald-600" />}
+                      {isChecked && <Check className="w-3.5 h-3.5 text-emerald-700" />}
                     </button>
                   );
                 })}
@@ -318,9 +323,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
             {/* Brand Filter */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
                 {isEn ? 'Brand' : 'Marke'}
-              </h4>
+              </h3>
               <div className="space-y-1">
                 {availableBrands.map((b) => {
                   const isChecked = selectedBrand === b;
@@ -335,7 +340,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                       }`}
                     >
                       <span>{b}</span>
-                      {isChecked && <Check className="w-3.5 h-3.5 text-emerald-600" />}
+                      {isChecked && <Check className="w-3.5 h-3.5 text-emerald-700" />}
                     </button>
                   );
                 })}
@@ -344,9 +349,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
             {/* Frame / Gender */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
                 {isEn ? 'Frame Type' : 'Rahmenform'}
-              </h4>
+              </h3>
               <div className="space-y-1">
                 {[
                   { id: 'tiefeinsteiger', labelDe: 'Tiefeinsteiger (Wave)', labelEn: 'Step-Through (Wave)' },
@@ -367,7 +372,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                       }`}
                     >
                       <span>{isEn ? item.labelEn : item.labelDe}</span>
-                      {isChecked && <Check className="w-3.5 h-3.5 text-emerald-600" />}
+                      {isChecked && <Check className="w-3.5 h-3.5 text-emerald-700" />}
                     </button>
                   );
                 })}
@@ -376,12 +381,13 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
             {/* Price Range Slider */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
                 {isEn ? 'Max Price (€)' : 'Maximaler Preis (€)'}
-              </h4>
+              </h3>
               <input
                 type="range"
-                min="800"
+                aria-label={isEn ? 'Maximum price in euro' : 'Maximaler Preis in Euro'}
+                min="500"
                 max="15000"
                 step="100"
                 value={priceRange[1]}
@@ -397,7 +403,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             {mobileFilterOpen && (
               <button
                 onClick={() => setMobileFilterOpen(false)}
-                className="w-full py-3 bg-emerald-600 text-white rounded-xl font-bold text-xs shadow-md"
+                className="w-full py-3 bg-emerald-700 text-white rounded-xl font-bold text-xs shadow-md"
               >
                 {isEn ? 'Apply Filters' : 'Filter anwenden'}
               </button>
@@ -406,13 +412,13 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
         </aside>
 
         {/* Product Cards Grid */}
-        <main className="lg:col-span-3">
+        <div className="lg:col-span-3">
           {filteredProducts.length === 0 ? (
             <div className="bg-slate-50 rounded-2xl border border-dashed border-slate-300 p-12 text-center space-y-4">
               <Sparkles className="w-12 h-12 text-slate-400 mx-auto" />
-              <h3 className="text-lg font-bold text-slate-800">
+              <h2 className="text-lg font-bold text-slate-800">
                 {isEn ? 'No E-Bikes match this filter combination' : 'Keine E-Bikes für diese Filterkriterien gefunden'}
-              </h3>
+              </h2>
               <p className="text-xs text-slate-500 max-w-md mx-auto">
                 {isEn
                   ? 'Try relaxing your price range or clearing motor and frame filters to view more available models.'
@@ -420,19 +426,32 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               </p>
               <button
                 onClick={resetFilters}
-                className="px-5 py-2.5 bg-emerald-600 text-white rounded-xl text-xs font-bold hover:bg-emerald-700 transition-colors shadow-xs"
+                className="px-5 py-2.5 bg-emerald-700 text-white rounded-xl text-xs font-bold hover:bg-emerald-800 transition-colors shadow-xs"
               >
                 {isEn ? 'Clear All Filters' : 'Alle Filter zurücksetzen'}
               </button>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+              {filteredProducts.slice(0, visibleCount).map((product, idx) => (
+                <ProductCard key={product.id} product={product} priority={idx < 4} />
               ))}
             </div>
           )}
-        </main>
+          {filteredProducts.length > visibleCount && (
+            <div className="mt-8 text-center">
+              <button
+                type="button"
+                onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
+                className="px-6 py-3 rounded-xl bg-slate-900 text-white text-sm font-bold hover:bg-slate-800"
+              >
+                {isEn
+                  ? `Show more models (${visibleCount} of ${filteredProducts.length})`
+                  : `Weitere Modelle anzeigen (${visibleCount} von ${filteredProducts.length})`}
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

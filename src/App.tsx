@@ -1,5 +1,7 @@
 'use client';
 
+import { NavLink } from './components/NavLink';
+import { smallImg } from './lib/img';
 import React, { useState } from 'react';
 import { SHOW_REVIEWS } from './config/flags';
 import {
@@ -27,7 +29,8 @@ import { GuideDetail } from './components/GuideDetail';
 import { LegalPage } from './components/LegalPage';
 import { SizeGuide } from './components/SizeGuide';
 import { CartDrawer } from './components/CartDrawer';
-import { CheckoutModal } from './components/CheckoutModal';
+import dynamic from 'next/dynamic';
+const CheckoutModal = dynamic(() => import('./components/CheckoutModal').then((m) => m.CheckoutModal), { ssr: false });
 import { OrderConfirmation } from './components/OrderConfirmation';
 import { TaxonomyInspector } from './components/TaxonomyInspector';
 
@@ -51,7 +54,7 @@ function tileFor(pathDe: string): { minPrice: number; img?: string } {
   const matches = PRODUCTS.filter((p) => prefix && p.category.startsWith(prefix));
   return {
     minPrice: matches.length ? Math.min(...matches.map((p) => p.price)) : 0,
-    img: matches[0]?.images[0],
+    img: matches[0] ? smallImg(matches[0].images[0]) : undefined,
   };
 }
 
@@ -62,7 +65,7 @@ export function MainRouter() {
   // 1. Single Product Detail Page: /e-bike/<slug>/ or /en/e-bike/<slug>/
   if (activeProduct) {
     return (
-      <main className="min-h-screen">
+      <main id="main" tabIndex={-1} className="min-h-screen">
         <ProductDetail product={activeProduct} />
       </main>
     );
@@ -74,7 +77,7 @@ export function MainRouter() {
     currentPath === '/en/order-confirmation/'
   ) {
     return (
-      <main className="min-h-screen">
+      <main id="main" tabIndex={-1} className="min-h-screen">
         <OrderConfirmation />
       </main>
     );
@@ -86,7 +89,7 @@ export function MainRouter() {
     currentPath === '/en/size-guide/'
   ) {
     return (
-      <main className="min-h-screen">
+      <main id="main" tabIndex={-1} className="min-h-screen">
         <SizeGuide />
       </main>
     );
@@ -100,7 +103,7 @@ export function MainRouter() {
     currentPath === '/en/spare-parts/'
   ) {
     return (
-      <main className="min-h-screen">
+      <main id="main" tabIndex={-1} className="min-h-screen">
         <AccessoriesCatalog />
       </main>
     );
@@ -114,7 +117,7 @@ export function MainRouter() {
   );
   if (guideMatch) {
     return (
-      <main className="min-h-screen">
+      <main id="main" tabIndex={-1} className="min-h-screen">
         <GuideDetail guide={guideMatch} />
       </main>
     );
@@ -123,7 +126,7 @@ export function MainRouter() {
   // General Guides overview (/ratgeber/ or /en/guides/)
   if (currentPath === '/ratgeber/' || currentPath === '/en/guides/') {
     return (
-      <main className="min-h-screen max-w-7xl mx-auto px-4 py-10">
+      <main id="main" tabIndex={-1} className="min-h-screen max-w-7xl mx-auto px-4 py-10">
         <div className="bg-slate-900 rounded-3xl p-8 sm:p-12 text-white mb-10">
           <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
             {isEn ? 'E-Bike Knowledge Hub' : 'Ratgeber & Wissensbereich'}
@@ -140,28 +143,28 @@ export function MainRouter() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {GUIDES.map((g) => (
-            <div
+            <NavLink href={isEn ? `/en/guides/${g.slugEn}/` : `/ratgeber/${g.slugDe}/`}
               key={g.id}
-              onClick={() => navigateTo(isEn ? `/en/guides/${g.slugEn}/` : `/ratgeber/${g.slugDe}/`)}
+              
               className="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-all cursor-pointer flex flex-col justify-between"
             >
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
                   {g.category}
                 </span>
-                <h3 className="text-base font-bold text-slate-900 mt-2 mb-2 line-clamp-2">
+                <h2 className="text-base font-bold text-slate-900 mt-2 mb-2 line-clamp-2">
                   {isEn ? g.titleEn : g.titleDe}
-                </h3>
+                </h2>
                 <p className="text-xs text-slate-500 line-clamp-3 leading-relaxed">
                   {isEn ? g.summaryEn : g.summaryDe}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-emerald-600 font-bold mt-4">
+              <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-emerald-700 font-bold mt-4">
                 <span>{isEn ? 'Read Guide' : 'Ratgeber lesen'}</span>
                 <ArrowRight className="w-4 h-4" />
               </div>
-            </div>
+            </NavLink>
           ))}
         </div>
       </main>
@@ -177,7 +180,7 @@ export function MainRouter() {
   );
   if (legalMatch) {
     return (
-      <main className="min-h-screen">
+      <main id="main" tabIndex={-1} className="min-h-screen">
         <LegalPage document={legalMatch} />
       </main>
     );
@@ -189,7 +192,7 @@ export function MainRouter() {
     currentPath !== '/en/'
   ) {
     return (
-      <main className="min-h-screen">
+      <main id="main" tabIndex={-1} className="min-h-screen">
         <ProductCatalog />
       </main>
     );
@@ -197,7 +200,7 @@ export function MainRouter() {
 
   // 8. Default: HOMEPAGE (for '/' and '/en/')
   return (
-    <main className="min-h-screen">
+    <main id="main" tabIndex={-1} className="min-h-screen">
       {/* Hero Banner */}
       <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white py-16 sm:py-24 px-4 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -242,20 +245,20 @@ export function MainRouter() {
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <button
-                onClick={() => navigateTo(isEn ? '/en/e-bikes/' : '/e-bikes/')}
+              <NavLink href={isEn ? '/en/e-bikes/' : '/e-bikes/'}
+                
                 className="px-8 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm flex items-center gap-2 shadow-lg shadow-emerald-500/25 transition-all cursor-pointer"
               >
                 <span>{isEn ? 'Explore E-Bikes' : 'Alle E-Bikes entdecken'}</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </NavLink>
 
-              <button
-                onClick={() => navigateTo(isEn ? '/en/guides/bike-leasing-germany/' : '/ratgeber/e-bike-leasing-jobrad/')}
-                className="px-6 py-4 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 backdrop-blur-xs transition-all cursor-pointer"
+              <NavLink href={isEn ? '/en/guides/bike-leasing-germany/' : '/ratgeber/e-bike-leasing-jobrad/'}
+                
+                className="px-6 py-4 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 backdrop-blur-xs transition-all cursor-pointer inline-block"
               >
                 {isEn ? 'JobRad Leasing Calculator' : 'JobRad Leasingrechner'}
-              </button>
+              </NavLink>
             </div>
 
             {SHOW_REVIEWS && (
@@ -283,6 +286,9 @@ export function MainRouter() {
                 <img
                   src={PRODUCTS[0].images[0]}
                   alt={isEn ? PRODUCTS[0].name_en : PRODUCTS[0].name_de}
+                  width={1200}
+                  height={900}
+                  fetchPriority="high"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -296,17 +302,17 @@ export function MainRouter() {
                 </span>
               </div>
 
-              <h3 className="font-bold text-white text-base mb-3">
+              <h2 className="font-bold text-white text-base mb-3">
                 {isEn ? PRODUCTS[0].name_en : PRODUCTS[0].name_de}
-              </h3>
+              </h2>
 
-              <button
-                onClick={() => navigateTo(isEn ? `/en/e-bike/${PRODUCTS[0].slug}/` : `/e-bike/${PRODUCTS[0].slug}/`)}
+              <NavLink href={isEn ? `/en/e-bike/${PRODUCTS[0].slug}/` : `/e-bike/${PRODUCTS[0].slug}/`}
+                
                 className="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center justify-center gap-2 border border-slate-700 transition-colors"
               >
                 <span>{isEn ? 'View Product Details' : 'Produktdetails ansehen'}</span>
                 <ChevronRight className="w-4 h-4" />
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -323,13 +329,13 @@ export function MainRouter() {
               {isEn ? 'Find the model best suited for your riding profile' : 'Finde das passende Rad für deinen Einsatzzweck'}
             </p>
           </div>
-          <button
-            onClick={() => navigateTo(isEn ? '/en/e-bikes/' : '/e-bikes/')}
-            className="text-xs font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1"
+          <NavLink href={isEn ? '/en/e-bikes/' : '/e-bikes/'}
+            
+            className="text-xs font-bold text-emerald-700 hover:text-emerald-700 flex items-center gap-1"
           >
             <span>{isEn ? 'All Categories' : 'Alle Kategorien'}</span>
             <ChevronRight className="w-4 h-4" />
-          </button>
+          </NavLink>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -383,9 +389,9 @@ export function MainRouter() {
               img: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=400&q=80',
             },
           ].map((c) => ({ ...c, ...tileFor(c.pathDe) })).map((cat) => (
-            <div
+            <NavLink href={isEn ? cat.pathEn : cat.pathDe}
               key={cat.titleDe}
-              onClick={() => navigateTo(isEn ? cat.pathEn : cat.pathDe)}
+              
               className="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all cursor-pointer flex flex-col"
             >
               <div className="h-28 overflow-hidden bg-white">
@@ -393,12 +399,15 @@ export function MainRouter() {
                   <img
                     src={cat.img}
                     alt={isEn ? cat.titleEn : cat.titleDe}
+                    width={1200}
+                    height={900}
+                    loading="lazy"
                     className="w-full h-full object-contain group-hover:scale-105 transition-transform"
                   />
                 )}
               </div>
               <div className="p-3 text-center flex-1 flex flex-col justify-between">
-                <div className="font-bold text-xs text-slate-900 group-hover:text-emerald-600">
+                <div className="font-bold text-xs text-slate-900 group-hover:text-emerald-700">
                   {isEn ? cat.titleEn : cat.titleDe}
                 </div>
                 <div className="text-[10px] text-emerald-700 font-bold mt-1">
@@ -409,7 +418,7 @@ export function MainRouter() {
                     : ''}
                 </div>
               </div>
-            </div>
+            </NavLink>
           ))}
         </div>
       </section>
@@ -426,13 +435,13 @@ export function MainRouter() {
                 {isEn ? 'Featured Electric Bikes' : 'Ausgewählte E-Bikes der Saison'}
               </h2>
             </div>
-            <button
-              onClick={() => navigateTo(isEn ? '/en/e-bikes/' : '/e-bikes/')}
-              className="text-xs font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1"
+            <NavLink href={isEn ? '/en/e-bikes/' : '/e-bikes/'}
+              
+              className="text-xs font-bold text-emerald-700 hover:text-emerald-700 flex items-center gap-1"
             >
               <span>{isEn ? 'View all models' : 'Alle Modelle anzeigen'}</span>
               <ChevronRight className="w-4 h-4" />
-            </button>
+            </NavLink>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -494,9 +503,9 @@ export function MainRouter() {
                       </div>
                     ))}
                   </div>
-                  <h4 className="font-bold text-sm text-slate-900 mb-1">
+                  <h3 className="font-bold text-sm text-slate-900 mb-1">
                     {isEn ? r.titleEn : r.titleDe}
-                  </h4>
+                  </h3>
                   <p className="text-xs text-slate-600 line-clamp-4 leading-relaxed">
                     {isEn ? r.commentEn : r.commentDe}
                   </p>
@@ -521,11 +530,17 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <ShopProvider>
       <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:bg-emerald-700 focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-white focus:shadow-lg"
+        >
+          Zum Inhalt springen / Skip to content
+        </a>
         <Header />
         {children}
         <Footer />
         <CartDrawer onProceedToCheckout={() => setIsCheckoutOpen(true)} />
-        <CheckoutModal isOpen={isCheckoutOpen} onClose={() => setIsCheckoutOpen(false)} />
+        {isCheckoutOpen && <CheckoutModal isOpen={isCheckoutOpen} onClose={() => setIsCheckoutOpen(false)} />}
       </div>
     </ShopProvider>
   );

@@ -470,7 +470,7 @@ export const TAXONOMY_ROUTES: TaxonomyRoute[] = [
     titleTemplateDe: (p = 2499) => `E-Bikes für lange Strecken kaufen | Große Auswahl ab ${p} € | EBike Zu Verkaufen`,
     titleTemplateEn: (p = 2499) => `Buy Long-Distance Electric Bikes | Wide Selection from €${p} | EBike Zu Verkaufen`,
     metaDe: 'E-Bikes mit großer Reichweite und Akkus ab 720 Wh für lange Touren.',
-    metaEn: 'Long-distance touring e-bikes with large batteries from 720 Wh.',
+    metaEn: 'Long-distance touring e-bikes with large batteries from 720 Wh: specifications, photos and prices for every model.',
     h1De: 'E-Bikes für lange Strecken & Touren',
     h1En: 'Long-Distance Touring Electric Bikes',
     subtitleDe: 'DualBattery Optionen und aerodynamische Effizienz für Mehrtagestouren ohne Ladesorgen',

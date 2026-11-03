@@ -1,4 +1,5 @@
 'use client';
+import { NavLink } from './NavLink';
 import React, { useState } from 'react';
 import { ShieldAlert, Globe, ChevronRight, FileText, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
@@ -18,12 +19,12 @@ export const LegalPage: React.FC<LegalPageProps> = ({ document }) => {
     <div className="max-w-4xl mx-auto px-4 py-10">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-xs text-slate-500 mb-6 flex-wrap">
-        <button
-          onClick={() => navigateTo(isEn ? '/en/' : '/')}
-          className="hover:text-emerald-600 transition-colors"
+        <NavLink href={isEn ? '/en/' : '/'}
+          
+          className="hover:text-emerald-700 transition-colors inline-block"
         >
           {isEn ? 'Home' : 'Startseite'}
-        </button>
+        </NavLink>
         <ChevronRight className="w-3 h-3 text-slate-400" />
         <span className="text-slate-900 font-medium">
           {isEn ? document.titleEn : document.titleDe}

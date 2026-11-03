@@ -1,4 +1,5 @@
 'use client';
+import { NavLink } from './NavLink';
 import React, { useState } from 'react';
 import { Ruler, CheckCircle2, ChevronRight, HelpCircle, ArrowRight } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
@@ -47,12 +48,12 @@ export const SizeGuide: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-10">
       <nav className="flex items-center gap-2 text-xs text-slate-500 mb-6 flex-wrap">
-        <button
-          onClick={() => navigateTo(isEn ? '/en/' : '/')}
-          className="hover:text-emerald-600 transition-colors"
+        <NavLink href={isEn ? '/en/' : '/'}
+          
+          className="hover:text-emerald-700 transition-colors inline-block"
         >
           {isEn ? 'Home' : 'Startseite'}
-        </button>
+        </NavLink>
         <ChevronRight className="w-3 h-3 text-slate-400" />
         <span className="text-slate-900 font-medium">
           {isEn ? 'Frame Size Guide' : 'Rahmengrößen-Berater'}
@@ -107,10 +108,11 @@ export const SizeGuide: React.FC = () => {
             <div>
               <div className="flex justify-between items-center text-xs font-bold text-slate-700 mb-1.5">
                 <span>{isEn ? 'Body Height:' : 'Körpergröße:'}</span>
-                <span className="font-mono text-emerald-600 text-sm">{heightCm} cm</span>
+                <span className="font-mono text-emerald-700 text-sm">{heightCm} cm</span>
               </div>
               <input
                 type="range"
+                aria-label={isEn ? 'Body height in cm' : 'Körpergröße in cm'}
                 min="145"
                 max="205"
                 value={heightCm}
@@ -124,10 +126,11 @@ export const SizeGuide: React.FC = () => {
                 <span className="flex items-center gap-1">
                   <span>{isEn ? 'Inseam / Stride Length:' : 'Schrittlänge (Innenbeinlänge):'}</span>
                 </span>
-                <span className="font-mono text-emerald-600 text-sm">{inseamCm} cm</span>
+                <span className="font-mono text-emerald-700 text-sm">{inseamCm} cm</span>
               </div>
               <input
                 type="range"
+                aria-label={isEn ? 'Inseam length in cm' : 'Schrittlänge in cm'}
                 min="65"
                 max="100"
                 value={inseamCm}
@@ -168,13 +171,13 @@ export const SizeGuide: React.FC = () => {
               </div>
             </div>
 
-            <button
-              onClick={() => navigateTo(isEn ? '/en/e-bikes/' : '/e-bikes/')}
-              className="w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl text-xs transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+            <NavLink href={isEn ? '/en/e-bikes/' : '/e-bikes/'}
+              
+              className="w-full py-3 bg-emerald-500 hover:bg-emerald-700 text-slate-950 font-bold rounded-xl text-xs transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm"
             >
               <span>{isEn ? `Find E-Bikes in Size ${sizeLabel}` : `E-Bikes in Größe ${sizeLabel} anzeigen`}</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </NavLink>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 'use client';
+import { NavLink } from './NavLink';
 import React, { useState } from 'react';
 import {
   BookOpen,
@@ -55,19 +56,19 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
     <div className="max-w-4xl mx-auto px-4 py-10">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-xs text-slate-500 mb-6 flex-wrap">
-        <button
-          onClick={() => navigateTo(isEn ? '/en/' : '/')}
-          className="hover:text-emerald-600 transition-colors"
+        <NavLink href={isEn ? '/en/' : '/'}
+          
+          className="hover:text-emerald-700 transition-colors inline-block"
         >
           {isEn ? 'Home' : 'Startseite'}
-        </button>
+        </NavLink>
         <ChevronRight className="w-3 h-3 text-slate-400" />
-        <button
-          onClick={() => navigateTo(isEn ? '/en/guides/' : '/ratgeber/')}
-          className="hover:text-emerald-600 transition-colors"
+        <NavLink href={isEn ? '/en/guides/' : '/ratgeber/'}
+          
+          className="hover:text-emerald-700 transition-colors inline-block"
         >
           {isEn ? 'Guides & Advice' : 'Ratgeber & Wissen'}
-        </button>
+        </NavLink>
         <ChevronRight className="w-3 h-3 text-slate-400" />
         <span className="text-slate-900 font-medium">
           {isEn ? guide.titleEn : guide.titleDe}
@@ -97,14 +98,14 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
 
       {/* Key Takeaways Box */}
       <div className="bg-emerald-50/80 rounded-2xl p-6 border border-emerald-200 mb-10">
-        <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-900 flex items-center gap-2 mb-3">
-          <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+        <h2 className="text-xs font-bold uppercase tracking-wider text-emerald-900 flex items-center gap-2 mb-3">
+          <CheckCircle2 className="w-4 h-4 text-emerald-700" />
           <span>{isEn ? 'Key Takeaways at a Glance' : 'Das Wichtigste in Kürze'}</span>
-        </h3>
+        </h2>
         <ul className="space-y-2 text-xs sm:text-sm text-emerald-950 font-medium">
           {(isEn ? guide.keyTakeawaysEn : guide.keyTakeawaysDe).map((point, i) => (
             <li key={i} className="flex items-start gap-2.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-700 mt-2 shrink-0" />
               <span>{point}</span>
             </li>
           ))}
@@ -121,9 +122,9 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
               <Calculator className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-bold text-lg text-white">
+              <h2 className="font-bold text-lg text-white">
                 {isEn ? 'JobRad & Dienstrad Leasing Calculator' : 'Interaktiver Dienstrad-Leasingrechner'}
-              </h3>
+              </h2>
               <p className="text-xs text-slate-400">
                 {isEn ? '0.25% Rule & Salary Sacrifice in Germany' : '0,25%-Regel nach deutschem Steuerrecht'}
               </p>
@@ -133,10 +134,10 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
             <div className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-slate-300 mb-1" htmlFor="fld-guid-8">
                   {isEn ? 'E-Bike Purchase Price (€)' : 'E-Bike Kaufpreis (€)'}
                 </label>
-                <input
+                <input id="fld-guid-8"
                   type="number"
                   step="50"
                   value={bikePrice}
@@ -146,10 +147,10 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-slate-300 mb-1" htmlFor="fld-guid-9">
                   {isEn ? 'Gross Monthly Salary (€)' : 'Monatliches Bruttogehalt (€)'}
                 </label>
-                <input
+                <input id="fld-guid-9"
                   type="number"
                   step="100"
                   value={grossSalary}
@@ -159,10 +160,10 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-slate-300 mb-1" htmlFor="fld-guid-10">
                   {isEn ? 'German Tax Class (Steuerklasse)' : 'Steuerklasse'}
                 </label>
-                <select
+                <select id="fld-guid-10"
                   value={taxClass}
                   onChange={(e) => setTaxClass(e.target.value)}
                   className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-hidden"
@@ -204,12 +205,12 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
                 </div>
               </div>
 
-              <button
-                onClick={() => navigateTo(isEn ? '/en/e-bikes/' : '/e-bikes/')}
-                className="w-full py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl text-xs transition-colors shadow-xs"
+              <NavLink href={isEn ? '/en/e-bikes/' : '/e-bikes/'}
+                
+                className="w-full py-2.5 bg-emerald-500 hover:bg-emerald-700 text-slate-950 font-bold rounded-xl text-xs transition-colors shadow-xs inline-block"
               >
                 {isEn ? 'Browse Lease-Eligible E-Bikes' : 'Jetzt Leasing-fähiges E-Bike aussuchen'}
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -223,9 +224,9 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
               <Battery className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-bold text-lg text-white">
+              <h2 className="font-bold text-lg text-white">
                 {isEn ? 'Real-World Range Simulator' : 'Realer E-Bike Reichweiten-Rechner'}
-              </h3>
+              </h2>
               <p className="text-xs text-slate-400">
                 {isEn ? 'Calculate realistic distances per charge' : 'Ermittle deine Reichweite nach Akkukapazität und Fahrergewicht'}
               </p>
@@ -235,10 +236,10 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
             <div className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
+                <div className="block text-xs font-semibold text-slate-300 mb-1" id="grp-battery">
                   {isEn ? 'Battery Size (Wh)' : 'Akkukapazität (Wh)'}
-                </label>
-                <div className="grid grid-cols-3 gap-2">
+                </div>
+                <div className="grid grid-cols-3 gap-2" role="group" aria-labelledby="grp-battery">
                   {[500, 625, 750, 1000, 1125].map((wh) => (
                     <button
                       key={wh}
@@ -256,9 +257,9 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
+                <div className="block text-xs font-semibold text-slate-300 mb-1">
                   {isEn ? 'Support Mode' : 'Unterstützungsstufe'}
-                </label>
+                </div>
                 <div className="grid grid-cols-3 gap-2">
                   {[
                     { id: 'eco', label: 'Eco' },
@@ -316,9 +317,9 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
               <MapPin className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-bold text-lg text-white">
+              <h2 className="font-bold text-lg text-white">
                 {isEn ? 'Subsidies Finder by German State' : 'Förderfinder nach Bundesland'}
-              </h3>
+              </h2>
               <p className="text-xs text-slate-400">
                 {isEn ? 'Check grant availability before purchasing' : 'Prüfe Zuschüsse von Bund, Ländern und Kommunen'}
               </p>
@@ -327,10 +328,10 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1">
+              <label className="block text-xs font-semibold text-slate-300 mb-1" htmlFor="fld-guid-11">
                 {isEn ? 'Select State / Region' : 'Bundesland wählen'}
               </label>
-              <select
+              <select id="fld-guid-11"
                 value={selectedBundesland}
                 onChange={(e) => setSelectedBundesland(e.target.value)}
                 className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-hidden"
@@ -380,21 +381,21 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide }) => {
 
       {/* Bottom CTA */}
       <div className="mt-12 p-8 bg-slate-50 rounded-3xl border border-slate-200 text-center space-y-4">
-        <h3 className="text-lg font-bold text-slate-900">
+        <h2 className="text-lg font-bold text-slate-900">
           {isEn ? 'Ready to find your perfect E-Bike?' : 'Bereit für dein Traum-E-Bike?'}
-        </h3>
+        </h2>
         <p className="text-xs text-slate-600 max-w-md mx-auto">
           {isEn
             ? 'Browse our certified inventory with Bosch & Yamaha motors, bank transfer and a 10% crypto discount.'
             : 'Entdecke alle Modelle mit Top-Motoren, Überweisung und 10% Rabatt bei Krypto-Zahlung.'}
         </p>
-        <button
-          onClick={() => navigateTo(isEn ? '/en/e-bikes/' : '/e-bikes/')}
+        <NavLink href={isEn ? '/en/e-bikes/' : '/e-bikes/'}
+          
           className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl shadow-md transition-all cursor-pointer"
         >
           <span>{isEn ? 'Explore E-Bikes' : 'Jetzt alle E-Bikes ansehen'}</span>
           <ArrowRight className="w-4 h-4" />
-        </button>
+        </NavLink>
       </div>
     </div>
   );

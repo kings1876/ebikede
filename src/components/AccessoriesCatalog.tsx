@@ -1,4 +1,5 @@
 'use client';
+import { NavLink } from './NavLink';
 import React from 'react';
 import { ShoppingCart, Check, ShieldCheck, ChevronRight } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
@@ -18,12 +19,12 @@ export const AccessoriesCatalog: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 py-8">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-xs text-slate-500 mb-6 flex-wrap">
-        <button
-          onClick={() => navigateTo(isEn ? '/en/' : '/')}
-          className="hover:text-emerald-600 transition-colors"
+        <NavLink href={isEn ? '/en/' : '/'}
+          
+          className="hover:text-emerald-700 transition-colors inline-block"
         >
           {isEn ? 'Home' : 'Startseite'}
-        </button>
+        </NavLink>
         <ChevronRight className="w-3 h-3 text-slate-400" />
         <span className="text-slate-900 font-medium">
           {isEn ? 'Accessories' : 'Zubehör'}
@@ -68,17 +69,17 @@ export const AccessoriesCatalog: React.FC = () => {
         ].map((item) => {
           const isActive = (item.id === '' && !categoryFilter) || item.id === categoryFilter;
           return (
-            <button
+            <NavLink href={isEn ? item.pathEn : item.pathDe}
               key={item.id}
-              onClick={() => navigateTo(isEn ? item.pathEn : item.pathDe)}
+              
               className={`px-4 py-2 rounded-xl whitespace-nowrap transition-all ${
                 isActive
-                  ? 'bg-emerald-600 text-white shadow-xs font-bold'
+                  ? 'bg-emerald-700 text-white shadow-xs font-bold'
                   : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
               }`}
             >
               {isEn ? item.labelEn : item.labelDe}
-            </button>
+            </NavLink>
           );
         })}
       </div>
@@ -95,6 +96,9 @@ export const AccessoriesCatalog: React.FC = () => {
                 <img
                   src={acc.image}
                   alt={isEn ? acc.name_en : acc.name_de}
+                  width={400}
+                  height={300}
+                  loading="lazy"
                   className="w-full h-full object-cover rounded-lg"
                 />
               </div>
@@ -103,9 +107,9 @@ export const AccessoriesCatalog: React.FC = () => {
                 {acc.brand}
               </div>
 
-              <h3 className="font-bold text-slate-900 text-sm mb-1 line-clamp-2">
+              <h2 className="font-bold text-slate-900 text-sm mb-1 line-clamp-2">
                 {isEn ? acc.name_en : acc.name_de}
-              </h3>
+              </h2>
 
               <p className="text-xs text-slate-500 leading-relaxed line-clamp-2 mb-4">
                 {isEn ? acc.description_en : acc.description_de}
@@ -126,7 +130,7 @@ export const AccessoriesCatalog: React.FC = () => {
 
               <button
                 onClick={() => addToCart(acc, undefined, undefined, true)}
-                className="p-2.5 rounded-xl bg-slate-900 hover:bg-emerald-600 text-white transition-all shadow-xs cursor-pointer"
+                className="p-2.5 rounded-xl bg-slate-900 hover:bg-emerald-700 text-white transition-all shadow-xs cursor-pointer"
                 title={isEn ? 'Add to cart' : 'In den Warenkorb'}
               >
                 <ShoppingCart className="w-4 h-4" />

@@ -73,7 +73,7 @@ export const TaxonomyInspector: React.FC = () => {
                 onClick={() => switchLanguage('de')}
                 className={`px-2.5 py-1 rounded-md font-bold transition-all ${
                   language === 'de'
-                    ? 'bg-emerald-600 text-white shadow-xs'
+                    ? 'bg-emerald-700 text-white shadow-xs'
                     : 'bg-slate-800 text-slate-400 hover:text-white'
                 }`}
               >
@@ -83,7 +83,7 @@ export const TaxonomyInspector: React.FC = () => {
                 onClick={() => switchLanguage('en')}
                 className={`px-2.5 py-1 rounded-md font-bold transition-all ${
                   language === 'en'
-                    ? 'bg-emerald-600 text-white shadow-xs'
+                    ? 'bg-emerald-700 text-white shadow-xs'
                     : 'bg-slate-800 text-slate-400 hover:text-white'
                 }`}
               >
@@ -239,7 +239,7 @@ export const TaxonomyInspector: React.FC = () => {
                         </button>
                         <button
                           onClick={() => navigateTo(language === 'de' ? r.pathDe : r.pathEn)}
-                          className="px-2 py-0.5 rounded bg-slate-800 hover:bg-emerald-600 text-white text-[10px] shrink-0 transition-colors ml-2"
+                          className="px-2 py-0.5 rounded bg-slate-800 hover:bg-emerald-700 text-white text-[10px] shrink-0 transition-colors ml-2"
                         >
                           Visit
                         </button>

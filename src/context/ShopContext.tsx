@@ -21,7 +21,7 @@ import { PRODUCTS } from '../data/products';
 import { ACCESSORIES } from '../data/accessories';
 import { INITIAL_REVIEWS } from '../data/reviews';
 import { brandSlug } from '../lib/brand';
-import { brandSeoDe, productTitleDe } from '../data/seo-apply';
+import { brandSeoDe, productTitleDe, productTitleEn, productMeta, shortenTitle } from '../data/seo-apply';
 
 interface ShopContextType {
   currentPath: string;
@@ -223,10 +223,10 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (activeProduct) {
       if (language === 'de') {
         title = productTitleDe(activeProduct);
-        description = activeProduct.description_de.slice(0, 155) + '...';
+        description = productMeta(activeProduct, 'de');
       } else {
-        title = `Buy ${activeProduct.name_en} | €${activeProduct.price.toLocaleString('en-US')} | EBike Zu Verkaufen`;
-        description = activeProduct.description_en.slice(0, 155) + '...';
+        title = productTitleEn(activeProduct);
+        description = productMeta(activeProduct, 'en');
       }
       pathDe = `/e-bike/${activeProduct.slug}/`;
       pathEn = `/en/e-bike/${activeProduct.slug}/`;
@@ -243,10 +243,10 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
     } else if (activeRoute) {
       if (activeRoute.noindex) isNoindex = true;
       if (language === 'de') {
-        title = activeRoute.titleTemplateDe(minCategoryPrice);
+        title = shortenTitle(activeRoute.titleTemplateDe(minCategoryPrice));
         description = activeRoute.metaDe;
       } else {
-        title = activeRoute.titleTemplateEn(minCategoryPrice);
+        title = shortenTitle(activeRoute.titleTemplateEn(minCategoryPrice));
         description = activeRoute.metaEn;
       }
       pathDe = activeRoute.pathDe;
@@ -259,7 +259,7 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const hreflangDefault = `${baseUrl}${pathDe}`; // x-default = German URL as specified in rules
 
     return {
-      title,
+      title: shortenTitle(title),
       description,
       canonicalUrl: selfCanonical,
       hreflangDe,

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { BASE_URL, allPaths, resolvePage } from '../lib/seo';
+import { BASE_URL, CONTENT_UPDATED, allPaths, resolvePage } from '../lib/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = [];
@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     if (info.noindex || info.kind === 'none') continue;
     out.push({
       url: `${BASE_URL}${p}`,
-      lastModified: new Date(),
+      lastModified: new Date(CONTENT_UPDATED),
       alternates: {
         languages: {
           'de-DE': `${BASE_URL}${info.pathDe}`,

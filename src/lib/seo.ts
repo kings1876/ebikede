@@ -5,10 +5,12 @@ import { GUIDES } from '../data/guides';
 import { ACCESSORIES } from '../data/accessories';
 import { LEGAL_DOCUMENTS } from '../data/legal';
 import { brandSlug } from './brand';
-import { homeSeoDe, brandSeoDe, productTitleDe } from '../data/seo-apply';
+import { homeSeoDe, brandSeoDe, productTitleDe, productTitleEn, productMeta, shortenTitle } from '../data/seo-apply';
 
 export const BASE_URL = 'https://e-bike-zuverkaufen.de';
 const SITE = 'EBike Zu Verkaufen';
+/** Date the catalogue/content last changed. Update when products or page text change (sitemap lastmod). */
+export const CONTENT_UPDATED = '2026-11-03';
 
 export interface PageInfo {
   path: string;
@@ -20,6 +22,7 @@ export interface PageInfo {
   noindex: boolean;
   kind: 'home' | 'product' | 'brand' | 'guide' | 'guides' | 'legal' | 'accessories' | 'route' | 'none';
   productSlug?: string;
+  image?: string;
 }
 
 export function brandSlugs(): string[] {
@@ -110,8 +113,9 @@ export function resolvePage(rawPath: string): PageInfo {
       pathEn: `/en/e-bike/${p.slug}/`,
       title: de
         ? productTitleDe(p)
-        : `Buy ${p.name_en} | €${p.price.toLocaleString('en-US')} | ${SITE}`,
-      description: (de ? p.description_de : p.description_en).slice(0, 155) + '...',
+        : productTitleEn(p),
+      description: productMeta(p, de ? 'de' : 'en'),
+      image: `${BASE_URL}${p.images[0]}`,
     };
   }
 
@@ -168,7 +172,9 @@ export function resolvePage(rawPath: string): PageInfo {
       pathDe: `/${legal.slugDe}/`,
       pathEn: `/en/${legal.slugEn}/`,
       title: `${de ? legal.titleDe : legal.titleEn} | ${SITE}`,
-      description: `${de ? legal.titleDe : legal.titleEn} – ${SITE}`,
+      description: de
+        ? `${legal.titleDe}: Pflichtangaben und rechtliche Hinweise von ${SITE} für Kunden in Deutschland.`
+        : `${legal.titleEn}: legal information and notices from ${SITE} for customers in Germany.`,
     };
   }
 
@@ -181,7 +187,7 @@ export function resolvePage(rawPath: string): PageInfo {
       pathDe: r.pathDe,
       pathEn: r.pathEn,
       noindex: !!r.noindex,
-      title: de ? r.titleTemplateDe(minPrice) : r.titleTemplateEn(minPrice),
+      title: shortenTitle(de ? r.titleTemplateDe(minPrice) : r.titleTemplateEn(minPrice)),
       description: de ? r.metaDe : r.metaEn,
     };
   }
@@ -195,8 +201,10 @@ export function pathFromSlug(lang: 'de' | 'en', slug?: string[]): string {
   return joined ? `/${joined}/` : '/';
 }
 
-export function buildMetadata(info: PageInfo): Metadata {
+export function buildMetadata(rawInfo: PageInfo): Metadata {
+  const info = { ...rawInfo, title: shortenTitle(rawInfo.title) };
   const self = info.lang === 'de' ? info.pathDe : info.pathEn;
+  const ogImage = info.image || `${BASE_URL}/images/og/default.jpg`;
   return {
     metadataBase: new URL(BASE_URL),
     title: { absolute: info.title },
@@ -211,6 +219,7 @@ export function buildMetadata(info: PageInfo): Metadata {
       },
     },
     openGraph: {
+      images: [{ url: ogImage, width: info.image ? 1200 : 1200, height: info.image ? 900 : 630, alt: info.title }],
       title: info.title,
       description: info.description,
       url: `${BASE_URL}${self}`,
@@ -218,6 +227,6 @@ export function buildMetadata(info: PageInfo): Metadata {
       type: 'website',
       locale: info.lang === 'de' ? 'de_DE' : 'en_GB',
     },
-    twitter: { card: 'summary_large_image', title: info.title, description: info.description },
+    twitter: { card: 'summary_large_image', title: info.title, description: info.description, images: [ogImage] },
   };
 }

@@ -107,6 +107,47 @@ export function productTitleDe(p: Product): string {
     `${p.name_de} – ${label} kaufen | ${price} | ${SITE}`,
     `${p.name_de} – ${label} kaufen | ${price}`,
     `${p.name_de} kaufen | ${price}`,
+    `${p.name_de} | ${price}`,
   ];
-  return candidates.find((t) => t.length <= 70) || candidates[candidates.length - 1];
+  const fit = candidates.find((t) => t.length <= 64);
+  if (fit) return fit;
+  return candidates.find((t) => t.length <= 64) || candidates[candidates.length - 1];
+}
+
+/** Products shown on a taxonomy route (same logic as the catalogue filter). */
+export function productsForRoute(r: TaxonomyRoute): Product[] {
+  return r.filterCriteria && Object.keys(r.filterCriteria).length ? PRODUCTS.filter((p) => matches(p, r.filterCriteria!)) : PRODUCTS;
+}
+
+/** Keeps a title within ~66 characters by dropping middle segments ("Große Auswahl ab ..."), never the first or the brand. */
+export function shortenTitle(title: string, max = 66): string {
+  const parts = title.split(' | ');
+  while (parts.join(' | ').length > max && parts.length > 2) parts.splice(parts.length - 2, 1);
+  const joined = parts.join(' | ');
+  // last resort: drop the site-name suffix when the page title alone fits
+  if (joined.length > max && parts.length === 2 && parts[0].length <= max) return parts[0];
+  return joined;
+}
+
+const CAT_LABEL_EN: Record<string, string> = {
+  'e-trekkingbikes': 'trekking e-bike', 'e-citybikes': 'city e-bike', 'e-mountainbikes-fully': 'full-suspension e-MTB', 'e-mountainbikes-hardtail': 'hardtail e-MTB',
+  'e-lastenraeder': 'electric cargo bike', 'e-faltraeder': 'folding e-bike', 's-pedelecs': 'speed pedelec', 'e-rennraeder': 'electric road bike', 'e-gravelbikes': 'electric gravel bike',
+};
+
+/** Product meta description: complete sentences, never cut mid-word. */
+export function productMeta(p: Product, lang: 'de' | 'en'): string {
+  if (lang === 'de') {
+    const t = `${p.name_de} (${CAT_LABEL[p.category] || 'E-Bike'}): ${p.motor} Antrieb, ${p.batteryWh} Wh Akku, ${eur(p.price)}. Fotos, Ausstattung und technische Daten.`;
+    return t.length <= 158 ? t : `${p.name_de}: ${p.motor} Antrieb, ${p.batteryWh} Wh, ${eur(p.price)}. Technische Daten und Fotos.`;
+  }
+  const price = '€' + p.price.toLocaleString('en-US');
+  const t = `${p.name_en} (${CAT_LABEL_EN[p.category] || 'e-bike'}): ${p.motor} motor, ${p.batteryWh} Wh battery, ${price}. Photos, equipment and specifications.`;
+  return t.length <= 158 ? t : `${p.name_en}: ${p.motor} motor, ${p.batteryWh} Wh, ${price}. Specifications and photos.`;
+}
+
+export function productTitleEn(p: Product): string {
+  const price = '€' + p.price.toLocaleString('en-US');
+  const label = CAT_LABEL_EN[p.category] || 'e-bike';
+  const c = [`${p.name_en} – ${label} | ${price} | ${SITE}`, `${p.name_en} – ${label} | ${price}`, `${p.name_en} | ${price}`];
+  return c.find((t) => t.length <= 64) || c[c.length - 1];
 }

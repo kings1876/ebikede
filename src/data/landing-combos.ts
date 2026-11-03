@@ -10,7 +10,7 @@ import { brandSlug } from '../lib/brand';
 const MIN_PRODUCTS = 4;
 const SITE = 'EBike Zu Verkaufen';
 
-interface CatDef {
+export interface CatDef {
   filter: string;
   de: string;
   en: string;
@@ -19,7 +19,7 @@ interface CatDef {
   match: (category: string) => boolean;
 }
 
-const CATS: CatDef[] = [
+export const CATS: CatDef[] = [
   { filter: 'e-trekkingbikes', de: 'E-Trekkingbikes', en: 'Electric Trekking Bikes', pathDe: '/e-bikes/e-trekkingbikes/', pathEn: '/en/e-bikes/electric-trekking-bikes/', match: (c) => c === 'e-trekkingbikes' },
   { filter: 'e-citybikes', de: 'E-Citybikes', en: 'Electric City Bikes', pathDe: '/e-bikes/e-citybikes/', pathEn: '/en/e-bikes/electric-city-bikes/', match: (c) => c === 'e-citybikes' },
   { filter: 'e-mountainbikes', de: 'E-Mountainbikes', en: 'Electric Mountain Bikes', pathDe: '/e-bikes/e-mountainbikes/', pathEn: '/en/e-bikes/electric-mountain-bikes/', match: (c) => c.includes('e-mountainbikes') },

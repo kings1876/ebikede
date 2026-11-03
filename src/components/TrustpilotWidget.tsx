@@ -211,7 +211,7 @@ export const TrustpilotWidget: React.FC<TrustpilotWidgetProps> = ({ productId, p
                 onClick={() => setSelectedStarFilter(stars)}
                 className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors ${
                   selectedStarFilter === stars
-                    ? 'bg-emerald-600 text-white'
+                    ? 'bg-emerald-700 text-white'
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                 }`}
               >
@@ -239,7 +239,7 @@ export const TrustpilotWidget: React.FC<TrustpilotWidgetProps> = ({ productId, p
               </p>
               <button
                 onClick={() => setSelectedStarFilter(null)}
-                className="mt-3 text-xs text-emerald-600 font-semibold hover:underline"
+                className="mt-3 text-xs text-emerald-700 font-semibold hover:underline"
               >
                 {language === 'de' ? 'Filter zurücksetzen' : 'Reset filter'}
               </button>
@@ -337,7 +337,7 @@ export const TrustpilotWidget: React.FC<TrustpilotWidgetProps> = ({ productId, p
 
             {formSubmitted ? (
               <div className="text-center py-10 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto">
                   <CheckCircle className="w-10 h-10" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">
@@ -369,7 +369,7 @@ export const TrustpilotWidget: React.FC<TrustpilotWidgetProps> = ({ productId, p
 
                 {/* Rating selection */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-700 mb-1.5" htmlFor="fld-trus-12">
                     {language === 'de' ? 'Deine Bewertung:' : 'Your Rating:'}
                   </label>
                   <div className="flex items-center gap-2">
@@ -397,7 +397,7 @@ export const TrustpilotWidget: React.FC<TrustpilotWidgetProps> = ({ productId, p
                     <label className="block text-xs font-semibold text-slate-700 mb-1">
                       {language === 'de' ? 'Dein Name *' : 'Your Name *'}
                     </label>
-                    <input
+                    <input id="fld-trus-12"
                       type="text"
                       required
                       value={formAuthor}
@@ -407,10 +407,10 @@ export const TrustpilotWidget: React.FC<TrustpilotWidgetProps> = ({ productId, p
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1" htmlFor="fld-trus-13">
                       {language === 'de' ? 'Stadt / Ort' : 'City / Location'}
                     </label>
-                    <input
+                    <input id="fld-trus-13"
                       type="text"
                       value={formCity}
                       onChange={(e) => setFormCity(e.target.value)}
@@ -422,10 +422,10 @@ export const TrustpilotWidget: React.FC<TrustpilotWidgetProps> = ({ productId, p
 
                 {/* Review Title */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  <label className="block text-xs font-semibold text-slate-700 mb-1" htmlFor="fld-trus-14">
                     {language === 'de' ? 'Überschrift deiner Bewertung *' : 'Review Title *'}
                   </label>
-                  <input
+                  <input id="fld-trus-14"
                     type="text"
                     required
                     value={formTitle}
@@ -441,10 +441,10 @@ export const TrustpilotWidget: React.FC<TrustpilotWidgetProps> = ({ productId, p
 
                 {/* Review Body */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  <label className="block text-xs font-semibold text-slate-700 mb-1" htmlFor="fld-trus-15">
                     {language === 'de' ? 'Dein Erfahrungsbericht *' : 'Detailed Review *'}
                   </label>
-                  <textarea
+                  <textarea id="fld-trus-15"
                     required
                     rows={4}
                     value={formComment}

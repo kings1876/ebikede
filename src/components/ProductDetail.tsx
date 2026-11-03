@@ -1,4 +1,6 @@
 'use client';
+import { smallImg } from '../lib/img';
+import { NavLink } from './NavLink';
 import React, { useState, useMemo } from 'react';
 import { SHOW_REVIEWS } from '../config/flags';
 import {
@@ -65,19 +67,19 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
     <div className="max-w-7xl mx-auto px-4 py-8">
       {/* Breadcrumb Navigation */}
       <nav className="flex items-center gap-2 text-xs text-slate-500 mb-6 flex-wrap">
-        <button
-          onClick={() => navigateTo(isEn ? '/en/' : '/')}
-          className="hover:text-emerald-600 transition-colors"
+        <NavLink href={isEn ? '/en/' : '/'}
+          
+          className="hover:text-emerald-700 transition-colors inline-block"
         >
           {isEn ? 'Home' : 'Startseite'}
-        </button>
+        </NavLink>
         <ChevronRight className="w-3 h-3 text-slate-400" />
-        <button
-          onClick={() => navigateTo(isEn ? '/en/e-bikes/' : '/e-bikes/')}
-          className="hover:text-emerald-600 transition-colors"
+        <NavLink href={isEn ? '/en/e-bikes/' : '/e-bikes/'}
+          
+          className="hover:text-emerald-700 transition-colors inline-block"
         >
           {isEn ? 'E-Bikes' : 'E-Bikes'}
-        </button>
+        </NavLink>
         <ChevronRight className="w-3 h-3 text-slate-400" />
         <span className="text-slate-900 font-medium">
           {isEn ? product.name_en : product.name_de}
@@ -92,6 +94,9 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             <img
               src={product.images[activeImageIdx] || product.images[0]}
               alt={isEn ? product.name_en : product.name_de}
+              width={1200}
+              height={900}
+              fetchPriority="high"
               className="w-full h-full object-cover rounded-2xl shadow-sm transition-all duration-300"
             />
             {product.isPreviousYear && (
@@ -107,6 +112,9 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
               {product.images.map((img, idx) => (
                 <button
                   key={idx}
+                  type="button"
+                  aria-label={isEn ? `Show image ${idx + 1} of ${product.images.length}` : `Bild ${idx + 1} von ${product.images.length} anzeigen`}
+                  aria-current={activeImageIdx === idx}
                   onClick={() => setActiveImageIdx(idx)}
                   className={`w-20 h-16 rounded-xl overflow-hidden border-2 transition-all shrink-0 cursor-pointer ${
                     activeImageIdx === idx
@@ -114,7 +122,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
                       : 'border-slate-200 opacity-70 hover:opacity-100'
                   }`}
                 >
-                  <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+                  <img src={smallImg(img)} alt="" width={240} height={180} loading="lazy" className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>
@@ -160,7 +168,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
                 {product.brand} Original
               </span>
-              <span className="text-xs font-semibold text-emerald-600 flex items-center gap-1">
+              <span className="text-xs font-semibold text-emerald-700 flex items-center gap-1">
                 <CheckCircle className="w-3.5 h-3.5" />
                 {isEn ? 'In Stock – Ships in 3-5 days' : 'Sofort lieferbar (3-5 Werktage)'}
               </span>
@@ -226,7 +234,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             {/* JobRad Leasing Box */}
             <div className="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-white border border-slate-200 text-xs">
               <div className="flex items-center gap-2">
-                <Calculator className="w-4 h-4 text-emerald-600" />
+                <Calculator className="w-4 h-4 text-emerald-700" />
                 <div>
                   <span className="font-bold text-slate-900">
                     {isEn ? 'JobRad Dienstrad Leasing:' : 'Dienstrad-Leasing (JobRad):'}
@@ -250,12 +258,12 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
               <span className="font-bold text-slate-900">
                 {isEn ? 'Select Frame Size:' : 'Rahmengröße wählen:'}
               </span>
-              <button
-                onClick={() => navigateTo(isEn ? '/en/size-guide/' : '/groessenberatung/')}
-                className="text-emerald-600 hover:underline font-semibold"
+              <NavLink href={isEn ? '/en/size-guide/' : '/groessenberatung/'}
+                
+                className="text-emerald-700 hover:underline font-semibold inline-block"
               >
                 {isEn ? 'Frame Size Calculator' : 'Größenberater öffnen'}
-              </button>
+              </NavLink>
             </div>
             <div className="grid grid-cols-2 gap-2">
               {product.sizes.map((size) => (
@@ -308,7 +316,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
               onClick={handleAddToCart}
               className={`w-full py-4 rounded-2xl font-bold text-base flex items-center justify-center gap-3 transition-all shadow-md cursor-pointer ${
                 addedAnimation
-                  ? 'bg-emerald-600 text-white'
+                  ? 'bg-emerald-700 text-white'
                   : 'bg-slate-900 hover:bg-slate-800 text-white'
               }`}
             >
@@ -329,11 +337,11 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
 
             <div className="flex items-center justify-center gap-6 text-xs text-slate-500 pt-1">
               <span className="flex items-center gap-1.5">
-                <Truck className="w-4 h-4 text-emerald-600" />
+                <Truck className="w-4 h-4 text-emerald-700" />
                 {isEn ? 'Free Freight Shipping' : 'Kostenfreier Speditionsversand'}
               </span>
               <span className="flex items-center gap-1.5">
-                <Shield className="w-4 h-4 text-emerald-600" />
+                <Shield className="w-4 h-4 text-emerald-700" />
                 {isEn ? '2-Year Warranty' : '2 Jahre volle Gewährleistung'}
               </span>
             </div>
@@ -362,7 +370,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             <ul className="space-y-2 text-sm text-slate-700">
               {(isEn ? product.features_en : product.features_de).map((feat, i) => (
                 <li key={i} className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <CheckCircle className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
                   <span>{feat}</span>
                 </li>
               ))}

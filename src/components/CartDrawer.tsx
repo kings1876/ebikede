@@ -11,6 +11,7 @@ import {
   Percent,
   Sparkles,
 } from 'lucide-react';
+import { smallImg } from '../lib/img';
 import { useShop } from '../context/ShopContext';
 
 interface CartDrawerProps {
@@ -69,7 +70,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onProceedToCheckout }) =
               ? 'Add €99+ for free freight shipping'
               : 'Versandkostenfrei ab 99 €'}
           </span>
-          <ShieldCheck className="w-4 h-4 text-emerald-600" />
+          <ShieldCheck className="w-4 h-4 text-emerald-700" />
         </div>
 
         {/* Items List */}
@@ -95,8 +96,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onProceedToCheckout }) =
               return (
                 <div key={index} className="pt-4 first:pt-0 flex gap-3.5">
                   <img
-                    src={img}
+                    src={img.startsWith('/images/products/') ? smallImg(img) : img}
                     alt={name}
+                    width={64}
+                    height={64}
                     className="w-16 h-16 object-cover rounded-xl bg-slate-100 border border-slate-200 shrink-0"
                   />
                   <div className="flex-1 min-w-0">
@@ -171,7 +174,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onProceedToCheckout }) =
               </div>
               <div className="flex justify-between">
                 <span>{isEn ? 'Shipping (Freight Carrier)' : 'Speditionsversand'}</span>
-                <span className="font-semibold text-emerald-600">
+                <span className="font-semibold text-emerald-700">
                   {shippingCost === 0 ? (isEn ? 'Free' : 'Kostenfrei') : `€${shippingCost}`}
                 </span>
               </div>
@@ -191,7 +194,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onProceedToCheckout }) =
                 setIsCartOpen(false);
                 onProceedToCheckout();
               }}
-              className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-emerald-600 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer"
+              className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-emerald-700 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer"
             >
               <span>{isEn ? 'Proceed to Checkout' : 'Zur Kasse gehen'}</span>
               <ArrowRight className="w-4 h-4" />

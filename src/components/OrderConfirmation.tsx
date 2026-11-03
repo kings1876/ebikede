@@ -1,4 +1,5 @@
 'use client';
+import { NavLink } from './NavLink';
 import React, { useState } from 'react';
 import {
   CheckCircle,
@@ -152,7 +153,7 @@ Web: https://e-bike-zuverkaufen.de`;
     <div className="max-w-4xl mx-auto px-4 py-12">
       {/* Success Badge */}
       <div className="text-center space-y-4 mb-10">
-        <div className="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/20">
+        <div className="w-20 h-20 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/20">
           <CheckCircle className="w-12 h-12" />
         </div>
         <span className="inline-block text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-100 text-emerald-800">
@@ -189,7 +190,7 @@ Web: https://e-bike-zuverkaufen.de`;
           </div>
           <div>
             <span className="text-xs text-slate-400">{isEn ? 'Total' : 'Gesamt'}</span>
-            <div className="text-lg font-black text-emerald-600">
+            <div className="text-lg font-black text-emerald-700">
               €{order.total.toLocaleString(isEn ? 'en-US' : 'de-DE')}
             </div>
           </div>
@@ -227,9 +228,9 @@ Web: https://e-bike-zuverkaufen.de`;
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
                 <Mail className="w-5 h-5 text-blue-600" />
-                <h3 className="font-bold text-sm text-slate-900">
+                <h2 className="font-bold text-sm text-slate-900">
                   {isEn ? 'Order Email (English)' : 'Bestell-E-Mail (Deutsch)'}
-                </h3>
+                </h2>
               </div>
               <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 font-semibold border border-blue-200">
                 {order.language.toUpperCase()}
@@ -249,7 +250,7 @@ Web: https://e-bike-zuverkaufen.de`;
             onClick={() => copyToClipboard(generatedEmailText, 'email')}
             className="mt-4 w-full py-2.5 px-4 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-800 font-semibold text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer"
           >
-            {copiedEmail ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+            {copiedEmail ? <Check className="w-4 h-4 text-emerald-700" /> : <Copy className="w-4 h-4" />}
             <span>{copiedEmail ? (isEn ? 'Copied to Clipboard!' : 'In Zwischenablage kopiert!') : (isEn ? 'Copy Email Text' : 'E-Mail Text kopieren')}</span>
           </button>
         </div>
@@ -259,10 +260,10 @@ Web: https://e-bike-zuverkaufen.de`;
           <div>
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <MessageCircle className="w-5 h-5 text-emerald-600" />
-                <h3 className="font-bold text-sm text-slate-900">
+                <MessageCircle className="w-5 h-5 text-emerald-700" />
+                <h2 className="font-bold text-sm text-slate-900">
                   {isEn ? 'WhatsApp Notification (English)' : 'WhatsApp Nachricht (Deutsch)'}
-                </h3>
+                </h2>
               </div>
               <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200">
                 WhatsApp Ready
@@ -283,14 +284,14 @@ Web: https://e-bike-zuverkaufen.de`;
               onClick={() => copyToClipboard(generatedWhatsAppText, 'whatsapp')}
               className="py-2.5 px-3 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-800 font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
             >
-              {copiedWhatsApp ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+              {copiedWhatsApp ? <Check className="w-4 h-4 text-emerald-700" /> : <Copy className="w-4 h-4" />}
               <span>{copiedWhatsApp ? (isEn ? 'Copied!' : 'Kopiert!') : (isEn ? 'Copy' : 'Kopieren')}</span>
             </button>
             <a
               href={openWhatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+              className="py-2.5 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs"
             >
               <ExternalLink className="w-4 h-4" />
               <span>{isEn ? 'Open WhatsApp' : 'WhatsApp öffnen'}</span>
@@ -301,13 +302,13 @@ Web: https://e-bike-zuverkaufen.de`;
 
       {/* Return to Shop CTA */}
       <div className="text-center">
-        <button
-          onClick={() => navigateTo(isEn ? '/en/' : '/')}
+        <NavLink href={isEn ? '/en/' : '/'}
+          
           className="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-md transition-all cursor-pointer"
         >
           <span>{isEn ? 'Back to E-Bike Catalog' : 'Zurück zum E-Bike Sortiment'}</span>
           <ArrowRight className="w-4 h-4" />
-        </button>
+        </NavLink>
       </div>
     </div>
   );
@@ -325,12 +326,12 @@ export const OrderConfirmation: React.FC = () => {
       <p className="text-sm text-slate-600 mb-6">
         {isEn ? 'There is no recent order in this session.' : 'In dieser Sitzung liegt keine aktuelle Bestellung vor.'}
       </p>
-      <button
-        onClick={() => navigateTo(isEn ? '/en/e-bikes/' : '/e-bikes/')}
-        className="px-5 py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm cursor-pointer"
+      <NavLink href={isEn ? '/en/e-bikes/' : '/e-bikes/'}
+        
+        className="px-5 py-3 rounded-xl bg-emerald-700 text-white font-bold text-sm cursor-pointer inline-block"
       >
         {isEn ? 'Browse e-bikes' : 'E-Bikes ansehen'}
-      </button>
+      </NavLink>
     </div>
   );
 };

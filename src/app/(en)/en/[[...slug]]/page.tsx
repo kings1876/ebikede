@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { MainRouter } from '../../../../App';
 import { allPaths, buildMetadata, pathFromSlug, resolvePage } from '../../../../lib/seo';
+import { jsonLdScript } from '../../../../lib/jsonld';
 
 type Props = { params: Promise<{ slug?: string[] }> };
 
@@ -21,5 +22,11 @@ export default async function Page({ params }: Props) {
   const { slug } = await params;
   const info = resolvePage(pathFromSlug('en', slug));
   if (info.kind === 'none') notFound();
-  return <MainRouter />;
+  const ld = jsonLdScript(info);
+  return (
+    <>
+      {ld && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />}
+      <MainRouter />
+    </>
+  );
 }

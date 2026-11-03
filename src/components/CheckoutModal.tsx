@@ -98,10 +98,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                <label className="block text-xs font-semibold text-slate-700 mb-1" htmlFor="fld-chec-1">
                   {isEn ? 'Full Name *' : 'Vor- und Nachname *'}
                 </label>
-                <input
+                <input id="fld-chec-1"
                   type="text"
                   required
                   value={name}
@@ -110,10 +110,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                <label className="block text-xs font-semibold text-slate-700 mb-1" htmlFor="fld-chec-2">
                   {isEn ? 'Email Address *' : 'E-Mail-Adresse *'}
                 </label>
-                <input
+                <input id="fld-chec-2"
                   type="email"
                   required
                   value={email}
@@ -122,10 +122,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 />
               </div>
               <div className="sm:col-span-2">
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                <label className="block text-xs font-semibold text-slate-700 mb-1" htmlFor="fld-chec-3">
                   {isEn ? 'Street & House Number *' : 'Straße & Hausnummer *'}
                 </label>
-                <input
+                <input id="fld-chec-3"
                   type="text"
                   required
                   value={address}
@@ -134,10 +134,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                <label className="block text-xs font-semibold text-slate-700 mb-1" htmlFor="fld-chec-4">
                   {isEn ? 'Postal Code *' : 'Postleitzahl *'}
                 </label>
-                <input
+                <input id="fld-chec-4"
                   type="text"
                   required
                   value={zip}
@@ -146,10 +146,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                <label className="block text-xs font-semibold text-slate-700 mb-1" htmlFor="fld-chec-5">
                   {isEn ? 'City *' : 'Stadt *'}
                 </label>
-                <input
+                <input id="fld-chec-5"
                   type="text"
                   required
                   value={city}
@@ -158,10 +158,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                <label className="block text-xs font-semibold text-slate-700 mb-1" htmlFor="fld-chec-6">
                   {isEn ? 'Phone (Carrier Freight Notification) *' : 'Telefon (für Speditionsaviso) *'}
                 </label>
-                <input
+                <input id="fld-chec-6"
                   type="tel"
                   required
                   value={phone}
@@ -170,10 +170,10 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                <label className="block text-xs font-semibold text-slate-700 mb-1" htmlFor="fld-chec-7">
                   {isEn ? 'Country' : 'Land'}
                 </label>
-                <input
+                <input id="fld-chec-7"
                   type="text"
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
@@ -199,11 +199,11 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                     : 'border-slate-200 hover:bg-slate-50'
                 }`}
               >
-                <span className="absolute top-2.5 right-2.5 text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-emerald-600 text-white shadow-xs">
+                <span className="absolute top-2.5 right-2.5 text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-emerald-700 text-white shadow-xs">
                   -10% Rabatt
                 </span>
                 <div className="flex items-center gap-2 mb-1">
-                  <Sparkles className="w-4 h-4 text-emerald-600" />
+                  <Sparkles className="w-4 h-4 text-emerald-700" />
                   <span className="font-bold text-sm text-slate-900">
                     Bitcoin / USDT / Krypto
                   </span>
@@ -275,7 +275,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
           {/* Submit */}
           <button
             type="submit"
-            className="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-base flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20 transition-all cursor-pointer"
+            className="w-full py-4 rounded-2xl bg-emerald-700 hover:bg-emerald-800 text-white font-black text-base flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20 transition-all cursor-pointer"
           >
             <span>
               {isEn
