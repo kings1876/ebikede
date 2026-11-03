@@ -126,6 +126,14 @@ export function shortenTitle(title: string, max = 66): string {
   const joined = parts.join(' | ');
   // last resort: drop the site-name suffix when the page title alone fits
   if (joined.length > max && parts.length === 2 && parts[0].length <= max) return parts[0];
+  if (joined.length > max) {
+    // very long page title: keep the part before ':' / ' – ' when it is still meaningful, else cut at a word boundary
+    const head = parts[0];
+    const cut = head.split(/:| – /)[0].trim();
+    if (cut.length >= 25 && cut.length <= max) return cut;
+    const words = head.slice(0, max).replace(/s+S*$/, '');
+    return words;
+  }
   return joined;
 }
 

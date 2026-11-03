@@ -79,6 +79,13 @@ function productLd(p: Product, de: boolean): object {
       itemCondition: 'https://schema.org/NewCondition',
       availability: 'https://schema.org/InStock',
       seller: { '@id': `${BASE_URL}/#organization` },
+      // statutory 14-day right of withdrawal for consumers in Germany (also stated on the site)
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'DE',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        merchantReturnDays: 14,
+      },
     },
   };
 }
