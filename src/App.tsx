@@ -203,13 +203,37 @@ export function MainRouter() {
     <main id="main" tabIndex={-1} className="min-h-screen">
       {/* Hero Banner */}
       <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white py-16 sm:py-24 px-4 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Decorative background: colour glows, road-line grid and a cycling-wheel motif (no image weight) */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-40 -left-32 w-[36rem] h-[36rem] rounded-full bg-emerald-500/20 blur-3xl" />
+          <div className="absolute -bottom-48 -right-24 w-[34rem] h-[34rem] rounded-full bg-blue-500/20 blur-3xl" />
+          <div
+            className="absolute inset-0 opacity-[0.07]"
+            style={{
+              backgroundImage:
+                'linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)',
+              backgroundSize: '48px 48px',
+              maskImage: 'radial-gradient(ellipse at center, #000 30%, transparent 75%)',
+              WebkitMaskImage: 'radial-gradient(ellipse at center, #000 30%, transparent 75%)',
+            }}
+          />
+          <svg className="absolute -right-24 top-1/2 -translate-y-1/2 w-[38rem] h-[38rem] text-emerald-300/10 hidden sm:block" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1">
+            <circle cx="100" cy="100" r="92" strokeWidth="3" />
+            <circle cx="100" cy="100" r="80" />
+            <circle cx="100" cy="100" r="8" />
+            {Array.from({ length: 24 }, (_, i) => {
+              const a = (i * 15 * Math.PI) / 180;
+              return <line key={i} x1={100 + 8 * Math.cos(a)} y1={100 + 8 * Math.sin(a)} x2={100 + 80 * Math.cos(a)} y2={100 + 80 * Math.sin(a)} />;
+            })}
+          </svg>
+        </div>
+        <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
             {/* Badges */}
             <div className="flex flex-wrap items-center gap-2">
               <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold border border-emerald-500/30 flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5" />
-                {isEn ? '2% Instant Crypto & SEPA Discount' : '2% Sofortrabatt bei Krypto-Zahlung'}
+                {isEn ? '10% Instant Crypto Discount' : '10% Sofortrabatt bei Krypto-Zahlung'}
               </span>
               <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold border border-blue-500/30 flex items-center gap-1.5">
                 <Truck className="w-3.5 h-3.5" />
