@@ -204,7 +204,7 @@ export const GUIDES: GuideArticle[] = [
       {
         heading: 'Worauf du achten solltest',
         content: [
-          'Frag zuerst deinen Arbeitgeber, ob er Dienstrad-Leasing anbietet und mit welchem Anbieter. Der Gehaltsverzicht kann sich auf spätere Leistungen wie Rente, Arbeitslosen- oder Elterngeld auswirken, weil dein Brutto sinkt. Informiere dich vor dem Abschluss und lass dich bei Fragen steuerlich beraten. Wenn du ein bestimmtes Modell von uns leasen möchtest, sprich uns vor der Bestellung an.',
+          'Frag zuerst deinen Arbeitgeber, ob er Dienstrad-Leasing anbietet und mit welchem Anbieter. Der Gehaltsverzicht kann sich auf spätere Leistungen wie Rente, Arbeitslosen- oder Elterngeld auswirken, weil dein Brutto sinkt. Informiere dich vor dem Abschluss und lass dich bei Fragen steuerlich beraten. EBike Zu Verkaufen ist JobRad-Partner. Wenn du ein bestimmtes Modell von uns leasen möchtest, sprich uns vor der Bestellung an.',
         ],
       },
     ],
@@ -231,7 +231,7 @@ export const GUIDES: GuideArticle[] = [
       {
         heading: 'What to check',
         content: [
-          'First ask your employer whether they offer company bike leasing and with which provider. Giving up gross salary can affect later benefits such as pension, unemployment or parental allowance because your gross pay is lower. Inform yourself before signing and get tax advice if in doubt. If you want to lease a specific model from us, talk to us before ordering.',
+          'First ask your employer whether they offer company bike leasing and with which provider. Giving up gross salary can affect later benefits such as pension, unemployment or parental allowance because your gross pay is lower. Inform yourself before signing and get tax advice if in doubt. EBike Zu Verkaufen is a JobRad partner. If you want to lease a specific model from us, talk to us before ordering.',
         ],
       },
     ],
