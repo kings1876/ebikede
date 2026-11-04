@@ -205,10 +205,11 @@ export function MainRouter() {
       <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white py-16 sm:py-24 px-4 relative overflow-hidden">
         {/* Decorative background: colour glows, road-line grid and a cycling-wheel motif (no image weight) */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-40 -left-32 w-[36rem] h-[36rem] rounded-full bg-emerald-500/20 blur-3xl" />
-          <div className="absolute -bottom-48 -right-24 w-[34rem] h-[34rem] rounded-full bg-blue-500/20 blur-3xl" />
+          <img src={PRODUCTS[0].images[0]} alt="" className="absolute inset-0 w-full h-full object-cover opacity-25 blur-2xl scale-125" />
+          <div className="absolute -top-40 -left-32 w-[40rem] h-[40rem] rounded-full bg-emerald-500/40 blur-3xl" />
+          <div className="absolute -bottom-48 -right-24 w-[40rem] h-[40rem] rounded-full bg-blue-500/40 blur-3xl" />
           <div
-            className="absolute inset-0 opacity-[0.07]"
+            className="absolute inset-0 opacity-[0.15]"
             style={{
               backgroundImage:
                 'linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)',
@@ -217,7 +218,7 @@ export function MainRouter() {
               WebkitMaskImage: 'radial-gradient(ellipse at center, #000 30%, transparent 75%)',
             }}
           />
-          <svg className="absolute -right-24 top-1/2 -translate-y-1/2 w-[38rem] h-[38rem] text-emerald-300/10 hidden sm:block" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1">
+          <svg className="absolute -right-24 top-1/2 -translate-y-1/2 w-[38rem] h-[38rem] text-emerald-300/25 hidden sm:block" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1">
             <circle cx="100" cy="100" r="92" strokeWidth="3" />
             <circle cx="100" cy="100" r="80" />
             <circle cx="100" cy="100" r="8" />
