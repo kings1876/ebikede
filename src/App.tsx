@@ -207,13 +207,13 @@ export function MainRouter() {
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <picture>
             <source srcSet="/images/hero/hero-ebike-lifestyle.avif" type="image/avif" />
-            <img src="/images/hero/hero-ebike-lifestyle.webp" alt="" width={2400} height={1200} decoding="async" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+            <img src="/images/hero/hero-ebike-lifestyle.webp" alt="" width={2400} height={1200} decoding="async" className="absolute inset-0 w-full h-full object-cover opacity-100" />
           </picture>
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/30" />
-          <div className="absolute -top-40 -left-32 w-[40rem] h-[40rem] rounded-full bg-emerald-500/40 blur-3xl" />
-          <div className="absolute -bottom-48 -right-24 w-[40rem] h-[40rem] rounded-full bg-blue-500/40 blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-slate-950/10" />
+          <div className="absolute -top-40 -left-32 w-[40rem] h-[40rem] rounded-full bg-emerald-500/15 blur-3xl" />
+          <div className="absolute -bottom-48 -right-24 w-[40rem] h-[40rem] rounded-full bg-blue-500/15 blur-3xl" />
           <div
-            className="absolute inset-0 opacity-[0.15]"
+            className="absolute inset-0 opacity-[0.08]"
             style={{
               backgroundImage:
                 'linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)',
