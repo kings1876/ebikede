@@ -205,7 +205,11 @@ export function MainRouter() {
       <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white py-16 sm:py-24 px-4 relative overflow-hidden">
         {/* Decorative background: colour glows, road-line grid and a cycling-wheel motif (no image weight) */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <img src={PRODUCTS[0].images[0]} alt="" className="absolute inset-0 w-full h-full object-cover opacity-25 blur-2xl scale-125" />
+          <picture>
+            <source srcSet="/images/hero/hero-ebike-lifestyle.avif" type="image/avif" />
+            <img src="/images/hero/hero-ebike-lifestyle.webp" alt="" width={2400} height={1200} decoding="async" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+          </picture>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/30" />
           <div className="absolute -top-40 -left-32 w-[40rem] h-[40rem] rounded-full bg-emerald-500/40 blur-3xl" />
           <div className="absolute -bottom-48 -right-24 w-[40rem] h-[40rem] rounded-full bg-blue-500/40 blur-3xl" />
           <div
