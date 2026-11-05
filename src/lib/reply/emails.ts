@@ -59,19 +59,19 @@ const adminUrl = (path = '') => `${REPLY.baseUrl}/admin/${path}`;
 // ---- Shop notification: new order -------------------------------------------------
 export function orderNotificationEmail(o: StoredOrder) {
   const body = `
-${field('Bestellnummer', `<b>${esc(o.orderNumber)}</b>`)}
-${field('Zu zahlen', `<b style="font-size:18px">${esc(money(o.amountDue))}</b> &middot; ${esc(methodLabel(o.paymentMethod, 'de'))}`)}
+${field('Order number', `<b>${esc(o.orderNumber)}</b>`)}
+${field('Amount due', `<b style="font-size:18px">${esc(money(o.amountDue, 'en'))}</b> &middot; ${esc(methodLabel(o.paymentMethod, 'en'))}`)}
 ${divider}
-${field('Kunde', `${esc(o.customerName)}<br><a href="mailto:${esc(o.customerEmail)}" style="color:${REPLY.brand.primary}">${esc(o.customerEmail)}</a><br>${esc(o.customerPhone)}`)}
-${field('Lieferadresse', esc(o.address).replace(/\n/g, '<br>'))}
-${field('Sprache', esc(o.language.toUpperCase()))}
+${field('Customer', `${esc(o.customerName)}<br><a href="mailto:${esc(o.customerEmail)}" style="color:${REPLY.brand.primary}">${esc(o.customerEmail)}</a><br>${esc(o.customerPhone)}`)}
+${field('Delivery address', esc(o.address).replace(/\n/g, '<br>'))}
+${field('Customer language', esc(o.language.toUpperCase()))}
 ${divider}
-${label('Artikel')}${itemsTable(o)}
-<div style="margin-top:22px">${button(adminUrl('orders/'), 'Im Dashboard antworten')}</div>`;
+${label('Items')}${itemsTable(o)}
+<div style="margin-top:22px">${button(adminUrl('orders/'), 'Reply in dashboard')}</div>`;
   return {
-    subject: `Neue Bestellung ${o.orderNumber} – ${money(o.amountDue)}`,
-    text: `Neue Bestellung ${o.orderNumber}\nZu zahlen: ${money(o.amountDue)} (${methodLabel(o.paymentMethod, 'de')})\n\n${o.customerName}\n${o.customerEmail}\n${o.customerPhone}\n${o.address}\n\n${itemsText(o)}\n\nDashboard: ${adminUrl('orders/')}`,
-    html: shell({ eyebrow: 'Neue Bestellung', title: o.orderNumber, meta: new Date(o.createdAt).toLocaleString('de-DE'), body, lang: 'de' }),
+    subject: `New order ${o.orderNumber} – ${money(o.amountDue, 'en')}`,
+    text: `New order ${o.orderNumber}\nAmount due: ${money(o.amountDue, 'en')} (${methodLabel(o.paymentMethod, 'en')})\n\n${o.customerName}\n${o.customerEmail}\n${o.customerPhone}\n${o.address}\n\n${itemsText(o)}\n\nDashboard: ${adminUrl('orders/')}`,
+    html: shell({ eyebrow: 'New order', title: o.orderNumber, meta: new Date(o.createdAt).toLocaleString('en-GB'), body, lang: 'en' }),
   };
 }
 
@@ -158,16 +158,16 @@ ${callout(`<ul style="margin:0;padding-left:18px">${terms.map((l) => `<li style=
 // ---- Shop notification: customer uploaded payment proof ---------------------------------
 export function paymentConfirmationNotification(o: StoredOrder, note?: string) {
   const body = `
-${field('Bestellnummer', `<b>${esc(o.orderNumber)}</b>`)}
-${field('Kunde', `${esc(o.customerName)}<br>${esc(o.customerEmail)}`)}
-${field('Betrag', esc(money(o.amountDue)))}
-${note ? field('Notiz des Kunden', esc(note).replace(/\n/g, '<br>')) : ''}
-<p style="font-size:13px;color:${C.soft}">Der Zahlungsbeleg ist angehängt. Prüfe den Zahlungseingang, bevor du die Bestellung freigibst.</p>
-<div style="margin-top:16px">${button(adminUrl('orders/'), 'Im Dashboard öffnen')}</div>`;
+${field('Order number', `<b>${esc(o.orderNumber)}</b>`)}
+${field('Customer', `${esc(o.customerName)}<br>${esc(o.customerEmail)}`)}
+${field('Amount', esc(money(o.amountDue, 'en')))}
+${note ? field('Customer note', esc(note).replace(/\n/g, '<br>')) : ''}
+<p style="font-size:13px;color:${C.soft}">The payment confirmation is attached. Check that the payment has arrived before releasing the order.</p>
+<div style="margin-top:16px">${button(adminUrl('orders/'), 'Open in dashboard')}</div>`;
   return {
-    subject: `Zahlungsbeleg für ${o.orderNumber}`,
-    text: `Der Kunde ${o.customerName} hat einen Zahlungsbeleg für ${o.orderNumber} hochgeladen (${money(o.amountDue)}).${note ? `\nNotiz: ${note}` : ''}\n${adminUrl('orders/')}`,
-    html: shell({ eyebrow: 'Zahlung gemeldet', title: o.orderNumber, body, lang: 'de' }),
+    subject: `Payment confirmation for ${o.orderNumber}`,
+    text: `${o.customerName} uploaded a payment confirmation for ${o.orderNumber} (${money(o.amountDue, 'en')}).${note ? `\nNote: ${note}` : ''}\n${adminUrl('orders/')}`,
+    html: shell({ eyebrow: 'Payment reported', title: o.orderNumber, body, lang: 'en' }),
   };
 }
 
@@ -175,15 +175,15 @@ ${note ? field('Notiz des Kunden', esc(note).replace(/\n/g, '<br>')) : ''}
 export function enquiryNotificationEmail(e: StoredEnquiry) {
   const body = `
 ${field('Name', esc(e.name))}
-${field('E-Mail', `<a href="mailto:${esc(e.email)}" style="color:${REPLY.brand.primary}">${esc(e.email)}</a>`)}
-${e.phone ? field('Telefon', esc(e.phone)) : ''}
+${field('Email', `<a href="mailto:${esc(e.email)}" style="color:${REPLY.brand.primary}">${esc(e.email)}</a>`)}
+${e.phone ? field('Phone', esc(e.phone)) : ''}
 ${divider}
-${field('Nachricht', esc(e.message).replace(/\n/g, '<br>'))}
-<div style="margin-top:20px">${button(adminUrl('enquiries/'), 'Im Dashboard antworten')}</div>`;
+${field('Message', esc(e.message).replace(/\n/g, '<br>'))}
+<div style="margin-top:20px">${button(adminUrl('enquiries/'), 'Reply in dashboard')}</div>`;
   return {
-    subject: `Neue Anfrage von ${e.name}`,
-    text: `Neue Anfrage ${e.id}\n${e.name} <${e.email}>${e.phone ? `\n${e.phone}` : ''}\n\n${e.message}\n\n${adminUrl('enquiries/')}`,
-    html: shell({ eyebrow: 'Neue Anfrage', title: e.name, meta: e.id, body, lang: 'de' }),
+    subject: `New enquiry from ${e.name}`,
+    text: `New enquiry ${e.id}\n${e.name} <${e.email}>${e.phone ? `\n${e.phone}` : ''}\n\n${e.message}\n\n${adminUrl('enquiries/')}`,
+    html: shell({ eyebrow: 'New enquiry', title: e.name, meta: e.id, body, lang: 'en' }),
   };
 }
 
