@@ -10,7 +10,7 @@ import {
   ShieldCheck,
   Percent,
   Sparkles,
-} from 'lucide-react';
+} from './icons';
 import { smallImg } from '../lib/img';
 import { useShop } from '../context/ShopContext';
 

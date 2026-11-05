@@ -1,7 +1,7 @@
 'use client';
 import { NavLink } from './NavLink';
 import React from 'react';
-import { ShoppingCart, Check, ShieldCheck, ChevronRight } from 'lucide-react';
+import { ShoppingCart, Check, ShieldCheck, ChevronRight } from './icons';
 import { useShop } from '../context/ShopContext';
 import { ACCESSORIES } from '../data/accessories';
 

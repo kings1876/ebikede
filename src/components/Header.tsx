@@ -18,7 +18,7 @@ import {
   X,
   ArrowRight,
   Zap,
-} from 'lucide-react';
+} from './icons';
 import { useShop } from '../context/ShopContext';
 import { PRODUCTS } from '../data/products';
 import { ACCESSORIES } from '../data/accessories';

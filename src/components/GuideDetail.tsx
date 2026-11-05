@@ -10,7 +10,7 @@ import {
   MapPin,
   ArrowRight,
   Info,
-} from 'lucide-react';
+} from './icons';
 import { useShop } from '../context/ShopContext';
 import { GuideArticle, readMinutes } from '../data/guides';
 

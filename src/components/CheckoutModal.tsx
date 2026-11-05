@@ -10,7 +10,7 @@ import {
   Percent,
   ArrowRight,
   Bike,
-} from 'lucide-react';
+} from './icons';
 import { useShop } from '../context/ShopContext';
 
 interface CheckoutModalProps {

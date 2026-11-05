@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = [];
   for (const p of allPaths()) {
     const info = resolvePage(p);
-    if (info.noindex || info.kind === 'none') continue;
+    if (info.noindex || info.canonicalPath || info.kind === 'none') continue;
     out.push({
       url: `${BASE_URL}${p}`,
       lastModified: new Date(CONTENT_UPDATED),

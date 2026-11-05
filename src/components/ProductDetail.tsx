@@ -20,7 +20,7 @@ import {
   Share2,
   Phone,
   Calculator,
-} from 'lucide-react';
+} from './icons';
 import { Product } from '../types';
 import { useShop } from '../context/ShopContext';
 import { TrustpilotWidget } from './TrustpilotWidget';
@@ -58,6 +58,28 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
     setAddedAnimation(true);
     setTimeout(() => setAddedAnimation(false), 2000);
   };
+
+  const nf = (n: number) => n.toLocaleString(isEn ? 'en-GB' : 'de-DE', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+  const pname = isEn ? product.name_en : product.name_de;
+  const sizesTxt = product.sizes.length ? product.sizes.join(', ') : isEn ? 'one size' : 'Einheitsgröße';
+  const colorsTxt = product.colors.map((c) => (isEn ? c.nameEn : c.nameDe)).join(', ');
+  const faq: [string, string][] = isEn
+    ? [
+        [`What does the ${pname} cost?`, `The price is €${nf(product.price)} including VAT. If you pay by bank transfer or cryptocurrency (BTC or USDT) you get 10% off, so you pay €${nf(cryptoPrice)}. That saves you €${nf(cryptoDiscount)}.`],
+        ['What motor and battery does it have?', `${product.motor} drive (${product.motorDetails})${product.torqueNm ? ` with up to ${product.torqueNm} Nm of torque` : ''} and a ${product.batteryWh} Wh battery${product.rangeKm ? `. Depending on assist level, load and terrain, the stated range is up to ${product.rangeKm} km` : ''}${product.weightKg ? `. The bike weighs about ${product.weightKg} kg` : ''}.`],
+        ['Which sizes and colours can I choose?', `Available frame sizes: ${sizesTxt}. Colours: ${colorsTxt || 'standard'}. Not sure about your size? Our size guide works it out from your inside leg and height.`],
+        ['How does delivery work?', 'Orders over €99 ship free. We assemble the bike ready to ride after payment has cleared, and the freight carrier phones you 24 hours before delivery to agree a two-hour time window.'],
+        ['How do I pay?', 'After you order, we email you the payment details for bank transfer or crypto. We dispatch as soon as the payment has arrived, and you can confirm your payment on the order page.'],
+        ['Can I lease this bike through my employer?', `Yes, company bike leasing such as JobRad is possible. As a rough guide, the monthly rate for this bike is about €${nf(monthlyLeasingEstimate)}. Your employer's leasing terms are what count.`],
+      ]
+    : [
+        [`Was kostet das ${pname}?`, `Der Preis beträgt ${nf(product.price)} € inklusive MwSt. Bei Zahlung per Überweisung oder Kryptowährung (BTC oder USDT) erhältst du 10 % Rabatt und zahlst ${nf(cryptoPrice)} €. Du sparst ${nf(cryptoDiscount)} €.`],
+        ['Welchen Motor und Akku hat es?', `${product.motor}-Antrieb (${product.motorDetails})${product.torqueNm ? ` mit bis zu ${product.torqueNm} Nm Drehmoment` : ''} und ${product.batteryWh}-Wh-Akku${product.rangeKm ? `. Je nach Unterstützungsstufe, Zuladung und Gelände beträgt die angegebene Reichweite bis zu ${product.rangeKm} km` : ''}${product.weightKg ? `. Das Rad wiegt etwa ${product.weightKg} kg` : ''}.`],
+        ['Welche Größen und Farben gibt es?', `Verfügbare Rahmengrößen: ${sizesTxt}. Farben: ${colorsTxt || 'Standard'}. Unsicher bei der Größe? Unser Größenberater ermittelt sie aus Schrittlänge und Körpergröße.`],
+        ['Wie läuft die Lieferung ab?', 'Ab 99 € Bestellwert ist der Versand kostenlos. Wir montieren das Rad nach Zahlungseingang fahrfertig, und die Spedition ruft dich 24 Stunden vor der Lieferung an, um ein Zeitfenster von zwei Stunden zu vereinbaren.'],
+        ['Wie bezahle ich?', 'Nach deiner Bestellung senden wir dir per E-Mail die Zahlungsdaten für Überweisung oder Krypto. Sobald die Zahlung eingegangen ist, versenden wir, und auf der Bestellseite kannst du deine Zahlung bestätigen.'],
+        ['Kann ich das Rad über den Arbeitgeber leasen?', `Ja, Dienstrad-Leasing wie JobRad ist möglich. Als grobe Orientierung liegt die monatliche Rate für dieses Rad bei etwa ${nf(monthlyLeasingEstimate)} €. Maßgeblich sind die Leasingbedingungen deines Arbeitgebers.`],
+      ];
 
   const relatedProducts = useMemo(() => {
     return PRODUCTS.filter((p) => p.id !== product.id && p.category === product.category).slice(0, 3);
@@ -178,7 +200,22 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
               {isEn ? product.name_en : product.name_de}
             </h1>
 
-            {SHOW_REVIEWS && reviews.length > 0 && (
+            {/* Buying questions: ordering, delivery and fit, answered from this bike's own data */}
+      <section className="py-12 border-t border-slate-200" aria-labelledby="pd-faq">
+        <h2 id="pd-faq" className="text-xl md:text-2xl font-bold text-slate-900 mb-6">
+          {isEn ? 'Buying This E-Bike: Questions & Answers' : 'Dieses E-Bike kaufen: Fragen & Antworten'}
+        </h2>
+        <dl className="grid md:grid-cols-2 gap-x-10 gap-y-6 text-sm text-slate-700">
+          {faq.map(([q, a]) => (
+            <div key={q}>
+              <dt className="font-bold text-slate-900 mb-1">{q}</dt>
+              <dd>{a}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      {SHOW_REVIEWS && reviews.length > 0 && (
 
             <a
               href="#trustpilot-reviews"

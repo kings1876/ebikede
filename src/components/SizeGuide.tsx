@@ -1,7 +1,7 @@
 'use client';
 import { NavLink } from './NavLink';
 import React, { useState } from 'react';
-import { Ruler, CheckCircle2, ChevronRight, HelpCircle, ArrowRight } from 'lucide-react';
+import { Ruler, CheckCircle2, ChevronRight, HelpCircle, ArrowRight } from './icons';
 import { useShop } from '../context/ShopContext';
 
 export const SizeGuide: React.FC = () => {

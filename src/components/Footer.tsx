@@ -13,7 +13,7 @@ import {
   Phone,
   MessageCircle,
   ExternalLink,
-} from 'lucide-react';
+} from './icons';
 import { useShop } from '../context/ShopContext';
 import { STORE_TRUSTPILOT_INFO } from '../data/reviews';
 
@@ -544,6 +544,27 @@ export const Footer: React.FC = () => {
             <span>LUCID: DE4812390812903</span>
           </div>
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 pb-6 text-xs text-slate-400 leading-relaxed">
+        <h2 className="text-sm font-bold text-white mb-2">
+          {isEn ? 'Buy new e-bikes online in Germany' : 'Neue E-Bikes online in Deutschland kaufen'}
+        </h2>
+        <p>
+          {isEn
+            ? 'EBike Zu Verkaufen sells brand-new e-bikes from well-known makers across Germany: mountain, trekking, city, cargo, folding, road and gravel models with drives from Bosch, Shimano, Yamaha, Bafang, Fazua and others. Every bike is assembled ready to ride after your payment has cleared and delivered by freight carrier, who arranges a two-hour delivery window with you 24 hours in advance. Orders over €99 ship free. You can pay by bank transfer or by Bitcoin and USDT and save 10% when you pay in crypto. After you order, we email you the payment details and you confirm your payment on the order page. Company bike leasing such as JobRad is possible with most models, and our guides explain battery range, motor types, maintenance and subsidies. Questions about a model, a frame size or your order? Call us, write an email or message us on WhatsApp, and we reply quickly.'
+            : 'EBike Zu Verkaufen verkauft fabrikneue E-Bikes bekannter Hersteller in ganz Deutschland: Mountainbikes, Trekking-, City-, Lasten-, Falt-, Renn- und Gravelbikes mit Antrieben von Bosch, Shimano, Yamaha, Bafang, Fazua und weiteren. Jedes Rad wird nach Zahlungseingang fahrfertig montiert und per Spedition geliefert, die 24 Stunden vorher ein Zeitfenster von zwei Stunden mit dir abstimmt. Ab 99 € Bestellwert ist der Versand kostenlos. Du zahlst per Banküberweisung oder mit Bitcoin und USDT und sparst bei Krypto-Zahlung 10 %. Nach deiner Bestellung senden wir dir die Zahlungsdaten per E-Mail, und auf der Bestellseite bestätigst du deine Zahlung. Dienstrad-Leasing wie JobRad ist bei den meisten Modellen möglich, und unsere Ratgeber erklären Akku-Reichweite, Motortypen, Pflege und Förderung. Fragen zu einem Modell, zur Rahmengröße oder zu deiner Bestellung? Ruf uns an, schreib eine E-Mail oder melde dich per WhatsApp, wir antworten schnell.'}
+        </p>
+        <p className="mt-3">
+          {isEn
+            ? 'How ordering works: choose your e-bike, frame size and colour, add it to the cart and send your order with your delivery address. We confirm it by email straight away and follow up with the payment details for bank transfer or crypto. As soon as your payment has arrived, the bike is assembled, checked and handed to the freight carrier. Because the carrier delivers to your door and phones ahead, you only need to be home for the agreed two-hour window. Our catalogue covers 290 models from Cube, Haibike, Winora, Ghost, Zündapp, Stromer and Canyon, so you can compare motors, battery capacities and ranges side by side. If you are unsure which type of e-bike suits your daily routes, start with our buying guide, or use the frame size calculator before you order.'
+            : 'So läuft die Bestellung: Wähle dein E-Bike, die Rahmengröße und die Farbe, lege es in den Warenkorb und sende deine Bestellung mit der Lieferadresse ab. Wir bestätigen sie sofort per E-Mail und senden dir anschließend die Zahlungsdaten für Überweisung oder Krypto. Sobald deine Zahlung eingegangen ist, wird das Rad montiert, geprüft und an die Spedition übergeben. Weil die Spedition bis an die Haustür liefert und vorher anruft, musst du nur im vereinbarten Zeitfenster von zwei Stunden zu Hause sein. Unser Sortiment umfasst 290 Modelle von Cube, Haibike, Winora, Ghost, Zündapp, Stromer und Canyon, sodass du Motoren, Akkukapazitäten und Reichweiten direkt vergleichen kannst. Wenn du unsicher bist, welcher E-Bike-Typ zu deinen täglichen Strecken passt, starte mit unserem Kaufratgeber oder nutze vor der Bestellung den Rahmengrößen-Rechner.'}
+        </p>
+        <p className="mt-3">
+          {isEn
+            ? 'Good to know before you buy: every e-bike on this site is brand new, and prices include German VAT. Our imprint, terms and conditions, withdrawal policy, privacy policy and battery disposal information are linked in the columns above, and the site map lists every category, brand, guide and model on one page. Prefer to browse by price, motor, frame type or use case? The category pages let you narrow the range, and every product page shows the technical data, the available sizes and colours, the delivery terms and the payment options before you order.'
+            : 'Gut zu wissen vor dem Kauf: Jedes E-Bike auf dieser Seite ist fabrikneu, und die Preise enthalten die deutsche MwSt. Impressum, AGB, Widerrufsbelehrung, Datenschutzerklärung und Hinweise zur Batterieentsorgung sind in den Spalten oben verlinkt, und die Seitenübersicht listet alle Kategorien, Marken, Ratgeber und Modelle auf einer Seite. Du möchtest lieber nach Preis, Motor, Rahmenform oder Einsatzzweck stöbern? Die Kategorieseiten grenzen das Sortiment ein, und jede Produktseite zeigt vor der Bestellung die technischen Daten, die verfügbaren Größen und Farben, die Lieferbedingungen und die Zahlungsmöglichkeiten.'}
+        </p>
       </div>
 
       {/* Copyright & Payment Badges */}

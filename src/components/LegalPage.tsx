@@ -1,7 +1,7 @@
 'use client';
 import { NavLink } from './NavLink';
 import React, { useState } from 'react';
-import { ShieldAlert, Globe, ChevronRight, FileText, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { ShieldAlert, Globe, ChevronRight, FileText, CheckCircle2, AlertTriangle } from './icons';
 import { useShop } from '../context/ShopContext';
 import { LegalDocument } from '../data/legal';
 

@@ -1,7 +1,7 @@
 'use client';
 import React, { useMemo } from 'react';
 import { SHOW_REVIEWS } from '../config/flags';
-import { Star, Battery, Zap, Gauge, ShoppingCart, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Star, Battery, Zap, Gauge, ShoppingCart, ArrowRight, ShieldCheck } from './icons';
 import { Product } from '../types';
 import { useShop } from '../context/ShopContext';
 import { calculateReviewStats } from '../data/reviews';

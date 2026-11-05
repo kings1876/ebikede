@@ -17,7 +17,7 @@ import {
   ChevronRight,
   Percent,
   CheckCircle,
-} from 'lucide-react';
+} from './components/icons';
 import { ShopProvider, useShop } from './context/ShopContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';

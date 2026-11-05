@@ -11,7 +11,7 @@ import {
   ArrowRight,
   ShieldCheck,
   ExternalLink,
-} from 'lucide-react';
+} from './icons';
 import { useShop } from '../context/ShopContext';
 
 const OrderConfirmationInner: React.FC = () => {

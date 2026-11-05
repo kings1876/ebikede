@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useMemo } from 'react';
-import { Star, CheckCircle, ThumbsUp, MessageSquarePlus, X, Filter } from 'lucide-react';
+import { Star, CheckCircle, ThumbsUp, MessageSquarePlus, X, Filter } from './icons';
 import { useShop } from '../context/ShopContext';
 import { calculateReviewStats, STORE_TRUSTPILOT_INFO } from '../data/reviews';
 

@@ -9,7 +9,7 @@ import {
   ArrowUpDown,
   Tag,
   Check,
-} from 'lucide-react';
+} from './icons';
 import { useShop } from '../context/ShopContext';
 import { PRODUCTS } from '../data/products';
 import { ProductCard } from './ProductCard';

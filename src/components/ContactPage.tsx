@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Mail, Phone, MessageCircle, Send } from 'lucide-react';
+import { Mail, Phone, MessageCircle, Send } from './icons';
 import { useShop } from '../context/ShopContext';
 import { REPLY } from '../lib/reply/config';
 
@@ -41,8 +41,21 @@ export const ContactPage: React.FC = () => {
         <ul className="space-y-3 text-sm">
           <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-emerald-700" /><a href={`mailto:${REPLY.email}`} className="font-semibold">{REPLY.email}</a></li>
           <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-emerald-700" /><a href={`tel:${REPLY.phone.replace(/[^\d+]/g, '')}`} className="font-semibold">{REPLY.phone}</a></li>
-          <li className="flex items-center gap-2"><MessageCircle className="w-4 h-4 text-emerald-700" /><a href={`https://wa.me/${REPLY.whatsapp.replace(/\D/g, '')}`} className="font-semibold" rel="noopener noreferrer">WhatsApp</a></li>
+          <li className="flex items-center gap-2"><MessageCircle className="w-4 h-4 text-emerald-700" /><button type="button" onClick={() => window.open(`https://wa.me/${REPLY.whatsapp.replace(/\D/g, '')}`, '_blank', 'noopener,noreferrer')} className="font-semibold cursor-pointer">WhatsApp</button></li>
         </ul>
+        <div className="text-sm text-slate-600 space-y-3">
+          <h2 className="text-base font-bold text-slate-900">{isEn ? 'How we can help' : 'Wobei wir helfen'}</h2>
+          <p>
+            {isEn
+              ? 'Tell us which model you are interested in and, if you know it, your height and inside leg, and we will recommend a frame size. We also answer questions about motors, battery range, company bike leasing, delivery to your address and the status of an order you have already placed.'
+              : 'Nenne uns das Modell, das dich interessiert, und wenn du sie kennst, deine Körpergröße und Schrittlänge, dann empfehlen wir dir eine Rahmengröße. Wir beantworten außerdem Fragen zu Motoren, Akku-Reichweite, Dienstrad-Leasing, zur Lieferung an deine Adresse und zum Stand einer bereits aufgegebenen Bestellung.'}
+          </p>
+          <p>
+            {isEn
+              ? 'If you already ordered, include your order number (it starts with EBZ) so we can find it straight away. You will get our reply by email, and if you prefer to talk it through, phone and WhatsApp work just as well as the form.'
+              : 'Wenn du schon bestellt hast, nenne uns deine Bestellnummer (sie beginnt mit EBZ), damit wir sie sofort finden. Unsere Antwort bekommst du per E-Mail, und wenn du lieber sprechen möchtest, funktionieren Telefon und WhatsApp genauso gut wie das Formular.'}
+          </p>
+        </div>
       </div>
 
       <div className="md:col-span-3 bg-white border border-slate-200 rounded-3xl p-6">

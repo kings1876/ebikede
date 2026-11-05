@@ -12,7 +12,7 @@ import {
   Search,
   CheckCircle2,
   AlertCircle,
-} from 'lucide-react';
+} from './icons';
 import { useShop } from '../context/ShopContext';
 import { TAXONOMY_ROUTES } from '../data/taxonomy';
 
