@@ -21,6 +21,7 @@ import { PRODUCTS } from '../data/products';
 import { ACCESSORIES } from '../data/accessories';
 import { INITIAL_REVIEWS } from '../data/reviews';
 import { brandSlug } from '../lib/brand';
+import { makeOrderNumber } from '../lib/reply/order';
 import { brandSeoDe, productTitleDe, productTitleEn, productMeta, shortenTitle } from '../data/seo-apply';
 
 interface ShopContextType {
@@ -333,7 +334,7 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Checkout & Order
   const placeOrder = useCallback(
     (orderInput: Omit<OrderData, 'orderNumber' | 'date'>): OrderData => {
-      const orderNumber = `EBZ-${Math.floor(100000 + Math.random() * 900000)}`;
+      const orderNumber = makeOrderNumber();
       const date = new Date().toLocaleDateString(orderInput.language === 'de' ? 'de-DE' : 'en-US', {
         year: 'numeric',
         month: 'long',
@@ -346,6 +347,26 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
         orderNumber,
         date,
       };
+      // Save + email the shop and the customer (best effort: the confirmation page never depends on it).
+      void fetch('/api/contact/', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        keepalive: true,
+        body: JSON.stringify({
+          formName: 'order',
+          orderNumber,
+          language: orderInput.language,
+          name: orderInput.customerName,
+          email: orderInput.email,
+          phone: orderInput.phone,
+          address: orderInput.address,
+          city: orderInput.city,
+          zip: orderInput.zip,
+          country: orderInput.country,
+          paymentMethod: orderInput.paymentMethod,
+          items: orderInput.items.map((i) => ({ id: i.product.id, quantity: i.quantity, isAccessory: i.isAccessory, size: i.selectedSize, color: i.selectedColor })),
+        }),
+      }).catch(() => {});
       setLastOrder(completeOrder);
       clearCart();
       const confirmPath = orderInput.language === 'de' ? '/bestellbestaetigung/' : '/en/order-confirmation/';

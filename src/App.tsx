@@ -27,6 +27,7 @@ import { ProductCatalog } from './components/ProductCatalog';
 import { AccessoriesCatalog } from './components/AccessoriesCatalog';
 import { GuideDetail } from './components/GuideDetail';
 import { LegalPage } from './components/LegalPage';
+import { ContactPage } from './components/ContactPage';
 import { SizeGuide } from './components/SizeGuide';
 import { CartDrawer } from './components/CartDrawer';
 import dynamic from 'next/dynamic';
@@ -167,6 +168,15 @@ export function MainRouter() {
             </NavLink>
           ))}
         </div>
+      </main>
+    );
+  }
+
+  // Contact page: /kontakt/ or /en/contact/
+  if (currentPath === '/kontakt/' || currentPath === '/en/contact/') {
+    return (
+      <main id="main" tabIndex={-1} className="min-h-screen">
+        <ContactPage />
       </main>
     );
   }

@@ -3,7 +3,7 @@ import { BASE_URL } from '../../lib/seo';
 export const dynamic = 'force-static';
 
 // Private / low-value pages that must not be crawled
-const DISALLOW = ['/warenkorb/', '/kasse/', '/bestellbestaetigung/', '/suche/', '/en/cart/', '/en/checkout/', '/en/order-confirmation/', '/en/search/'];
+const DISALLOW = ['/warenkorb/', '/kasse/', '/bestellbestaetigung/', '/suche/', '/en/cart/', '/en/checkout/', '/en/order-confirmation/', '/en/search/', '/admin/', '/order/', '/api/admin/'];
 
 const AI_BOTS = ['GPTBot', 'ChatGPT-User', 'OAI-SearchBot', 'ClaudeBot', 'Claude-Web', 'PerplexityBot', 'Applebot', 'Amazonbot', 'CCBot', 'Google-Extended', 'Meta-ExternalAgent', 'cohere-ai'];
 

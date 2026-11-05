@@ -157,15 +157,15 @@ Web: https://e-bike-zuverkaufen.de`;
           <CheckCircle className="w-12 h-12" />
         </div>
         <span className="inline-block text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-100 text-emerald-800">
-          {isEn ? 'Order Received & Confirmed' : 'Bestellung erfolgreich eingegangen'}
+          {isEn ? 'Order Received' : 'Bestellung eingegangen'}
         </span>
         <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
           {isEn ? 'Thank You for Your Order!' : 'Vielen Dank für deinen Einkauf!'}
         </h1>
         <p className="text-slate-600 text-sm max-w-lg mx-auto">
           {isEn
-            ? `Your order #${order.orderNumber} has been forwarded to our certified bicycle workshop in Munich.`
-            : `Dein Auftrag #${order.orderNumber} wurde an unsere Fahrradwerkstatt in München übergeben.`}
+            ? `Your order #${order.orderNumber} has been received. We are sending a confirmation to ${order.email} and will email you the payment details shortly.`
+            : `Deine Bestellung #${order.orderNumber} ist eingegangen. Wir senden eine Bestätigung an ${order.email} und schicken dir in Kürze die Zahlungsdaten per E-Mail.`}
         </p>
       </div>
 
