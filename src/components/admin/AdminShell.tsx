@@ -52,7 +52,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
       setError('');
     } else {
       setState('locked');
-      setError(r.status === 503 ? 'Admin-Zugang ist noch nicht eingerichtet (ADMIN_PASSCODE fehlt).' : code ? 'Falscher Zugangscode.' : '');
+      setError(r.status === 503 ? 'Admin access is not set up yet (ADMIN_PASSCODE is missing).' : code ? 'Wrong access code.' : '');
     }
   }, []);
 
@@ -86,7 +86,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
         >
           <div className="text-white font-black text-lg">{REPLY.siteName} · Admin</div>
           <label htmlFor="pc" className="block text-xs font-semibold text-slate-400">
-            Zugangscode
+            Access code
           </label>
           <input
             id="pc"
@@ -97,7 +97,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
           />
           {error && <p className="text-xs text-rose-400">{error}</p>}
-          <button className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm cursor-pointer">Anmelden</button>
+          <button className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm cursor-pointer">Sign in</button>
         </form>
       </div>
     );
@@ -105,8 +105,8 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
 
   const nav = [
     { href: '/admin/', label: 'Dashboard' },
-    { href: '/admin/orders/', label: 'Bestellungen' },
-    { href: '/admin/enquiries/', label: 'Anfragen' },
+    { href: '/admin/orders/', label: 'Orders' },
+    { href: '/admin/enquiries/', label: 'Enquiries' },
   ];
 
   return (
@@ -129,7 +129,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
               ))}
             </nav>
             <button onClick={signOut} className="ml-auto text-xs text-slate-400 hover:text-white cursor-pointer">
-              Abmelden
+              Sign out
             </button>
           </div>
         </header>

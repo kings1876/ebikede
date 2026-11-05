@@ -29,23 +29,23 @@ export function AdminHub() {
     <div className="space-y-6">
       {!configured && (
         <div className="rounded-xl border border-amber-500/40 bg-amber-500/10 text-amber-200 text-sm p-4">
-          Es ist noch keine Datenbank verbunden. Bestellungen und Anfragen werden per E-Mail zugestellt, erscheinen hier aber erst nach dem Verbinden von Upstash Redis.
+          No database is connected yet. Orders and enquiries are delivered by email, but only appear here once Upstash Redis is connected.
         </div>
       )}
       <div className="grid sm:grid-cols-2 gap-4">
         <Link href="/admin/orders/" className="rounded-2xl bg-slate-900 border border-slate-800 p-5 hover:border-emerald-600">
-          <div className="text-xs uppercase tracking-wider text-slate-400">Bestellungen</div>
+          <div className="text-xs uppercase tracking-wider text-slate-400">Orders</div>
           <div className="text-3xl font-black mt-1">{orders.length}</div>
-          <div className="text-sm text-emerald-300 mt-1">{pending} offen (Zahlungsdaten senden)</div>
+          <div className="text-sm text-emerald-300 mt-1">{pending} open (send payment details)</div>
         </Link>
         <Link href="/admin/enquiries/" className="rounded-2xl bg-slate-900 border border-slate-800 p-5 hover:border-emerald-600">
-          <div className="text-xs uppercase tracking-wider text-slate-400">Anfragen</div>
+          <div className="text-xs uppercase tracking-wider text-slate-400">Enquiries</div>
           <div className="text-3xl font-black mt-1">{enquiries.length}</div>
-          <div className="text-sm text-emerald-300 mt-1">{fresh} neu</div>
+          <div className="text-sm text-emerald-300 mt-1">{fresh} new</div>
         </Link>
       </div>
       <section>
-        <h2 className="text-sm font-bold text-slate-300 mb-2">Letzte Bestellungen</h2>
+        <h2 className="text-sm font-bold text-slate-300 mb-2">Recent orders</h2>
         <div className="divide-y divide-slate-800 rounded-xl border border-slate-800 bg-slate-900">
           {orders.slice(0, 5).map((o) => (
             <Link key={o.orderNumber} href="/admin/orders/" className="flex justify-between px-4 py-3 text-sm hover:bg-slate-800/50">
@@ -55,7 +55,7 @@ export function AdminHub() {
               <span className="text-slate-400">{money(o.amountDue)}</span>
             </Link>
           ))}
-          {!orders.length && <div className="px-4 py-3 text-sm text-slate-500">Noch keine Bestellungen.</div>}
+          {!orders.length && <div className="px-4 py-3 text-sm text-slate-500">No orders yet.</div>}
         </div>
       </section>
     </div>

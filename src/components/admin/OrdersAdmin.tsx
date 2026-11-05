@@ -12,9 +12,9 @@ import {
 } from '../../lib/reply/order';
 
 const STATUS: Record<StoredOrder['status'], { label: string; cls: string }> = {
-  pending: { label: 'Offen', cls: 'bg-amber-500/15 text-amber-300' },
-  'payment-sent': { label: 'Zahlungsdaten gesendet', cls: 'bg-blue-500/15 text-blue-300' },
-  'payment-confirmed': { label: 'Zahlung gemeldet', cls: 'bg-emerald-500/15 text-emerald-300' },
+  pending: { label: 'Open', cls: 'bg-amber-500/15 text-amber-300' },
+  'payment-sent': { label: 'Payment details sent', cls: 'bg-blue-500/15 text-blue-300' },
+  'payment-confirmed': { label: 'Payment reported', cls: 'bg-emerald-500/15 text-emerald-300' },
 };
 
 function waLinkTo(phone: string, lines: string[]) {
@@ -40,9 +40,9 @@ function Composer({ order, onSent }: { order: StoredOrder; onSent: () => void })
     });
     setBusy(false);
     if (r.data.ok) {
-      setMsg('E-Mail gesendet.');
+      setMsg('Email sent.');
       onSent();
-    } else setMsg(r.data.error === 'not-configured' ? 'E-Mail-Versand ist nicht eingerichtet (SMTP-Variablen fehlen).' : `Fehler: ${r.data.error || r.status}`);
+    } else setMsg(r.data.error === 'not-configured' ? 'Email sending is not set up (SMTP variables missing).' : `Error: ${r.data.error || r.status}`);
   };
 
   const wa = waLinkTo(order.customerPhone, [
@@ -57,11 +57,11 @@ function Composer({ order, onSent }: { order: StoredOrder; onSent: () => void })
 
   return (
     <div className="space-y-3">
-      <h3 className="text-sm font-bold">{order.paymentDetails ? 'Zahlungsdaten erneut senden' : 'Zahlungsdaten senden'}</h3>
+      <h3 className="text-sm font-bold">{order.paymentDetails ? 'Resend payment details' : 'Send payment details'}</h3>
       <select value={methodId} onChange={(e) => setMethodId(e.target.value)} className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-sm">
         {REPLY.paymentMethods.map((m) => (
           <option key={m.id} value={m.id}>
-            {m.labelDe}
+            {m.labelEn}
           </option>
         ))}
       </select>
@@ -69,7 +69,7 @@ function Composer({ order, onSent }: { order: StoredOrder; onSent: () => void })
         value={detail}
         onChange={(e) => setDetail(e.target.value)}
         rows={6}
-        placeholder={'Kontoinhaber: …\nIBAN: …\nBIC: …\nVerwendungszweck: ' + order.orderNumber}
+        placeholder={'Account holder: …\nIBAN: …\nBIC: …\nReference: ' + order.orderNumber}
         className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-sm font-mono"
       />
       {fields.length > 0 && (
@@ -85,11 +85,11 @@ function Composer({ order, onSent }: { order: StoredOrder; onSent: () => void })
       )}
       <div className="flex flex-wrap gap-2 items-center">
         <button disabled={busy || !fields.length} onClick={send} className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-sm font-bold cursor-pointer">
-          {busy ? 'Senden…' : `Per E-Mail an ${order.customerEmail}`}
+          {busy ? 'Sending…' : `Send by email to ${order.customerEmail}`}
         </button>
         {order.customerPhone && fields.length > 0 && (
           <a href={wa} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-xl border border-slate-700 text-sm hover:bg-slate-800">
-            Per WhatsApp öffnen
+            Open in WhatsApp
           </a>
         )}
         {msg && <span className="text-xs text-slate-300">{msg}</span>}
@@ -111,7 +111,7 @@ export function OrdersAdmin() {
   }, [load]);
 
   const remove = async (id: string) => {
-    if (!confirm(`Bestellung ${id} löschen?`)) return;
+    if (!confirm(`Delete order ${id}?`)) return;
     await api(`/api/admin/orders/?id=${encodeURIComponent(id)}`, { method: 'DELETE' });
     setOpen(null);
     void load();
@@ -119,8 +119,8 @@ export function OrdersAdmin() {
 
   return (
     <div className="space-y-3">
-      <h1 className="text-xl font-black">Bestellungen</h1>
-      {!orders.length && <p className="text-sm text-slate-500">Noch keine Bestellungen.</p>}
+      <h1 className="text-xl font-black">Orders</h1>
+      {!orders.length && <p className="text-sm text-slate-500">No orders yet.</p>}
       {orders.map((o) => {
         const s = STATUS[o.status];
         const isOpen = open === o.orderNumber;
@@ -131,13 +131,13 @@ export function OrdersAdmin() {
               <span className="text-sm text-slate-300">{o.customerName}</span>
               <span className={`text-[11px] px-2 py-0.5 rounded-full ${s.cls}`}>{s.label}</span>
               <span className="ml-auto text-sm">{money(o.amountDue)}</span>
-              <span className="text-xs text-slate-500">{new Date(o.createdAt).toLocaleDateString('de-DE')}</span>
+              <span className="text-xs text-slate-500">{new Date(o.createdAt).toLocaleDateString('en-GB')}</span>
             </button>
             {isOpen && (
               <div className="border-t border-slate-800 p-4 grid md:grid-cols-2 gap-6">
                 <div className="text-sm space-y-3">
                   <div>
-                    <div className="text-xs text-slate-500">Kunde</div>
+                    <div className="text-xs text-slate-500">Customer</div>
                     {o.customerName}
                     <br />
                     <a className="text-emerald-300" href={`mailto:${o.customerEmail}`}>
@@ -147,12 +147,12 @@ export function OrdersAdmin() {
                     {o.customerPhone}
                   </div>
                   <div>
-                    <div className="text-xs text-slate-500">Lieferadresse</div>
+                    <div className="text-xs text-slate-500">Delivery address</div>
                     <div className="whitespace-pre-line">{o.address}</div>
                   </div>
                   <div>
                     <div className="text-xs text-slate-500">
-                      Artikel · {methodLabel(o.paymentMethod, 'de')} · Sprache {o.language.toUpperCase()}
+                      Items · {methodLabel(o.paymentMethod, 'en')} · Language {o.language.toUpperCase()}
                     </div>
                     {o.items.map((i, k) => (
                       <div key={k} className="flex justify-between gap-4">
@@ -163,18 +163,18 @@ export function OrdersAdmin() {
                         <span>{money(i.lineTotal)}</span>
                       </div>
                     ))}
-                    {o.discount > 0 && <div className="flex justify-between text-emerald-300">Krypto-Rabatt <span>-{money(o.discount)}</span></div>}
-                    <div className="flex justify-between">Versand <span>{o.shipping ? money(o.shipping) : 'kostenlos'}</span></div>
-                    <div className="flex justify-between font-bold border-t border-slate-800 mt-1 pt-1">Zu zahlen <span>{money(o.amountDue)}</span></div>
+                    {o.discount > 0 && <div className="flex justify-between text-emerald-300">Crypto discount <span>-{money(o.discount)}</span></div>}
+                    <div className="flex justify-between">Shipping <span>{o.shipping ? money(o.shipping) : 'free'}</span></div>
+                    <div className="flex justify-between font-bold border-t border-slate-800 mt-1 pt-1">Amount due <span>{money(o.amountDue)}</span></div>
                   </div>
                   {o.paymentConfirmation && (
                     <div className="rounded-lg bg-emerald-500/10 text-emerald-200 text-xs p-3">
-                      Kunde hat einen Zahlungsbeleg hochgeladen ({new Date(o.paymentConfirmation.at).toLocaleString('de-DE')}). Beleg liegt in deinem Postfach.
-                      {o.paymentConfirmation.note && <div className="mt-1">Notiz: {o.paymentConfirmation.note}</div>}
+                      Customer uploaded a payment confirmation ({new Date(o.paymentConfirmation.at).toLocaleString('en-GB')}). The file is in your inbox.
+                      {o.paymentConfirmation.note && <div className="mt-1">Note: {o.paymentConfirmation.note}</div>}
                     </div>
                   )}
                   <button onClick={() => remove(o.orderNumber)} className="text-xs text-rose-400 hover:text-rose-300 cursor-pointer">
-                    Bestellung löschen
+                    Delete order
                   </button>
                 </div>
                 <Composer order={o} onSent={load} />
