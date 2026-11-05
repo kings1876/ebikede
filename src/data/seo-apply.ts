@@ -131,7 +131,7 @@ export function shortenTitle(title: string, max = 66): string {
     const head = parts[0];
     const cut = head.split(/:| – /)[0].trim();
     if (cut.length >= 25 && cut.length <= max) return cut;
-    const words = head.slice(0, max).replace(/s+S*$/, '');
+    const words = head.slice(0, max).replace(/\s+\S*$/, '');
     return words;
   }
   return joined;

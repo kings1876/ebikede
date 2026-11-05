@@ -20,9 +20,21 @@ export interface PageInfo {
   pathDe: string;
   pathEn: string;
   noindex: boolean;
+  canonicalPath?: string;
   kind: 'home' | 'product' | 'brand' | 'guide' | 'guides' | 'legal' | 'accessories' | 'route' | 'none';
   productSlug?: string;
   image?: string;
+}
+
+/** Page title that always differs from the H1: keeps the site suffix and trims the head to fit. */
+function titleWithSite(h1: string, max = 66): string {
+  const room = max - 3 - SITE.length;
+  let head = h1;
+  if (head.length > room) {
+    const cut = head.split(/:| – /)[0].trim();
+    head = cut.length >= 20 && cut.length <= room ? cut : head.slice(0, room).replace(/\s+\S*$/, '');
+  }
+  return `${head} | ${SITE}`;
 }
 
 export function brandSlugs(): string[] {
@@ -144,7 +156,7 @@ export function resolvePage(rawPath: string): PageInfo {
       kind: 'guide',
       pathDe: `/ratgeber/${guide.slugDe}/`,
       pathEn: `/en/guides/${guide.slugEn}/`,
-      title: `${de ? guide.titleDe : guide.titleEn} | ${SITE}`,
+      title: titleWithSite(de ? guide.titleDe : guide.titleEn),
       description: de ? guide.summaryDe : guide.summaryEn,
     };
   }
@@ -171,7 +183,7 @@ export function resolvePage(rawPath: string): PageInfo {
       kind: 'legal',
       pathDe: `/${legal.slugDe}/`,
       pathEn: `/en/${legal.slugEn}/`,
-      title: `${de ? legal.titleDe : legal.titleEn} | ${SITE}`,
+      title: titleWithSite(de ? legal.titleDe : legal.titleEn),
       description: de
         ? `${legal.titleDe}: Pflichtangaben und rechtliche Hinweise von ${SITE} für Kunden in Deutschland.`
         : `${legal.titleEn}: legal information and notices from ${SITE} for customers in Germany.`,
@@ -187,6 +199,7 @@ export function resolvePage(rawPath: string): PageInfo {
       pathDe: r.pathDe,
       pathEn: r.pathEn,
       noindex: !!r.noindex,
+      canonicalPath: de ? r.canonicalPathDe : r.canonicalPathEn,
       title: shortenTitle(de ? r.titleTemplateDe(minPrice) : r.titleTemplateEn(minPrice)),
       description: de ? r.metaDe : r.metaEn,
     };
@@ -203,7 +216,7 @@ export function pathFromSlug(lang: 'de' | 'en', slug?: string[]): string {
 
 export function buildMetadata(rawInfo: PageInfo): Metadata {
   const info = { ...rawInfo, title: shortenTitle(rawInfo.title) };
-  const self = info.lang === 'de' ? info.pathDe : info.pathEn;
+  const self = info.canonicalPath || (info.lang === 'de' ? info.pathDe : info.pathEn);
   const ogImage = info.image || `${BASE_URL}/images/og/default.jpg`;
   return {
     metadataBase: new URL(BASE_URL),

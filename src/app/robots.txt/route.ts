@@ -13,9 +13,6 @@ export function GET() {
     'Allow: /',
     ...DISALLOW.map((p) => `Disallow: ${p}`),
     '',
-    // Crawling for search and AI answers is welcome; training use is opted out (change here if the owner decides otherwise)
-    'Content-Signal: search=yes, ai-input=yes, ai-train=no',
-    '',
     '# AI crawlers: welcome to read catalogue and guide pages',
     ...AI_BOTS.flatMap((b) => [`User-agent: ${b}`, 'Allow: /', ...DISALLOW.map((p) => `Disallow: ${p}`), '']),
     '# Agent-readable resources',

@@ -489,6 +489,13 @@ export const Footer: React.FC = () => {
               </NavLink>
             </li>
             <li>
+              <NavLink href={isEn ? '/en/sitemap/' : '/seitenuebersicht/'}
+                className="hover:text-emerald-400 transition-colors inline-block"
+              >
+                {isEn ? 'Site Map' : 'Seitenübersicht'}
+              </NavLink>
+            </li>
+            <li>
               <NavLink href={isEn ? '/en/terms/' : '/agb/'}
                 
                 className="hover:text-emerald-400 transition-colors inline-block"

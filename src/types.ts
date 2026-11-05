@@ -28,6 +28,9 @@ export interface TaxonomyRoute {
     accessoryType?: string;
   };
   noindex?: boolean;
+  /** Indexable duplicate view: points search engines at the main page instead of noindexing it */
+  canonicalPathDe?: string;
+  canonicalPathEn?: string;
 }
 
 export type MotorType = 'Bosch' | 'Shimano Steps' | 'Yamaha' | 'Bafang' | 'Fazua' | 'Brose' | 'TQ' | 'Stromer' | 'Ananda' | 'Nabenmotor';

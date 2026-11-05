@@ -257,7 +257,9 @@ export const TAXONOMY_ROUTES: TaxonomyRoute[] = [
     h1En: 'Electric Bikes for Seniors – Safe & Ergonomic',
     subtitleDe: 'Extra tiefer Durchstieg, aufrechte Haltung, pannensichere Reifen und einfache Bedienung',
     subtitleEn: 'Extra-low entry clearance, upright posture, puncture-proof tires, and simplified controls',
-    noindex: true, // shows the step-through bikes; same list as /tiefeinsteiger/, so it must not compete with it
+    // shows the step-through bikes; same list as /tiefeinsteiger/, so it canonicalises there instead of competing with it
+    canonicalPathDe: '/e-bikes/tiefeinsteiger/',
+    canonicalPathEn: '/en/e-bikes/step-through/',
     filterCriteria: { gender: 'tiefeinsteiger' },
   },
 
@@ -886,6 +888,18 @@ export const TAXONOMY_ROUTES: TaxonomyRoute[] = [
     metaEn: 'Calculate your exact e-bike frame size based on inseam length and body height. Interactive sizing calculator.',
     h1De: 'Interaktive Rahmengrößen-Beratung',
     h1En: 'Interactive Frame Size Guide',
+  },
+  {
+    id: 'seitenuebersicht',
+    pathDe: '/seitenuebersicht/',
+    pathEn: '/en/sitemap/',
+    section: 'service',
+    titleTemplateDe: () => `Seitenübersicht: Alle Seiten & E-Bikes | EBike Zu Verkaufen`,
+    titleTemplateEn: () => `Site Map: All Pages & E-Bikes | EBike Zu Verkaufen`,
+    metaDe: 'Alle Kategorien, Marken, Ratgeber und E-Bike Modelle von EBike Zu Verkaufen auf einen Blick.',
+    metaEn: 'All categories, brands, guides and e-bike models from EBike Zu Verkaufen at a glance.',
+    h1De: 'Seitenübersicht – Alle Seiten',
+    h1En: 'Site Map – All Pages',
   },
   {
     id: 'kontakt',

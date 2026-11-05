@@ -28,6 +28,7 @@ import { AccessoriesCatalog } from './components/AccessoriesCatalog';
 import { GuideDetail } from './components/GuideDetail';
 import { LegalPage } from './components/LegalPage';
 import { ContactPage } from './components/ContactPage';
+import { SitemapPage } from './components/SitemapPage';
 import { SizeGuide } from './components/SizeGuide';
 import { CartDrawer } from './components/CartDrawer';
 import dynamic from 'next/dynamic';
@@ -177,6 +178,15 @@ export function MainRouter() {
     return (
       <main id="main" tabIndex={-1} className="min-h-screen">
         <ContactPage />
+      </main>
+    );
+  }
+
+  // Site map: /seitenuebersicht/ or /en/sitemap/
+  if (currentPath === '/seitenuebersicht/' || currentPath === '/en/sitemap/') {
+    return (
+      <main id="main" tabIndex={-1} className="min-h-screen">
+        <SitemapPage />
       </main>
     );
   }
