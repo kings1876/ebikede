@@ -57,7 +57,7 @@ export const SitemapPage: React.FC = () => {
           ))}
           {Object.values(LEGAL_DOCUMENTS).map((d) => (
             <li key={d.slugDe}>
-              <NavLink href={isEn && d.id !== 'impressum' ? `/en/${d.slugEn}/` : `/${d.slugDe}/`} className={link}>{isEn ? d.titleEn : d.titleDe}</NavLink>
+              <NavLink href={isEn ? `/en/${d.slugEn}/` : `/${d.slugDe}/`} className={link}>{isEn ? d.titleEn : d.titleDe}</NavLink>
             </li>
           ))}
         </ul>

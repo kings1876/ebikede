@@ -40,8 +40,8 @@ export const Footer: React.FC<{ lang: 'de' | 'en' }> = ({ lang }) => {
         </p>
         <p className="mt-3">
           {isEn
-            ? 'Good to know before you buy: every e-bike on this site is brand new, and prices include German VAT. Our imprint, terms and conditions, withdrawal policy, privacy policy and battery disposal information are linked in the columns above, and the site map lists every category, brand, guide and model on one page. Prefer to browse by price, motor, frame type or use case? The category pages let you narrow the range, and every product page shows the technical data, the available sizes and colours, the delivery terms and the payment options before you order.'
-            : 'Gut zu wissen vor dem Kauf: Jedes E-Bike auf dieser Seite ist fabrikneu, und die Preise enthalten die deutsche MwSt. Impressum, AGB, Widerrufsbelehrung, Datenschutzerklärung und Hinweise zur Batterieentsorgung sind in den Spalten oben verlinkt, und die Seitenübersicht listet alle Kategorien, Marken, Ratgeber und Modelle auf einer Seite. Du möchtest lieber nach Preis, Motor, Rahmenform oder Einsatzzweck stöbern? Die Kategorieseiten grenzen das Sortiment ein, und jede Produktseite zeigt vor der Bestellung die technischen Daten, die verfügbaren Größen und Farben, die Lieferbedingungen und die Zahlungsmöglichkeiten.'}
+            ? 'Good to know before you buy: every e-bike on this site is brand new, and prices include German VAT. Our terms and conditions, withdrawal policy, privacy policy and battery disposal information are linked in the columns above, and the site map lists every category, brand, guide and model on one page. Prefer to browse by price, motor, frame type or use case? The category pages let you narrow the range, and every product page shows the technical data, the available sizes and colours, the delivery terms and the payment options before you order.'
+            : 'Gut zu wissen vor dem Kauf: Jedes E-Bike auf dieser Seite ist fabrikneu, und die Preise enthalten die deutsche MwSt. AGB, Widerrufsbelehrung, Datenschutzerklärung und Hinweise zur Batterieentsorgung sind in den Spalten oben verlinkt, und die Seitenübersicht listet alle Kategorien, Marken, Ratgeber und Modelle auf einer Seite. Du möchtest lieber nach Preis, Motor, Rahmenform oder Einsatzzweck stöbern? Die Kategorieseiten grenzen das Sortiment ein, und jede Produktseite zeigt vor der Bestellung die technischen Daten, die verfügbaren Größen und Farben, die Lieferbedingungen und die Zahlungsmöglichkeiten.'}
         </p>
       </div>
 
@@ -493,14 +493,6 @@ export const Footer: React.FC<{ lang: 'de' | 'en' }> = ({ lang }) => {
                 className="fl"
               >
                 {isEn ? 'Withdrawal Policy' : 'Widerrufsbelehrung'}
-              </a>
-            </li>
-            <li>
-              <a href="/impressum/"
-                
-                className="fl"
-              >
-                {isEn ? 'Legal Notice (Impressum)' : 'Impressum (§ 5 TMG)'}
               </a>
             </li>
             <li>

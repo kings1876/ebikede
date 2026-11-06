@@ -939,18 +939,6 @@ export const TAXONOMY_ROUTES: TaxonomyRoute[] = [
     h1En: 'Frequently Asked Questions (FAQ)',
   },
   {
-    id: 'impressum',
-    pathDe: '/impressum/',
-    pathEn: '/en/legal-notice/',
-    section: 'service',
-    titleTemplateDe: () => `Impressum (Angaben gemäß § 5 TMG) | EBike Zu Verkaufen`,
-    titleTemplateEn: () => `Legal Notice / Impressum (German TMG § 5) | EBike Zu Verkaufen`,
-    metaDe: 'Impressum von e-bike-zuverkaufen.de. Gesetzliche Anbieterkennzeichnung nach § 5 Telemediengesetz (TMG).',
-    metaEn: 'Legal notice for e-bike-zuverkaufen.de. Statutory vendor identification pursuant to § 5 German Telemedia Act.',
-    h1De: 'Impressum',
-    h1En: 'Legal Notice (Impressum)',
-  },
-  {
     id: 'datenschutz',
     pathDe: '/datenschutz/',
     pathEn: '/en/privacy/',
