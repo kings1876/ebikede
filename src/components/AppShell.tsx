@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { ShopProvider } from '../context/ShopContext';
 import { Header } from './Header';
 import { CartDrawer } from './CartDrawer';
+import { LazyHydrate } from './LazyHydrate';
 
 const CheckoutModal = dynamic(() => import('./CheckoutModal').then((m) => m.CheckoutModal), { ssr: false });
 
@@ -22,7 +23,7 @@ export function AppShell({ children, footer }: { children: React.ReactNode; foot
         </a>
         <Header />
         {children}
-        {footer}
+        <LazyHydrate>{footer}</LazyHydrate>
         <CartDrawer onProceedToCheckout={() => setIsCheckoutOpen(true)} />
         {isCheckoutOpen && <CheckoutModal isOpen={isCheckoutOpen} onClose={() => setIsCheckoutOpen(false)} />}
       </div>

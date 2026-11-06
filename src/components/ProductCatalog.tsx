@@ -12,6 +12,7 @@ import {
 } from './icons';
 import { useShop } from '../context/ShopContext';
 import { useRouteState } from '../context/useRouteState';
+import { LazyHydrate } from './LazyHydrate';
 import { PRODUCTS } from '../data/products.slim';
 import { ProductCard } from './ProductCard';
 import { Product } from '../types';
@@ -149,6 +150,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       : `Große Auswahl ab ${minPriceFound} € mit geprüfter fahrfertiger Vormontage und voller Garantie`;
   }, [customSubtitle, activeRoute, isEn, minPriceFound]);
 
+  const FIRST_CARDS = 4;
+  const gridActive = visibleCount > PAGE_SIZE || sortBy !== 'featured' || searchQuery.trim().length > 0 || selectedMotor !== null || selectedBrand !== null || selectedGender !== null || priceRange[0] > 0 || priceRange[1] < 15000;
+
   const hasActiveFilters =
     selectedMotor !== null ||
     selectedBrand !== null ||
@@ -278,6 +282,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             </div>
           )}
 
+          <LazyHydrate eager={mobileFilterOpen || hasActiveFilters}>
           <div className="bg-white rounded-2xl border border-slate-200 p-5 space-y-6 shadow-2xs">
             <div className="flex items-center justify-between">
               <h2 className="font-bold text-sm text-slate-900 flex items-center gap-2">
@@ -408,6 +413,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               </button>
             )}
           </div>
+          </LazyHydrate>
         </aside>
 
         {/* Product Cards Grid */}
@@ -432,9 +438,15 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProducts.slice(0, visibleCount).map((product, idx) => (
+              {filteredProducts.slice(0, FIRST_CARDS).map((product, idx) => (
                 <ProductCard key={product.id} product={product} priority={idx < 4} />
               ))}
+              {/* the rest sit below the fold: kept as plain HTML until needed (see LazyHydrate) */}
+              <LazyHydrate key={`${activeRoute?.id ?? ""}|${activeBrand ?? ""}`} className="contents" eager={gridActive}>
+                {filteredProducts.slice(FIRST_CARDS, visibleCount).map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </LazyHydrate>
             </div>
           )}
           {filteredProducts.length > visibleCount && (

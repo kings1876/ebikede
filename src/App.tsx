@@ -34,6 +34,7 @@ import { TaxonomyInspector } from './components/TaxonomyInspector';
 
 import { PRODUCTS } from './data/products.slim';
 import type { Product } from './types';
+import { LazyHydrate } from './components/LazyHydrate';
 import { STORE_TRUSTPILOT_INFO, calculateReviewStats, INITIAL_REVIEWS } from './data/reviews';
 
 const TILE_CATEGORY: Record<string, string> = {
@@ -311,6 +312,7 @@ export function MainRouter({ initialProduct }: { initialProduct?: Product } = {}
       </section>
 
       {/* Featured Categories Quick Navigation */}
+      <LazyHydrate>
       <section className="max-w-7xl mx-auto px-4 py-16">
         <div className="flex items-end justify-between mb-8">
           <div>
@@ -414,8 +416,10 @@ export function MainRouter({ initialProduct }: { initialProduct?: Product } = {}
           ))}
         </div>
       </section>
+      </LazyHydrate>
 
       {/* Featured Bikes Showcase */}
+      <LazyHydrate>
       <section className="bg-slate-50 py-16 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-end justify-between mb-8">
@@ -443,9 +447,11 @@ export function MainRouter({ initialProduct }: { initialProduct?: Product } = {}
           </div>
         </div>
       </section>
+      </LazyHydrate>
 
       {SHOW_REVIEWS && (
 
+      <LazyHydrate>
       <section id="bewertungen" className="max-w-7xl mx-auto px-4 py-16">
         <div className="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-slate-200">
@@ -511,6 +517,7 @@ export function MainRouter({ initialProduct }: { initialProduct?: Product } = {}
           </div>
         </div>
       </section>
+      </LazyHydrate>
 )}
     </main>
   );
