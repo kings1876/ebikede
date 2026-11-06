@@ -271,10 +271,10 @@ export const Header: React.FC = () => {
               {isEn ? 'Free Expert Advice' : 'Kostenlose Fachberatung'}
             </div>
             <a
-              href="mailto:info@e-bike-zuverkaufen.de"
+              href="mailto:verkaufe@e-bike-zuverkaufen.de"
               className="text-xs font-bold text-slate-900 hover:text-emerald-700"
             >
-              info@e-bike-zuverkaufen.de
+              verkaufe@e-bike-zuverkaufen.de
             </a>
           </div>
 
