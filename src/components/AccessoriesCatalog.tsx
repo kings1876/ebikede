@@ -3,10 +3,12 @@ import { NavLink } from './NavLink';
 import React from 'react';
 import { ShoppingCart, Check, ShieldCheck, ChevronRight } from './icons';
 import { useShop } from '../context/ShopContext';
+import { useRouteState } from '../context/useRouteState';
 import { ACCESSORIES } from '../data/accessories';
 
 export const AccessoriesCatalog: React.FC = () => {
-  const { language, navigateTo, addToCart, activeRoute } = useShop();
+  const { language, navigateTo, addToCart } = useShop();
+  const { activeRoute } = useRouteState();
   const isEn = language === 'en';
 
   const categoryFilter = activeRoute?.filterCriteria?.accessoryType;

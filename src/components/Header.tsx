@@ -20,12 +20,11 @@ import {
   Zap,
 } from './icons';
 import { useShop } from '../context/ShopContext';
-import { PRODUCTS } from '../data/products.slim';
-import { ACCESSORIES } from '../data/accessories';
+import type { Product } from '../types';
 import { STORE_TRUSTPILOT_INFO } from '../data/reviews';
 
-const fromPrice = (category: string) => {
-  const ps = PRODUCTS.filter((p) => p.category === category);
+const fromPriceIn = (products: Product[], category: string) => {
+  const ps = products.filter((p) => p.category === category);
   return ps.length ? `ab ${Math.min(...ps.map((p) => p.price)).toLocaleString('de-DE')} €` : '';
 };
 
@@ -46,6 +45,21 @@ export const Header: React.FC = () => {
   const [searchFocused, setSearchFocused] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
 
+  // The catalogue is only needed for search suggestions and the menu's "from" prices, so it loads on first use
+  const [products, setProducts] = useState<Product[]>([]);
+  const needsProducts = searchFocused || searchQuery.length > 0 || activeDropdown !== null || mobileMenuOpen;
+  useEffect(() => {
+    if (!needsProducts || products.length) return;
+    let live = true;
+    void import('../data/products.slim').then((m) => {
+      if (live) setProducts(m.PRODUCTS);
+    });
+    return () => {
+      live = false;
+    };
+  }, [needsProducts, products.length]);
+  const fromPrice = (category: string) => fromPriceIn(products, category);
+
   // Close search dropdown on click outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -61,14 +75,14 @@ export const Header: React.FC = () => {
   const searchResults = React.useMemo(() => {
     if (!searchQuery || searchQuery.trim().length < 2) return [];
     const q = searchQuery.toLowerCase().trim();
-    return PRODUCTS.filter(
+    return products.filter(
       (p) =>
         p.name_de.toLowerCase().includes(q) ||
         p.name_en.toLowerCase().includes(q) ||
         p.brand.toLowerCase().includes(q) ||
         p.motor.toLowerCase().includes(q)
     ).slice(0, 5);
-  }, [searchQuery]);
+  }, [searchQuery, products]);
 
   const isEn = language === 'en';
 

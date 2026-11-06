@@ -181,6 +181,20 @@ export const SizeGuide: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <section className="mt-10 text-sm text-slate-600 space-y-3 max-w-3xl">
+        <h2 className="text-lg font-bold text-slate-900">{isEn ? 'How to choose the right frame size' : 'So findest du die richtige Rahmengröße'}</h2>
+        <p>
+          {isEn
+            ? 'The frame size of an e-bike is usually given in centimetres of seat-tube length or as S, M, L and XL. What matters most is your inside leg: stand barefoot against a wall, hold a book level between your legs and measure from the floor to the top edge of the book. The calculator above turns that number, and your height, into a recommended size.'
+            : 'Die Rahmengröße eines E-Bikes wird meist in Zentimetern Sitzrohrlänge oder als S, M, L und XL angegeben. Am wichtigsten ist deine Schrittlänge: Stell dich barfuß an eine Wand, halte ein Buch waagerecht zwischen die Beine und miss vom Boden bis zur Oberkante des Buchs. Der Rechner oben macht aus diesem Wert und deiner Körpergröße eine Größenempfehlung.'}
+        </p>
+        <p>
+          {isEn
+            ? 'Step-through frames are easier to mount and usually cover a wider height range, while high-step frames are stiffer and often preferred for sporty riding. If you are between two sizes, riders who want an upright, relaxed position tend to take the smaller one, and riders who want a longer, more stretched position the larger one. You can always ask us for advice on a specific model before you order.'
+            : 'Tiefeinsteiger lassen sich leichter besteigen und decken meist einen größeren Körpergrößenbereich ab, während Diamantrahmen steifer sind und oft für sportliches Fahren bevorzugt werden. Liegst du zwischen zwei Größen, nehmen Fahrer mit aufrechter, entspannter Sitzposition eher die kleinere und Fahrer mit gestreckter Haltung eher die größere. Zu einem bestimmten Modell beraten wir dich gern vor der Bestellung.'}
+        </p>
+      </section>
     </div>
   );
 };

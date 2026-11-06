@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { MainRouter } from '../../../../App';
 import { allPaths, buildMetadata, pathFromSlug, resolvePage } from '../../../../lib/seo';
 import { PRODUCTS } from '../../../../data/products';
+import { isStaticPath } from '../../../../lib/staticPaths';
 import { jsonLdScript } from '../../../../lib/jsonld';
 
 type Props = { params: Promise<{ slug?: string[] }> };
@@ -11,6 +12,7 @@ export const dynamicParams = false;
 export function generateStaticParams() {
   return allPaths()
     .filter((p) => p.startsWith('/en/'))
+    .filter((p) => !isStaticPath(p))
     .map((p) => ({ slug: p.replace(/^\/en\//, '').split('/').filter(Boolean) }));
 }
 

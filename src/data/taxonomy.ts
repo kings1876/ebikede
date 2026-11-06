@@ -1,4 +1,5 @@
 import { TaxonomyRoute } from '../types';
+import { normalizePath, getLanguageFromPath } from '../lib/paths';
 import { COMBO_ROUTES } from './landing-combos';
 import { applySeoKeywords } from './seo-apply';
 
@@ -1065,37 +1066,7 @@ export const TAXONOMY_ROUTES: TaxonomyRoute[] = [
   },
 ];
 
-/**
- * Normalizes a URL path by ensuring trailing slash for directory routes
- */
-export function normalizePath(path: string): string {
-  if (!path || path === '') return '/';
-  // Strip protocol/host if passed
-  try {
-    if (path.startsWith('http://') || path.startsWith('https://')) {
-      const url = new URL(path);
-      path = url.pathname;
-    }
-  } catch {
-    // ignore
-  }
-  // Strip query string and hash
-  path = path.split('?')[0].split('#')[0];
-  if (!path.startsWith('/')) path = '/' + path;
-  if (!path.endsWith('/') && !path.includes('.')) path = path + '/';
-  return path;
-}
-
-/**
- * Detect language from path: starts with /en/ is 'en', otherwise 'de'
- */
-export function getLanguageFromPath(path: string): 'de' | 'en' {
-  const norm = normalizePath(path);
-  if (norm === '/en/' || norm.startsWith('/en/')) {
-    return 'en';
-  }
-  return 'de';
-}
+export { normalizePath, getLanguageFromPath } from '../lib/paths';
 
 /**
  * Given any path (DE or EN), finds the matching TaxonomyRoute or product match

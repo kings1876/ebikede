@@ -11,6 +11,7 @@ import {
   Check,
 } from './icons';
 import { useShop } from '../context/ShopContext';
+import { useRouteState } from '../context/useRouteState';
 import { PRODUCTS } from '../data/products.slim';
 import { ProductCard } from './ProductCard';
 import { Product } from '../types';
@@ -28,8 +29,6 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 }) => {
   const {
     language,
-    activeRoute,
-    activeBrand,
     searchQuery,
     selectedMotor,
     setSelectedMotor,
@@ -40,9 +39,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     priceRange,
     setPriceRange,
     resetFilters,
-    seoInfo,
     navigateTo,
   } = useShop();
+  const { activeRoute, activeBrand, seoInfo } = useRouteState();
 
   const isEn = language === 'en';
 

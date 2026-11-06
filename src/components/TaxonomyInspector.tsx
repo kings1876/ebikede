@@ -14,10 +14,12 @@ import {
   AlertCircle,
 } from './icons';
 import { useShop } from '../context/ShopContext';
+import { useRouteState } from '../context/useRouteState';
 import { TAXONOMY_ROUTES } from '../data/taxonomy';
 
 export const TaxonomyInspector: React.FC = () => {
-  const { currentPath, language, navigateTo, switchLanguage, seoInfo } = useShop();
+  const { currentPath, language, navigateTo, switchLanguage } = useShop();
+  const { seoInfo } = useRouteState();
   const [isOpen, setIsOpen] = useState(false);
   const [filterSection, setFilterSection] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');

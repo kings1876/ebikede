@@ -1,5 +1,6 @@
 import '../../globals.css';
-import { AppShell } from '../../../App';
+import { Footer } from '../../../components/Footer';
+import { AppShell } from '../../../components/AppShell';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -8,7 +9,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script src="/js/webmcp.js" defer />
       </head>
       <body>
-        <AppShell>{children}</AppShell>
+        <AppShell footer={<Footer lang="en" />}>{children}</AppShell>
       </body>
     </html>
   );

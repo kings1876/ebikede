@@ -18,29 +18,22 @@ import {
   Percent,
   CheckCircle,
 } from './components/icons';
-import { ShopProvider, useShop } from './context/ShopContext';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
+import { useShop } from './context/ShopContext';
+import { useRouteState } from './context/useRouteState';
 import { ProductCard } from './components/ProductCard';
 import { ProductDetail } from './components/ProductDetail';
 import { ProductCatalog } from './components/ProductCatalog';
 import { AccessoriesCatalog } from './components/AccessoriesCatalog';
-import { CartDrawer } from './components/CartDrawer';
 import dynamic from 'next/dynamic';
 // Route-specific pages load on demand so the home/catalogue bundle stays small
-const GuideDetail = dynamic(() => import('./components/GuideDetail').then((m) => m.GuideDetail));
-const LegalPage = dynamic(() => import('./components/LegalPage').then((m) => m.LegalPage));
 const SizeGuide = dynamic(() => import('./components/SizeGuide').then((m) => m.SizeGuide));
 const SitemapPage = dynamic(() => import('./components/SitemapPage').then((m) => m.SitemapPage));
 const ContactPage = dynamic(() => import('./components/ContactPage').then((m) => m.ContactPage));
-const CheckoutModal = dynamic(() => import('./components/CheckoutModal').then((m) => m.CheckoutModal), { ssr: false });
 import { OrderConfirmation } from './components/OrderConfirmation';
 import { TaxonomyInspector } from './components/TaxonomyInspector';
 
 import { PRODUCTS } from './data/products.slim';
 import type { Product } from './types';
-import { GUIDES } from './data/guides';
-import { LEGAL_DOCUMENTS } from './data/legal';
 import { STORE_TRUSTPILOT_INFO, calculateReviewStats, INITIAL_REVIEWS } from './data/reviews';
 
 const TILE_CATEGORY: Record<string, string> = {
@@ -63,7 +56,8 @@ function tileFor(pathDe: string): { minPrice: number; img?: string } {
 }
 
 export function MainRouter({ initialProduct }: { initialProduct?: Product } = {}) {
-  const { currentPath, language, navigateTo, activeProduct, activeRoute } = useShop();
+  const { currentPath, language, navigateTo } = useShop();
+  const { activeProduct, activeRoute } = useRouteState();
   const isEn = language === 'en';
 
   // The bundled catalogue only has list fields. A product page needs the full record: the server passes it for
@@ -136,68 +130,6 @@ export function MainRouter({ initialProduct }: { initialProduct?: Product } = {}
     );
   }
 
-  // 5. Guides / Ratgeber Pages: /ratgeber/* or /en/guides/*
-  const guideMatch = GUIDES.find(
-    (g) =>
-      currentPath === `/ratgeber/${g.slugDe}/` ||
-      currentPath === `/en/guides/${g.slugEn}/`
-  );
-  if (guideMatch) {
-    return (
-      <main id="main" tabIndex={-1} className="min-h-screen">
-        <GuideDetail guide={guideMatch} />
-      </main>
-    );
-  }
-
-  // General Guides overview (/ratgeber/ or /en/guides/)
-  if (currentPath === '/ratgeber/' || currentPath === '/en/guides/') {
-    return (
-      <main id="main" tabIndex={-1} className="min-h-screen max-w-7xl mx-auto px-4 py-10">
-        <div className="bg-slate-900 rounded-3xl p-8 sm:p-12 text-white mb-10">
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
-            {isEn ? 'E-Bike Knowledge Hub' : 'Ratgeber & Wissensbereich'}
-          </span>
-          <h1 className="text-3xl sm:text-4xl font-black mt-1 mb-3">
-            {isEn ? 'Electric Bike Guides & Buying Advice' : 'E-Bike Ratgeber & Kaufberatung'}
-          </h1>
-          <p className="text-slate-300 text-sm max-w-2xl">
-            {isEn
-              ? 'Guides on buying criteria, company bike leasing, cargo bike grants, battery care, insurance and German traffic law.'
-              : 'Ratgeber zu Kaufkriterien, Dienstrad-Leasing, Lastenrad-Förderung, Akkupflege, Versicherung und deutschem Verkehrsrecht.'}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {GUIDES.map((g) => (
-            <NavLink href={isEn ? `/en/guides/${g.slugEn}/` : `/ratgeber/${g.slugDe}/`}
-              key={g.id}
-              
-              className="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg transition-all cursor-pointer flex flex-col justify-between"
-            >
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
-                  {isEn ? g.categoryEn : g.categoryDe}
-                </span>
-                <h2 className="text-base font-bold text-slate-900 mt-2 mb-2 line-clamp-2">
-                  {isEn ? g.titleEn : g.titleDe}
-                </h2>
-                <p className="text-xs text-slate-500 line-clamp-3 leading-relaxed">
-                  {isEn ? g.summaryEn : g.summaryDe}
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-emerald-700 font-bold mt-4">
-                <span>{isEn ? 'Read Guide' : 'Ratgeber lesen'}</span>
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            </NavLink>
-          ))}
-        </div>
-      </main>
-    );
-  }
-
   // Contact page: /kontakt/ or /en/contact/
   if (currentPath === '/kontakt/' || currentPath === '/en/contact/') {
     return (
@@ -212,21 +144,6 @@ export function MainRouter({ initialProduct }: { initialProduct?: Product } = {}
     return (
       <main id="main" tabIndex={-1} className="min-h-screen">
         <SitemapPage />
-      </main>
-    );
-  }
-
-  // 6. Legal & Service Documents (Impressum, AGB, Widerruf, etc.)
-  const legalEntries = Object.values(LEGAL_DOCUMENTS);
-  const legalMatch = legalEntries.find(
-    (doc) =>
-      currentPath === `/${doc.slugDe}/` ||
-      currentPath === `/en/${doc.slugEn}/`
-  );
-  if (legalMatch) {
-    return (
-      <main id="main" tabIndex={-1} className="min-h-screen">
-        <LegalPage document={legalMatch} />
       </main>
     );
   }
@@ -596,27 +513,5 @@ export function MainRouter({ initialProduct }: { initialProduct?: Product } = {}
       </section>
 )}
     </main>
-  );
-}
-
-export function AppShell({ children }: { children: React.ReactNode }) {
-  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
-
-  return (
-    <ShopProvider>
-      <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:bg-emerald-700 focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-white focus:shadow-lg"
-        >
-          Zum Inhalt springen / Skip to content
-        </a>
-        <Header />
-        {children}
-        <Footer />
-        <CartDrawer onProceedToCheckout={() => setIsCheckoutOpen(true)} />
-        {isCheckoutOpen && <CheckoutModal isOpen={isCheckoutOpen} onClose={() => setIsCheckoutOpen(false)} />}
-      </div>
-    </ShopProvider>
   );
 }
