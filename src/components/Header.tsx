@@ -22,6 +22,7 @@ import {
 import { useShop } from '../context/ShopContext';
 import type { Product } from '../types';
 import { STORE_TRUSTPILOT_INFO } from '../data/reviews';
+import { LazyHydrate } from "./LazyHydrate";
 
 const fromPriceIn = (products: Product[], category: string) => {
   const ps = products.filter((p) => p.category === category);
@@ -309,7 +310,7 @@ export const Header: React.FC = () => {
       </div>
 
       {/* Main Taxonomy Navigation Bar (Desktop) */}
-      <nav className="hidden md:block bg-slate-50/80 border-t border-slate-200 text-xs font-semibold text-slate-700">
+      <LazyHydrate className="hidden md:block"><nav className="hidden md:block bg-slate-50/80 border-t border-slate-200 text-xs font-semibold text-slate-700">
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center gap-x-1">
           {/* Shop / E-Bikes Mega Dropdown */}
           <div
@@ -643,7 +644,7 @@ export const Header: React.FC = () => {
             {isEn ? 'Frame Size Guide' : 'Größenberater'}
           </NavLink>
         </div>
-      </nav>
+      </nav></LazyHydrate>
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (

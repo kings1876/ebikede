@@ -21,23 +21,13 @@ export function CatalogActions() {
       if (add) {
         e.preventDefault();
         e.stopPropagation();
-        try {
-          const d = JSON.parse(add.dataset.add || '{}');
-          const product = {
-            id: d.id,
-            slug: d.slug,
-            brand: d.brand,
-            name_de: d.name_de,
-            name_en: d.name_en,
-            price: d.price,
-            images: [d.image],
-            sizes: [d.size],
-            colors: [{ nameDe: d.color, nameEn: d.color, hex: '#94a3b8' }],
-          } as unknown as Product;
-          addToCart(product, d.size, d.color);
-        } catch {
-          // ignore malformed data
-        }
+        const slug = add.dataset.add;
+        fetch(`/data/p/${slug}.json`)
+          .then((r) => r.json())
+          .then((p: Product) => addToCart(p, p.sizes[0], p.colors[0]?.nameDe || 'Standard'))
+          .catch(() => {
+            // product record unavailable: nothing to add
+          });
         return;
       }
       const a = t.closest<HTMLAnchorElement>('a[href]');
