@@ -154,12 +154,24 @@ function CatalogSummary({ list, isEn }: { list: typeof PRODUCTS; isEn: boolean }
           ? `This page lists ${list.length} new e-bike${list.length === 1 ? '' : 's'} with prices from ${eur(cheapest.price)} to ${eur(dearest.price)}. The most affordable model is the ${name(cheapest)}; the most expensive is the ${name(dearest)}. Brands in this selection: ${lead(brands)}. Motors: ${lead(motors)}. Battery capacities range from ${Math.min(...wh)} to ${Math.max(...wh)} Wh, with the largest in the ${name(biggest)}. Every bike is delivered fully assembled, and the product pages list equipment, frame sizes and technical data. Use the filters to narrow the selection by motor, brand, price and frame shape.`
           : `Auf dieser Seite findest du ${list.length} neue${list.length === 1 ? 's E-Bike' : ' E-Bikes'} zu Preisen von ${eur(cheapest.price)} bis ${eur(dearest.price)}. Das günstigste Modell ist das ${name(cheapest)}, das teuerste das ${name(dearest)}. Marken in dieser Auswahl: ${lead(brands)}. Antriebe: ${lead(motors)}. Die Akkukapazität reicht von ${Math.min(...wh)} bis ${Math.max(...wh)} Wh, den größten Akku hat das ${name(biggest)}. Jedes Rad wird fahrfertig montiert geliefert, und die Produktseiten zeigen Ausstattung, Rahmengrößen und technische Daten. Mit den Filtern grenzt du die Auswahl nach Motor, Marke, Preis und Rahmenform weiter ein.`}
       </p>
+      <p className="mt-3">
+        {isEn
+          ? 'All e-bikes here are brand new with the statutory two-year warranty and a 14-day right of withdrawal. Freight delivery within Germany is free from €99, and our team answers questions about frame size, range or financing by email.'
+          : 'Alle E-Bikes hier sind fabrikneu, mit der gesetzlichen Gewährleistung von zwei Jahren und 14 Tagen Widerrufsrecht. Die Speditionslieferung innerhalb Deutschlands ist ab 99 € kostenlos, und bei Fragen zu Rahmengröße, Reichweite oder Finanzierung hilft dir unser Team per E-Mail.'}
+      </p>
       {list.length > 6 && (
-        <p className="mt-3">
-          {isEn ? 'Models in this selection: ' : 'Modelle in dieser Auswahl: '}
-          {list.slice(0, 40).map(name).join(', ')}
-          {list.length > 40 ? ' …' : ''}
-        </p>
+        <>
+          <h3 className="mt-4 mb-1 font-semibold text-slate-800">{isEn ? 'Models in this selection' : 'Modelle in dieser Auswahl'}</h3>
+          {Array.from({ length: Math.ceil(Math.min(list.length, 40) / 8) }, (_, i) => {
+            const last = i === Math.ceil(Math.min(list.length, 40) / 8) - 1;
+            return (
+              <p key={i} className="mt-1">
+                {list.slice(i * 8, i * 8 + 8).map(name).join(', ')}
+                {last && list.length > 40 ? ' …' : ''}
+              </p>
+            );
+          })}
+        </>
       )}
     </section>
   );
