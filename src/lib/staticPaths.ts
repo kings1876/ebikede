@@ -13,3 +13,15 @@ for (const d of Object.values(LEGAL_DOCUMENTS)) {
 }
 
 export const isStaticPath = (path: string) => STATIC_PATHS.has(path);
+
+const SPECIAL_PAGES = new Set<string>([
+  '/', '/en/', '/bestellbestaetigung/', '/en/order-confirmation/', '/groessenberatung/', '/en/size-guide/',
+  '/kontakt/', '/en/contact/', '/seitenuebersicht/', '/en/sitemap/', '/ersatzteile/', '/en/spare-parts/',
+]);
+
+/** Category / landing / brand / service pages: everything the catch-all route shows as a product list. */
+export function isCatalogPath(path: string, isProduct: boolean): boolean {
+  if (isProduct || SPECIAL_PAGES.has(path)) return false;
+  if (path.startsWith('/zubehoer/') || path.startsWith('/en/accessories/')) return false;
+  return true;
+}

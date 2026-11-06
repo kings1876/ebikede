@@ -2,17 +2,18 @@ import { notFound } from 'next/navigation';
 import { MainRouter } from '../../../App';
 import { allPaths, buildMetadata, pathFromSlug, resolvePage } from '../../../lib/seo';
 import { PRODUCTS } from '../../../data/products';
-import { isStaticPath } from '../../../lib/staticPaths';
+import { isCatalogPath, isStaticPath } from '../../../lib/staticPaths';
 import { jsonLdScript } from '../../../lib/jsonld';
 
-type Props = { params: Promise<{ slug?: string[] }> };
+type Props = { params: Promise<{ slug: string[] }> };
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
   return allPaths()
     .filter((p) => !p.startsWith('/en/') && p !== '/en/')
-    .filter((p) => !isStaticPath(p))
+    .filter((p) => p !== '/' && p !== '/en/')
+    .filter((p) => !isStaticPath(p) && !isCatalogPath(p, p.includes('/e-bike/')))
     .map((p) => ({ slug: p.split('/').filter(Boolean) }));
 }
 
@@ -26,6 +27,7 @@ export default async function Page({ params }: Props) {
   const info = resolvePage(pathFromSlug('de', slug));
   if (info.kind === 'none') notFound();
   const ld = jsonLdScript(info);
+  const path = pathFromSlug('de', slug);
   return (
     <>
       {ld && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />}
