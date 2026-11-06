@@ -467,6 +467,11 @@ export const Footer: React.FC<{ lang: 'de' | 'en' }> = ({ lang }) => {
           </h2>
           <ul className="space-y-2">
             <li>
+              <a href={isEn ? '/en/contact/' : '/kontakt/'} className="fl">
+                {isEn ? 'Contact' : 'Kontakt'}
+              </a>
+            </li>
+            <li>
               <a href={isEn ? '/en/shipping/' : '/versand/'}
                 
                 className="fl"

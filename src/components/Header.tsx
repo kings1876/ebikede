@@ -643,6 +643,13 @@ export const Header: React.FC = () => {
           >
             {isEn ? 'Frame Size Guide' : 'Größenberater'}
           </NavLink>
+
+          {/* Contact */}
+          <NavLink href={isEn ? '/en/contact/' : '/kontakt/'} onNavigate={() => { afterNav() }}
+            className="px-3 py-1.5 rounded-md hover:bg-white hover:text-emerald-700 transition-colors inline-block"
+          >
+            {isEn ? 'Contact' : 'Kontakt'}
+          </NavLink>
         </div>
       </nav></LazyHydrate>
 
@@ -810,6 +817,11 @@ export const Header: React.FC = () => {
               className="hm1"
             >
               {isEn ? 'Frame Size Calculator' : 'Rahmengrößen-Rechner'}
+            </NavLink>
+            <NavLink href={isEn ? '/en/contact/' : '/kontakt/'} onNavigate={() => { afterNav() }}
+              className="hm1"
+            >
+              {isEn ? 'Contact' : 'Kontakt'}
             </NavLink>
           </div>
         </div>
