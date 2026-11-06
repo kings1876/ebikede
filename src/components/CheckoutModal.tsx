@@ -88,8 +88,8 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
           </h2>
           <p className="text-xs text-slate-500">
             {isEn
-              ? 'Order emails and WhatsApp messages follow your selected language.'
-              : 'Auftragsbestätigung und WhatsApp-Nachricht erfolgen in deiner Bestellsprache.'}
+              ? 'Order emails follow your selected language.'
+              : 'Die Auftragsbestätigung erfolgt in deiner Bestellsprache.'}
           </p>
         </div>
 

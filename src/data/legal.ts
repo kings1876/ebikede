@@ -42,9 +42,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
       {
         heading: 'Kontakt',
         paragraphs: [
-          'Telefon: +49 (0) 89 452 89 200 (Mo–Fr: 09:00 – 18:00 Uhr)',
-          'E-Mail: info@e-bike-zuverkaufen.de',
-          'WhatsApp Kundenservice: +49 170 8923041',
+          'E-Mail: verkaufe@e-bike-zuverkaufen.de',
           'Internet: https://e-bike-zuverkaufen.de',
         ],
       },
@@ -85,9 +83,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
       {
         heading: 'Contact',
         paragraphs: [
-          'Phone: +49 (0) 89 452 89 200 (Mon–Fri: 9:00 AM – 6:00 PM CET)',
-          'Email: info@e-bike-zuverkaufen.de',
-          'WhatsApp Direct Support: +49 170 8923041',
+          'Email: verkaufe@e-bike-zuverkaufen.de',
           'Web: https://e-bike-zuverkaufen.de/en/',
         ],
       },

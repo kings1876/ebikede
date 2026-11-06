@@ -18,7 +18,6 @@ import { CryptoPayCard } from './CryptoPayCard';
 const OrderConfirmationInner: React.FC = () => {
   const { lastOrder, language, navigateTo } = useShop();
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedWhatsApp, setCopiedWhatsApp] = useState(false);
 
   // If no last order, provide default demo view
   const order = lastOrder || {
@@ -68,7 +67,7 @@ NEXT STEPS:
 1. Certified Pre-Assembly: Our master mechanics are inspecting your e-bike, adjusting gear shifting, calibrating disc brakes and pre-charging the battery to 80%.
 2. Freight Delivery: Our forwarding partner (DB Schenker / Gebrüder Weiss) will call you 24 hours prior to delivery to schedule your personal 2-hour arrival slot.
 
-Should you have any questions, our support team is available via email at info@e-bike-zuverkaufen.de or phone at +49 (0) 89 452 89 200.
+Should you have any questions, our support team is available via email at verkaufe@e-bike-zuverkaufen.de.
 
 Best regards,
 Your EBike Zu Verkaufen Team
@@ -98,57 +97,17 @@ SO GEHT ES WEITER:
 2. Speditionsversand: Die Spedition kontaktiert dich telefonisch 24h vorab, um ein 2-Stunden-Lieferzeitfenster mit dir abzustimmen.
 3. Auspacken & Losfahren: Nur Lenker geradestellen, Pedale einschrauben – fertig!
 
-Bei Fragen erreichst du uns jederzeit unter info@e-bike-zuverkaufen.de oder telefonisch unter +49 (0) 89 452 89 200.
+Bei Fragen erreichst du uns jederzeit unter verkaufe@e-bike-zuverkaufen.de.
 
 Mit freundlichen Grüßen,
 Dein Team von EBike Zu Verkaufen
 https://e-bike-zuverkaufen.de`;
 
-  // Generate WhatsApp Message following customer's order language
-  const generatedWhatsAppText = isEn
-    ? `🚴 *EBike Zu Verkaufen – Order #${order.orderNumber}*
-
-Hello ${order.customerName}! 👋
-Your e-bike order has been confirmed.
-
-📦 *Summary:*
-• Order ID: ${order.orderNumber}
-• Total: €${order.total.toLocaleString('en-US')}
-• Delivery to: ${order.address}, ${order.city}
-
-🔧 *Status:* In certified workshop pre-assembly.
-🚚 *Shipping:* Freight courier will call your number (${order.phone}) to schedule delivery.
-
-Need quick help? Reply directly to this WhatsApp chat!
-Website: https://e-bike-zuverkaufen.de/en/`
-    : `🚴 *EBike Zu Verkaufen – Bestellung #${order.orderNumber}*
-
-Hallo ${order.customerName}! 👋
-Deine E-Bike Bestellung ist erfolgreich bei uns eingegangen.
-
-📦 *Bestelldetails:*
-• Bestellnummer: #${order.orderNumber}
-• Gesamtbetrag: ${order.total.toLocaleString('de-DE')} €
-• Lieferadresse: ${order.address}, ${order.city}
-
-🔧 *Status:* In der Meister-Endmontage.
-🚚 *Spedition:* Du wirst vor Anlieferung unter ${order.phone} zur Terminabstimmung angerufen.
-
-Hast du Fragen? Antworte einfach direkt auf diese WhatsApp-Nachricht!
-Web: https://e-bike-zuverkaufen.de`;
-
-  const copyToClipboard = (text: string, type: 'email' | 'whatsapp') => {
+  const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
-    if (type === 'email') {
-      setCopiedEmail(true);
-      setTimeout(() => setCopiedEmail(false), 2000);
-    } else {
-      setCopiedWhatsApp(true);
-      setTimeout(() => setCopiedWhatsApp(false), 2000);
-    }
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
   };
-
-  const openWhatsAppUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(generatedWhatsAppText)}`;
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
@@ -235,7 +194,7 @@ Web: https://e-bike-zuverkaufen.de`;
       </div>
 
       {/* LANGUAGE-AWARE NOTIFICATIONS: ORDER EMAIL & WHATSAPP TEXT */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div className="grid grid-cols-1 gap-6 mb-8">
         {/* Email Preview */}
         <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between">
           <div>
@@ -261,7 +220,7 @@ Web: https://e-bike-zuverkaufen.de`;
           </div>
 
           <button
-            onClick={() => copyToClipboard(generatedEmailText, 'email')}
+            onClick={() => copyToClipboard(generatedEmailText)}
             className="mt-4 w-full py-2.5 px-4 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-800 font-semibold text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer"
           >
             {copiedEmail ? <Check className="w-4 h-4 text-emerald-700" /> : <Copy className="w-4 h-4" />}
@@ -269,49 +228,6 @@ Web: https://e-bike-zuverkaufen.de`;
           </button>
         </div>
 
-        {/* WhatsApp Preview */}
-        <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between">
-          <div>
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2">
-                <MessageCircle className="w-5 h-5 text-emerald-700" />
-                <h2 className="font-bold text-sm text-slate-900">
-                  {isEn ? 'WhatsApp Notification (English)' : 'WhatsApp Nachricht (Deutsch)'}
-                </h2>
-              </div>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200">
-                WhatsApp Ready
-              </span>
-            </div>
-            <p className="text-xs text-slate-500 mb-3">
-              {isEn
-                ? 'Formatted for 1-click WhatsApp messaging to customer or support team:'
-                : 'Automatisch formatiert für 1-Klick WhatsApp Versand an Kunden oder Support:'}
-            </p>
-            <div className="bg-emerald-950 text-emerald-200 p-4 rounded-xl font-mono text-[11px] leading-relaxed max-h-56 overflow-y-auto whitespace-pre-wrap select-all">
-              {generatedWhatsAppText}
-            </div>
-          </div>
-
-          <div className="mt-4 grid grid-cols-2 gap-2">
-            <button
-              onClick={() => copyToClipboard(generatedWhatsAppText, 'whatsapp')}
-              className="py-2.5 px-3 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-800 font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
-            >
-              {copiedWhatsApp ? <Check className="w-4 h-4 text-emerald-700" /> : <Copy className="w-4 h-4" />}
-              <span>{copiedWhatsApp ? (isEn ? 'Copied!' : 'Kopiert!') : (isEn ? 'Copy' : 'Kopieren')}</span>
-            </button>
-            <a
-              href={openWhatsAppUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="py-2.5 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs"
-            >
-              <ExternalLink className="w-4 h-4" />
-              <span>{isEn ? 'Open WhatsApp' : 'WhatsApp öffnen'}</span>
-            </a>
-          </div>
-        </div>
       </div>
 
       {/* Return to Shop CTA */}
