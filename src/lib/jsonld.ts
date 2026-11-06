@@ -102,6 +102,11 @@ function productLd(p: Product, de: boolean): object {
         '@type': 'OfferShippingDetails',
         shippingRate: { '@type': 'MonetaryAmount', value: p.price >= 99 ? 0 : 49, currency: 'EUR' },
         shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'DE' },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 1, unitCode: 'DAY' },
+          transitTime: { '@type': 'QuantitativeValue', minValue: 3, maxValue: 4, unitCode: 'DAY' },
+        },
       },
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
