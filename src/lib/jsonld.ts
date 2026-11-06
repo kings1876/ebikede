@@ -1,4 +1,5 @@
 import { PRODUCTS } from '../data/products';
+import { FAQ_DE, FAQ_EN } from '../data/home-faq';
 import { GUIDES } from '../data/guides';
 import { findRouteByPath } from '../data/taxonomy';
 import { productsForRoute } from '../data/seo-apply';
@@ -15,7 +16,24 @@ const ORGANIZATION = {
   name: SITE,
   url: `${BASE_URL}/`,
   logo: abs('/apple-icon.png'),
+  description:
+    'Online-Shop für neue E-Bikes in Deutschland: fahrfertig montiert, Lieferung per Spedition, Zahlung per Überweisung oder Krypto. / Online shop for new e-bikes in Germany: assembled, delivered by freight carrier, pay by bank transfer or crypto.',
+  areaServed: { '@type': 'Country', name: 'DE' },
+  knowsAbout: ['E-Bikes', 'Pedelecs', 'E-Mountainbikes', 'E-Trekkingbikes', 'Lastenräder', 'JobRad Leasing'],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    email: 'verkaufe@e-bike-zuverkaufen.de',
+    availableLanguage: ['de', 'en'],
+    areaServed: 'DE',
+  },
 };
+
+const faqLd = (de: boolean) => ({
+  '@type': 'FAQPage',
+  inLanguage: de ? 'de-DE' : 'en',
+  mainEntity: (de ? FAQ_DE : FAQ_EN).map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+});
 
 function crumbLabel(path: string, de: boolean): string | null {
   const r = findRouteByPath(path);
@@ -80,6 +98,11 @@ function productLd(p: Product, de: boolean): object {
       availability: 'https://schema.org/InStock',
       seller: { '@id': `${BASE_URL}/#organization` },
       // statutory 14-day right of withdrawal for consumers in Germany (also stated on the site)
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingRate: { '@type': 'MonetaryAmount', value: p.price >= 99 ? 0 : 49, currency: 'EUR' },
+        shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'DE' },
+      },
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
         applicableCountry: 'DE',
@@ -113,6 +136,7 @@ export function jsonLdFor(info: PageInfo): object[] {
 
   if (info.kind === 'home') {
     out.push(ORGANIZATION);
+    out.push(faqLd(de));
     out.push({ '@type': 'WebSite', '@id': `${BASE_URL}/#website`, name: SITE, url: abs(de ? '/' : '/en/'), inLanguage: de ? 'de-DE' : 'en', publisher: { '@id': `${BASE_URL}/#organization` } });
     return out.map((x) => ({ '@context': 'https://schema.org', ...x }));
   }
@@ -125,7 +149,10 @@ export function jsonLdFor(info: PageInfo): object[] {
     if (p) { out.push(productLd(p, de)); out.push(ORGANIZATION); }
   } else if (info.kind === 'route') {
     const r = findRouteByPath(self).route;
-    if (r) {
+    if (r && r.section === 'service') {
+      out.push({ '@type': r.id === 'ueber-uns' ? 'AboutPage' : 'WebPage', name: info.title, url: abs(self), inLanguage: de ? 'de-DE' : 'en', isPartOf: { '@id': `${BASE_URL}/#website` } });
+      if (r.id === 'faq') out.push(faqLd(de));
+    } else if (r) {
       const items = productsForRoute(r);
       out.push({ '@type': 'CollectionPage', name: info.title, url: abs(self), inLanguage: de ? 'de-DE' : 'en', ...(items.length ? { mainEntity: itemList(items, de) } : {}) });
     }

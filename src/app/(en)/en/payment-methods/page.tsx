@@ -1,9 +1,9 @@
-import { catalogMetadata, catalogView } from '../../../../lib/catalogRoute';
+import { staticMetadata, staticView } from '../../../../lib/staticRoutes';
 
 export function generateMetadata() {
-  return catalogMetadata('/en/payment-methods/');
+  return staticMetadata('/en/payment-methods/');
 }
 
 export default function Page() {
-  return catalogView('/en/payment-methods/', 'en');
+  return staticView('/en/payment-methods/', 'en');
 }

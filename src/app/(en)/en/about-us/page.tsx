@@ -1,9 +1,9 @@
-import { catalogMetadata, catalogView } from '../../../../lib/catalogRoute';
+import { staticMetadata, staticView } from '../../../../lib/staticRoutes';
 
 export function generateMetadata() {
-  return catalogMetadata('/en/about-us/');
+  return staticMetadata('/en/about-us/');
 }
 
 export default function Page() {
-  return catalogView('/en/about-us/', 'en');
+  return staticView('/en/about-us/', 'en');
 }

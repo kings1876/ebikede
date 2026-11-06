@@ -1,6 +1,8 @@
 import React from 'react';
 import { GUIDES } from '../data/guides';
 import { LEGAL_DOCUMENTS } from '../data/legal';
+import { INFO_PAGES } from '../data/info-pages';
+import { InfoPage } from '../components/InfoPage';
 import { ArrowRight } from '../components/icons';
 import { GuideDetail } from '../components/GuideDetail';
 import { LegalPage } from '../components/LegalPage';
@@ -64,6 +66,14 @@ export function renderStaticPage(path: string, lang: 'de' | 'en'): React.ReactNo
     return (
       <main id="main" tabIndex={-1} className="min-h-screen">
         <GuideDetail guide={guide} lang={lang} />
+      </main>
+    );
+  }
+  const info = Object.values(INFO_PAGES).find((d) => path === `/${d.slugDe}/` || path === `/en/${d.slugEn}/`);
+  if (info) {
+    return (
+      <main id="main" tabIndex={-1} className="min-h-screen">
+        <InfoPage doc={info} lang={lang} />
       </main>
     );
   }
