@@ -20,7 +20,7 @@ import {
   Zap,
 } from './icons';
 import { useShop } from '../context/ShopContext';
-import { PRODUCTS } from '../data/products';
+import { PRODUCTS } from '../data/products.slim';
 import { ACCESSORIES } from '../data/accessories';
 import { STORE_TRUSTPILOT_INFO } from '../data/reviews';
 

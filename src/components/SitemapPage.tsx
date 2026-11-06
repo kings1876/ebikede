@@ -3,7 +3,7 @@ import React from 'react';
 import { useShop } from '../context/ShopContext';
 import { NavLink } from './NavLink';
 import { TAXONOMY_ROUTES } from '../data/taxonomy';
-import { PRODUCTS } from '../data/products';
+import { PRODUCTS } from '../data/products.slim';
 import { GUIDES } from '../data/guides';
 import { LEGAL_DOCUMENTS } from '../data/legal';
 import { brandSlug } from '../lib/brand';

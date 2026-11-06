@@ -1,5 +1,5 @@
 import { TaxonomyRoute } from '../types';
-import { PRODUCTS } from './products';
+import { PRODUCTS } from './products.slim';
 import { brandSlug } from '../lib/brand';
 
 /**

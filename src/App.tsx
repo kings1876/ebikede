@@ -2,7 +2,7 @@
 
 import { NavLink } from './components/NavLink';
 import { smallImg } from './lib/img';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SHOW_REVIEWS } from './config/flags';
 import {
   Bike,
@@ -25,18 +25,20 @@ import { ProductCard } from './components/ProductCard';
 import { ProductDetail } from './components/ProductDetail';
 import { ProductCatalog } from './components/ProductCatalog';
 import { AccessoriesCatalog } from './components/AccessoriesCatalog';
-import { GuideDetail } from './components/GuideDetail';
-import { LegalPage } from './components/LegalPage';
-import { ContactPage } from './components/ContactPage';
-import { SitemapPage } from './components/SitemapPage';
-import { SizeGuide } from './components/SizeGuide';
 import { CartDrawer } from './components/CartDrawer';
 import dynamic from 'next/dynamic';
+// Route-specific pages load on demand so the home/catalogue bundle stays small
+const GuideDetail = dynamic(() => import('./components/GuideDetail').then((m) => m.GuideDetail));
+const LegalPage = dynamic(() => import('./components/LegalPage').then((m) => m.LegalPage));
+const SizeGuide = dynamic(() => import('./components/SizeGuide').then((m) => m.SizeGuide));
+const SitemapPage = dynamic(() => import('./components/SitemapPage').then((m) => m.SitemapPage));
+const ContactPage = dynamic(() => import('./components/ContactPage').then((m) => m.ContactPage));
 const CheckoutModal = dynamic(() => import('./components/CheckoutModal').then((m) => m.CheckoutModal), { ssr: false });
 import { OrderConfirmation } from './components/OrderConfirmation';
 import { TaxonomyInspector } from './components/TaxonomyInspector';
 
-import { PRODUCTS } from './data/products';
+import { PRODUCTS } from './data/products.slim';
+import type { Product } from './types';
 import { GUIDES } from './data/guides';
 import { LEGAL_DOCUMENTS } from './data/legal';
 import { STORE_TRUSTPILOT_INFO, calculateReviewStats, INITIAL_REVIEWS } from './data/reviews';
@@ -60,15 +62,38 @@ function tileFor(pathDe: string): { minPrice: number; img?: string } {
   };
 }
 
-export function MainRouter() {
+export function MainRouter({ initialProduct }: { initialProduct?: Product } = {}) {
   const { currentPath, language, navigateTo, activeProduct, activeRoute } = useShop();
   const isEn = language === 'en';
+
+  // The bundled catalogue only has list fields. A product page needs the full record: the server passes it for
+  // the first page view, and it is fetched on demand when the visitor navigates to another bike.
+  const [fetchedProducts, setFetchedProducts] = useState<Record<string, Product>>({});
+  const activeSlug = activeProduct?.slug;
+  const fullProduct = !activeSlug
+    ? undefined
+    : initialProduct?.slug === activeSlug
+      ? initialProduct
+      : fetchedProducts[activeSlug];
+  useEffect(() => {
+    if (!activeSlug || fullProduct) return;
+    let cancelled = false;
+    fetch(`/data/p/${activeSlug}.json`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((p: Product | null) => {
+        if (p && !cancelled) setFetchedProducts((prev) => ({ ...prev, [activeSlug]: p }));
+      })
+      .catch(() => undefined);
+    return () => {
+      cancelled = true;
+    };
+  }, [activeSlug, fullProduct]);
 
   // 1. Single Product Detail Page: /e-bike/<slug>/ or /en/e-bike/<slug>/
   if (activeProduct) {
     return (
       <main id="main" tabIndex={-1} className="min-h-screen">
-        <ProductDetail product={activeProduct} />
+        <ProductDetail product={fullProduct ?? activeProduct} />
       </main>
     );
   }
@@ -226,12 +251,13 @@ export function MainRouter() {
         {/* Decorative background: colour glows, road-line grid and a cycling-wheel motif (no image weight) */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <picture>
-            <source srcSet="/images/hero/hero-ebike-lifestyle.avif" type="image/avif" />
-            <img src="/images/hero/hero-ebike-lifestyle.webp" alt="" width={2400} height={1200} decoding="async" className="absolute inset-0 w-full h-full object-cover opacity-100" />
+            <source srcSet="/images/hero/hero-ebike-lifestyle-900.avif 900w, /images/hero/hero-ebike-lifestyle.avif 2400w" sizes="100vw" type="image/avif" />
+            <source srcSet="/images/hero/hero-ebike-lifestyle-900.webp 900w, /images/hero/hero-ebike-lifestyle.webp 2400w" sizes="100vw" type="image/webp" />
+            <img src="/images/hero/hero-ebike-lifestyle.webp" alt="" width={2400} height={1200} fetchPriority="high" className="absolute inset-0 w-full h-full object-cover opacity-100" />
           </picture>
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-slate-950/10" />
-          <div className="absolute -top-40 -left-32 w-[40rem] h-[40rem] rounded-full bg-emerald-500/15 blur-3xl" />
-          <div className="absolute -bottom-48 -right-24 w-[40rem] h-[40rem] rounded-full bg-blue-500/15 blur-3xl" />
+          <div className="absolute -top-40 -left-32 w-[40rem] h-[40rem]" style={{ backgroundImage: 'radial-gradient(closest-side, rgba(16,185,129,0.15), transparent)' }} />
+          <div className="absolute -bottom-48 -right-24 w-[40rem] h-[40rem]" style={{ backgroundImage: 'radial-gradient(closest-side, rgba(59,130,246,0.15), transparent)' }} />
           <div
             className="absolute inset-0 opacity-[0.08]"
             style={{

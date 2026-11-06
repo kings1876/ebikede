@@ -17,7 +17,7 @@ import {
   translatePath,
   findRouteByPath,
 } from '../data/taxonomy';
-import { PRODUCTS } from '../data/products';
+import { PRODUCTS } from '../data/products.slim';
 import { ACCESSORIES } from '../data/accessories';
 import { INITIAL_REVIEWS } from '../data/reviews';
 import { brandSlug } from '../lib/brand';

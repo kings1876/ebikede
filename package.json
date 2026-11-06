@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "gen:slim": "tsx scripts/gen-slim-products.ts",
+    "prebuild": "tsx scripts/gen-slim-products.ts",
+    "predev": "tsx scripts/gen-slim-products.ts"
   },
   "dependencies": {
     "@upstash/redis": "^1.41.0",
@@ -25,6 +28,14 @@
     "@types/react-dom": "^19.3.0",
     "postcss": "^8.5.32",
     "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
     "typescript": "^7.0.2"
-  }
+  },
+  "browserslist": [
+    "chrome >= 111",
+    "edge >= 111",
+    "firefox >= 111",
+    "safari >= 16.4",
+    "ios_saf >= 16.4"
+  ]
 }

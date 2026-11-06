@@ -25,7 +25,7 @@ import { Product } from '../types';
 import { useShop } from '../context/ShopContext';
 import { TrustpilotWidget } from './TrustpilotWidget';
 import { ProductCard } from './ProductCard';
-import { PRODUCTS } from '../data/products';
+import { PRODUCTS } from '../data/products.slim';
 import { calculateReviewStats } from '../data/reviews';
 
 interface ProductDetailProps {

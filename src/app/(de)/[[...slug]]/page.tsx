@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { MainRouter } from '../../../App';
 import { allPaths, buildMetadata, pathFromSlug, resolvePage } from '../../../lib/seo';
+import { PRODUCTS } from '../../../data/products';
 import { jsonLdScript } from '../../../lib/jsonld';
 
 type Props = { params: Promise<{ slug?: string[] }> };
@@ -26,7 +27,7 @@ export default async function Page({ params }: Props) {
   return (
     <>
       {ld && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />}
-      <MainRouter />
+      <MainRouter initialProduct={info.productSlug ? PRODUCTS.find((p) => p.slug === info.productSlug) : undefined} />
     </>
   );
 }

@@ -11,7 +11,7 @@ import {
   Check,
 } from './icons';
 import { useShop } from '../context/ShopContext';
-import { PRODUCTS } from '../data/products';
+import { PRODUCTS } from '../data/products.slim';
 import { ProductCard } from './ProductCard';
 import { Product } from '../types';
 import { COMBO_ROUTES } from '../data/landing-combos';

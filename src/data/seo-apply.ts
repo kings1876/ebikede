@@ -1,5 +1,5 @@
 import { Product, TaxonomyRoute } from '../types';
-import { PRODUCTS } from './products';
+import { PRODUCTS } from './products.slim';
 import KEYWORD_DATA from './seo-keywords.json';
 import { brandSlug } from '../lib/brand';
 

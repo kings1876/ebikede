@@ -58,7 +58,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
       </div>
 
       <div className="absolute top-3 right-3 z-10">
-        <span className="text-[10px] font-bold px-2 py-1 rounded-md bg-white/90 backdrop-blur-xs text-slate-700 border border-slate-200 shadow-2xs">
+        <span className="text-[10px] font-bold px-2 py-1 rounded-md bg-white/90 text-slate-700 border border-slate-200 shadow-2xs">
           {product.brand}
         </span>
       </div>
