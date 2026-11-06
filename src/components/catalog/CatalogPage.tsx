@@ -119,14 +119,48 @@ export function CatalogPage({ path, lang }: { path: string; lang: 'de' | 'en' })
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {list.slice(0, PAGE_SIZE).map((product, idx) => (
-                <StaticProductCard key={product.id} product={product} lang={lang} priority={idx < 4} />
+                <StaticProductCard key={product.id} product={product} lang={lang} priority={false} />
               ))}
             </div>
           )}
           {list.length > PAGE_SIZE && <ShowMoreButton lang={lang} shown={PAGE_SIZE} total={list.length} />}
         </div>
       </div>
+      {list.length > 0 && <CatalogSummary list={list} isEn={isEn} />}
       <CatalogActions />
     </div>
+  );
+}
+
+/** Plain-language overview built from the page's own products (counts, price span, brands, motors, batteries). */
+function CatalogSummary({ list, isEn }: { list: typeof PRODUCTS; isEn: boolean }) {
+  const fmt = (n: number) => n.toLocaleString(isEn ? 'en-US' : 'de-DE');
+  const eur = (n: number) => (isEn ? `€${fmt(n)}` : `${fmt(n)} €`);
+  const by = <T,>(f: (p: (typeof list)[number]) => T, pick: 'min' | 'max') =>
+    list.reduce((a, b) => ((pick === 'min' ? f(b) < f(a) : f(b) > f(a)) ? b : a));
+  const cheapest = by((p) => p.price, 'min');
+  const dearest = by((p) => p.price, 'max');
+  const biggest = by((p) => p.batteryWh, 'max');
+  const brands = Array.from(new Set(list.map((p) => p.brand)));
+  const motors = Array.from(new Set(list.map((p) => p.motor)));
+  const wh = list.map((p) => p.batteryWh);
+  const name = (p: (typeof list)[number]) => (isEn ? p.name_en : p.name_de);
+  const lead = (a: string[]) => (a.length > 6 ? a.slice(0, 6).join(', ') : a.join(', '));
+  return (
+    <section className="mt-10 max-w-4xl text-sm text-slate-600 leading-relaxed">
+      <h2 className="text-base font-bold text-slate-900 mb-2">{isEn ? 'This selection at a glance' : 'Diese Auswahl im Überblick'}</h2>
+      <p>
+        {isEn
+          ? `This page lists ${list.length} new e-bike${list.length === 1 ? '' : 's'} with prices from ${eur(cheapest.price)} to ${eur(dearest.price)}. The most affordable model is the ${name(cheapest)}; the most expensive is the ${name(dearest)}. Brands in this selection: ${lead(brands)}. Motors: ${lead(motors)}. Battery capacities range from ${Math.min(...wh)} to ${Math.max(...wh)} Wh, with the largest in the ${name(biggest)}. Every bike is delivered fully assembled, and the product pages list equipment, frame sizes and technical data. Use the filters to narrow the selection by motor, brand, price and frame shape.`
+          : `Auf dieser Seite findest du ${list.length} neue${list.length === 1 ? 's E-Bike' : ' E-Bikes'} zu Preisen von ${eur(cheapest.price)} bis ${eur(dearest.price)}. Das günstigste Modell ist das ${name(cheapest)}, das teuerste das ${name(dearest)}. Marken in dieser Auswahl: ${lead(brands)}. Antriebe: ${lead(motors)}. Die Akkukapazität reicht von ${Math.min(...wh)} bis ${Math.max(...wh)} Wh, den größten Akku hat das ${name(biggest)}. Jedes Rad wird fahrfertig montiert geliefert, und die Produktseiten zeigen Ausstattung, Rahmengrößen und technische Daten. Mit den Filtern grenzt du die Auswahl nach Motor, Marke, Preis und Rahmenform weiter ein.`}
+      </p>
+      {list.length > 6 && (
+        <p className="mt-3">
+          {isEn ? 'Models in this selection: ' : 'Modelle in dieser Auswahl: '}
+          {list.slice(0, 40).map(name).join(', ')}
+          {list.length > 40 ? ' …' : ''}
+        </p>
+      )}
+    </section>
   );
 }

@@ -320,7 +320,7 @@ export const Header: React.FC = () => {
           >
             <NavLink href={isEn ? '/en/e-bikes/' : '/e-bikes/'} onNavigate={() => { afterNav() }}
               
-              className="flex items-center gap-1 px-3 py-1.5 rounded-md hover:bg-white hover:text-emerald-700 transition-colors"
+              className="hm5"
             >
               <Bike className="w-4 h-4 text-emerald-700" />
               <span>{isEn ? 'E-Bikes by Category' : 'E-Bikes Kategorien'}</span>
@@ -339,61 +339,61 @@ export const Header: React.FC = () => {
                 <div className="h-px bg-slate-100 my-1" />
                 <NavLink href={isEn ? '/en/e-bikes/electric-mountain-bikes/full-suspension/' : '/e-bikes/e-mountainbikes/fully/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-emerald-700 cursor-pointer flex justify-between"
+                  className="hm3"
                 >
                   <span>{isEn ? 'Full-Suspension E-MTB (Fully)' : 'E-Mountainbike Fully'}</span>
                   <span className="text-[10px] text-slate-400">{fromPrice('e-mountainbikes-fully')}</span>
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/electric-mountain-bikes/hardtail/' : '/e-bikes/e-mountainbikes/hardtail/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-emerald-700 cursor-pointer flex justify-between"
+                  className="hm3"
                 >
                   <span>{isEn ? 'Hardtail E-MTB' : 'E-Mountainbike Hardtail'}</span>
                   <span className="text-[10px] text-slate-400">{fromPrice('e-mountainbikes-hardtail')}</span>
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/electric-trekking-bikes/' : '/e-bikes/e-trekkingbikes/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-emerald-700 cursor-pointer flex justify-between"
+                  className="hm3"
                 >
                   <span>{isEn ? 'Electric Trekking Bikes' : 'E-Trekkingbikes (Touren)'}</span>
                   <span className="text-[10px] text-slate-400">{fromPrice('e-trekkingbikes')}</span>
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/electric-city-bikes/' : '/e-bikes/e-citybikes/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-emerald-700 cursor-pointer flex justify-between"
+                  className="hm3"
                 >
                   <span>{isEn ? 'Electric City Bikes' : 'E-Citybikes (Tiefeinsteiger)'}</span>
                   <span className="text-[10px] text-slate-400">{fromPrice('e-citybikes')}</span>
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/electric-cargo-bikes/' : '/e-bikes/e-lastenraeder/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-emerald-700 cursor-pointer flex justify-between"
+                  className="hm3"
                 >
                   <span>{isEn ? 'Electric Cargo Bikes' : 'E-Lastenräder (Cargo)'}</span>
                   <span className="text-[10px] text-emerald-700 font-bold">Gefördert!</span>
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/speed-pedelecs/' : '/e-bikes/s-pedelecs/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-emerald-700 cursor-pointer flex justify-between"
+                  className="hm3"
                 >
                   <span>{isEn ? 'Speed Pedelecs (45 km/h)' : 'S-Pedelecs (45 km/h)'}</span>
                   <span className="text-[10px] text-slate-400">High-Speed</span>
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/electric-gravel-bikes/' : '/e-bikes/e-gravelbikes/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-emerald-700 cursor-pointer block"
+                  className="hm6"
                 >
                   {isEn ? 'Electric Gravel Bikes' : 'E-Gravelbikes'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/electric-road-bikes/' : '/e-bikes/e-rennraeder/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-emerald-700 cursor-pointer block"
+                  className="hm6"
                 >
                   {isEn ? 'Electric Road Bikes' : 'E-Rennräder'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/electric-folding-bikes/' : '/e-bikes/e-faltraeder/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-700 hover:text-emerald-700 cursor-pointer block"
+                  className="hm6"
                 >
                   {isEn ? 'Electric Folding Bikes' : 'E-Falträder & Klappräder'}
                 </NavLink>
@@ -407,7 +407,7 @@ export const Header: React.FC = () => {
             onMouseEnter={() => setActiveDropdown('motors')}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <button className="flex items-center gap-1 px-3 py-1.5 rounded-md hover:bg-white hover:text-emerald-700 transition-colors">
+            <button className="hm5">
               <span>{isEn ? 'Motors & Systems' : 'Motoren & Antriebe'}</span>
               <ChevronDown className="w-3.5 h-3.5 opacity-60" />
             </button>
@@ -415,35 +415,35 @@ export const Header: React.FC = () => {
               <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-slate-200 p-2 grid grid-cols-1 gap-1 z-50">
                 <NavLink href={isEn ? '/en/e-bikes/motor/bosch/' : '/e-bikes/antrieb/bosch/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer flex justify-between items-center"
+                  className="hm4"
                 >
                   <span>Bosch Smart System</span>
                   <span className="text-[10px] px-1.5 py-0.5 bg-slate-100 rounded text-slate-600">85 Nm</span>
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/motor/shimano-steps/' : '/e-bikes/antrieb/shimano-steps/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer flex justify-between items-center"
+                  className="hm4"
                 >
                   <span>Shimano STEPS</span>
                   <span className="text-[10px] px-1.5 py-0.5 bg-slate-100 rounded text-slate-600">EP8/EP6</span>
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/motor/yamaha/' : '/e-bikes/antrieb/yamaha/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer flex justify-between items-center"
+                  className="hm4"
                 >
                   <span>Yamaha PW-X3</span>
                   <span className="text-[10px] px-1.5 py-0.5 bg-slate-100 rounded text-slate-600">85 Nm</span>
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/motor/fazua/' : '/e-bikes/antrieb/fazua/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer flex justify-between items-center"
+                  className="hm4"
                 >
                   <span>Fazua Ride 60</span>
                   <span className="text-[10px] px-1.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold">Light</span>
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/motor/bafang/' : '/e-bikes/antrieb/bafang/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer flex justify-between items-center"
+                  className="hm4"
                 >
                   <span>Bafang Drive</span>
                   <span className="text-[10px] px-1.5 py-0.5 bg-slate-100 rounded text-slate-600">Spar-Tipp</span>
@@ -458,7 +458,7 @@ export const Header: React.FC = () => {
             onMouseEnter={() => setActiveDropdown('target')}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <button className="flex items-center gap-1 px-3 py-1.5 rounded-md hover:bg-white hover:text-emerald-700 transition-colors">
+            <button className="hm5">
               <span>{isEn ? 'Frame & Purpose' : 'Rahmen & Zielgruppe'}</span>
               <ChevronDown className="w-3.5 h-3.5 opacity-60" />
             </button>
@@ -466,49 +466,49 @@ export const Header: React.FC = () => {
               <div className="absolute top-full left-0 w-60 bg-white rounded-xl shadow-xl border border-slate-200 p-2 grid grid-cols-1 gap-1 z-50">
                 <NavLink href={isEn ? '/en/e-bikes/step-through/' : '/e-bikes/tiefeinsteiger/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? 'Step-Through (Wave)' : 'Tiefeinsteiger (Wave)'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/for-seniors/' : '/e-bikes/senioren/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? 'Bikes for Seniors' : 'E-Bikes für Senioren'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/womens/' : '/e-bikes/damen/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? "Women's E-Bikes (Trapez)" : 'Damen E-Bikes (Trapez)'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/mens/' : '/e-bikes/herren/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? "Men's E-Bikes (Diamant)" : 'Herren E-Bikes (Diamant)'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/commuter/' : '/e-bikes/pendler/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? 'Commuter E-Bikes' : 'Pendler E-Bikes'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/family/' : '/e-bikes/familie/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? 'Family & Child Transport' : 'Familie & Kinder'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/lightweight/' : '/e-bikes/leicht/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? 'Lightweight (<18 kg)' : 'Leichte E-Bikes (<18 kg)'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/long-distance/' : '/e-bikes/fuer-lange-strecken/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? 'Long Distance (DualBattery)' : 'Lange Strecken (DualBattery)'}
                 </NavLink>
@@ -522,7 +522,7 @@ export const Header: React.FC = () => {
             onMouseEnter={() => setActiveDropdown('budget')}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <button className="flex items-center gap-1 px-3 py-1.5 rounded-md hover:bg-white hover:text-emerald-700 transition-colors">
+            <button className="hm5">
               <span>{isEn ? 'Price Brackets' : 'Preisklassen'}</span>
               <ChevronDown className="w-3.5 h-3.5 opacity-60" />
             </button>
@@ -536,25 +536,25 @@ export const Header: React.FC = () => {
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/under-1500-euro/' : '/e-bikes/unter-1500-euro/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? 'Under €1,500' : 'Unter 1.500 €'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/under-2000-euro/' : '/e-bikes/unter-2000-euro/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? 'Under €2,000' : 'Unter 2.000 €'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/under-3000-euro/' : '/e-bikes/unter-3000-euro/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? 'Under €3,000' : 'Unter 3.000 €'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/e-bikes/over-3000-euro/' : '/e-bikes/ab-3000-euro/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? 'Over €3,000 (Premium)' : 'Ab 3.000 € (High-End)'}
                 </NavLink>
@@ -587,7 +587,7 @@ export const Header: React.FC = () => {
           >
             <NavLink href={isEn ? '/en/guides/' : '/ratgeber/'} onNavigate={() => { afterNav() }}
               
-              className="flex items-center gap-1 px-3 py-1.5 rounded-md hover:bg-white hover:text-emerald-700 transition-colors"
+              className="hm5"
             >
               <span>{isEn ? 'Guides & Advice' : 'Ratgeber & Wissen'}</span>
               <ChevronDown className="w-3.5 h-3.5 opacity-60" />
@@ -610,25 +610,25 @@ export const Header: React.FC = () => {
                 </NavLink>
                 <NavLink href={isEn ? '/en/guides/e-bike-buying-guide/' : '/ratgeber/e-bike-kaufberatung/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? 'E-Bike Buying Guide' : 'E-Bike Kaufberatung 2026'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/guides/battery-and-range/' : '/ratgeber/e-bike-akku-reichweite/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? 'Battery & Range Optimization' : 'Akku & Reichweiten-Tipps'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/guides/payment-and-crypto-discount/' : '/ratgeber/e-bike-zahlung/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? '10% Crypto Discount' : 'Zahlung & 10% Krypto-Rabatt'}
                 </NavLink>
                 <NavLink href={isEn ? '/en/guides/e-bike-laws-germany/' : '/ratgeber/e-bike-recht/'} onNavigate={() => { afterNav() }}
                   
-                  className="px-3 py-1.5 rounded-lg hover:bg-slate-50 text-slate-800 hover:text-emerald-700 cursor-pointer block"
+                  className="hm2"
                 >
                   {isEn ? 'German E-Bike Traffic Laws' : 'E-Bike Recht & Gesetze in DE'}
                 </NavLink>
@@ -675,43 +675,43 @@ export const Header: React.FC = () => {
             </NavLink>
             <NavLink href={isEn ? '/en/e-bikes/electric-mountain-bikes/full-suspension/' : '/e-bikes/e-mountainbikes/fully/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'E-MTB Fully' : 'E-Mountainbike Fully'}
             </NavLink>
             <NavLink href={isEn ? '/en/e-bikes/electric-mountain-bikes/hardtail/' : '/e-bikes/e-mountainbikes/hardtail/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'E-MTB Hardtail' : 'E-Mountainbike Hardtail'}
             </NavLink>
             <NavLink href={isEn ? '/en/e-bikes/electric-trekking-bikes/' : '/e-bikes/e-trekkingbikes/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'Electric Trekking Bikes' : 'E-Trekkingbikes'}
             </NavLink>
             <NavLink href={isEn ? '/en/e-bikes/electric-gravel-bikes/' : '/e-bikes/e-gravelbikes/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'Electric Gravel Bikes' : 'E-Gravelbikes'}
             </NavLink>
             <NavLink href={isEn ? '/en/e-bikes/electric-road-bikes/' : '/e-bikes/e-rennraeder/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'Electric Road Bikes' : 'E-Rennräder'}
             </NavLink>
             <NavLink href={isEn ? '/en/e-bikes/electric-folding-bikes/' : '/e-bikes/e-faltraeder/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'Electric Folding Bikes' : 'E-Falträder & Klappräder'}
             </NavLink>
             <NavLink href={isEn ? '/en/e-bikes/electric-city-bikes/' : '/e-bikes/e-citybikes/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'Electric City Bikes' : 'E-Citybikes'}
             </NavLink>
@@ -723,7 +723,7 @@ export const Header: React.FC = () => {
             </NavLink>
             <NavLink href={isEn ? '/en/e-bikes/speed-pedelecs/' : '/e-bikes/s-pedelecs/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'Speed Pedelecs (45 km/h)' : 'S-Pedelecs (45 km/h)'}
             </NavLink>
@@ -733,25 +733,25 @@ export const Header: React.FC = () => {
             </div>
             <NavLink href={isEn ? '/en/e-bikes/under-1000-euro/' : '/e-bikes/unter-1000-euro/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'Under €1,000' : 'Unter 1.000 €'}
             </NavLink>
             <NavLink href={isEn ? '/en/e-bikes/under-2000-euro/' : '/e-bikes/unter-2000-euro/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'Under €2,000' : 'Unter 2.000 €'}
             </NavLink>
             <NavLink href={isEn ? '/en/e-bikes/under-3000-euro/' : '/e-bikes/unter-3000-euro/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'Under €3,000' : 'Unter 3.000 €'}
             </NavLink>
             <NavLink href={isEn ? '/en/e-bikes/over-3000-euro/' : '/e-bikes/ab-3000-euro/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'Over €3,000' : 'Ab 3.000 €'}
             </NavLink>
@@ -761,19 +761,19 @@ export const Header: React.FC = () => {
             </div>
             <NavLink href={isEn ? '/en/e-bikes/motor/bosch/' : '/e-bikes/antrieb/bosch/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               Bosch
             </NavLink>
             <NavLink href={isEn ? '/en/e-bikes/motor/shimano-steps/' : '/e-bikes/antrieb/shimano-steps/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               Shimano STEPS
             </NavLink>
             <NavLink href={isEn ? '/en/e-bikes/motor/yamaha/' : '/e-bikes/antrieb/yamaha/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               Yamaha
             </NavLink>
@@ -783,7 +783,7 @@ export const Header: React.FC = () => {
             </div>
             <NavLink href={isEn ? '/en/guides/' : '/ratgeber/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'All Guides' : 'Alle Ratgeber'}
             </NavLink>
@@ -801,13 +801,13 @@ export const Header: React.FC = () => {
             </NavLink>
             <NavLink href={isEn ? '/en/accessories/' : '/zubehoer/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'Accessories' : 'Zubehör & Akkus'}
             </NavLink>
             <NavLink href={isEn ? '/en/size-guide/' : '/groessenberatung/'} onNavigate={() => { afterNav() }}
               
-              className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 inline-block"
+              className="hm1"
             >
               {isEn ? 'Frame Size Calculator' : 'Rahmengrößen-Rechner'}
             </NavLink>

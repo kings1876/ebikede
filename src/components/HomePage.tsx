@@ -77,6 +77,7 @@ export function HomePage({ lang }: { lang: 'de' | 'en' }) {
       <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white py-16 sm:py-24 px-4 relative overflow-hidden">
         {/* Decorative background: colour glows, road-line grid and a cycling-wheel motif (no image weight) */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <link rel="preload" as="image" type="image/avif" imageSrcSet="/images/hero/hero-ebike-lifestyle-900.avif 900w, /images/hero/hero-ebike-lifestyle.avif 2400w" imageSizes="100vw" fetchPriority="high" />
           <picture>
             <source srcSet="/images/hero/hero-ebike-lifestyle-900.avif 900w, /images/hero/hero-ebike-lifestyle.avif 2400w" sizes="100vw" type="image/avif" />
             <source srcSet="/images/hero/hero-ebike-lifestyle-900.webp 900w, /images/hero/hero-ebike-lifestyle.webp 2400w" sizes="100vw" type="image/webp" />
@@ -186,11 +187,12 @@ export function HomePage({ lang }: { lang: 'de' | 'en' }) {
             <div className="bg-slate-900/90 rounded-3xl border border-slate-800 p-6 shadow-2xl relative">
               <div className="relative aspect-4/3 rounded-2xl overflow-hidden mb-4 bg-slate-800">
                 <img
-                  src={PRODUCTS[0].images[0]}
+                  src={smallImg(PRODUCTS[0].images[0])}
                   alt={isEn ? PRODUCTS[0].name_en : PRODUCTS[0].name_de}
                   width={1200}
                   height={900}
-                  fetchPriority="high"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>

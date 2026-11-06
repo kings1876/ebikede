@@ -43,7 +43,6 @@ export const StaticProductCard: React.FC<ProductCardProps> = ({ product, lang, p
             height={360}
             className="pc-img"
             loading={priority ? 'eager' : 'lazy'}
-            fetchPriority={priority ? 'high' : 'auto'}
             decoding="async"
           />
         </a>
