@@ -220,6 +220,7 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
           zip: orderInput.zip,
           country: orderInput.country,
           paymentMethod: orderInput.paymentMethod,
+          cryptoAsset: orderInput.cryptoAsset,
           items: orderInput.items.map((i) => ({ id: i.product.id, quantity: i.quantity, isAccessory: i.isAccessory, size: i.selectedSize, color: i.selectedColor })),
         }),
       }).catch(() => {});

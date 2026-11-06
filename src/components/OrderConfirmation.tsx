@@ -13,6 +13,7 @@ import {
   ExternalLink,
 } from './icons';
 import { useShop } from '../context/ShopContext';
+import { CryptoPayCard } from './CryptoPayCard';
 
 const OrderConfirmationInner: React.FC = () => {
   const { lastOrder, language, navigateTo } = useShop();
@@ -164,10 +165,23 @@ Web: https://e-bike-zuverkaufen.de`;
         </h1>
         <p className="text-slate-600 text-sm max-w-lg mx-auto">
           {isEn
-            ? `Your order #${order.orderNumber} has been received. We are sending a confirmation to ${order.email} and will email you the payment details shortly.`
-            : `Deine Bestellung #${order.orderNumber} ist eingegangen. Wir senden eine Bestätigung an ${order.email} und schicken dir in Kürze die Zahlungsdaten per E-Mail.`}
+            ? order.paymentMethod === 'crypto' && lastOrder
+              ? `Your order #${order.orderNumber} has been received. Pay with the details below; we also email them to ${order.email}.`
+              : `Your order #${order.orderNumber} has been received. We are sending a confirmation to ${order.email} and will email you the payment details shortly.`
+            : order.paymentMethod === 'crypto' && lastOrder
+              ? `Deine Bestellung #${order.orderNumber} ist eingegangen. Bezahle mit den Angaben unten; wir senden sie dir auch an ${order.email}.`
+              : `Deine Bestellung #${order.orderNumber} ist eingegangen. Wir senden eine Bestätigung an ${order.email} und schicken dir in Kürze die Zahlungsdaten per E-Mail.`}
         </p>
       </div>
+
+      {order.paymentMethod === 'crypto' && lastOrder && (
+        <div className="mb-8">
+          <h2 className="text-lg font-black text-slate-900 mb-3">
+            {isEn ? 'Pay now' : 'Jetzt bezahlen'}
+          </h2>
+          <CryptoPayCard assetId={order.cryptoAsset} amount={order.total} orderNumber={order.orderNumber} lang={order.language} />
+        </div>
+      )}
 
       {/* Order Summary Card */}
       <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 mb-8 space-y-6">

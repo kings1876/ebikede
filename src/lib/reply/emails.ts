@@ -105,6 +105,34 @@ export function orderConfirmationEmail(o: StoredOrder) {
         pay: 'Payment method',
         q: `Questions? Just reply to this email or call us: ${REPLY.phone}`,
       };
+  // Crypto orders already have their wallet details: put them in this email instead of promising a second one.
+  const crypto = o.paymentDetails;
+  if (crypto) {
+    const p = paymentMethodParts(crypto.methodId, o.amountDue, o.orderNumber, o.language);
+    const detailsUrl = `${REPLY.baseUrl}/order/payment-details/?id=${encodeURIComponent(o.orderNumber)}`;
+    const rows = crypto.fields
+      .map((f) => field(f.label, `<span style="font-family:Consolas,Menlo,monospace;font-size:14px;word-break:break-all">${esc(f.value)}</span>`, 10))
+      .join('');
+    const cryptoBody = `
+<p style="font-size:14px;line-height:1.6;margin:0 0 6px">${esc(t.hi)}</p>
+<p style="font-size:14px;line-height:1.6;margin:0 0 18px">${esc(t.intro)}</p>
+${field(t.order, `<b>${esc(o.orderNumber)}</b>`)}
+${field(t.total, `<b style="font-size:18px">${esc(money(o.amountDue, o.language))}</b>`)}
+${divider}
+<p style="font-size:14px;line-height:1.6;margin:0 0 14px">${esc(p.opening)}</p>
+${rows}
+<p style="font-size:14px;line-height:1.6;margin:14px 0 18px">${esc(p.closing)}</p>
+<div style="margin-bottom:18px">${button(detailsUrl, de ? 'Zahlungsseite mit QR-Code öffnen' : 'Open payment page with QR code')}</div>
+${field(t.addr, esc(o.address).replace(/\n/g, '<br>'))}
+${divider}
+${itemsTable(o)}
+<p style="font-size:12px;color:${C.soft};margin:18px 0 0">${esc(t.q)}</p>`;
+    return {
+      subject: t.subject,
+      text: `${t.hi}\n\n${t.intro}\n\n${t.order}: ${o.orderNumber}\n${t.total}: ${money(o.amountDue, o.language)}\n\n${p.opening}\n${crypto.fields.map((f) => `${f.label}: ${f.value}`).join('\n')}\n\n${p.closing}\n${detailsUrl}\n\n${itemsText(o)}\n\n${t.q}`,
+      html: shell({ eyebrow: de ? 'Zahlungsdaten' : 'Payment details', title: o.orderNumber, meta: REPLY.siteName, body: cryptoBody, lang: o.language }),
+    };
+  }
   const body = `
 <p style="font-size:14px;line-height:1.6;margin:0 0 6px">${esc(t.hi)}</p>
 <p style="font-size:14px;line-height:1.6;margin:0 0 18px">${esc(t.intro)}</p>

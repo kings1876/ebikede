@@ -134,6 +134,7 @@ export interface OrderData {
   country: string;
   language: Language;
   paymentMethod: 'sepa' | 'crypto';
+  cryptoAsset?: 'usdt' | 'btc' | 'eth';
   items: CartItem[];
   subtotal: number;
   discount: number;

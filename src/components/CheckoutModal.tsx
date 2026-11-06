@@ -12,6 +12,7 @@ import {
   Bike,
 } from './icons';
 import { useShop } from '../context/ShopContext';
+import { CRYPTO_WALLETS, CryptoAsset } from '../lib/reply/config';
 
 interface CheckoutModalProps {
   isOpen: boolean;
@@ -23,6 +24,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
   const isEn = language === 'en';
 
   const [paymentMethod, setPaymentMethod] = useState<'crypto' | 'sepa'>('crypto');
+  const [cryptoAsset, setCryptoAsset] = useState<CryptoAsset>('usdt');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -53,6 +55,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
       country,
       language,
       paymentMethod,
+      cryptoAsset: paymentMethod === 'crypto' ? cryptoAsset : undefined,
       items: cart,
       subtotal: cartSubtotal,
       discount: discountAmount,
@@ -205,7 +208,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 <div className="flex items-center gap-2 mb-1">
                   <Sparkles className="w-4 h-4 text-emerald-700" />
                   <span className="font-bold text-sm text-slate-900">
-                    Bitcoin / USDT / Krypto
+                    {isEn ? 'Crypto (USDT / BTC / ETH)' : 'Krypto (USDT / BTC / ETH)'}
                   </span>
                 </div>
                 <p className="text-[11px] text-slate-500 leading-tight">
@@ -236,6 +239,37 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 </p>
               </button>
             </div>
+
+            {paymentMethod === 'crypto' && (
+              <div className="mt-3">
+                <div className="text-[11px] font-semibold text-slate-600 mb-2">
+                  {isEn ? 'Choose your cryptocurrency (10% discount)' : 'Kryptowährung wählen (10 % Rabatt)'}
+                </div>
+                <div className="grid grid-cols-3 gap-2">
+                  {CRYPTO_WALLETS.map((w) => (
+                    <button
+                      key={w.id}
+                      type="button"
+                      onClick={() => setCryptoAsset(w.id)}
+                      aria-pressed={cryptoAsset === w.id}
+                      className={`py-2.5 rounded-xl border text-center cursor-pointer transition-all ${
+                        cryptoAsset === w.id
+                          ? 'border-emerald-600 bg-emerald-50 ring-2 ring-emerald-500'
+                          : 'border-slate-200 hover:bg-slate-50'
+                      }`}
+                    >
+                      <div className="font-black text-sm text-slate-900">{w.symbol}</div>
+                      <div className="text-[10px] text-slate-500">{w.network}</div>
+                    </button>
+                  ))}
+                </div>
+                <p className="mt-2 text-[11px] text-slate-500 leading-snug">
+                  {isEn
+                    ? 'After you place the order you go straight to a payment page with our wallet address, the network, the amount due and a QR code. Please do not send any payment before then.'
+                    : 'Nach der Bestellung gelangst du direkt zur Zahlungsseite mit Wallet-Adresse, Netzwerk, Betrag und QR-Code. Bitte sende vorher keine Zahlung.'}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Pricing Breakdown */}

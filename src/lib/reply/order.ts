@@ -1,4 +1,4 @@
-import { REPLY, Lang, PaymentMethod } from './config';
+import { REPLY, Lang, PaymentMethod, getWallet } from './config';
 
 // Zero server imports: runs in the browser (checkout) and on the server.
 export function makeOrderNumber(prefix: string = REPLY.orderPrefix): string {
@@ -101,6 +101,19 @@ export function parsePaymentDetail(text: string): PaymentField[] {
   });
 }
 
+// Fields shown on the payment page and in the payment email for a crypto order (address comes from config).
+export function cryptoPaymentFields(assetId: string | undefined, amount: number, lang: Lang): PaymentField[] {
+  const w = getWallet(assetId);
+  if (!w) return [];
+  const de = lang === 'de';
+  return [
+    { label: de ? 'Währung' : 'Currency', value: `${w.symbol} (${w.name})` },
+    { label: de ? 'Netzwerk' : 'Network', value: w.network },
+    { label: de ? 'Wallet-Adresse' : 'Wallet address', value: w.address },
+    { label: de ? 'Betrag (Gegenwert in EUR)' : 'Amount (EUR equivalent)', value: money(amount, lang) },
+  ];
+}
+
 export interface StoredOrder {
   orderNumber: string;
   customerName: string;
@@ -113,6 +126,7 @@ export interface StoredOrder {
   shipping: number;
   amountDue: number;
   paymentMethod: 'sepa' | 'crypto';
+  cryptoAsset?: 'usdt' | 'btc' | 'eth';
   language: Lang;
   status: 'pending' | 'payment-sent' | 'payment-confirmed';
   channel: 'email';

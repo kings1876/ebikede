@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { REPLY } from '../lib/reply/config';
+import { CryptoPayCard } from './CryptoPayCard';
 
 interface Details {
   ok: boolean;
@@ -12,6 +13,9 @@ interface Details {
   closing: string;
   fields: { label: string; value: string }[];
   terms: string[];
+  amountNumber: number;
+  methodId: string;
+  cryptoAsset: string | null;
 }
 
 const useOrderId = () => {
@@ -63,6 +67,20 @@ export function PaymentDetailsPage() {
   }
   if (!d) return <p className="mt-8 text-sm text-slate-500">…</p>;
   const de = d.language === 'de';
+  if (d.methodId === 'crypto' && d.cryptoAsset) {
+    return (
+      <div className="mt-6 space-y-4">
+        <h1 className="text-2xl font-black">{de ? 'Zahlungsdaten' : 'Payment details'}</h1>
+        <p className="text-sm text-slate-600">{de ? 'Bestellnummer' : 'Order number'}: <b>{d.orderNumber}</b></p>
+        <CryptoPayCard assetId={d.cryptoAsset} amount={d.amountNumber} orderNumber={d.orderNumber} lang={d.language} />
+        <ul className="text-xs text-slate-600 list-disc pl-5 space-y-1">
+          {d.terms.map((t, i) => (
+            <li key={i}>{t}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
   return (
     <div className="mt-6 space-y-4">
       <h1 className="text-2xl font-black">{de ? 'Zahlungsdaten' : 'Payment details'}</h1>

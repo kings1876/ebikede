@@ -12,6 +12,25 @@ export interface PaymentMethod {
   closingEn: string;
 }
 
+export type CryptoAsset = 'usdt' | 'btc' | 'eth';
+
+export interface CryptoWallet {
+  id: CryptoAsset;
+  symbol: string;
+  name: string;
+  network: string;
+  address: string;
+}
+
+// Public receiving addresses. Shown to the customer after a crypto order; never put a private key here.
+export const CRYPTO_WALLETS: CryptoWallet[] = [
+  { id: 'usdt', symbol: 'USDT', name: 'Tether', network: 'Tron (TRC-20)', address: 'TBnrAF6yjaYyUBXFGDzDUdkUG7EZr6qrFN' },
+  { id: 'btc', symbol: 'BTC', name: 'Bitcoin', network: 'Bitcoin', address: 'bc1qzn330nvevy8l2phf2swc25znd8ct6ju9gdprl7' },
+  { id: 'eth', symbol: 'ETH', name: 'Ethereum', network: 'Ethereum (ERC-20)', address: '0x71e590e953d8DBf7a2d8a4Fa58Ea55c3c57A6f8C' },
+];
+
+export const getWallet = (id?: string): CryptoWallet | undefined => CRYPTO_WALLETS.find((w) => w.id === id);
+
 export const REPLY = {
   siteName: 'EBike Zu Verkaufen',
   domain: 'e-bike-zuverkaufen.de',
@@ -39,8 +58,8 @@ export const REPLY = {
     },
     {
       id: 'crypto',
-      labelDe: 'Krypto (Bitcoin / USDT)',
-      labelEn: 'Crypto (Bitcoin / USDT)',
+      labelDe: 'Krypto (USDT / BTC / ETH)',
+      labelEn: 'Crypto (USDT / BTC / ETH)',
       openingDe: 'Bitte sende den Gegenwert von {amount} an folgende Wallet-Adresse:',
       openingEn: 'Please send the equivalent of {amount} to the following wallet address:',
       closingDe: 'Prüfe Adresse und Netzwerk sorgfältig: Krypto-Zahlungen lassen sich nicht zurückholen. Nenne uns nach der Zahlung deine Bestellnummer {ref}.',

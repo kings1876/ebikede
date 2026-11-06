@@ -1,7 +1,7 @@
 import { PRODUCTS } from '../../../data/products';
 import { ACCESSORIES } from '../../../data/accessories';
-import { REPLY, Lang } from '../../../lib/reply/config';
-import { ORDER_REF_RE, StoredOrder, StoredEnquiry, makeEnquiryId } from '../../../lib/reply/order';
+import { REPLY, Lang, getWallet } from '../../../lib/reply/config';
+import { ORDER_REF_RE, StoredOrder, StoredEnquiry, makeEnquiryId, cryptoPaymentFields } from '../../../lib/reply/order';
 import { saveOrder, saveEnquiry } from '../../../lib/reply/store';
 import { sendMail, shopInbox } from '../../../lib/reply/mailer';
 import { orderNotificationEmail, orderConfirmationEmail, enquiryNotificationEmail } from '../../../lib/reply/emails';
@@ -45,6 +45,7 @@ export async function POST(request: Request) {
   const orderNumber = str(body.orderNumber, 20);
   if (!ORDER_REF_RE.test(orderNumber)) return Response.json({ ok: false, error: 'invalid-order-number' }, { status: 400 });
   const paymentMethod = body.paymentMethod === 'crypto' ? 'crypto' : 'sepa';
+  const cryptoAsset = paymentMethod === 'crypto' ? getWallet(str(body.cryptoAsset, 8))?.id ?? 'usdt' : undefined;
   const address = [str(body.address, 160), `${str(body.zip, 12)} ${str(body.city, 80)}`.trim(), str(body.country, 60)].filter(Boolean).join('\n');
   if (!str(body.address, 160) || !str(body.zip, 12) || !str(body.city, 80)) return Response.json({ ok: false, error: 'invalid-address' }, { status: 400 });
 
@@ -78,12 +79,18 @@ export async function POST(request: Request) {
     shipping,
     amountDue: Number((subtotal - discount + shipping).toFixed(2)),
     paymentMethod,
+    cryptoAsset,
     language: lang,
     status: 'pending',
     channel: 'email',
     createdAt: new Date().toISOString(),
   };
 
+  // Crypto wallets are fixed, so the payment details exist from the moment the order is placed.
+  if (cryptoAsset) {
+    order.status = 'payment-sent';
+    order.paymentDetails = { methodId: 'crypto', fields: cryptoPaymentFields(cryptoAsset, order.amountDue, lang), sentAt: order.createdAt };
+  }
   await saveOrder(order).catch(() => {});
   const shop = orderNotificationEmail(order);
   const customer = orderConfirmationEmail(order);
