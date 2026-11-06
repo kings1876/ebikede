@@ -36,7 +36,8 @@ export async function POST(request: Request) {
     };
     await saveEnquiry(enquiry).catch(() => {});
     const n = enquiryNotificationEmail(enquiry);
-    const r = await sendMail({ to: shopInbox(), replyTo: email, ...n });
+    // Contact enquiries always go to the public contact address.
+    const r = await sendMail({ to: REPLY.email, replyTo: email, ...n });
     return Response.json({ ok: true, emailed: r.sent });
   }
 

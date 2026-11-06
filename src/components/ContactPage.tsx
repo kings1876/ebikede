@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Mail, Phone, MessageCircle, Send } from './icons';
+import { Mail, Send } from './icons';
 import { useShop } from '../context/ShopContext';
 import { REPLY } from '../lib/reply/config';
 
@@ -36,12 +36,10 @@ export const ContactPage: React.FC = () => {
       <div className="md:col-span-2 space-y-4">
         <h1 className="text-3xl font-black text-slate-900">{isEn ? 'Customer Support & Inquiries' : 'Kundenservice & Fachberatung'}</h1>
         <p className="text-sm text-slate-600">
-          {isEn ? 'Questions about a model, size or your order? We reply by email, phone or WhatsApp.' : 'Fragen zu Modell, Rahmengröße oder deiner Bestellung? Wir antworten per E-Mail, Telefon oder WhatsApp.'}
+          {isEn ? 'Questions about a model, size or your order? We reply by email.' : 'Fragen zu Modell, Rahmengröße oder deiner Bestellung? Wir antworten per E-Mail.'}
         </p>
         <ul className="space-y-3 text-sm">
           <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-emerald-700" /><a href={`mailto:${REPLY.email}`} className="font-semibold">{REPLY.email}</a></li>
-          <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-emerald-700" /><a href={`tel:${REPLY.phone.replace(/[^\d+]/g, '')}`} className="font-semibold">{REPLY.phone}</a></li>
-          <li className="flex items-center gap-2"><MessageCircle className="w-4 h-4 text-emerald-700" /><button type="button" onClick={() => window.open(`https://wa.me/${REPLY.whatsapp.replace(/\D/g, '')}`, '_blank', 'noopener,noreferrer')} className="font-semibold cursor-pointer">WhatsApp</button></li>
         </ul>
         <div className="text-sm text-slate-600 space-y-3">
           <h2 className="text-base font-bold text-slate-900">{isEn ? 'How we can help' : 'Wobei wir helfen'}</h2>
@@ -52,8 +50,8 @@ export const ContactPage: React.FC = () => {
           </p>
           <p>
             {isEn
-              ? 'If you already ordered, include your order number (it starts with EBZ) so we can find it straight away. You will get our reply by email, and if you prefer to talk it through, phone and WhatsApp work just as well as the form.'
-              : 'Wenn du schon bestellt hast, nenne uns deine Bestellnummer (sie beginnt mit EBZ), damit wir sie sofort finden. Unsere Antwort bekommst du per E-Mail, und wenn du lieber sprechen möchtest, funktionieren Telefon und WhatsApp genauso gut wie das Formular.'}
+              ? 'If you already ordered, include your order number (it starts with EBZ) so we can find it straight away. You will get our reply by email.'
+              : 'Wenn du schon bestellt hast, nenne uns deine Bestellnummer (sie beginnt mit EBZ), damit wir sie sofort finden. Unsere Antwort bekommst du per E-Mail.'}
           </p>
         </div>
       </div>
