@@ -24,7 +24,7 @@ export const Footer: React.FC<{ lang: 'de' | 'en' }> = ({ lang }) => {
 
   return (
     <footer className="bg-slate-950 text-slate-300 border-t border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 py-8 text-xs text-slate-400 leading-relaxed">
+      <div className="max-w-4xl mx-auto px-4 py-8 text-xs text-slate-400 leading-relaxed text-center">
         <h2 className="text-sm font-bold text-white mb-2">
           {isEn ? 'Buy new e-bikes online in Germany' : 'Neue E-Bikes online in Deutschland kaufen'}
         </h2>
