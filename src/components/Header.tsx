@@ -268,13 +268,13 @@ export const Header: React.FC = () => {
           {/* Direct Support hotline */}
           <div className="hidden lg:block text-right">
             <div className="text-[11px] text-slate-500 font-medium">
-              {isEn ? 'Expert Phone Support' : 'Kostenlose Fachberatung'}
+              {isEn ? 'Free Expert Advice' : 'Kostenlose Fachberatung'}
             </div>
             <a
-              href="tel:+498945289200"
+              href="mailto:info@e-bike-zuverkaufen.de"
               className="text-xs font-bold text-slate-900 hover:text-emerald-700"
             >
-              +49 (0) 89 452 89 200
+              info@e-bike-zuverkaufen.de
             </a>
           </div>
 
