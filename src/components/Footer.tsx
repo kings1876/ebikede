@@ -496,7 +496,7 @@ export const Footer: React.FC<{ lang: 'de' | 'en' }> = ({ lang }) => {
               </a>
             </li>
             <li>
-              <a href={isEn ? '/en/legal-notice/' : '/impressum/'}
+              <a href="/impressum/"
                 
                 className="fl"
               >

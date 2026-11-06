@@ -54,6 +54,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: '/en/legal-notice', destination: '/impressum/', permanent: true },
       { source: '/:path*', has: [{ type: 'host', value: 'www.e-bike-zuverkaufen.de' }], destination: 'https://e-bike-zuverkaufen.de/:path*', permanent: true },
     ];
   },

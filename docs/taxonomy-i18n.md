@@ -70,7 +70,7 @@
 | Contact | `/kontakt/` | `/en/contact/` |
 | About | `/ueber-uns/` | `/en/about-us/` |
 | FAQ | `/faq/` | `/en/faq/` |
-| Legal notice | `/impressum/` | `/en/legal-notice/` |
+| Legal notice | `/impressum/` | (none: `/en/legal-notice/` redirects to `/impressum/`) |
 | Privacy | `/datenschutz/` | `/en/privacy/` |
 | Terms | `/agb/` | `/en/terms/` |
 | Withdrawal policy | `/widerrufsbelehrung/` | `/en/withdrawal-policy/` |

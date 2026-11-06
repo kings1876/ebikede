@@ -46,7 +46,7 @@ export function allPaths(): string[] {
   const set = new Set<string>(['/', '/en/', '/ratgeber/', '/en/guides/']);
   for (const r of TAXONOMY_ROUTES) {
     set.add(r.pathDe);
-    set.add(r.pathEn);
+    if (r.pathEn !== '/en/legal-notice/') set.add(r.pathEn); // retired: redirects to /impressum/
   }
   for (const p of PRODUCTS) {
     set.add(`/e-bike/${p.slug}/`);
@@ -62,7 +62,7 @@ export function allPaths(): string[] {
   }
   for (const d of Object.values(LEGAL_DOCUMENTS)) {
     set.add(`/${d.slugDe}/`);
-    set.add(`/en/${d.slugEn}/`);
+    if (d.id !== 'impressum') set.add(`/en/${d.slugEn}/`); // the English legal notice is retired (redirects to /impressum/)
   }
   return Array.from(set);
 }
@@ -182,7 +182,7 @@ export function resolvePage(rawPath: string): PageInfo {
       ...base,
       kind: 'legal',
       pathDe: `/${legal.slugDe}/`,
-      pathEn: `/en/${legal.slugEn}/`,
+      pathEn: legal.id === 'impressum' ? `/${legal.slugDe}/` : `/en/${legal.slugEn}/`,
       title: titleWithSite(de ? legal.titleDe : legal.titleEn),
       description: de
         ? `${legal.titleDe}: Pflichtangaben und rechtliche Hinweise von ${SITE} für Kunden in Deutschland.`
