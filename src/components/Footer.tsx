@@ -543,19 +543,7 @@ export const Footer: React.FC<{ lang: 'de' | 'en' }> = ({ lang }) => {
 
       {/* Mandatory German Legal Binding Disclaimer Banner */}
       <div className="bg-slate-900 border-t border-slate-800 px-4 py-4 text-[11px] text-slate-400">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-            <p>
-              <strong className="text-slate-200">
-                {isEn ? 'Binding Legal Notice: ' : 'Rechtlicher Hinweis: '}
-              </strong>
-              {isEn
-                ? 'Pursuant to German law, the German version of all legal documents (AGB, Widerrufsbelehrung, Impressum, Datenschutz) is strictly binding. The English translation is provided exclusively for convenience.'
-                : 'Rechtlich verbindlich ist ausschließlich die deutsche Fassung aller Richtlinien und Vertragsbedingungen. Die englische Sprachfassung dient lediglich als unverbindliche Lesehilfe.'}
-            </p>
-          </div>
-
+        <div className="max-w-7xl mx-auto flex items-center justify-center">
           <div className="shrink-0 flex items-center gap-2 text-slate-400 font-mono">
             <span>DE-WEEE: 89123456</span>
             <span>•</span>
