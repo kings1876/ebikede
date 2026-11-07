@@ -4,6 +4,7 @@ import { REPLY, Lang, getWallet } from '../../../lib/reply/config';
 import { ORDER_REF_RE, StoredOrder, StoredEnquiry, makeEnquiryId, cryptoPaymentFields } from '../../../lib/reply/order';
 import { saveOrder, saveEnquiry } from '../../../lib/reply/store';
 import { sendMail, shopInbox } from '../../../lib/reply/mailer';
+import { notifyWhatsApp, orderWhatsAppLines, enquiryWhatsAppLines } from '../../../lib/reply/whatsapp';
 import { orderNotificationEmail, orderConfirmationEmail, enquiryNotificationEmail } from '../../../lib/reply/emails';
 
 export const dynamic = 'force-dynamic';
@@ -37,7 +38,7 @@ export async function POST(request: Request) {
     await saveEnquiry(enquiry).catch(() => {});
     const n = enquiryNotificationEmail(enquiry);
     // Contact enquiries always go to the public contact address.
-    const r = await sendMail({ to: REPLY.email, replyTo: email, ...n });
+    const [r] = await Promise.all([sendMail({ to: REPLY.email, replyTo: email, ...n }), notifyWhatsApp(enquiryWhatsAppLines(enquiry))]);
     return Response.json({ ok: true, emailed: r.sent });
   }
 
@@ -98,6 +99,7 @@ export async function POST(request: Request) {
   const [a, b] = await Promise.all([
     sendMail({ to: shopInbox(), replyTo: email, ...shop }),
     sendMail({ to: email, replyTo: REPLY.email, ...customer }),
+    notifyWhatsApp(orderWhatsAppLines(order)),
   ]);
   return Response.json({ ok: true, emailed: a.sent && b.sent, amountDue: order.amountDue });
 }

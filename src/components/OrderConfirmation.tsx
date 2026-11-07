@@ -234,13 +234,21 @@ https://e-bike-zuverkaufen.de`;
       <div className="text-center mb-6">
         <a
           href={`https://wa.me/${REPLY.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(
-            isEn ? `Hi, I have a question about order ${order.orderNumber}.` : `Hallo, ich habe eine Frage zu Bestellung ${order.orderNumber}.`
+            [
+              isEn ? `Hi ${REPLY.siteName}, I just placed order ${order.orderNumber}.` : `Hallo ${REPLY.siteName}, ich habe gerade Bestellung ${order.orderNumber} aufgegeben.`,
+              ...order.items.map((it) => {
+                const p = it.product as { name_de: string; name_en: string };
+                return `${it.quantity}x ${isEn ? p.name_en : p.name_de}`;
+              }),
+              `${isEn ? 'Total' : 'Gesamt'}: €${order.total.toLocaleString(isEn ? 'en-US' : 'de-DE')}`,
+              `${order.customerName}, ${order.email}`,
+            ].join('\n')
           )}`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all"
         >
-          {isEn ? 'Questions? Message us on WhatsApp' : 'Fragen? Schreib uns per WhatsApp'}
+          {isEn ? 'Send your order to us on WhatsApp' : 'Bestellung per WhatsApp an uns senden'}
         </a>
       </div>
 
