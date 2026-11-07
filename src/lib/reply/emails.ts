@@ -159,9 +159,12 @@ export function paymentDetailsEmail(o: StoredOrder, methodId: string, fields: Pa
   const terms = paymentTermsLines(o.orderNumber, lang);
   const detailsUrl = `${REPLY.baseUrl}/order/payment-details/?id=${encodeURIComponent(o.orderNumber)}`;
   const confirmUrl = `${REPLY.baseUrl}/order/confirm-payment/?id=${encodeURIComponent(o.orderNumber)}`;
+  const waUrl = `https://wa.me/${REPLY.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(
+    de ? `Hallo ${REPLY.siteName}, ich habe die Zahlung für Bestellung ${o.orderNumber} abgeschlossen.` : `Hi ${REPLY.siteName}, I've completed payment for order ${o.orderNumber}.`
+  )}`;
   const t = de
-    ? { subject: `Zahlungsdaten für Bestellung ${o.orderNumber} – ${money(o.amountDue, lang)}`, eyebrow: 'Zahlungsdaten', hi: `Hallo ${o.customerName},`, due: 'Zu zahlen', order: 'Bestellnummer', view: 'Zahlungsdaten ansehen & kopieren', paid: 'Ich habe bezahlt – Beleg hochladen', reply: 'Uns antworten' }
-    : { subject: `Payment details for order ${o.orderNumber} – ${money(o.amountDue, lang)}`, eyebrow: 'Payment details', hi: `Hello ${o.customerName},`, due: 'Amount due', order: 'Order number', view: 'View & copy payment details', paid: "I've paid – upload confirmation", reply: 'Reply to us' };
+    ? { subject: `Zahlungsdaten für Bestellung ${o.orderNumber} – ${money(o.amountDue, lang)}`, eyebrow: 'Zahlungsdaten', hi: `Hallo ${o.customerName},`, due: 'Zu zahlen', order: 'Bestellnummer', view: 'Zahlungsdaten ansehen & kopieren', paid: 'Ich habe bezahlt – Beleg hochladen', wa: 'Per WhatsApp bestätigen', reply: 'Uns antworten' }
+    : { subject: `Payment details for order ${o.orderNumber} – ${money(o.amountDue, lang)}`, eyebrow: 'Payment details', hi: `Hello ${o.customerName},`, due: 'Amount due', order: 'Order number', view: 'View & copy payment details', paid: "I've paid – upload confirmation", wa: 'Confirm via WhatsApp', reply: 'Reply to us' };
   const fieldRows = fields
     .map((f) => field(f.label, `<span style="font-family:Consolas,Menlo,monospace;font-size:14px;word-break:break-all">${esc(f.value)}</span>`, 10))
     .join('');
@@ -175,7 +178,7 @@ ${fieldRows}
 <p style="font-size:14px;line-height:1.6;margin:14px 0 18px">${esc(closing)}</p>
 <div style="margin-bottom:18px">${button(detailsUrl, t.view)}</div>
 ${callout(`<ul style="margin:0;padding-left:18px">${terms.map((l) => `<li style="margin-bottom:4px">${esc(l)}</li>`).join('')}</ul>`)}
-<div style="margin-top:20px">${button(confirmUrl, t.paid, false)}${button(`mailto:${REPLY.email}?subject=${encodeURIComponent(o.orderNumber)}`, t.reply, false)}</div>`;
+<div style="margin-top:20px">${button(confirmUrl, t.paid, false)}${button(waUrl, t.wa, false)}${button(`mailto:${REPLY.email}?subject=${encodeURIComponent(o.orderNumber)}`, t.reply, false)}</div>`;
   const text = `${t.hi}\n\n${t.order}: ${o.orderNumber}\n${t.due}: ${money(o.amountDue, lang)}\n\n${opening}\n${fields.map((f) => `${f.label}: ${f.value}`).join('\n')}\n\n${closing}\n\n${terms.map((l) => `- ${l}`).join('\n')}\n\n${t.view}: ${detailsUrl}\n${t.paid}: ${confirmUrl}`;
   return { subject: t.subject, text, html: shell({ eyebrow: t.eyebrow, title: o.orderNumber, meta: methodLabel(methodId, lang), body, lang }) };
 }

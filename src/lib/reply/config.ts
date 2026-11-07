@@ -40,6 +40,7 @@ export const REPLY = {
   currency: { code: 'EUR', symbol: '€', locale: 'de-DE' },
   // Shop inbox: receives order and enquiry notifications, and is the Reply-To address of customer emails.
   email: 'verkaufe@e-bike-zuverkaufen.de',
+  whatsapp: '+491635042514',
   headerTagline: 'Neue E-Bikes · Versand per Spedition',
   headerTaglineEn: 'New e-bikes · Freight delivery',
   dispatchDe: 'Nach Zahlungseingang montieren wir dein E-Bike fahrfertig und die Spedition vereinbart 24 Stunden vor Lieferung einen Termin mit dir.',

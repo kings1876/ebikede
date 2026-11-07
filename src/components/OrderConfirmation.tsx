@@ -14,6 +14,7 @@ import {
 } from './icons';
 import { useShop } from '../context/ShopContext';
 import { CryptoPayCard } from './CryptoPayCard';
+import { REPLY } from '../lib/reply/config';
 
 const OrderConfirmationInner: React.FC = () => {
   const { lastOrder, language, navigateTo } = useShop();
@@ -228,6 +229,19 @@ https://e-bike-zuverkaufen.de`;
           </button>
         </div>
 
+      </div>
+
+      <div className="text-center mb-6">
+        <a
+          href={`https://wa.me/${REPLY.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(
+            isEn ? `Hi, I have a question about order ${order.orderNumber}.` : `Hallo, ich habe eine Frage zu Bestellung ${order.orderNumber}.`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all"
+        >
+          {isEn ? 'Questions? Message us on WhatsApp' : 'Fragen? Schreib uns per WhatsApp'}
+        </a>
       </div>
 
       {/* Return to Shop CTA */}
