@@ -178,6 +178,15 @@ export function jsonLdFor(info: PageInfo): object[] {
       publisher: { '@id': `${BASE_URL}/#organization` },
     });
     out.push(ORGANIZATION);
+    const g = GUIDES.find((x) => self === (de ? `/ratgeber/${x.slugDe}/` : `/en/guides/${x.slugEn}/`));
+    const qa = g && (de ? g.faqDe : g.faqEn);
+    if (qa?.length) {
+      out.push({
+        '@type': 'FAQPage',
+        inLanguage: de ? 'de-DE' : 'en',
+        mainEntity: qa.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+      });
+    }
   }
   return out.map((x) => ({ '@context': 'https://schema.org', ...x }));
 }

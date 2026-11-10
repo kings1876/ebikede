@@ -11,6 +11,22 @@ import {
   Info,
 } from './icons';
 import { GuideArticle, readMinutes } from '../data/guides';
+import { PRODUCTS } from '../data/products';
+import { GuideProducts } from './GuideProducts';
+import { GuideQuoteForm } from './GuideQuoteForm';
+
+/** Turns [label](/path/) into internal links inside plain paragraph text. */
+const renderText = (text: string): React.ReactNode[] =>
+  text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
+    const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    return m ? (
+      <a key={i} href={m[2]} className="font-semibold text-emerald-700 underline underline-offset-2 hover:text-emerald-800">
+        {m[1]}
+      </a>
+    ) : (
+      part
+    );
+  });
 
 interface GuideDetailProps {
   guide: GuideArticle;
@@ -25,6 +41,7 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide, lang }) => {
   const sections = isEn ? guide.sectionsEn : guide.sectionsDe;
   const note = isEn ? guide.noteEn : guide.noteDe;
   const minutes = readMinutes(guide, isEn);
+  const faq = isEn ? guide.faqEn : guide.faqDe;
 
 
   return (
@@ -76,6 +93,21 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide, lang }) => {
           ))}
         </ul>
       </div>
+
+      {(guide.products || guide.quote) && (
+        <div className="flex flex-wrap gap-3 mb-6">
+          {guide.products && (
+            <a href="#modelle" className="rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-bold text-white hover:bg-emerald-700">
+              {isEn ? 'See & order the models' : 'Modelle ansehen & bestellen'}
+            </a>
+          )}
+          {guide.quote && (
+            <a href="#angebot" className="rounded-xl border border-slate-300 px-4 py-2.5 text-xs font-bold text-slate-800 hover:bg-slate-50">
+              {isEn ? 'Get a free quote' : 'Kostenloses Angebot'}
+            </a>
+          )}
+        </div>
+      )}
 
       {note && (
         <p className="flex items-start gap-2 text-xs text-slate-600 mb-10">
@@ -129,12 +161,41 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide, lang }) => {
             <h2 className="text-xl font-bold text-slate-900 tracking-tight">{section.heading}</h2>
             {section.content.map((p, pIdx) => (
               <p key={pIdx} className="text-slate-700 text-sm sm:text-base leading-relaxed">
-                {p}
+                {renderText(p)}
               </p>
             ))}
           </section>
         ))}
       </div>
+
+      {guide.products && <GuideProducts slugs={guide.products} isEn={isEn} />}
+
+      {faq && (
+        <section className="mt-12" aria-labelledby="faq-heading">
+          <h2 id="faq-heading" className="text-xl font-bold text-slate-900 tracking-tight mb-4">
+            {isEn ? 'Frequently asked questions' : 'Häufige Fragen'}
+          </h2>
+          <div className="space-y-4">
+            {faq.map(([q, a]) => (
+              <div key={q}>
+                <h3 className="text-sm font-bold text-slate-900">{q}</h3>
+                <p className="mt-1 text-sm text-slate-700 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {guide.quote && (
+        <GuideQuoteForm
+          isEn={isEn}
+          topic={isEn ? guide.titleEn : guide.titleDe}
+          models={(guide.products || []).flatMap((s) => {
+            const p = PRODUCTS.find((x) => x.slug === s);
+            return p ? [{ slug: p.slug, name: isEn ? p.name_en : p.name_de }] : [];
+          })}
+        />
+      )}
 
       {/* Related shop pages */}
       {guide.related.length > 0 && (

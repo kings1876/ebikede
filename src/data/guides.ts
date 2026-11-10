@@ -1,3 +1,4 @@
+import { COMMERCIAL_GUIDES } from './guides-commercial';
 export interface GuideLink {
   de: string;
   en: string;
@@ -24,6 +25,13 @@ export interface GuideArticle {
   noteEn?: string;
   /** Internal links to the matching shop pages. */
   related: GuideLink[];
+  /** Product slugs shown as order cards inside the article (commercial guides). */
+  products?: string[];
+  /** Questions and answers, rendered as an FAQ and as FAQPage structured data. */
+  faqDe?: [string, string][];
+  faqEn?: [string, string][];
+  /** Adds the free-quote form at the end of the article. */
+  quote?: boolean;
   interactiveType?: 'leasing-calculator' | 'subsidies-checker' | 'range-calculator' | 'crypto-explainer';
 }
 
@@ -61,7 +69,7 @@ const L = {
   parts: { de: '/ersatzteile/', en: '/en/spare-parts/', labelDe: 'Ersatzteile', labelEn: 'Spare parts' },
 };
 
-export const GUIDES: GuideArticle[] = [
+const BASE_GUIDES: GuideArticle[] = [
   {
     id: 'kaufberatung',
     slugDe: 'e-bike-kaufberatung',
@@ -154,7 +162,17 @@ export const GUIDES: GuideArticle[] = [
         ],
       },
     ],
-    related: [L.trek, L.city, L.mtb, L.u2000, L.u3000, L.size],
+    related: [
+      L.trek,
+      L.city,
+      L.mtb,
+      L.u2000,
+      L.u3000,
+      L.size,
+      { de: '/ratgeber/beste-e-bikes-unter-3000-euro/', en: '/en/guides/best-e-bikes-under-3000-euro/', labelDe: 'E-Bike bis 3.000 € kaufen', labelEn: 'E-bikes under €3,000: top picks' },
+      { de: '/ratgeber/e-mountainbike-kaufen/', en: '/en/guides/buy-electric-mountain-bike/', labelDe: 'E-Mountainbike kaufen', labelEn: 'E-MTB buying guide' },
+      { de: '/ratgeber/trekking-e-bike-kaufen/', en: '/en/guides/buy-trekking-e-bike/', labelDe: 'Trekking E-Bike kaufen', labelEn: 'Buy a trekking e-bike' },
+    ],
   },
   {
     id: 'leasing-jobrad',
@@ -749,3 +767,5 @@ export const GUIDES: GuideArticle[] = [
     related: [L.parts, L.access, L.all],
   },
 ];
+
+export const GUIDES: GuideArticle[] = [...BASE_GUIDES, ...COMMERCIAL_GUIDES];
