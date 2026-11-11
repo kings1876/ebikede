@@ -84,9 +84,10 @@ export const listEnquiries = () => list<StoredEnquiry>(ENQUIRIES);
 export const getEnquiry = (id: string) => get<StoredEnquiry>(ENQUIRIES, id);
 export const deleteEnquiry = (id: string) => del(ENQUIRIES, id);
 
-export async function markEnquiryReplied(id: string) {
+export async function markEnquiryReplied(id: string, text?: string, from: 'us' | 'customer' = 'us') {
   const e = await getEnquiry(id);
   if (!e) return;
-  e.status = 'replied';
+  if (from === 'us') e.status = 'replied';
+  if (text) e.thread = [...(e.thread || []), { from, text, at: new Date().toISOString() }];
   await saveEnquiry(e);
 }

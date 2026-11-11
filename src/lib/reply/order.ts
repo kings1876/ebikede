@@ -144,4 +144,6 @@ export interface StoredEnquiry {
   language: Lang;
   status: 'new' | 'replied';
   createdAt: string;
+  /** Conversation after the first message: our replies and customer replies pasted in by the admin. */
+  thread?: { from: 'us' | 'customer'; text: string; at: string }[];
 }
