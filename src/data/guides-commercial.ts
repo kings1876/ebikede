@@ -11,6 +11,7 @@ const L: Record<string, GuideLink> = {
   mtb: { de: '/e-bikes/e-mountainbikes/', en: '/en/e-bikes/electric-mountain-bikes/', labelDe: 'E-Mountainbikes', labelEn: 'Electric mountain bikes' },
   city: { de: '/e-bikes/e-citybikes/', en: '/en/e-bikes/electric-city-bikes/', labelDe: 'E-Citybikes', labelEn: 'Electric city bikes' },
   bosch: { de: '/e-bikes/antrieb/bosch/', en: '/en/e-bikes/motor/bosch/', labelDe: 'Bosch E-Bikes', labelEn: 'Bosch e-bikes' },
+  spedelec: { de: '/e-bikes/s-pedelecs/', en: '/en/e-bikes/speed-pedelecs/', labelDe: 'S-Pedelecs (45 km/h)', labelEn: 'Speed pedelecs (45 km/h)' },
   all: { de: '/e-bikes/', en: '/en/e-bikes/', labelDe: 'Alle E-Bikes', labelEn: 'All e-bikes' },
   size: { de: '/groessenberatung/', en: '/en/size-guide/', labelDe: 'Größenberatung', labelEn: 'Size guide' },
   pay: { de: '/zahlungsarten/', en: '/en/payment-methods/', labelDe: 'Zahlungsarten & 10 % Krypto-Rabatt', labelEn: 'Payment methods & 10% crypto discount' },
@@ -334,5 +335,211 @@ export const COMMERCIAL_GUIDES: GuideArticle[] = [
     ],
     quote: true,
     related: [L.trek, L.city, L.u3000, L.access, L.all],
+  },
+  {
+    id: 's-pedelec-kaufen',
+    slugDe: 's-pedelec-kaufen',
+    slugEn: 'buy-speed-pedelec',
+    categoryDe: 'Kaufberatung',
+    categoryEn: 'Buying guide',
+    titleDe: 'S-Pedelec kaufen: 4 Modelle ab 4.999 €',
+    titleEn: 'Buy a Speed Pedelec: 4 Models From €4,999',
+    summaryDe: 'Ein S-Pedelec unterstützt bis 45 km/h. Wir zeigen vier neue Modelle mit Preisen und Daten, erklären Führerschein, Kennzeichen und Helm und lassen dich direkt bestellen.',
+    summaryEn: 'A speed pedelec assists up to 45 km/h. We show four new models with prices and data, explain licence, plate and helmet, and let you order right away.',
+    keyTakeawaysDe: [
+      'S-Pedelecs unterstützen bis 45 km/h und eignen sich für Pendelstrecken von etwa 15 bis 50 km.',
+      'Du brauchst Versicherungskennzeichen, Führerschein der Klasse AM oder B und einen Helm.',
+      'Die Preise starten bei 4.999 € für das Cube Kathmandu Hybrid 45 800, bei Krypto-Zahlung sparst du 10 %.',
+      'Bestelle direkt hier oder fordere ein kostenloses, unverbindliches Angebot an.',
+    ],
+    keyTakeawaysEn: [
+      'Speed pedelecs assist up to 45 km/h and suit commutes of roughly 15 to 50 km.',
+      'You need an insurance plate, a class AM or B licence and a helmet.',
+      'Prices start at €4,999 for the Cube Kathmandu Hybrid 45 800, and you save 10% when you pay in crypto.',
+      'Order right here or request a free, no-obligation quote.',
+    ],
+    sectionsDe: [
+      {
+        heading: 'Für wen sich ein S-Pedelec lohnt',
+        content: [
+          'Ein S-Pedelec unterstützt dich bis 45 km/h und ersetzt auf längeren Strecken oft das Auto. Es lohnt sich vor allem für Pendler, die täglich 15 bis 50 Kilometer fahren und dabei auf Landstraßen unterwegs sind. Wer vor allem kurze Stadtwege fährt, kommt mit einem normalen [E-Bike](/e-bikes/) bis 25 km/h günstiger und einfacher ans Ziel.',
+          'Alle Modelle findest du unter [S-Pedelecs (45 km/h)](/e-bikes/s-pedelecs/). Wenn du noch nicht sicher bist, welcher Typ zu dir passt, hilft dir unsere [E-Bike Kaufberatung](/ratgeber/e-bike-kaufberatung/).',
+        ],
+      },
+      {
+        heading: 'Führerschein, Kennzeichen und Helm',
+        content: [
+          'Rechtlich ist ein S-Pedelec ein Kleinkraftrad. Du brauchst einen Führerschein der Klasse AM oder B, ein Versicherungskennzeichen und einen Helm. Das Mindestalter liegt bei 16 Jahren. Innerorts fährst du auf der Straße, Radwege sind in der Regel tabu.',
+          'Die Haftpflichtversicherung schließt du vor der ersten Fahrt ab, sie läuft jeweils für ein Versicherungsjahr. Alle Regeln im Detail findest du im [Ratgeber zum E-Bike Recht](/ratgeber/e-bike-recht/) und im [Ratgeber zur Versicherung](/ratgeber/e-bike-versicherung/). Einen passenden Helm findest du im [Zubehör](/zubehoer/).',
+        ],
+      },
+      {
+        heading: 'Unsere vier S-Pedelecs im Überblick',
+        content: [
+          'Cube Kathmandu Hybrid 45 800 für 4.999 €: Bosch Performance Line Speed mit bis zu 100 Nm, 800-Wh-Akku, Kiox-500-Display und Magura-Bremsen mit ABS bei rund 28,9 kg. Der Einstieg mit der stärksten Technik für das Geld. [Zum Modell](/e-bike/cube-kathmandu-hybrid-45-800/).',
+          'Stromer ST1 für 5.565 €: Stromer CYRO Drive II mit 670 W und ein 983-Wh-Akku. Das ruhige Schweizer S-Pedelec für lange Pendelstrecken. [Zum Modell](/e-bike/stromer-st1/).',
+          'Stromer ST3 für 8.882 €: Stromer SYNO Drive II mit 820 W und 983 Wh. Mehr Leistung und mehr Ausstattung für Vielfahrer. [Zum Modell](/e-bike/stromer-st3/).',
+          'Stromer ST5 für 10.990 €: Stromer SYNO Sport mit 850 W und 983 Wh, die sportliche Variante der Reihe. [Zum Modell](/e-bike/stromer-st5/).',
+        ],
+      },
+      {
+        heading: 'So bestellst du und sparst dabei',
+        content: [
+          'Wähle unten dein Modell und lege es in den Warenkorb oder öffne die Produktseite, um Größe und Farbe zu wählen. Die Speditionslieferung ist ab 99 € kostenlos, das Rad kommt fahrfertig montiert zu dir. Mehr dazu unter [Versand & Lieferung](/versand/).',
+          'Du zahlst per Überweisung oder mit Krypto. Bei Krypto-Zahlung erhältst du 10 % Rabatt auf den gesamten Warenkorb, beim Cube Kathmandu Hybrid 45 800 sind das 499,90 €. Details findest du unter [Zahlungsarten](/zahlungsarten/). Es gelten die gesetzliche Gewährleistung von zwei Jahren und 14 Tage Widerrufsrecht.',
+          'Fragen zu Größe, Papieren oder Lieferzeit? Fordere unten ein kostenloses, unverbindliches Angebot an. Wir antworten per E-Mail.',
+        ],
+      },
+    ],
+    sectionsEn: [
+      {
+        heading: 'Who a speed pedelec suits',
+        content: [
+          'A speed pedelec assists you up to 45 km/h and often replaces the car on longer trips. It pays off mainly for commuters who ride 15 to 50 kilometres a day, often on country roads. If you mostly ride short city trips, a regular [e-bike](/en/e-bikes/) up to 25 km/h is cheaper and simpler.',
+          'You find all models under [speed pedelecs (45 km/h)](/en/e-bikes/speed-pedelecs/). If you are not sure which type suits you, our [e-bike buying guide](/en/guides/e-bike-buying-guide/) helps.',
+        ],
+      },
+      {
+        heading: 'Licence, plate and helmet',
+        content: [
+          'Legally a speed pedelec is a small motorcycle. You need a class AM or B licence, an insurance plate and a helmet. The minimum age is 16. In built-up areas you ride on the road, and cycle paths are generally off limits.',
+          'You take out liability insurance before your first ride, and it runs for one insurance year at a time. The details are in the [guide to e-bike law](/en/guides/e-bike-laws-germany/) and the [insurance guide](/en/guides/insurance/). You find a matching helmet under [accessories](/en/accessories/).',
+        ],
+      },
+      {
+        heading: 'Our four speed pedelecs at a glance',
+        content: [
+          'Cube Kathmandu Hybrid 45 800 at €4,999: Bosch Performance Line Speed with up to 100 Nm, an 800 Wh battery, a Kiox 500 display and Magura brakes with ABS at about 28.9 kg. The entry model with the strongest hardware for the money. [View the model](/en/e-bike/cube-kathmandu-hybrid-45-800/).',
+          'Stromer ST1 at €5,565: Stromer CYRO Drive II with 670 W and a 983 Wh battery. The calm Swiss speed pedelec for long commutes. [View the model](/en/e-bike/stromer-st1/).',
+          'Stromer ST3 at €8,882: Stromer SYNO Drive II with 820 W and 983 Wh. More power and more equipment for high-mileage riders. [View the model](/en/e-bike/stromer-st3/).',
+          'Stromer ST5 at €10,990: Stromer SYNO Sport with 850 W and 983 Wh, the sporty version of the line. [View the model](/en/e-bike/stromer-st5/).',
+        ],
+      },
+      {
+        heading: 'How to order and save',
+        content: [
+          'Pick your model below and add it to the cart, or open the product page to choose size and colour. Freight delivery is free from €99, and the bike arrives fully assembled. See [shipping & delivery](/en/shipping/).',
+          'You pay by bank transfer or crypto. Pay in crypto and you get 10% off the whole cart, which is €499.90 on the Cube Kathmandu Hybrid 45 800. Details are under [payment methods](/en/payment-methods/). The statutory two-year warranty and a 14-day right of withdrawal apply.',
+          'Questions about size, papers or delivery time? Request a free, no-obligation quote below. We reply by email.',
+        ],
+      },
+    ],
+    products: ['cube-kathmandu-hybrid-45-800', 'stromer-st1', 'stromer-st3', 'stromer-st5'],
+    faqDe: [
+      ['Brauche ich für ein S-Pedelec einen Führerschein?', 'Ja. Du brauchst einen Führerschein der Klasse AM oder B, ein Versicherungskennzeichen und einen Helm. Das Mindestalter liegt bei 16 Jahren.'],
+      ['Wie schnell fährt ein S-Pedelec?', 'Die Motorunterstützung reicht bis 45 km/h. Darüber fährst du nur mit eigener Kraft.'],
+      ['Welches S-Pedelec ist am günstigsten?', 'Im Shop ist das Cube Kathmandu Hybrid 45 800 mit 4.999 € das günstigste S-Pedelec.'],
+      ['Kann ich ein Angebot anfordern, ohne zu bestellen?', 'Ja. Das Angebot ist kostenlos und unverbindlich. Nenne uns im Formular dein Wunschmodell und deine Größe.'],
+    ],
+    faqEn: [
+      ['Do I need a licence for a speed pedelec?', 'Yes. You need a class AM or B licence, an insurance plate and a helmet. The minimum age is 16.'],
+      ['How fast does a speed pedelec go?', 'The motor assists up to 45 km/h. Above that you ride on your own power.'],
+      ['Which speed pedelec is the cheapest?', 'In the shop the Cube Kathmandu Hybrid 45 800 at €4,999 is the cheapest speed pedelec.'],
+      ['Can I ask for a quote without ordering?', 'Yes. The quote is free and non-binding. Tell us the model and your size in the form.'],
+    ],
+    quote: true,
+    related: [L.spedelec, L.bosch, L.access, L.pay, L.all],
+  },
+  {
+    id: 'e-bike-krypto-kaufen',
+    slugDe: 'e-bike-mit-krypto-kaufen',
+    slugEn: 'buy-e-bike-with-crypto',
+    categoryDe: 'Bezahlung',
+    categoryEn: 'Payment',
+    titleDe: 'E-Bike mit Krypto kaufen: 10 % Rabatt',
+    titleEn: 'Buy an E-Bike With Crypto: 10% Off',
+    summaryDe: 'So kaufst du ein neues E-Bike mit Bitcoin, USDT oder ETH und sparst 10 %. Mit Rechenbeispielen, den Schritten bis zur Lieferung und vier Modellen zum direkten Bestellen.',
+    summaryEn: 'How to buy a new e-bike with Bitcoin, USDT or ETH and save 10%. With worked examples, the steps up to delivery and four models you can order right away.',
+    keyTakeawaysDe: [
+      'Bei Krypto-Zahlung ziehen wir 10 % vom gesamten Warenkorb ab.',
+      'Du zahlst mit USDT, Bitcoin oder Ethereum und bekommst Adresse, Netzwerk, Betrag und QR-Code nach der Bestellung.',
+      'Bei einem Rad für 2.999 € sparst du 299,90 € und zahlst 2.699,10 €.',
+      'Lieferung per Spedition, fahrfertig montiert, 14 Tage Widerrufsrecht.',
+    ],
+    keyTakeawaysEn: [
+      'When you pay in crypto we deduct 10% from the whole cart.',
+      'You pay with USDT, Bitcoin or Ethereum and get the address, network, amount and QR code after you order.',
+      'On a bike at €2,999 you save €299.90 and pay €2,699.10.',
+      'Freight delivery, fully assembled, 14-day right of withdrawal.',
+    ],
+    sectionsDe: [
+      {
+        heading: 'Wie viel du mit Krypto sparst',
+        content: [
+          'Bei Zahlung per Kryptowährung zieht der Warenkorb automatisch 10 % ab. Das gilt für den gesamten Warenkorb, nicht nur für ein einzelnes Rad. Ein Rad für 1.899 € kostet dann 1.709,10 €, eines für 2.699 € kostet 2.429,10 € und eines für 4.999 € nur 4.499,10 €.',
+          'Der Rabatt entsteht, weil bei Krypto-Zahlung die Gebühren klassischer Zahlungsdienstleister wegfallen. Warum das so ist, erklärt unser [Ratgeber zu Zahlung und Krypto-Rabatt](/ratgeber/e-bike-zahlung/). Alle Optionen findest du unter [Zahlungsarten](/zahlungsarten/).',
+        ],
+      },
+      {
+        heading: 'In vier Schritten zum E-Bike',
+        content: [
+          'Schritt 1: Wähle dein Modell, Größe und Farbe und lege es in den Warenkorb. Schritt 2: Gib im Checkout deine Lieferdaten ein und wähle Krypto als Zahlungsart. Der Rabatt erscheint sofort im Warenkorb.',
+          'Schritt 3: Nach dem Absenden siehst du eine Zahlungsseite mit Wallet-Adresse, Netzwerk, Betrag und QR-Code. Dieselben Angaben bekommst du per E-Mail. Schritt 4: Du überweist, wir bestätigen den Eingang und die Spedition liefert das Rad fahrfertig montiert. Alles zur Lieferung steht unter [Versand & Lieferung](/versand/).',
+        ],
+      },
+      {
+        heading: 'Darauf solltest du achten',
+        content: [
+          'Dein Kaufpreis ist in Euro festgelegt. Den passenden Betrag in USDT, Bitcoin oder Ethereum rechnest du zum Kurs am Zahlungstag um. USDT ist an den US-Dollar gekoppelt und schwankt weniger als Bitcoin.',
+          'Prüfe vor dem Absenden genau Adresse und Netzwerk, denn Krypto-Überweisungen lassen sich nicht zurückholen. Bei Fragen schreib uns vor der Zahlung. Dein gesetzliches Widerrufsrecht von 14 Tagen bleibt bei jeder Zahlungsart bestehen.',
+        ],
+      },
+      {
+        heading: 'Vier Modelle, bei denen sich der Rabatt lohnt',
+        content: [
+          'Zündapp X900 Mountainbike Hardtail für 1.899 €, mit Krypto 1.709,10 €: Mittelmotor mit 110 Nm und 734-Wh-Akku. [Zum Modell](/e-bike/zuendapp-x900-mountainbike-hardtail/).',
+          'Cube Nuride Hybrid Performance 720 für 2.699 €, mit Krypto 2.429,10 €: der Allrounder mit Bosch Performance Line und 720 Wh. [Zum Modell](/e-bike/cube-nuride-hybrid-performance-720/).',
+          'Cube Touring Hybrid Pro 800 für 2.999 €, mit Krypto 2.699,10 €: das Trekkingbike mit 800-Wh-Akku für lange Touren. [Zum Modell](/e-bike/cube-touring-hybrid-pro-800/).',
+          'Cube Kathmandu Hybrid 45 800 für 4.999 €, mit Krypto 4.499,10 €: das S-Pedelec mit Bosch Speed-Motor und 800 Wh. [Zum Modell](/e-bike/cube-kathmandu-hybrid-45-800/). Mehr Auswahl siehst du unter [alle E-Bikes](/e-bikes/).',
+        ],
+      },
+    ],
+    sectionsEn: [
+      {
+        heading: 'How much you save with crypto',
+        content: [
+          'When you pay in cryptocurrency the cart deducts 10% automatically. It applies to the whole cart, not just a single bike. A bike at €1,899 then costs €1,709.10, one at €2,699 costs €2,429.10, and one at €4,999 costs just €4,499.10.',
+          'The discount exists because the fees of traditional payment providers do not apply when you pay in crypto. Our [guide to payment and the crypto discount](/en/guides/payment-and-crypto-discount/) explains why. You find all options under [payment methods](/en/payment-methods/).',
+        ],
+      },
+      {
+        heading: 'Four steps to your e-bike',
+        content: [
+          'Step 1: pick your model, size and colour and add it to the cart. Step 2: enter your delivery details at checkout and choose crypto as the payment method. The discount shows in the cart right away.',
+          'Step 3: after you submit, you see a payment page with the wallet address, network, amount and QR code. You get the same details by email. Step 4: you send the payment, we confirm receipt and the freight carrier delivers the bike fully assembled. Everything about delivery is under [shipping & delivery](/en/shipping/).',
+        ],
+      },
+      {
+        heading: 'What to keep in mind',
+        content: [
+          'Your purchase price is fixed in euros. You convert the matching amount to USDT, Bitcoin or Ethereum at the rate on the day of payment. USDT is pegged to the US dollar and fluctuates less than Bitcoin.',
+          'Check the address and network carefully before you send, because crypto transfers cannot be reversed. If you have questions, write to us before paying. Your statutory 14-day right of withdrawal remains with every payment method.',
+        ],
+      },
+      {
+        heading: 'Four models where the discount pays off',
+        content: [
+          'Zündapp X900 Mountain Bike Hardtail at €1,899, €1,709.10 with crypto: a mid-drive motor with 110 Nm and a 734 Wh battery. [View the model](/en/e-bike/zuendapp-x900-mountainbike-hardtail/).',
+          'Cube Nuride Hybrid Performance 720 at €2,699, €2,429.10 with crypto: the all-rounder with a Bosch Performance Line and 720 Wh. [View the model](/en/e-bike/cube-nuride-hybrid-performance-720/).',
+          'Cube Touring Hybrid Pro 800 at €2,999, €2,699.10 with crypto: the trekking bike with an 800 Wh battery for long tours. [View the model](/en/e-bike/cube-touring-hybrid-pro-800/).',
+          'Cube Kathmandu Hybrid 45 800 at €4,999, €4,499.10 with crypto: the speed pedelec with a Bosch Speed motor and 800 Wh. [View the model](/en/e-bike/cube-kathmandu-hybrid-45-800/). See more under [all e-bikes](/en/e-bikes/).',
+        ],
+      },
+    ],
+    products: ['zuendapp-x900-mountainbike-hardtail', 'cube-nuride-hybrid-performance-720', 'cube-touring-hybrid-pro-800', 'cube-kathmandu-hybrid-45-800'],
+    faqDe: [
+      ['Welche Kryptowährungen kann ich nutzen?', 'Du kannst mit USDT, Bitcoin oder Ethereum zahlen. Adresse, Netzwerk und Betrag erhältst du nach der Bestellung.'],
+      ['Wie hoch ist der Krypto-Rabatt?', 'Der Rabatt beträgt 10 % auf den gesamten Warenkorb und wird im Checkout automatisch abgezogen.'],
+      ['Habe ich bei Krypto-Zahlung Widerrufsrecht?', 'Ja. Das gesetzliche Widerrufsrecht von 14 Tagen gilt bei jeder Zahlungsart.'],
+      ['Kann ich vor der Bestellung ein Angebot bekommen?', 'Ja. Fordere unten ein kostenloses, unverbindliches Angebot an, wir antworten per E-Mail.'],
+    ],
+    faqEn: [
+      ['Which cryptocurrencies can I use?', 'You can pay with USDT, Bitcoin or Ethereum. You get the address, network and amount after you order.'],
+      ['How big is the crypto discount?', 'The discount is 10% off the whole cart and is deducted automatically at checkout.'],
+      ['Do I keep my right of withdrawal when paying in crypto?', 'Yes. The statutory 14-day right of withdrawal applies to every payment method.'],
+      ['Can I get a quote before I order?', 'Yes. Request a free, no-obligation quote below and we reply by email.'],
+    ],
+    quote: true,
+    related: [L.pay, L.u3000, L.ship, L.spedelec, L.all],
   },
 ];

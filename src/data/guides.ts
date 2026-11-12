@@ -172,6 +172,8 @@ const BASE_GUIDES: GuideArticle[] = [
       { de: '/ratgeber/beste-e-bikes-unter-3000-euro/', en: '/en/guides/best-e-bikes-under-3000-euro/', labelDe: 'E-Bike bis 3.000 € kaufen', labelEn: 'E-bikes under €3,000: top picks' },
       { de: '/ratgeber/e-mountainbike-kaufen/', en: '/en/guides/buy-electric-mountain-bike/', labelDe: 'E-Mountainbike kaufen', labelEn: 'E-MTB buying guide' },
       { de: '/ratgeber/trekking-e-bike-kaufen/', en: '/en/guides/buy-trekking-e-bike/', labelDe: 'Trekking E-Bike kaufen', labelEn: 'Buy a trekking e-bike' },
+      { de: '/ratgeber/s-pedelec-kaufen/', en: '/en/guides/buy-speed-pedelec/', labelDe: 'S-Pedelec kaufen', labelEn: 'Buy a speed pedelec' },
+      { de: '/ratgeber/e-bike-mit-krypto-kaufen/', en: '/en/guides/buy-e-bike-with-crypto/', labelDe: 'E-Bike mit Krypto kaufen', labelEn: 'Buy an e-bike with crypto' },
     ],
   },
   {
@@ -401,7 +403,7 @@ const BASE_GUIDES: GuideArticle[] = [
         ],
       },
     ],
-    related: [L.pay, L.withdraw, L.all],
+    related: [L.pay, L.withdraw, { de: '/ratgeber/e-bike-mit-krypto-kaufen/', en: '/en/guides/buy-e-bike-with-crypto/', labelDe: 'E-Bike mit Krypto kaufen', labelEn: 'Buy an e-bike with crypto' }, L.all],
   },
   {
     id: 'akku-reichweite',
@@ -618,7 +620,7 @@ const BASE_GUIDES: GuideArticle[] = [
         ],
       },
     ],
-    related: [L.access, L.all],
+    related: [L.access, { de: '/ratgeber/s-pedelec-kaufen/', en: '/en/guides/buy-speed-pedelec/', labelDe: 'S-Pedelec kaufen', labelEn: 'Buy a speed pedelec' }, L.all],
   },
   {
     id: 'recht',
@@ -688,7 +690,7 @@ const BASE_GUIDES: GuideArticle[] = [
         ],
       },
     ],
-    related: [L.spedelec, L.trek, L.city, L.access],
+    related: [L.spedelec, { de: '/ratgeber/s-pedelec-kaufen/', en: '/en/guides/buy-speed-pedelec/', labelDe: 'S-Pedelec kaufen', labelEn: 'Buy a speed pedelec' }, L.trek, L.city, L.access],
   },
   {
     id: 'pflege',
