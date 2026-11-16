@@ -552,7 +552,7 @@ export const Footer: React.FC<{ lang: 'de' | 'en' }> = ({ lang }) => {
       {/* Copyright & Payment Badges */}
       <div className="max-w-7xl mx-auto px-4 py-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
         <div>
-          © 2026 EBike Zu Verkaufen GmbH & Co. KG. Alle Rechte vorbehalten. e-bike-zuverkaufen.de
+          © 2026 EBike Zu Verkaufen GmbH & Co. KG. Alle Rechte vorbehalten. ebike-zu-verkaufen.de
         </div>
         <div className="flex items-center gap-3 flex-wrap">
           <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 font-mono text-[10px] text-slate-300">

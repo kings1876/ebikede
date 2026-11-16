@@ -64,7 +64,7 @@ export function GuideQuoteForm({ isEn, topic, models }: { isEn: boolean; topic: 
           </button>
           {state === 'error' && (
             <p role="alert" className="text-sm font-semibold text-red-700 sm:col-span-2">
-              {isEn ? 'Sending failed. Please email us at verkaufe@e-bike-zuverkaufen.de.' : 'Senden fehlgeschlagen. Bitte schreib uns an verkaufe@e-bike-zuverkaufen.de.'}
+              {isEn ? 'Sending failed. Please email us at verkaufe@ebike-zu-verkaufen.de.' : 'Senden fehlgeschlagen. Bitte schreib uns an verkaufe@ebike-zu-verkaufen.de.'}
             </p>
           )}
         </form>

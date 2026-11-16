@@ -7,7 +7,7 @@ import { LEGAL_DOCUMENTS } from '../data/legal';
 import { brandSlug } from './brand';
 import { homeSeoDe, brandSeoDe, productTitleDe, productTitleEn, productMeta, shortenTitle } from '../data/seo-apply';
 
-export const BASE_URL = 'https://e-bike-zuverkaufen.de';
+export const BASE_URL = 'https://ebike-zu-verkaufen.de';
 const SITE = 'EBike Zu Verkaufen';
 /** Date the catalogue/content last changed. Update when products or page text change (sitemap lastmod). */
 export const CONTENT_UPDATED = '2026-11-03';

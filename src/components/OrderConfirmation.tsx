@@ -68,11 +68,11 @@ NEXT STEPS:
 1. Certified Pre-Assembly: Our master mechanics are inspecting your e-bike, adjusting gear shifting, calibrating disc brakes and pre-charging the battery to 80%.
 2. Freight Delivery: Our forwarding partner (DB Schenker / Gebrüder Weiss) will call you 24 hours prior to delivery to schedule your personal 2-hour arrival slot.
 
-Should you have any questions, our support team is available via email at verkaufe@e-bike-zuverkaufen.de.
+Should you have any questions, our support team is available via email at verkaufe@ebike-zu-verkaufen.de.
 
 Best regards,
 Your EBike Zu Verkaufen Team
-https://e-bike-zuverkaufen.de/en/`
+https://ebike-zu-verkaufen.de/en/`
     : `Betreff: Auftragsbestätigung #${order.orderNumber} – EBike Zu Verkaufen
 
 Sehr geehrte(r) ${order.customerName},
@@ -98,11 +98,11 @@ SO GEHT ES WEITER:
 2. Speditionsversand: Die Spedition kontaktiert dich telefonisch 24h vorab, um ein 2-Stunden-Lieferzeitfenster mit dir abzustimmen.
 3. Auspacken & Losfahren: Nur Lenker geradestellen, Pedale einschrauben – fertig!
 
-Bei Fragen erreichst du uns jederzeit unter verkaufe@e-bike-zuverkaufen.de.
+Bei Fragen erreichst du uns jederzeit unter verkaufe@ebike-zu-verkaufen.de.
 
 Mit freundlichen Grüßen,
 Dein Team von EBike Zu Verkaufen
-https://e-bike-zuverkaufen.de`;
+https://ebike-zu-verkaufen.de`;
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);

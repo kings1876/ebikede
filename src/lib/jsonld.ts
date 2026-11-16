@@ -23,7 +23,7 @@ const ORGANIZATION = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
-    email: 'verkaufe@e-bike-zuverkaufen.de',
+    email: 'verkaufe@ebike-zu-verkaufen.de',
     availableLanguage: ['de', 'en'],
     areaServed: 'DE',
   },

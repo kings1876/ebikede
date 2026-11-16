@@ -103,7 +103,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         paragraphs: [
           'Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.',
           'Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Ware in Besitz genommen haben.',
-          'Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (EBike Zu Verkaufen GmbH & Co. KG, Fahrrad-Allee 42, 80336 München, E-Mail: widerruf@e-bike-zuverkaufen.de) mittels einer eindeutigen Erklärung über Ihren Entschluss informieren.',
+          'Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (EBike Zu Verkaufen GmbH & Co. KG, Fahrrad-Allee 42, 80336 München, E-Mail: widerruf@ebike-zu-verkaufen.de) mittels einer eindeutigen Erklärung über Ihren Entschluss informieren.',
         ],
       },
       {
@@ -120,7 +120,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         paragraphs: [
           'You have the right to withdraw from this contract within fourteen days without giving any reason.',
           'The cancellation period is fourteen days from the day on which you or a third party named by you (other than the carrier) took physical possession of the final goods.',
-          'To exercise your right of withdrawal, notify us (EBike Zu Verkaufen GmbH & Co. KG, Fahrrad-Allee 42, 80336 Munich, Email: widerruf@e-bike-zuverkaufen.de) by means of a clear declaration.',
+          'To exercise your right of withdrawal, notify us (EBike Zu Verkaufen GmbH & Co. KG, Fahrrad-Allee 42, 80336 Munich, Email: widerruf@ebike-zu-verkaufen.de) by means of a clear declaration.',
         ],
       },
       {
@@ -229,8 +229,8 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
       {
         heading: '1. Datenschutz auf einen Blick',
         paragraphs: [
-          'Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website e-bike-zuverkaufen.de besuchen.',
-          'Verantwortliche Stelle: EBike Zu Verkaufen GmbH & Co. KG, Fahrrad-Allee 42, 80336 München, datenschutz@e-bike-zuverkaufen.de.',
+          'Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website ebike-zu-verkaufen.de besuchen.',
+          'Verantwortliche Stelle: EBike Zu Verkaufen GmbH & Co. KG, Fahrrad-Allee 42, 80336 München, datenschutz@ebike-zu-verkaufen.de.',
         ],
       },
       {
@@ -250,8 +250,8 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
       {
         heading: '1. Data Privacy Overview',
         paragraphs: [
-          'The following disclosures provide a transparent overview of what happens to your personal data when browsing e-bike-zuverkaufen.de.',
-          'Data Controller: EBike Zu Verkaufen GmbH & Co. KG, Fahrrad-Allee 42, 80336 Munich, Germany, privacy@e-bike-zuverkaufen.de.',
+          'The following disclosures provide a transparent overview of what happens to your personal data when browsing ebike-zu-verkaufen.de.',
+          'Data Controller: EBike Zu Verkaufen GmbH & Co. KG, Fahrrad-Allee 42, 80336 Munich, Germany, privacy@ebike-zu-verkaufen.de.',
         ],
       },
       {

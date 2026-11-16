@@ -393,7 +393,7 @@ export const INFO_PAGES: Record<string, InfoPageDoc> = {
       {
         heading: 'Beratung per E-Mail',
         paragraphs: [
-          'Du bist unsicher bei Modell, Rahmengröße oder Motor? Schreibe uns eine E-Mail an verkaufe@e-bike-zuverkaufen.de, wir antworten persönlich. Unsere Ratgeber und der Rahmengrößen-Rechner helfen dir bei der Vorauswahl.',
+          'Du bist unsicher bei Modell, Rahmengröße oder Motor? Schreibe uns eine E-Mail an verkaufe@ebike-zu-verkaufen.de, wir antworten persönlich. Unsere Ratgeber und der Rahmengrößen-Rechner helfen dir bei der Vorauswahl.',
         ],
       },
     ],
@@ -418,7 +418,7 @@ export const INFO_PAGES: Record<string, InfoPageDoc> = {
       {
         heading: 'Advice by email',
         paragraphs: [
-          'Not sure about the model, frame size or motor? Email us at verkaufe@e-bike-zuverkaufen.de and we reply personally. Our guides and the frame size calculator help you narrow down the choice.',
+          'Not sure about the model, frame size or motor? Email us at verkaufe@ebike-zu-verkaufen.de and we reply personally. Our guides and the frame size calculator help you narrow down the choice.',
         ],
       },
     ],

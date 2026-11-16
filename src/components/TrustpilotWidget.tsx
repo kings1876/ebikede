@@ -174,7 +174,7 @@ export const TrustpilotWidget: React.FC<TrustpilotWidgetProps> = ({ productId, p
                   : 'All reviews are submitted by verified customers who purchased this e-bike from us. Unbiased, unfiltered transparency.'}
               </p>
               <div className="text-xs text-slate-500 font-mono">
-                Store ID: e-bike-zuverkaufen.de | TrustScore {STORE_TRUSTPILOT_INFO.score}/5.0 ({STORE_TRUSTPILOT_INFO.totalReviews} total)
+                Store ID: ebike-zu-verkaufen.de | TrustScore {STORE_TRUSTPILOT_INFO.score}/5.0 ({STORE_TRUSTPILOT_INFO.totalReviews} total)
               </div>
             </div>
 

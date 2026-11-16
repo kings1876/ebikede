@@ -62,7 +62,7 @@ export const TaxonomyInspector: React.FC = () => {
             <div className="flex items-center gap-3">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
               <span className="font-bold text-sm text-white">
-                Bilingual Taxonomy Engine (e-bike-zuverkaufen.de)
+                Bilingual Taxonomy Engine (ebike-zu-verkaufen.de)
               </span>
               <span className="text-xs text-slate-400 font-mono">
                 {TAXONOMY_ROUTES.length}+ Mapped Pairs

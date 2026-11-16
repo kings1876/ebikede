@@ -33,13 +33,13 @@ export const getWallet = (id?: string): CryptoWallet | undefined => CRYPTO_WALLE
 
 export const REPLY = {
   siteName: 'EBike Zu Verkaufen',
-  domain: 'e-bike-zuverkaufen.de',
-  baseUrl: 'https://e-bike-zuverkaufen.de',
+  domain: 'ebike-zu-verkaufen.de',
+  baseUrl: 'https://ebike-zu-verkaufen.de',
   orderPrefix: 'EBZ',
   brand: { primary: '#059669', headerDark: '#0F172A' },
   currency: { code: 'EUR', symbol: '€', locale: 'de-DE' },
   // Shop inbox: receives order and enquiry notifications, and is the Reply-To address of customer emails.
-  email: 'verkaufe@e-bike-zuverkaufen.de',
+  email: 'verkaufe@ebike-zu-verkaufen.de',
   whatsapp: '+491635042514',
   headerTagline: 'Neue E-Bikes · Versand per Spedition',
   headerTaglineEn: 'New e-bikes · Freight delivery',

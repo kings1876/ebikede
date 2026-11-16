@@ -56,8 +56,8 @@ export const InfoPage: React.FC<{ doc: InfoPageDoc; lang: 'de' | 'en' }> = ({ do
         <h2 className="text-base font-bold text-slate-900 mb-1">{isEn ? 'Still have a question?' : 'Noch eine Frage?'}</h2>
         <p className="text-sm text-slate-600 mb-3">
           {isEn ? 'Email us and we reply personally:' : 'Schreib uns eine E-Mail, wir antworten persönlich:'}{' '}
-          <a href="mailto:verkaufe@e-bike-zuverkaufen.de" className="font-semibold text-emerald-700">
-            verkaufe@e-bike-zuverkaufen.de
+          <a href="mailto:verkaufe@ebike-zu-verkaufen.de" className="font-semibold text-emerald-700">
+            verkaufe@ebike-zu-verkaufen.de
           </a>
         </p>
         <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">

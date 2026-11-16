@@ -183,7 +183,7 @@ export const Header: React.FC = () => {
               EBike <span className="text-emerald-700">Zu Verkaufen</span>
             </div>
             <div className="text-[10px] uppercase font-bold tracking-widest text-slate-500">
-              e-bike-zuverkaufen.de
+              ebike-zu-verkaufen.de
             </div>
           </div>
         </NavLink>
@@ -271,10 +271,10 @@ export const Header: React.FC = () => {
               {isEn ? 'Free Expert Advice' : 'Kostenlose Fachberatung'}
             </div>
             <a
-              href="mailto:verkaufe@e-bike-zuverkaufen.de"
+              href="mailto:verkaufe@ebike-zu-verkaufen.de"
               className="text-xs font-bold text-slate-900 hover:text-emerald-700"
             >
-              verkaufe@e-bike-zuverkaufen.de
+              verkaufe@ebike-zu-verkaufen.de
             </a>
           </div>
 

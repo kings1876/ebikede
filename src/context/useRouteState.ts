@@ -67,7 +67,7 @@ export function useRouteState() {
 
   // Compute live SEO tags
   const seoInfo = useMemo(() => {
-    const baseUrl = 'https://e-bike-zuverkaufen.de';
+    const baseUrl = 'https://ebike-zu-verkaufen.de';
     let title = 'EBike Zu Verkaufen | E-Bikes online kaufen';
     let description = 'EBike Zu Verkaufen: Große Auswahl an Premium E-Bikes in Deutschland.';
     let pathDe = currentPath;

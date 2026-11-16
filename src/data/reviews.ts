@@ -6,7 +6,7 @@ export const STORE_TRUSTPILOT_INFO = {
   ratingTextDe: 'Hervorragend',
   ratingTextEn: 'Excellent',
   totalReviews: 1842,
-  trustpilotUrl: 'https://www.trustpilot.com/review/e-bike-zuverkaufen.de',
+  trustpilotUrl: 'https://www.trustpilot.com/review/ebike-zu-verkaufen.de',
 };
 
 export const INITIAL_REVIEWS: TrustpilotReview[] = [
