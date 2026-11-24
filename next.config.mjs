@@ -30,7 +30,6 @@ const nextConfig = {
   },
   async headers() {
     return [
-      { source: '/en/legal-notice', destination: '/impressum/', permanent: true },
       {
         source: '/:path*',
         headers: [
