@@ -172,7 +172,7 @@ export function jsonLdFor(info: PageInfo): object[] {
       description: info.description,
       inLanguage: de ? 'de-DE' : 'en',
       mainEntityOfPage: abs(self),
-      image: abs(info.image || '/images/og/default.jpg'),
+      image: info.image ? (info.image.startsWith('http') ? info.image : abs(info.image)) : abs('/images/og/default.jpg'),
       dateModified: CONTENT_UPDATED,
       author: { '@id': `${BASE_URL}/#organization` },
       publisher: { '@id': `${BASE_URL}/#organization` },

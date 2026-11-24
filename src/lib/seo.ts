@@ -158,6 +158,7 @@ export function resolvePage(rawPath: string): PageInfo {
       pathEn: `/en/guides/${guide.slugEn}/`,
       title: titleWithSite(de ? guide.titleDe : guide.titleEn),
       description: de ? guide.summaryDe : guide.summaryEn,
+      ...(guide.images ? { image: `${BASE_URL}/images/og/${guide.images.dir}.jpg` } : {}),
     };
   }
 
@@ -232,7 +233,7 @@ export function buildMetadata(rawInfo: PageInfo): Metadata {
       },
     },
     openGraph: {
-      images: [{ url: ogImage, width: info.image ? 1200 : 1200, height: info.image ? 900 : 630, alt: info.title }],
+      images: [{ url: ogImage, width: info.image ? 1200 : 1200, height: info.image && !info.image.includes('/images/og/') ? 900 : 630, alt: info.title }],
       title: info.title,
       description: info.description,
       url: `${BASE_URL}${self}`,

@@ -14,6 +14,7 @@ import { GuideArticle, readMinutes } from '../data/guides';
 import { PRODUCTS } from '../data/products';
 import { GuideProducts } from './GuideProducts';
 import { GuideQuoteForm } from './GuideQuoteForm';
+import { GuideImage } from './GuideImage';
 
 /** Turns [label](/path/) into internal links inside plain paragraph text. */
 const renderText = (text: string): React.ReactNode[] =>
@@ -42,6 +43,7 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide, lang }) => {
   const note = isEn ? guide.noteEn : guide.noteDe;
   const minutes = readMinutes(guide, isEn);
   const faq = isEn ? guide.faqEn : guide.faqDe;
+  const imgs = guide.images;
 
 
   return (
@@ -77,6 +79,12 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide, lang }) => {
 
         <p className="text-slate-600 text-sm sm:text-base leading-relaxed">{isEn ? guide.summaryEn : guide.summaryDe}</p>
       </div>
+
+      {imgs && (
+        <div className="mb-8">
+          <GuideImage dir={imgs.dir} name="hero" alt={isEn ? imgs.heroAltEn : imgs.heroAltDe} width={1600} height={900} priority />
+        </div>
+      )}
 
       {/* Key Takeaways Box */}
       <div className="bg-emerald-50/80 rounded-2xl p-6 border border-emerald-200 mb-6">
@@ -164,6 +172,13 @@ export const GuideDetail: React.FC<GuideDetailProps> = ({ guide, lang }) => {
                 {renderText(p)}
               </p>
             ))}
+            {imgs?.inline.map((im, n) =>
+              im.after === idx ? (
+                <div key={n} className="pt-2">
+                  <GuideImage dir={imgs.dir} name={n === 0 ? 'inline-1' : 'inline-2'} alt={isEn ? im.altEn : im.altDe} width={1200} height={800} />
+                </div>
+              ) : null
+            )}
           </section>
         ))}
       </div>
