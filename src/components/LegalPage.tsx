@@ -51,7 +51,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ document, lang }) => {
             {isEn ? document.titleEn : document.titleDe}
           </h1>
           <p className="text-xs text-slate-500 mt-1">
-            LENZ E-Bikes GmbH • Cannstatt-Mitte, 70372 Stuttgart
+            LENZ E-Bikes GmbH • Karlstraße 45, 70173 Stuttgart
           </p>
         </div>
 

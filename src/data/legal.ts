@@ -26,8 +26,8 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         heading: 'Diensteanbieter / Betreiber der Website',
         paragraphs: [
           'LENZ E-Bikes GmbH',
-          'Cannstatt-Mitte',
-          '70372 Stuttgart, Deutschland',
+          'Karlstraße 45',
+          '70173 Stuttgart, Deutschland',
         ],
       },
       {
@@ -64,8 +64,8 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         heading: 'Service Provider / Website Operator',
         paragraphs: [
           'LENZ E-Bikes GmbH',
-          'Cannstatt-Mitte',
-          '70372 Stuttgart, Germany',
+          'Karlstraße 45',
+          '70173 Stuttgart, Germany',
         ],
       },
       {
@@ -189,7 +189,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         paragraphs: [
           'Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.',
           'Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Ware in Besitz genommen haben.',
-          'Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (LENZ E-Bikes GmbH, Cannstatt-Mitte, 70372 Stuttgart, E-Mail: widerruf@ebike-zu-verkaufen.de) mittels einer eindeutigen Erklärung über Ihren Entschluss informieren.',
+          'Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (LENZ E-Bikes GmbH, Karlstraße 45, 70173 Stuttgart, E-Mail: widerruf@ebike-zu-verkaufen.de) mittels einer eindeutigen Erklärung über Ihren Entschluss informieren.',
         ],
       },
       {
@@ -206,7 +206,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         paragraphs: [
           'You have the right to withdraw from this contract within fourteen days without giving any reason.',
           'The cancellation period is fourteen days from the day on which you or a third party named by you (other than the carrier) took physical possession of the final goods.',
-          'To exercise your right of withdrawal, notify us (LENZ E-Bikes GmbH, Cannstatt-Mitte, 70372 Stuttgart, Email: widerruf@ebike-zu-verkaufen.de) by means of a clear declaration.',
+          'To exercise your right of withdrawal, notify us (LENZ E-Bikes GmbH, Karlstraße 45, 70173 Stuttgart, Email: widerruf@ebike-zu-verkaufen.de) by means of a clear declaration.',
         ],
       },
       {
@@ -316,7 +316,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         heading: '1. Datenschutz auf einen Blick',
         paragraphs: [
           'Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website ebike-zu-verkaufen.de besuchen.',
-          'Verantwortliche Stelle: LENZ E-Bikes GmbH, Cannstatt-Mitte, 70372 Stuttgart, datenschutz@ebike-zu-verkaufen.de.',
+          'Verantwortliche Stelle: LENZ E-Bikes GmbH, Karlstraße 45, 70173 Stuttgart, datenschutz@ebike-zu-verkaufen.de.',
         ],
       },
       {
@@ -337,7 +337,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         heading: '1. Data Privacy Overview',
         paragraphs: [
           'The following disclosures provide a transparent overview of what happens to your personal data when browsing ebike-zu-verkaufen.de.',
-          'Data Controller: LENZ E-Bikes GmbH, Cannstatt-Mitte, 70372 Stuttgart, Germany, privacy@ebike-zu-verkaufen.de.',
+          'Data Controller: LENZ E-Bikes GmbH, Karlstraße 45, 70173 Stuttgart, Germany, privacy@ebike-zu-verkaufen.de.',
         ],
       },
       {
