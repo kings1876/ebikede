@@ -12,6 +12,90 @@ export interface LegalDocument {
 }
 
 export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
+  impressum: {
+    id: 'impressum',
+    slugDe: 'impressum',
+    slugEn: 'legal-notice',
+    titleDe: 'Impressum – Angaben gemäß § 5 DDG',
+    titleEn: 'Legal Notice (Impressum – § 5 German Digital Services Act)',
+    lastUpdated: '24. November 2026',
+    bindingNoticeDe: 'Rechtlich verbindlich ist ausschließlich die deutsche Fassung dieser Angaben. Die englische Übersetzung dient lediglich Ihrer Information.',
+    bindingNoticeEn: 'LEGAL NOTICE: The German version is the solely binding legal text pursuant to German law. This English version is provided as a convenience translation only.',
+    sectionsDe: [
+      {
+        heading: 'Diensteanbieter / Betreiber der Website',
+        paragraphs: [
+          'LENZ E-Bikes GmbH',
+          'Cannstatt-Mitte',
+          '70372 Stuttgart, Deutschland',
+        ],
+      },
+      {
+        heading: 'Vertreten durch',
+        paragraphs: [
+          'Geschäftsführer: Michael Cheng',
+        ],
+      },
+      {
+        heading: 'Registereintrag',
+        paragraphs: [
+          'Handelsregister: HRB 11027',
+          'EUID: DEM1203.HRB11027',
+        ],
+      },
+      {
+        heading: 'Kontakt',
+        paragraphs: [
+          'E-Mail: verkaufe@ebike-zu-verkaufen.de',
+          'Internet: https://ebike-zu-verkaufen.de',
+        ],
+      },
+      {
+        heading: 'EU-Streitschlichtung & Verbraucherstreitbeilegung',
+        paragraphs: [
+          'Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr/.',
+          'Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.',
+        ],
+      },
+    ],
+    sectionsEn: [
+      {
+        heading: 'Service Provider / Website Operator',
+        paragraphs: [
+          'LENZ E-Bikes GmbH',
+          'Cannstatt-Mitte',
+          '70372 Stuttgart, Germany',
+        ],
+      },
+      {
+        heading: 'Represented By',
+        paragraphs: [
+          'Managing Director: Michael Cheng',
+        ],
+      },
+      {
+        heading: 'Register Entry',
+        paragraphs: [
+          'Commercial Register: HRB 11027',
+          'EUID: DEM1203.HRB11027',
+        ],
+      },
+      {
+        heading: 'Contact',
+        paragraphs: [
+          'Email: verkaufe@ebike-zu-verkaufen.de',
+          'Web: https://ebike-zu-verkaufen.de/en/',
+        ],
+      },
+      {
+        heading: 'EU Dispute Resolution',
+        paragraphs: [
+          'The European Commission provides a platform for online dispute resolution (ODR): https://ec.europa.eu/consumers/odr/.',
+          'We are neither obligated nor willing to participate in dispute resolution proceedings before a consumer arbitration board.',
+        ],
+      },
+    ],
+  },
   agb: {
     id: 'agb',
     slugDe: 'agb',
@@ -25,7 +109,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
       {
         heading: '§ 1 Geltungsbereich und Vertragspartner',
         paragraphs: [
-          'Für alle Bestellungen über unseren Online-Shop gelten die nachfolgenden AGB in der zum Zeitpunkt der Bestellung gültigen Fassung. Vertragspartner ist die EBike Zu Verkaufen GmbH & Co. KG.',
+          'Für alle Bestellungen über unseren Online-Shop gelten die nachfolgenden AGB in der zum Zeitpunkt der Bestellung gültigen Fassung. Vertragspartner ist die LENZ E-Bikes GmbH.',
         ],
       },
       {
@@ -58,7 +142,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
       {
         heading: '§ 1 Scope & Contracting Parties',
         paragraphs: [
-          'These General Terms and Conditions govern all orders placed via our online shop. The contractual partner is EBike Zu Verkaufen GmbH & Co. KG.',
+          'These General Terms and Conditions govern all orders placed via our online shop. The contractual partner is LENZ E-Bikes GmbH.',
         ],
       },
       {
@@ -103,7 +187,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         paragraphs: [
           'Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.',
           'Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Ware in Besitz genommen haben.',
-          'Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (EBike Zu Verkaufen GmbH & Co. KG, Fahrrad-Allee 42, 80336 München, E-Mail: widerruf@ebike-zu-verkaufen.de) mittels einer eindeutigen Erklärung über Ihren Entschluss informieren.',
+          'Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (LENZ E-Bikes GmbH, Cannstatt-Mitte, 70372 Stuttgart, E-Mail: widerruf@ebike-zu-verkaufen.de) mittels einer eindeutigen Erklärung über Ihren Entschluss informieren.',
         ],
       },
       {
@@ -120,7 +204,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         paragraphs: [
           'You have the right to withdraw from this contract within fourteen days without giving any reason.',
           'The cancellation period is fourteen days from the day on which you or a third party named by you (other than the carrier) took physical possession of the final goods.',
-          'To exercise your right of withdrawal, notify us (EBike Zu Verkaufen GmbH & Co. KG, Fahrrad-Allee 42, 80336 Munich, Email: widerruf@ebike-zu-verkaufen.de) by means of a clear declaration.',
+          'To exercise your right of withdrawal, notify us (LENZ E-Bikes GmbH, Cannstatt-Mitte, 70372 Stuttgart, Email: widerruf@ebike-zu-verkaufen.de) by means of a clear declaration.',
         ],
       },
       {
@@ -230,7 +314,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         heading: '1. Datenschutz auf einen Blick',
         paragraphs: [
           'Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website ebike-zu-verkaufen.de besuchen.',
-          'Verantwortliche Stelle: EBike Zu Verkaufen GmbH & Co. KG, Fahrrad-Allee 42, 80336 München, datenschutz@ebike-zu-verkaufen.de.',
+          'Verantwortliche Stelle: LENZ E-Bikes GmbH, Cannstatt-Mitte, 70372 Stuttgart, datenschutz@ebike-zu-verkaufen.de.',
         ],
       },
       {
@@ -251,7 +335,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
         heading: '1. Data Privacy Overview',
         paragraphs: [
           'The following disclosures provide a transparent overview of what happens to your personal data when browsing ebike-zu-verkaufen.de.',
-          'Data Controller: EBike Zu Verkaufen GmbH & Co. KG, Fahrrad-Allee 42, 80336 Munich, Germany, privacy@ebike-zu-verkaufen.de.',
+          'Data Controller: LENZ E-Bikes GmbH, Cannstatt-Mitte, 70372 Stuttgart, Germany, privacy@ebike-zu-verkaufen.de.',
         ],
       },
       {

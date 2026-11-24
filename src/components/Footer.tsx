@@ -40,8 +40,8 @@ export const Footer: React.FC<{ lang: 'de' | 'en' }> = ({ lang }) => {
         </p>
         <p className="mt-3">
           {isEn
-            ? 'Good to know before you buy: every e-bike on this site is brand new, and prices include German VAT. Our terms and conditions, withdrawal policy, privacy policy and battery disposal information are linked in the columns above, and the site map lists every category, brand, guide and model on one page. Prefer to browse by price, motor, frame type or use case? The category pages let you narrow the range, and every product page shows the technical data, the available sizes and colours, the delivery terms and the payment options before you order.'
-            : 'Gut zu wissen vor dem Kauf: Jedes E-Bike auf dieser Seite ist fabrikneu, und die Preise enthalten die deutsche MwSt. AGB, Widerrufsbelehrung, Datenschutzerklärung und Hinweise zur Batterieentsorgung sind in den Spalten oben verlinkt, und die Seitenübersicht listet alle Kategorien, Marken, Ratgeber und Modelle auf einer Seite. Du möchtest lieber nach Preis, Motor, Rahmenform oder Einsatzzweck stöbern? Die Kategorieseiten grenzen das Sortiment ein, und jede Produktseite zeigt vor der Bestellung die technischen Daten, die verfügbaren Größen und Farben, die Lieferbedingungen und die Zahlungsmöglichkeiten.'}
+            ? 'Good to know before you buy: every e-bike on this site is brand new, and prices include German VAT. Our imprint, terms and conditions, withdrawal policy, privacy policy and battery disposal information are linked in the columns above, and the site map lists every category, brand, guide and model on one page. Prefer to browse by price, motor, frame type or use case? The category pages let you narrow the range, and every product page shows the technical data, the available sizes and colours, the delivery terms and the payment options before you order.'
+            : 'Gut zu wissen vor dem Kauf: Jedes E-Bike auf dieser Seite ist fabrikneu, und die Preise enthalten die deutsche MwSt. Impressum, AGB, Widerrufsbelehrung, Datenschutzerklärung und Hinweise zur Batterieentsorgung sind in den Spalten oben verlinkt, und die Seitenübersicht listet alle Kategorien, Marken, Ratgeber und Modelle auf einer Seite. Du möchtest lieber nach Preis, Motor, Rahmenform oder Einsatzzweck stöbern? Die Kategorieseiten grenzen das Sortiment ein, und jede Produktseite zeigt vor der Bestellung die technischen Daten, die verfügbaren Größen und Farben, die Lieferbedingungen und die Zahlungsmöglichkeiten.'}
         </p>
       </div>
 
@@ -496,6 +496,14 @@ export const Footer: React.FC<{ lang: 'de' | 'en' }> = ({ lang }) => {
               </a>
             </li>
             <li>
+              <a href="/impressum/"
+                
+                className="fl"
+              >
+                {isEn ? 'Legal Notice (Impressum)' : 'Impressum (§ 5 DDG)'}
+              </a>
+            </li>
+            <li>
               <a href={isEn ? '/en/privacy/' : '/datenschutz/'}
                 
                 className="fl"
@@ -552,7 +560,7 @@ export const Footer: React.FC<{ lang: 'de' | 'en' }> = ({ lang }) => {
       {/* Copyright & Payment Badges */}
       <div className="max-w-7xl mx-auto px-4 py-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
         <div>
-          © 2026 EBike Zu Verkaufen GmbH & Co. KG. Alle Rechte vorbehalten. ebike-zu-verkaufen.de
+          © 2026 LENZ E-Bikes GmbH. Alle Rechte vorbehalten. ebike-zu-verkaufen.de
         </div>
         <div className="flex items-center gap-3 flex-wrap">
           <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 font-mono text-[10px] text-slate-300">
