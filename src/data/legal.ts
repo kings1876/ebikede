@@ -39,6 +39,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
       {
         heading: 'Registereintrag',
         paragraphs: [
+          'Registergericht: Amtsgericht Königstein',
           'Handelsregister: HRB 11027',
           'EUID: DEM1203.HRB11027',
         ],
@@ -76,6 +77,7 @@ export const LEGAL_DOCUMENTS: Record<string, LegalDocument> = {
       {
         heading: 'Register Entry',
         paragraphs: [
+          'Register court: Königstein District Court (Amtsgericht Königstein)',
           'Commercial Register: HRB 11027',
           'EUID: DEM1203.HRB11027',
         ],
