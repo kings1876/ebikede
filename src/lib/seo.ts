@@ -10,7 +10,7 @@ import { homeSeoDe, brandSeoDe, productTitleDe, productTitleEn, productMeta, sho
 export const BASE_URL = 'https://ebike-zu-verkaufen.de';
 const SITE = 'EBike Zu Verkaufen';
 /** Date the catalogue/content last changed. Update when products or page text change (sitemap lastmod). */
-export const CONTENT_UPDATED = '2026-11-03';
+export const CONTENT_UPDATED = '2026-11-28';
 
 export interface PageInfo {
   path: string;

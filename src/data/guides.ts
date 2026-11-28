@@ -1,5 +1,6 @@
 import { COMMERCIAL_GUIDES } from './guides-commercial';
 import { COMMERCIAL_GUIDES_2 } from './guides-commercial-2';
+import { COMMERCIAL_GUIDES_3 } from './guides-commercial-3';
 export interface GuideLink {
   de: string;
   en: string;
@@ -185,6 +186,8 @@ const BASE_GUIDES: GuideArticle[] = [
       { de: '/ratgeber/e-lastenrad-kaufen/', en: '/en/guides/buy-electric-cargo-bike/', labelDe: 'E-Lastenrad kaufen', labelEn: 'Buy an e-cargo bike' },
       { de: '/ratgeber/e-faltrad-kaufen/', en: '/en/guides/buy-folding-e-bike/', labelDe: 'E-Faltrad kaufen', labelEn: 'Buy a folding e-bike' },
       { de: '/ratgeber/e-citybike-kaufen/', en: '/en/guides/buy-electric-city-bike/', labelDe: 'E-Citybike kaufen', labelEn: 'Buy an e-city bike' },
+      { de: '/ratgeber/e-bike-damen-kaufen/', en: '/en/guides/buy-womens-e-bike/', labelDe: 'E-Bike Damen kaufen', labelEn: "Buy a women's e-bike" },
+      { de: '/ratgeber/e-bike-guenstig-kaufen/', en: '/en/guides/buy-cheap-e-bike/', labelDe: 'E-Bike günstig kaufen', labelEn: 'Buy a cheap e-bike' },
     ],
   },
   {
@@ -266,7 +269,7 @@ const BASE_GUIDES: GuideArticle[] = [
         ],
       },
     ],
-    related: [L.all, L.trek, L.city, { de: '/ratgeber/e-citybike-kaufen/', en: '/en/guides/buy-electric-city-bike/', labelDe: 'E-Citybike kaufen', labelEn: 'Buy an e-city bike' }, L.u3000],
+    related: [L.all, L.trek, L.city, { de: '/ratgeber/e-citybike-kaufen/', en: '/en/guides/buy-electric-city-bike/', labelDe: 'E-Citybike kaufen', labelEn: 'Buy an e-city bike' }, L.u3000, { de: '/ratgeber/e-bike-guenstig-kaufen/', en: '/en/guides/buy-cheap-e-bike/', labelDe: 'E-Bike günstig kaufen', labelEn: 'Buy a cheap e-bike' }],
   },
   {
     id: 'foerderung',
@@ -565,7 +568,7 @@ const BASE_GUIDES: GuideArticle[] = [
         ],
       },
     ],
-    related: [L.trek, L.city, L.mtb, L.cargo, L.spedelec, L.gravel, L.road, L.folding, { de: '/ratgeber/e-lastenrad-kaufen/', en: '/en/guides/buy-electric-cargo-bike/', labelDe: 'E-Lastenrad kaufen', labelEn: 'Buy an e-cargo bike' }, { de: '/ratgeber/e-faltrad-kaufen/', en: '/en/guides/buy-folding-e-bike/', labelDe: 'E-Faltrad kaufen', labelEn: 'Buy a folding e-bike' }, { de: '/ratgeber/e-citybike-kaufen/', en: '/en/guides/buy-electric-city-bike/', labelDe: 'E-Citybike kaufen', labelEn: 'Buy an e-city bike' }],
+    related: [L.trek, L.city, L.mtb, L.cargo, L.spedelec, L.gravel, L.road, L.folding, { de: '/ratgeber/e-lastenrad-kaufen/', en: '/en/guides/buy-electric-cargo-bike/', labelDe: 'E-Lastenrad kaufen', labelEn: 'Buy an e-cargo bike' }, { de: '/ratgeber/e-faltrad-kaufen/', en: '/en/guides/buy-folding-e-bike/', labelDe: 'E-Faltrad kaufen', labelEn: 'Buy a folding e-bike' }, { de: '/ratgeber/e-citybike-kaufen/', en: '/en/guides/buy-electric-city-bike/', labelDe: 'E-Citybike kaufen', labelEn: 'Buy an e-city bike' }, { de: '/ratgeber/e-bike-damen-kaufen/', en: '/en/guides/buy-womens-e-bike/', labelDe: 'E-Bike Damen kaufen', labelEn: "Buy a women's e-bike" }, { de: '/ratgeber/e-bike-guenstig-kaufen/', en: '/en/guides/buy-cheap-e-bike/', labelDe: 'E-Bike günstig kaufen', labelEn: 'Buy a cheap e-bike' }],
   },
   {
     id: 'versicherung',
@@ -781,4 +784,4 @@ const BASE_GUIDES: GuideArticle[] = [
   },
 ];
 
-export const GUIDES: GuideArticle[] = [...BASE_GUIDES, ...COMMERCIAL_GUIDES, ...COMMERCIAL_GUIDES_2];
+export const GUIDES: GuideArticle[] = [...BASE_GUIDES, ...COMMERCIAL_GUIDES, ...COMMERCIAL_GUIDES_2, ...COMMERCIAL_GUIDES_3];
